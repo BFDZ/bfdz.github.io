@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>KMS 服务器的配置与使用 | BFDZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="知识科普vlmcsd 是由 C 语言编写的一款 KMS 模拟器，它可以运行在几乎任何系统中，比如：Linux、Android、FreeBSD、Solaris、Minix、Mac OS、iOS、Windows。">
+<meta name="keywords" content="kms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KMS 服务器的配置与使用">
+<meta property="og:url" content="https://www.bfdz.ink/2017/11/14/62/index.html">
+<meta property="og:site_name" content="BFDZ">
+<meta property="og:description" content="知识科普vlmcsd 是由 C 语言编写的一款 KMS 模拟器，它可以运行在几乎任何系统中，比如：Linux、Android、FreeBSD、Solaris、Minix、Mac OS、iOS、Windows。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.vtrois.com/wp-content/themes/Ravenclaw/images/smilies/razz.png">
+<meta property="og:image" content="https://www.vtrois.com/wp-content/uploads/kms-1.png">
+<meta property="og:image" content="https://www.vtrois.com/wp-content/uploads/kms-6.png">
+<meta property="og:image" content="https://www.vtrois.com/wp-content/uploads/kms-8.png">
+<meta property="og:updated_time" content="2017-11-14T14:24:21.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KMS 服务器的配置与使用">
+<meta name="twitter:description" content="知识科普vlmcsd 是由 C 语言编写的一款 KMS 模拟器，它可以运行在几乎任何系统中，比如：Linux、Android、FreeBSD、Solaris、Minix、Mac OS、iOS、Windows。">
+<meta name="twitter:image" content="https://www.vtrois.com/wp-content/themes/Ravenclaw/images/smilies/razz.png">
+  
+    <link rel="alternative" href="/atom.xml" title="BFDZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BFDZ</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.bfdz.ink"></form>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    var d = new Date();
+    var m = d.getMinutes();
+    var num = Math.ceil((m + 1) / (60 / 4));
+    document.getElementById("banner").style.backgroundImage = "url(/css/images/banner" + num + ".jpg)";
+    
+</script>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-62" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/14/62/" class="article-date">
+  <time datetime="2017-11-14T14:17:00.000Z" itemprop="datePublished">2017-11-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      KMS 服务器的配置与使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="知识科普"><a href="#知识科普" class="headerlink" title="知识科普"></a>知识科普</h2><p>vlmcsd 是由 C 语言编写的一款 KMS 模拟器，它可以运行在几乎任何系统中，比如：Linux、Android、FreeBSD、Solaris、Minix、Mac OS、iOS、Windows。</p>
+<a id="more"></a>
+<h2 id="战前准备"><a href="#战前准备" class="headerlink" title="战前准备"></a>战前准备</h2><ul>
+<li>一台 CentOS 7 64位的服务器（这里是因为我只有这个设备所以用这个为例子）</li>
+<li>服务器需要放通 KMS 默认的 1688 激活端口</li>
+<li>vlmcsd 源文件：<a href="https://github.com/Wind4/vlmcsd" target="_blank" rel="noopener">https://github.com/Wind4/vlmcsd</a></li>
+<li>充满智慧的大脑  <img src="https://www.vtrois.com/wp-content/themes/Ravenclaw/images/smilies/razz.png" alt=":razz:"></li>
+</ul>
+<h2 id="战斗开始"><a href="#战斗开始" class="headerlink" title="战斗开始"></a>战斗开始</h2><p>1.首先根据使用的设备选择相应的程序，这里我使用的 CentOS 7 64位服务器，所以找到 <code>binaries\Linux\intel\glibc</code> 目录中的 <code>vlmcsd-x64-glibc</code>。</p>
+<p>注意：这里的 x86 和 x64 一定要根据机器的配置来选择。</p>
+<p><img src="https://www.vtrois.com/wp-content/uploads/kms-1.png" alt=""></p>
+<p>2.将 <code>vlmcsd-x64-glibc</code> 上传到机器的 <code>/data</code> 目录下，并改名为 <code>vlmcsd</code> ，再使用下面命令给 <code>vlmcsd</code> 加执行权限，然后尝试执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod  u+x  vlmcsd</span><br><span class="line">./vlmcsd</span><br></pre></td></tr></table></figure>
+<p>如果执行 <code>vlmcsd</code> 显示类似下面的结果，那么 <code>1688</code> 端口可能被占用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Warning:  [::]:1688:  Address already <span class="keyword">in</span>  use</span><br><span class="line">Warning:  0.0.0.0:1688:  Address already <span class="keyword">in</span>  use</span><br><span class="line">Fatal:  Could not  listen on any socket.</span><br></pre></td></tr></table></figure>
+<p>3.使用 <code>ps</code> 命令来查看执行的进程，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps  aux|grep  vlmcsd</span><br></pre></td></tr></table></figure>
+<p>如果显示类似下面的结果，即为正常运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root 16336  0.0  0.0 8624 120  ?        Ss 11:01 0:00  ./vlmcsd</span><br><span class="line">root 16390  0.0  0.0  112660 976  pts/0    R+ 11:03 0:00  grep  --color=auto vlmcsd</span><br></pre></td></tr></table></figure>
+<p>4.将 <code>vlmcsd</code> 添加到开机启动并记录相关日志，使用到的命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span>  <span class="string">"/data/vlmcsd -l /var/log/vlmcsd.log &gt; /dev/null 2&gt;&amp;1"</span>  &gt;&gt;  /etc/rc.local  </span><br><span class="line">chmod  +x  /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p><em>注意：<code>/data/vlmcsd</code> 为 vlmcsd 的位置，<code>/var/log/vlmcsd.log</code> 为日志保存的位置。</em></p>
+<p>5.至此 vlmcsd 已经搭建完成，重启服务器测试一下 vlmcsd 进程是否启动即可。</p>
+<p>6.如果在 Windows 环境下可以使用客户端测试，在 <code>binaries\Windows\intel</code> 目录找到 <code>vlmcs-Windows-x64.exe</code> 文件，将其拖到 <code>CDM</code> 命令行中，并添加以下命令测试：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-v  -l  1  kms.bfdz.ink</span><br></pre></td></tr></table></figure></p>
+<p>注意：<code>-v</code> 是输出详细信息，<code>-l 1</code>表示发送 <code>Windows 10 Enterprise G</code> 的激活请求，<code>kms.bfdz.ink</code> 是我搭建好的 KMS 服务器绑定的网址。</p>
+<p>如果返回类似下面内容，则表示 KMS 服务器搭建成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Request Parameters</span><br><span class="line">==================</span><br><span class="line"></span><br><span class="line">Protocol version                : 6.0</span><br><span class="line">Client is a virtual machine     : No</span><br><span class="line">Licensing status                : 2 (OOB grace)</span><br><span class="line">Remaining time (0 = forever)    : 43200 minutes</span><br><span class="line">Application ID                  : 55c92734-d682-4d71-983e-d6ec3f16059f (Windows)</span><br><span class="line">SKU ID (aka Activation ID)      : e0b2d383-d112-413f-8a80-97f373a5820c (Windows 10 Enterprise G)</span><br><span class="line">KMS ID (aka KMS counted ID)     : 7ba0bf23-d0f5-4072-91d9-d55af5a481b6 (Windows 10 China Government)</span><br><span class="line">Client machine ID               : b979c2cb-3a81-45fc-b38a-995556160dd7</span><br><span class="line">Previous client machine ID      : 00000000-0000-0000-0000-000000000000</span><br><span class="line">Client request timestamp (UTC)  : 2017-11-04 03:25:27</span><br><span class="line">Workstation name                : www.amazon.org</span><br><span class="line">N count policy (minimum clients): 25</span><br><span class="line"></span><br><span class="line">Connecting to :1688 ... successful</span><br><span class="line"></span><br><span class="line">Performing RPC <span class="built_in">bind</span> ...</span><br><span class="line">... NDR64 ... BTFN ... NDR32 ... successful</span><br><span class="line">Sending activation request (KMS V6) 1 of 1</span><br><span class="line"></span><br><span class="line">Response from KMS server</span><br><span class="line">========================</span><br><span class="line"></span><br><span class="line">Size of KMS Response            : 260 (0x104)</span><br><span class="line">Protocol version                : 6.0</span><br><span class="line">KMS host extended PID           : 05426-03858-014-927327-03-1068-9200.0000-3502016</span><br><span class="line">KMS host Hardware ID            : 3A1C049600B60076</span><br><span class="line">Client machine ID               : b979c2cb-3a81-45fc-b38a-995556160dd7</span><br><span class="line">Client request timestamp (UTC)  : 2017-11-04 03:25:27</span><br><span class="line">KMS host current active clients : 50</span><br><span class="line">Renewal interval policy         : 10080</span><br><span class="line">Activation interval policy      : 120</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.vtrois.com/wp-content/uploads/kms-6.png" alt=""></p>
+<p>7.使用 KMS 服务器一键激活，使用管理员模式命令提示符（可以右击左下角徽标找到）执行下面的命令即可自动激活：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">slmgr  /skms kms.bfdz.ink</span><br><span class="line">slmgr  /ato</span><br></pre></td></tr></table></figure></p>
+<p>如果无法自动激活，需要首先到微软官网 <a href="https://technet.microsoft.com/en-us/library/jj612867.aspx" target="_blank" rel="noopener">KMS Client Setup Keys</a> 获取对应版本的 KEY，然后执行下面命令激活：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr  /skms kms.bfdz.ink</span><br><span class="line">slmgr  /ipk xxxxx-xxxxx-xxxxx-xxxxx</span><br><span class="line">slmgr  /ato</span><br></pre></td></tr></table></figure></p>
+<p><em>注意：<code>xxxxx-xxxxx-xxxxx-xxxxx</code> 是在微软官网获取的 <code>KEY</code> ，如果微软官网没有找到要激活的版本，那么 KMS 服务器将无法激活该版本，如果提示 <code>0x80070005</code> 错误，那么是由于命令不是在 <code>管理员模式命令提示符</code> 下运行导致，<code>kms.bfdz.ink</code> 是我搭建好的 KMS 服务器绑定的网址。</em></p>
+<p>如果不知道自己的系统是什么版本，可以使用以下命令查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic os get  caption</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.vtrois.com/wp-content/uploads/kms-8.png" alt=""></p>
+<p>8.为了方便激活，我这边准备了一个一键激活的批处理工具，只要保存下面的代码为 <code>activate.bat</code>并以管理员身份运行即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">ver &gt; C:\ver.txt</span><br><span class="line">findstr <span class="string">"6."</span> C:\ver.txt &gt;nul</span><br><span class="line"><span class="keyword">if</span> %ERRORLEVEL% == 0 (</span><br><span class="line">    cscript /nologo %windir%/system32/slmgr.vbs -skms kms.vtrois.com:1688</span><br><span class="line">    sc query w32time | findstr RUNNING &gt;null</span><br><span class="line">    <span class="keyword">if</span> %ERRORLEVEL% == 0 ( net start w32time )</span><br><span class="line">    w32tm /config /syncfromflags:manual /manualpeerlist:<span class="string">"ntp.vtrois.com"</span></span><br><span class="line">    net stop w32time</span><br><span class="line">    net start w32time</span><br><span class="line">    <span class="keyword">for</span> /l %%i <span class="keyword">in</span> (1,1,10) <span class="keyword">do</span> (</span><br><span class="line">      w32tm /resync | findstr successfully &gt;null</span><br><span class="line">      <span class="keyword">if</span> %ERRORLEVEL% == 1 ( goto _break ) <span class="keyword">else</span> ( C:\Windows\system32\timeout.exe /t 1 /nobreak &gt;null )</span><br><span class="line">      cscript /nologo %windir%/system32/slmgr.vbs -ato</span><br><span class="line">      <span class="keyword">if</span> %ERRORLEVEL% == 0 ( goto _break )</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line">:_break</span><br><span class="line">del C:\ver.txt</span><br></pre></td></tr></table></figure>
+<p><em>注意：这个批处理中有一个时间同步的功能，如果时间不同步，可能导致激活失败。</em></p>
+<hr>
+<p>作者：<a href="https://www.vtrois.com/" target="_blank" rel="noopener">Vtrois</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+
+      
+        <a href="https://www.bfdz.ink/2017/11/14/62/#valine_thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kms/">kms</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/15/63/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Debian添加开机启动项
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/31/61/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">rutorrent 辅种技巧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BT/">BT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTPS/">HTTPS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PT/">PT</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实用网站/">实用网站</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电视剧/">电视剧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/纪录片/">纪录片</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网盘/">网盘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脚本/">脚本</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视频压制/">视频压制</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/ARM/" style="font-size: 11.43px;">ARM</a> <a href="/tags/Arubacloud/" style="font-size: 10px;">Arubacloud</a> <a href="/tags/BBR/" style="font-size: 12.86px;">BBR</a> <a href="/tags/BT/" style="font-size: 12.86px;">BT</a> <a href="/tags/B站/" style="font-size: 10px;">B站</a> <a href="/tags/CCTV5/" style="font-size: 11.43px;">CCTV5</a> <a href="/tags/Centos/" style="font-size: 11.43px;">Centos</a> <a href="/tags/DGIndexNV/" style="font-size: 14.29px;">DGIndexNV</a> <a href="/tags/Danted/" style="font-size: 10px;">Danted</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/ELITEHD/" style="font-size: 10px;">ELITEHD</a> <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/HDClub/" style="font-size: 10px;">HDClub</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/IDC/" style="font-size: 10px;">IDC</a> <a href="/tags/Landscape-plus/" style="font-size: 10px;">Landscape-plus</a> <a href="/tags/ListAssFonts/" style="font-size: 10px;">ListAssFonts</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/NTP/" style="font-size: 11.43px;">NTP</a> <a href="/tags/Openvz/" style="font-size: 10px;">Openvz</a> <a href="/tags/PT/" style="font-size: 11.43px;">PT</a> <a href="/tags/Paypal/" style="font-size: 10px;">Paypal</a> <a href="/tags/Scene/" style="font-size: 10px;">Scene</a> <a href="/tags/ServerSpeeder/" style="font-size: 10px;">ServerSpeeder</a> <a href="/tags/Socks5/" style="font-size: 10px;">Socks5</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/TCP/" style="font-size: 11.43px;">TCP</a> <a href="/tags/Telegram/" style="font-size: 10px;">Telegram</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/acg/" style="font-size: 10px;">acg</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/avs/" style="font-size: 11.43px;">avs</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/galgame/" style="font-size: 10px;">galgame</a> <a href="/tags/hgame/" style="font-size: 10px;">hgame</a> <a href="/tags/hostloc/" style="font-size: 10px;">hostloc</a> <a href="/tags/https/" style="font-size: 11.43px;">https</a> <a href="/tags/iptables/" style="font-size: 11.43px;">iptables</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lnmp/" style="font-size: 10px;">lnmp</a> <a href="/tags/mail/" style="font-size: 10px;">mail</a> <a href="/tags/megui/" style="font-size: 15.71px;">megui</a> <a href="/tags/nginx/" style="font-size: 12.86px;">nginx</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/potplayer/" style="font-size: 12.86px;">potplayer</a> <a href="/tags/pre/" style="font-size: 10px;">pre</a> <a href="/tags/pretime/" style="font-size: 10px;">pretime</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/rTorrent/" style="font-size: 10px;">rTorrent</a> <a href="/tags/rar/" style="font-size: 10px;">rar</a> <a href="/tags/rarbg/" style="font-size: 10px;">rarbg</a> <a href="/tags/rename/" style="font-size: 10px;">rename</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/rutorrent/" style="font-size: 10px;">rutorrent</a> <a href="/tags/seedbox/" style="font-size: 11.43px;">seedbox</a> <a href="/tags/shadowsocks/" style="font-size: 17.14px;">shadowsocks</a> <a href="/tags/ss-panel/" style="font-size: 10px;">ss-panel</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tftp/" style="font-size: 10px;">tftp</a> <a href="/tags/torrent/" style="font-size: 14.29px;">torrent</a> <a href="/tags/tracker/" style="font-size: 10px;">tracker</a> <a href="/tags/ts/" style="font-size: 10px;">ts</a> <a href="/tags/tsukaeru/" style="font-size: 11.43px;">tsukaeru</a> <a href="/tags/uTorrent/" style="font-size: 11.43px;">uTorrent</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vps/" style="font-size: 18.57px;">vps</a> <a href="/tags/一键备份/" style="font-size: 10px;">一键备份</a> <a href="/tags/分区表/" style="font-size: 10px;">分区表</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/反劫持/" style="font-size: 10px;">反劫持</a> <a href="/tags/反封锁/" style="font-size: 10px;">反封锁</a> <a href="/tags/合集/" style="font-size: 11.43px;">合集</a> <a href="/tags/嘉年华/" style="font-size: 10px;">嘉年华</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大护法/" style="font-size: 10px;">大护法</a> <a href="/tags/字幕工具/" style="font-size: 10px;">字幕工具</a> <a href="/tags/字幕组/" style="font-size: 10px;">字幕组</a> <a href="/tags/安卓游戏/" style="font-size: 10px;">安卓游戏</a> <a href="/tags/开机启动/" style="font-size: 10px;">开机启动</a> <a href="/tags/指令集/" style="font-size: 10px;">指令集</a> <a href="/tags/搜索技术/" style="font-size: 17.14px;">搜索技术</a> <a href="/tags/木心/" style="font-size: 10px;">木心</a> <a href="/tags/水印/" style="font-size: 10px;">水印</a> <a href="/tags/漏洞/" style="font-size: 12.86px;">漏洞</a> <a href="/tags/激活工具/" style="font-size: 10px;">激活工具</a> <a href="/tags/百度网盘/" style="font-size: 11.43px;">百度网盘</a> <a href="/tags/监控/" style="font-size: 10px;">监控</a> <a href="/tags/盒子/" style="font-size: 10px;">盒子</a> <a href="/tags/直播/" style="font-size: 14.29px;">直播</a> <a href="/tags/种子/" style="font-size: 11.43px;">种子</a> <a href="/tags/端口/" style="font-size: 10px;">端口</a> <a href="/tags/签到/" style="font-size: 10px;">签到</a> <a href="/tags/纪录片/" style="font-size: 11.43px;">纪录片</a> <a href="/tags/纪念碑谷/" style="font-size: 10px;">纪念碑谷</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/网络封锁/" style="font-size: 11.43px;">网络封锁</a> <a href="/tags/网络时间同步/" style="font-size: 11.43px;">网络时间同步</a> <a href="/tags/美少女万華鏡/" style="font-size: 10px;">美少女万華鏡</a> <a href="/tags/脚本/" style="font-size: 10px;">脚本</a> <a href="/tags/视频压制/" style="font-size: 15.71px;">视频压制</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/评论系统/" style="font-size: 10px;">评论系统</a> <a href="/tags/跳转指令/" style="font-size: 10px;">跳转指令</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/运维/" style="font-size: 11.43px;">运维</a> <a href="/tags/逆流寻梦/" style="font-size: 10px;">逆流寻梦</a> <a href="/tags/锐速/" style="font-size: 10px;">锐速</a> <a href="/tags/预核准付款/" style="font-size: 10px;">预核准付款</a> <a href="/tags/驱动/" style="font-size: 10px;">驱动</a> <a href="/tags/高清直播/" style="font-size: 14.29px;">高清直播</a> <a href="/tags/高清知识/" style="font-size: 12.86px;">高清知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/26/105/">Windows10 获取数字许可证 批处理版</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/24/104/">ListAssFonts - ass 字幕字体分析工具</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/06/103/">周浩作品集（第二版）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/102/">windows 7 分区表转换和 USB 3.0 驱动注入</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/101/">字幕组网站签到脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://tristana.cn/" target="_blank">不点儿</a>
+          </li>
+        
+          <li>
+            <a href="https://www.xjh.me/" target="_blank">岁月小筑</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.xcatliu.com/" target="_blank">Xcat Liu&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.riverrun.xyz/" target="_blank">River&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="http://chuangzaoshi.com/" target="_blank">创意狮导航</a>
+          </li>
+        
+          <li>
+            <a href="http://www.awkxy.com/" target="_blank">Awkxy运维日志</a>
+          </li>
+        
+          <li>
+            <a href="https://www.azimiao.com/" target="_blank">梓喵出没</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.goagent.net/" target="_blank">小小</a>
+          </li>
+        
+          <li>
+            <a href="https://weicn.org/" target="_blank">WeiCN</a>
+          </li>
+        
+          <li>
+            <a href="https://wobeibk.com" target="_blank">我辈博客</a>
+          </li>
+        
+          <li>
+            <a href="https://so2x.com/" target="_blank">so2x</a>
+          </li>
+        
+          <li>
+            <a href="https://darrenliuwei.com/" target="_blank">刘伟的博客</a>
+          </li>
+        
+          <li>
+            <a href="https://affvps.net" target="_blank">AFFVPS</a>
+          </li>
+        
+          <li>
+            <a href="https://www.do1999.com/" target="_blank">Let me Attente</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">狡兔三窟</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://www.bfdz.ink/" target="_blank">www.bfdz.ink</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.coding.me/" target="_blank">bfdz.coding.me</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.github.io/" target="_blank">bfdz.github.io</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">工具箱</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://cargo.hyperay.cc/" target="_blank">网盘</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/password.html" target="_blank">密码生成</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/ptgen.html" target="_blank">PT Gen</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/btsearch.html" target="_blank">BT Search</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="https://creativecommons.org/licenses/by-nc/3.0/cn/" target="_blank"><img src="/images/88x31.png" alt="知识共享许可协议"></a>
+    <br>
+    除非另有说明，本站文章采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/">知识共享署名-非商业性使用 3.0 中国大陆许可协议</a>授权
+      <br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      .
+      Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a> & <a href="https://pages.github.com/" style="font-weight: bold">GitHub Pages</a>
+      .
+      <br>
+      &copy; 2016-2018 BFDZ
+      
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            smiles_url: 'https://www.bfdz.ink/smiles',
+            verify: false,
+            app_id: 'jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz',
+            app_key: 'jcsUjAW740MvTyO5DX2mF0Ho',
+            placeholder: '',
+            avatar: 'identicon'
+        });
+    </script>
+
+
+<!-- JQ Start-->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.1.4.min.js' type='text/javascript'%3E%3C/script%3E"));}
+// ]]>
+</script>
+<!-- JQ end -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-64016301-4');
+</script>
+
+
+
+
+<script src="/js/script.js"></script>
+</div>
+</body>
+</html>

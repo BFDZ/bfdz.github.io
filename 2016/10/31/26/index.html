@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一键备份脚本backup.sh | BFDZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="做网站最重要的是什么？数据！数据，是网站之本，备份，是每一个站长都应该重视的事情。但同时，备份也是一件繁琐和重复的事情。所以，这些事情，肯定能做到自动化的。下面来介绍一下这个一键备份脚本 backup.sh。 总结一下 backup.sh 特点：1、支持 MySQL/MariaDB/Percona 的数据库全量备份或选择备份；2、支持指定目录或文件的备份；3、支持加密备份文件（需安装 openss">
+<meta name="keywords" content="linux,一键备份">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一键备份脚本backup.sh">
+<meta property="og:url" content="https://www.bfdz.ink/2016/10/31/26/index.html">
+<meta property="og:site_name" content="BFDZ">
+<meta property="og:description" content="做网站最重要的是什么？数据！数据，是网站之本，备份，是每一个站长都应该重视的事情。但同时，备份也是一件繁琐和重复的事情。所以，这些事情，肯定能做到自动化的。下面来介绍一下这个一键备份脚本 backup.sh。 总结一下 backup.sh 特点：1、支持 MySQL/MariaDB/Percona 的数据库全量备份或选择备份；2、支持指定目录或文件的备份；3、支持加密备份文件（需安装 openss">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-11-24T05:38:17.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一键备份脚本backup.sh">
+<meta name="twitter:description" content="做网站最重要的是什么？数据！数据，是网站之本，备份，是每一个站长都应该重视的事情。但同时，备份也是一件繁琐和重复的事情。所以，这些事情，肯定能做到自动化的。下面来介绍一下这个一键备份脚本 backup.sh。 总结一下 backup.sh 特点：1、支持 MySQL/MariaDB/Percona 的数据库全量备份或选择备份；2、支持指定目录或文件的备份；3、支持加密备份文件（需安装 openss">
+  
+    <link rel="alternative" href="/atom.xml" title="BFDZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BFDZ</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.bfdz.ink"></form>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    var d = new Date();
+    var m = d.getMinutes();
+    var num = Math.ceil((m + 1) / (60 / 4));
+    document.getElementById("banner").style.backgroundImage = "url(/css/images/banner" + num + ".jpg)";
+    
+</script>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-26" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/26/" class="article-date">
+  <time datetime="2016-10-31T12:31:00.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/脚本/">脚本</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一键备份脚本backup.sh
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做网站最重要的是什么？数据！数据，是网站之本，备份，是每一个站长都应该重视的事情。但同时，备份也是一件繁琐和重复的事情。所以，这些事情，肯定能做到自动化的。<br>下面来介绍一下这个一键备份脚本 backup.sh。</p>
+<p><strong>总结一下 backup.sh 特点：</strong><br>1、支持 MySQL/MariaDB/Percona 的数据库全量备份或选择备份；<br>2、支持指定目录或文件的备份；<br>3、支持加密备份文件（需安装 openssl 命令，可选）；<br>4、支持上传至 Google Drive（需先安装 gdrive 并配置，可选）；<br>5、支持在删除指定天数本地旧的备份文件的同时，也删除 Google Drive 上的同名文件（可选）。<br><a id="more"></a><br><strong>2016 年 8 月 21 日更新：</strong><br>1、新增：指定 MySQL/MariaDB 的数据库名进行备份，可以同时指定多个；<br>2、新增：删除指定天数本地旧的备份文件。</p>
+<p><strong>2016 年 9 月 8 日更新：</strong><br>1、新增：删除指定天数本地旧的备份文件的同时，可选删除 Google Drive 上的同名文件，以节约空间。</p>
+<p>教程模式开启：</p>
+<h3 id="1、下载该脚本并赋予执行权限"><a href="#1、下载该脚本并赋予执行权限" class="headerlink" title="1、下载该脚本并赋予执行权限"></a>1、下载该脚本并赋予执行权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/teddysun/across/raw/master/backup.sh</span><br><span class="line">chmod +x backup.sh</span><br></pre></td></tr></table></figure>
+<h3 id="2、修改并配置脚本"><a href="#2、修改并配置脚本" class="headerlink" title="2、修改并配置脚本"></a>2、修改并配置脚本</h3><p>请使用 vim 或 nano 等工具来修改。</p>
+<p><strong>关于变量名的一些说明：</strong></p>
+<p>ENCRYPTFLG（加密FLG，true 为加密，false 为不加密，默认是加密）<br>BACKUPPASS（加密密码，重要，务必要修改）<br>LOCALDIR（备份目录，可自己指定）<br>TEMPDIR（备份目录的临时目录，可自己指定）<br>LOGFILE（脚本运行产生的日志文件路径）<br>MYSQL_ROOT_PASSWORD（MySQL 或 MariaDB 的 root 用户密码）<br>MYSQL_DATABASE_NAME（指定 MySQL 数据库名，留空则是备份所有数据库）<br><strong>※ MYSQL_DATABASE_NAME 是一个数组变量，可以指定多个。举例如下：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MYSQL_DATABASE_NAME[0]=<span class="string">"phpmyadmin"</span></span><br><span class="line">MYSQL_DATABASE_NAME[1]=<span class="string">"test"</span></span><br></pre></td></tr></table></figure></p>
+<p>BACKUP（需要备份的指定目录或文件列表，留空就是不备份目录或文件）</p>
+<p><strong>※ BACKUP 是一个数组变量，可以指定多个。举例如下：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BACKUP[0]=<span class="string">"/data/www/default/test.tgz"</span></span><br><span class="line">BACKUP[1]=<span class="string">"/data/www/default/test/"</span></span><br><span class="line">BACKUP[2]=<span class="string">"/data/www/default/test2/"</span></span><br></pre></td></tr></table></figure></p>
+<p>LOCALAGEDAILIES（指定多少天之后删除本地旧的备份文件，默认为 7 天）<br>DELETE_REMOTE_FILE_FLG（删除 Google Drive 上的备份文件FLG，true 为删除，false 为不删除，默认是删除）</p>
+<p><strong>一些注意事项的说明：</strong></p>
+<p>1）脚本需要用 root 用户来执行；<br>2）脚本需要用到 openssl 来加密，请事先安装好；<br>3）脚本默认备份所有的数据库（全量备份）；<br>4）备份文件的解密命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl enc -aes256 -<span class="keyword">in</span> [ENCRYPTED BACKUP] -out decrypted_backup.tgz -pass pass:[BACKUPPASS] -d -md sha1</span><br></pre></td></tr></table></figure></p>
+<p>5）备份文件解密后，解压命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxPf [DECRYPTION BACKUP FILE]</span><br></pre></td></tr></table></figure></p>
+<p><strong>解释一下参数 -P：</strong><br>tar 压缩文件默认都是相对路径的。加个 -P 是为了 tar 能以绝对路径压缩文件。因此，解压的时候也要带个 -P 参数。</p>
+<h3 id="3、配置-gdrive-命令"><a href="#3、配置-gdrive-命令" class="headerlink" title="3、配置 gdrive 命令"></a>3、配置 gdrive 命令</h3><p>gdrive 是一个命令行工具，用于 Google Drive 的上传下载等操作。官网网站：<br><a href="https://github.com/prasmussen/gdrive" target="_blank" rel="noopener">https://github.com/prasmussen/gdrive</a></p>
+<p>当然，你可以用以下的命令来安装 gdrive。</p>
+<p><strong>x86_64（64位）：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O /usr/bin/gdrive http://dl.teddysun.com/files/gdrive-linux-x64</span><br><span class="line">chmod +x /usr/bin/gdrive</span><br></pre></td></tr></table></figure></p>
+<p><strong>i386（32位）</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O /usr/bin/gdrive http://dl.teddysun.com/files/gdrive-linux-386</span><br><span class="line">chmod +x /usr/bin/gdrive</span><br></pre></td></tr></table></figure></p>
+<p>然后，运行以下命令开始获取授权：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdrive about</span><br></pre></td></tr></table></figure></p>
+<p>根据提示用浏览器打开 gdrive 给出的 URL，点击接受（Accept），然后将浏览器上显示出来的字符串粘贴回命令行里，完成授权。</p>
+<h3 id="4、运行脚本开始备份"><a href="#4、运行脚本开始备份" class="headerlink" title="4、运行脚本开始备份"></a>4、运行脚本开始备份</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./backup.sh</span><br></pre></td></tr></table></figure>
+<p>脚本默认会显示备份进度，并在最后统计出所需时间。<br>如果你想将脚本加入到 cron 自动运行的话，就不需要前台显示备份进度，只写日志就可以了。<br>这个时候你需要稍微改一下脚本中的 log 函数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">log</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$(date "+%Y-%m-%d %H:%M:%S")</span>"</span> <span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$(date "+%Y-%m-%d %H:%M:%S")</span>"</span> <span class="string">"<span class="variable">$1</span>"</span> &gt;&gt; <span class="variable">$&#123;LOGFILE&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">log</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$(date "+%Y-%m-%d %H:%M:%S")</span>"</span> <span class="string">"<span class="variable">$1</span>"</span> &gt;&gt; <span class="variable">$&#123;LOGFILE&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于如何使用 cron 自动备份，以 CentOS 6 来举例说明。</p>
+<p>修改文件 /etc/crontab，内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/<span class="built_in">local</span>/bin:/usr/<span class="built_in">local</span>/sbin:~/bin</span><br><span class="line">MAILTO=root</span><br><span class="line">HOME=/root</span><br><span class="line"></span><br><span class="line"><span class="comment"># For details see man 4 crontabs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Example of job definition:</span></span><br><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name command to be executed</span></span><br><span class="line">30  1  *  *  * root bash /root/backup.sh</span><br></pre></td></tr></table></figure></p>
+<p>以上表示，每天凌晨 1 点 30 分，root 用户执行一次 backup.sh 脚本。</p>
+<p><strong>注意：</strong><br>一定要修改其中的 PATH 和 HOME 变量的值。<br>尤其是 HOME 变量，gdrive 命令能否正确执行，是要依赖于其配置文件的。默认用 root 配置的话，其配置文件夹应该是 /root/.gdrive/ ，所以要更改 HOME 的值。</p>
+<p>最后，欢迎交流和提出意见。</p>
+<hr>
+<p>转载来源：<a href="https://teddysun.com/" target="_blank" rel="noopener">秋水逸冰</a> » <a href="https://teddysun.com/469.html" target="_blank" rel="noopener">一键备份脚本backup.sh</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+
+      
+        <a href="https://www.bfdz.ink/2016/10/31/26/#valine_thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一键备份/">一键备份</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/31/27/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          hostloc论坛每日翻牌
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/25/25/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">shadowsocks 优化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BT/">BT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTPS/">HTTPS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PT/">PT</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实用网站/">实用网站</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电视剧/">电视剧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/纪录片/">纪录片</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网盘/">网盘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脚本/">脚本</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视频压制/">视频压制</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/ARM/" style="font-size: 11.43px;">ARM</a> <a href="/tags/Arubacloud/" style="font-size: 10px;">Arubacloud</a> <a href="/tags/BBR/" style="font-size: 12.86px;">BBR</a> <a href="/tags/BT/" style="font-size: 12.86px;">BT</a> <a href="/tags/B站/" style="font-size: 10px;">B站</a> <a href="/tags/CCTV5/" style="font-size: 11.43px;">CCTV5</a> <a href="/tags/Centos/" style="font-size: 11.43px;">Centos</a> <a href="/tags/DGIndexNV/" style="font-size: 14.29px;">DGIndexNV</a> <a href="/tags/Danted/" style="font-size: 10px;">Danted</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/ELITEHD/" style="font-size: 10px;">ELITEHD</a> <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/HDClub/" style="font-size: 10px;">HDClub</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/IDC/" style="font-size: 10px;">IDC</a> <a href="/tags/Landscape-plus/" style="font-size: 10px;">Landscape-plus</a> <a href="/tags/ListAssFonts/" style="font-size: 10px;">ListAssFonts</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/NTP/" style="font-size: 11.43px;">NTP</a> <a href="/tags/Openvz/" style="font-size: 10px;">Openvz</a> <a href="/tags/PT/" style="font-size: 11.43px;">PT</a> <a href="/tags/Paypal/" style="font-size: 10px;">Paypal</a> <a href="/tags/Scene/" style="font-size: 10px;">Scene</a> <a href="/tags/ServerSpeeder/" style="font-size: 10px;">ServerSpeeder</a> <a href="/tags/Socks5/" style="font-size: 10px;">Socks5</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/TCP/" style="font-size: 11.43px;">TCP</a> <a href="/tags/Telegram/" style="font-size: 10px;">Telegram</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/acg/" style="font-size: 10px;">acg</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/avs/" style="font-size: 11.43px;">avs</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/galgame/" style="font-size: 10px;">galgame</a> <a href="/tags/hgame/" style="font-size: 10px;">hgame</a> <a href="/tags/hostloc/" style="font-size: 10px;">hostloc</a> <a href="/tags/https/" style="font-size: 11.43px;">https</a> <a href="/tags/iptables/" style="font-size: 11.43px;">iptables</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lnmp/" style="font-size: 10px;">lnmp</a> <a href="/tags/mail/" style="font-size: 10px;">mail</a> <a href="/tags/megui/" style="font-size: 15.71px;">megui</a> <a href="/tags/nginx/" style="font-size: 12.86px;">nginx</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/potplayer/" style="font-size: 12.86px;">potplayer</a> <a href="/tags/pre/" style="font-size: 10px;">pre</a> <a href="/tags/pretime/" style="font-size: 10px;">pretime</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/rTorrent/" style="font-size: 10px;">rTorrent</a> <a href="/tags/rar/" style="font-size: 10px;">rar</a> <a href="/tags/rarbg/" style="font-size: 10px;">rarbg</a> <a href="/tags/rename/" style="font-size: 10px;">rename</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/rutorrent/" style="font-size: 10px;">rutorrent</a> <a href="/tags/seedbox/" style="font-size: 11.43px;">seedbox</a> <a href="/tags/shadowsocks/" style="font-size: 17.14px;">shadowsocks</a> <a href="/tags/ss-panel/" style="font-size: 10px;">ss-panel</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tftp/" style="font-size: 10px;">tftp</a> <a href="/tags/torrent/" style="font-size: 14.29px;">torrent</a> <a href="/tags/tracker/" style="font-size: 10px;">tracker</a> <a href="/tags/ts/" style="font-size: 10px;">ts</a> <a href="/tags/tsukaeru/" style="font-size: 11.43px;">tsukaeru</a> <a href="/tags/uTorrent/" style="font-size: 11.43px;">uTorrent</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vps/" style="font-size: 18.57px;">vps</a> <a href="/tags/一键备份/" style="font-size: 10px;">一键备份</a> <a href="/tags/分区表/" style="font-size: 10px;">分区表</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/反劫持/" style="font-size: 10px;">反劫持</a> <a href="/tags/反封锁/" style="font-size: 10px;">反封锁</a> <a href="/tags/合集/" style="font-size: 11.43px;">合集</a> <a href="/tags/嘉年华/" style="font-size: 10px;">嘉年华</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大护法/" style="font-size: 10px;">大护法</a> <a href="/tags/字幕工具/" style="font-size: 10px;">字幕工具</a> <a href="/tags/字幕组/" style="font-size: 10px;">字幕组</a> <a href="/tags/安卓游戏/" style="font-size: 10px;">安卓游戏</a> <a href="/tags/开机启动/" style="font-size: 10px;">开机启动</a> <a href="/tags/指令集/" style="font-size: 10px;">指令集</a> <a href="/tags/搜索技术/" style="font-size: 17.14px;">搜索技术</a> <a href="/tags/木心/" style="font-size: 10px;">木心</a> <a href="/tags/水印/" style="font-size: 10px;">水印</a> <a href="/tags/漏洞/" style="font-size: 12.86px;">漏洞</a> <a href="/tags/激活工具/" style="font-size: 10px;">激活工具</a> <a href="/tags/百度网盘/" style="font-size: 11.43px;">百度网盘</a> <a href="/tags/监控/" style="font-size: 10px;">监控</a> <a href="/tags/盒子/" style="font-size: 10px;">盒子</a> <a href="/tags/直播/" style="font-size: 14.29px;">直播</a> <a href="/tags/种子/" style="font-size: 11.43px;">种子</a> <a href="/tags/端口/" style="font-size: 10px;">端口</a> <a href="/tags/签到/" style="font-size: 10px;">签到</a> <a href="/tags/纪录片/" style="font-size: 11.43px;">纪录片</a> <a href="/tags/纪念碑谷/" style="font-size: 10px;">纪念碑谷</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/网络封锁/" style="font-size: 11.43px;">网络封锁</a> <a href="/tags/网络时间同步/" style="font-size: 11.43px;">网络时间同步</a> <a href="/tags/美少女万華鏡/" style="font-size: 10px;">美少女万華鏡</a> <a href="/tags/脚本/" style="font-size: 10px;">脚本</a> <a href="/tags/视频压制/" style="font-size: 15.71px;">视频压制</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/评论系统/" style="font-size: 10px;">评论系统</a> <a href="/tags/跳转指令/" style="font-size: 10px;">跳转指令</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/运维/" style="font-size: 11.43px;">运维</a> <a href="/tags/逆流寻梦/" style="font-size: 10px;">逆流寻梦</a> <a href="/tags/锐速/" style="font-size: 10px;">锐速</a> <a href="/tags/预核准付款/" style="font-size: 10px;">预核准付款</a> <a href="/tags/驱动/" style="font-size: 10px;">驱动</a> <a href="/tags/高清直播/" style="font-size: 14.29px;">高清直播</a> <a href="/tags/高清知识/" style="font-size: 12.86px;">高清知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/26/105/">Windows10 获取数字许可证 批处理版</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/24/104/">ListAssFonts - ass 字幕字体分析工具</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/06/103/">周浩作品集（第二版）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/102/">windows 7 分区表转换和 USB 3.0 驱动注入</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/101/">字幕组网站签到脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://tristana.cn/" target="_blank">不点儿</a>
+          </li>
+        
+          <li>
+            <a href="https://www.xjh.me/" target="_blank">岁月小筑</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.xcatliu.com/" target="_blank">Xcat Liu&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.riverrun.xyz/" target="_blank">River&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="http://chuangzaoshi.com/" target="_blank">创意狮导航</a>
+          </li>
+        
+          <li>
+            <a href="http://www.awkxy.com/" target="_blank">Awkxy运维日志</a>
+          </li>
+        
+          <li>
+            <a href="https://www.azimiao.com/" target="_blank">梓喵出没</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.goagent.net/" target="_blank">小小</a>
+          </li>
+        
+          <li>
+            <a href="https://weicn.org/" target="_blank">WeiCN</a>
+          </li>
+        
+          <li>
+            <a href="https://wobeibk.com" target="_blank">我辈博客</a>
+          </li>
+        
+          <li>
+            <a href="https://so2x.com/" target="_blank">so2x</a>
+          </li>
+        
+          <li>
+            <a href="https://darrenliuwei.com/" target="_blank">刘伟的博客</a>
+          </li>
+        
+          <li>
+            <a href="https://affvps.net" target="_blank">AFFVPS</a>
+          </li>
+        
+          <li>
+            <a href="https://www.do1999.com/" target="_blank">Let me Attente</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">狡兔三窟</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://www.bfdz.ink/" target="_blank">www.bfdz.ink</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.coding.me/" target="_blank">bfdz.coding.me</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.github.io/" target="_blank">bfdz.github.io</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">工具箱</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://cargo.hyperay.cc/" target="_blank">网盘</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/password.html" target="_blank">密码生成</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/ptgen.html" target="_blank">PT Gen</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/btsearch.html" target="_blank">BT Search</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="https://creativecommons.org/licenses/by-nc/3.0/cn/" target="_blank"><img src="/images/88x31.png" alt="知识共享许可协议"></a>
+    <br>
+    除非另有说明，本站文章采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/">知识共享署名-非商业性使用 3.0 中国大陆许可协议</a>授权
+      <br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      .
+      Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a> & <a href="https://pages.github.com/" style="font-weight: bold">GitHub Pages</a>
+      .
+      <br>
+      &copy; 2016-2018 BFDZ
+      
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            smiles_url: 'https://www.bfdz.ink/smiles',
+            verify: false,
+            app_id: 'jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz',
+            app_key: 'jcsUjAW740MvTyO5DX2mF0Ho',
+            placeholder: '',
+            avatar: 'identicon'
+        });
+    </script>
+
+
+<!-- JQ Start-->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.1.4.min.js' type='text/javascript'%3E%3C/script%3E"));}
+// ]]>
+</script>
+<!-- JQ end -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-64016301-4');
+</script>
+
+
+
+
+<script src="/js/script.js"></script>
+</div>
+</body>
+</html>

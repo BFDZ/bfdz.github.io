@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Change torrent hash</title>
+<style>
+	body {
+		font-family: Arial;
+	}
+	.dragover, .dragover input {
+		background-color:#f2f2f2;
+	}
+	h1 {
+		font-weight: normal;
+		white-space: nowrap;
+	}
+	label {
+		margin-left: 5%;
+		cursor: pointer;
+	}
+	input {
+		border: 1px solid #ddd;
+		padding: 2px;
+		border-radius: 2px;
+	}
+	small {
+		color: #666;
+		font-size: 70%;
+	}
+	small a:hover {
+		color:#000;
+	}
+	#content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+</style>
+</head>
+<body>
+<div id="content">
+	<h1>Drag a torrent here to instantly change its hash</h1>
+	<p><input name="tracker" id="tracker" placeholder="Set announce URL (optional)" style="width:50%;"> <label><input type="checkbox" id="private" checked="checked"> Make private</label></p>
+	<p><small>Works in latest Firefox and Chrome. <a href="https://www.reddit.com/r/trackers/comments/493z21/webservice_instantly_change_torrent_hash/" target="_blank">Reddit</a>, <a href="https://github.com/blacknuller/blacknuller.github.io/blob/master/change-torrent-hash.html" target="_blank">Github</a>.</small></p>
+</div>
+<script>
+var Torrent = function(binaryString)
+{
+    var self = this,
+        uniqueStringChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+        mimeType = "application/x-bittorrent",
+        data = Bencode.decode(binaryString),
+		removeKeys = [
+			"announce-list",
+			"publisher",
+			"publisher-url",
+			"comment",
+			"source"
+		];
+
+    self.getName = function() {
+        return decodeURIComponent(escape(data.info.name));
+    };
+
+	self.cleanUp = function(){
+		for (var i = 0, l = removeKeys.length; i < l; i++) {
+			if (data[removeKeys[i]]) {
+				delete data[removeKeys[i]];
+			}
+		}
+		return this;
+	};
+
+    self.setAnnounceUrl = function(value) {
+        data.announce = value;
+        return this;
+    };
+
+    var randomString = function (length) {
+        var text = "";
+
+        for (var i = 0; i < length; i++) {
+            text += uniqueStringChars.charAt(Math.floor(Math.random() * uniqueStringChars.length));
+        }
+
+        return text;
+    };
+
+    self.changeHash = function(makePrivate) {
+        if (makePrivate) {
+            data.info.private = 1;
+        }
+        data.info.unique = randomString(30);
+        return self;
+    };
+
+    self.downloadTorrent = function(){
+        var uri = "data:application/x-bittorrent;base64," + btoa(Bencode.encode(data));
+		var trid = data.announce.split('://')[1].split('/')[0].split(':')[0].replace(/^tracker\./, "").replace(/^please\./, "");
+
+        var link = document.createElement("a");
+        link.href = uri;
+        link.style = "visibility:hidden";
+        link.download = self.getName() + " ["+ trid +"].torrent";
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        return false;
+    };
+};
+
+
+// Module for encoding/decoding Bencoded data
+// Copyright: https://github.com/nutbread/t2m
+
+var Bencode = (function () {
+	"use strict";
+
+	var encode = function (value) {
+		var t = typeof(value);
+		if (t == "number") return encode_int(Math.floor(value));
+		if (t == "string") return encode_string(value);
+		if (Array.isArray(value)) return encode_list(value);
+		return encode_dict(value);
+	};
+
+	var encode_int = function (value) {
+		return "i" + value + "e";
+	};
+	var encode_string = function (value) {
+		return "" + value.length + ":" + value;
+	};
+	var encode_list = function (value) {
+		var str = [ "l" ],
+			i;
+
+		for (i = 0; i < value.length; ++i) {
+			str.push(encode(value[i]));
+		}
+
+		str.push("e");
+		return str.join("");
+	};
+	var encode_dict = function (value) {
+		var str = [ "d" ],
+			keys = [],
+			i;
+
+		for (i in value) keys.push(i);
+		keys.sort();
+
+		for (i = 0; i < keys.length; ++i) {
+			str.push(encode_string(keys[i]));
+			str.push(encode(value[keys[i]]));
+		}
+
+		str.push("e");
+		return str.join("");
+	};
+
+
+	var Decoder = function () {
+		this.pos = 0;
+	};
+
+	Decoder.prototype = {
+		constructor: Decoder,
+
+		decode: function (str) {
+			var k = str[this.pos];
+			if (!(k in decode_generic)) throw "Invalid format";
+			return decode_generic[k].call(this, str);
+		},
+		decode_int: function (str) {
+			++this.pos;
+
+			var end = str.indexOf("e", this.pos),
+				value;
+
+			if (end < 0) throw "Invalid format";
+
+			value = parseInt(str.substr(this.pos, end - this.pos), 10);
+
+			this.pos = end + 1;
+			return value;
+		},
+		decode_string: function (str) {
+			var delim = str.indexOf(":", this.pos),
+				length, value;
+
+			if (delim < 0) throw "Invalid format";
+
+			length = parseInt(str.substr(this.pos, delim - this.pos), 10);
+			value = str.substr(delim + 1, length);
+
+			this.pos = delim + length + 1;
+			return value;
+		},
+		decode_list: function (str) {
+			++this.pos;
+
+			var list = [],
+				value;
+
+			while (str[this.pos] != "e") {
+				value = this.decode(str);
+				list.push(value);
+			}
+
+			++this.pos;
+			return list;
+		},
+		decode_dict: function (str) {
+			++this.pos;
+
+			var dict = {},
+				key, value;
+
+			while (str[this.pos] != "e") {
+				key = this.decode_string(str);
+				value = this.decode(str);
+				dict[key] = value;
+			}
+
+			++this.pos;
+			return dict;
+		},
+	};
+
+	var decode_generic = {
+			"l": Decoder.prototype.decode_list,
+			"d": Decoder.prototype.decode_dict,
+			"i": Decoder.prototype.decode_int,
+		},
+		i;
+	for (i = 0; i < 10; ++i) decode_generic[i.toString()] = Decoder.prototype.decode_string;
+
+	return {
+		encode: encode,
+		decode: function (str) {
+			return (new Decoder()).decode(str);
+		},
+	};
+
+})();
+
+var body = document.getElementsByTagName('body').item(0);
+var tracker = document.getElementById("tracker");
+var priv = document.getElementById("private");
+var header = document.getElementsByTagName('h1').item(0);
+
+tracker.value = localStorage.getItem("tracker");
+
+tracker.addEventListener("keyup", function(){
+	localStorage.setItem("tracker", this.value);
+});
+
+if (localStorage.getItem("private") === '0') {
+	priv.checked = false;
+}
+
+priv.addEventListener("change", function(){
+	localStorage.setItem("private", this.checked ? '1' : '0');
+});
+
+window.ondragover = window.ondrop = function(e) {
+	e.preventDefault();
+	return false;
+};
+
+document.ondragover = function(){ body.classList.add("dragover"); return false; };
+document.ondragleave = function(){ body.classList.remove("dragover"); return false; };
+
+document.ondrop = function (e) {
+	e.preventDefault();
+
+	var files = e.dataTransfer.files;
+
+	for (var i = 0, l = files.length; i < l; i++) {
+		readAsBinaryString(files[i], function(binary) {
+			try {
+				var torrent = new Torrent(binary);
+		        torrent.cleanUp().changeHash(priv.checked);
+				if (tracker.value) torrent.setAnnounceUrl(tracker.value.trim());
+				torrent.downloadTorrent();
+			} catch (e) {
+				console.log(e);
+			}
+	    });
+	}
+
+	body.classList.remove("dragover");
+
+	return false;
+};
+
+function readAsBinaryString(blob, callback) {
+    var reader = new FileReader();
+
+    var binStringCallback = function (e) {
+        callback(e.target.result);
+    };
+
+    var arrBufferCallback = function (e) {
+        var binary = "";
+        var bytes = new Uint8Array(e.target.result);
+        var length = bytes.byteLength;
+        for (var i = 0; i < length; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        callback(binary);
+    };
+
+    reader.onerror = reader.onabort = function () {
+        callback(null)
+    };
+
+    if (typeof reader.readAsBinaryString === "function") {
+        reader.onload = binStringCallback;
+        reader.readAsBinaryString(blob);
+    } else {
+        reader.onload = arrBufferCallback;
+        reader.readAsArrayBuffer(blob);
+    }
+}
+</script>
+</body>
+</html>
+

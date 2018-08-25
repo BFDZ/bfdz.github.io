@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux 安装 NFS Server | BFDZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。 Debian / UbuntuNFS Server 安装 安装 NFS  1apt-get install nfs-kernel-server nfs-common">
+<meta name="keywords" content="linux,NFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 安装 NFS Server">
+<meta property="og:url" content="https://www.bfdz.ink/2017/01/09/39/index.html">
+<meta property="og:site_name" content="BFDZ">
+<meta property="og:description" content="NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。 Debian / UbuntuNFS Server 安装 安装 NFS  1apt-get install nfs-kernel-server nfs-common">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-01-09T10:37:36.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 安装 NFS Server">
+<meta name="twitter:description" content="NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。 Debian / UbuntuNFS Server 安装 安装 NFS  1apt-get install nfs-kernel-server nfs-common">
+  
+    <link rel="alternative" href="/atom.xml" title="BFDZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BFDZ</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.bfdz.ink"></form>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    var d = new Date();
+    var m = d.getMinutes();
+    var num = Math.ceil((m + 1) / (60 / 4));
+    document.getElementById("banner").style.backgroundImage = "url(/css/images/banner" + num + ".jpg)";
+    
+</script>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-39" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/09/39/" class="article-date">
+  <time datetime="2017-01-09T08:22:00.000Z" itemprop="datePublished">2017-01-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 安装 NFS Server
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。</p>
+<h2 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian / Ubuntu"></a>Debian / Ubuntu</h2><h3 id="NFS-Server-安装"><a href="#NFS-Server-安装" class="headerlink" title="NFS Server 安装"></a>NFS Server 安装</h3><ul>
+<li>安装 NFS</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nfs-kernel-server nfs-common</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>设置分享目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/nfsshare</span><br><span class="line">chmod -R 777 /var/nfsshare/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编辑 <code>/etc/exports</code> ，在最后一行追加以下内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/nfsshare    192.168.0.11(rw,sync,no_root_squash,no_all_squash)</span><br></pre></td></tr></table></figure>
+<p>上面是设置只有 <code>192.168.0.11</code> 这个用户能访问共享目录, 设置多人访问可用 * 匹配</p>
+<ul>
+<li>重启 NFS Server</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/nfs-kernel-server restart</span><br></pre></td></tr></table></figure>
+<h3 id="安装-NFS-Client"><a href="#安装-NFS-Client" class="headerlink" title="安装 NFS Client"></a>安装 NFS Client</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nfs-common</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建挂载点</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/nfs/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 <code>mount</code> 命令可挂载他人分享出来的目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t nfs 192.168.0.10:/var/nfsshare /mnt/nfs/</span><br></pre></td></tr></table></figure>
+<p>上面是挂载 <code>192.168.0.10</code> 的分享目录。测试挂载本机分享目录，可将 ip 该改为 <code>127.0.0.1</code> ，同时注意先修改服务端的访问 ip 限制。</p>
+<ul>
+<li>如果要设置开机自动挂载，编辑 <code>/etc/fstab</code> ,添加以下内容</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.0.10:/var/nfsshare    /mnt/nfs/   nfs defaults 0 0</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="RHEL-CentOS-7-安装-NFS-Server"><a href="#RHEL-CentOS-7-安装-NFS-Server" class="headerlink" title="RHEL / CentOS 7 安装 NFS Server"></a>RHEL / CentOS 7 安装 NFS Server</h2><h3 id="安装-NFS-Server"><a href="#安装-NFS-Server" class="headerlink" title="安装 NFS Server"></a>安装 NFS Server</h3><ul>
+<li>安装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nfs-utils</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置分享目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/nfsshare</span><br><span class="line">chmod -R 777 /var/nfsshare/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编辑 <code>/etc/exports</code> ，在最后一行追加以下内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/nfsshare    192.168.0.11(rw,sync,no_root_squash,no_all_squash)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动 NFS Server ，设置开机自启，及设置防火墙</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> rpcbind</span><br><span class="line">systemctl <span class="built_in">enable</span> nfs-server</span><br><span class="line">systemctl <span class="built_in">enable</span> nfs-lock</span><br><span class="line">systemctl <span class="built_in">enable</span> nfs-idmap</span><br><span class="line">systemctl start rpcbind</span><br><span class="line">systemctl start nfs-server</span><br><span class="line">systemctl start nfs-lock</span><br><span class="line">systemctl start nfs-idmap</span><br><span class="line">firewall-cmd –permanent –zone=public –add-service=nfs</span><br><span class="line">firewall-cmd –reload</span><br></pre></td></tr></table></figure>
+<h3 id="安装-NFS-Client-1"><a href="#安装-NFS-Client-1" class="headerlink" title="安装 NFS Client"></a>安装 NFS Client</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nfs-utils</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建挂载点</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/nfs/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 <code>mount</code> 命令可挂载他人分享出来的目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t nfs 192.168.0.10:/var/nfsshare /mnt/nfs/</span><br></pre></td></tr></table></figure>
+<hr>
+<p>via：<a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank" rel="noopener">维基百科：NFS</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+
+      
+        <a href="https://www.bfdz.ink/2017/01/09/39/#valine_thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NFS/">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/03/40/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          2017 年十大最受欢迎的 BT 站
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/31/38/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Ubuntu 配置 tftp 服务器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="valine_thread">
+      <div class="comment"></div>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BT/">BT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTPS/">HTTPS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PT/">PT</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实用网站/">实用网站</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电视剧/">电视剧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/纪录片/">纪录片</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网盘/">网盘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脚本/">脚本</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视频压制/">视频压制</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/ARM/" style="font-size: 11.43px;">ARM</a> <a href="/tags/Arubacloud/" style="font-size: 10px;">Arubacloud</a> <a href="/tags/BBR/" style="font-size: 12.86px;">BBR</a> <a href="/tags/BT/" style="font-size: 12.86px;">BT</a> <a href="/tags/B站/" style="font-size: 10px;">B站</a> <a href="/tags/CCTV5/" style="font-size: 11.43px;">CCTV5</a> <a href="/tags/Centos/" style="font-size: 11.43px;">Centos</a> <a href="/tags/DGIndexNV/" style="font-size: 14.29px;">DGIndexNV</a> <a href="/tags/Danted/" style="font-size: 10px;">Danted</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/ELITEHD/" style="font-size: 10px;">ELITEHD</a> <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/HDClub/" style="font-size: 10px;">HDClub</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/IDC/" style="font-size: 10px;">IDC</a> <a href="/tags/Landscape-plus/" style="font-size: 10px;">Landscape-plus</a> <a href="/tags/ListAssFonts/" style="font-size: 10px;">ListAssFonts</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/NTP/" style="font-size: 11.43px;">NTP</a> <a href="/tags/Openvz/" style="font-size: 10px;">Openvz</a> <a href="/tags/PT/" style="font-size: 11.43px;">PT</a> <a href="/tags/Paypal/" style="font-size: 10px;">Paypal</a> <a href="/tags/Scene/" style="font-size: 10px;">Scene</a> <a href="/tags/ServerSpeeder/" style="font-size: 10px;">ServerSpeeder</a> <a href="/tags/Socks5/" style="font-size: 10px;">Socks5</a> <a href="/tags/Stack/" style="font-size: 10px;">Stack</a> <a href="/tags/TCP/" style="font-size: 11.43px;">TCP</a> <a href="/tags/Telegram/" style="font-size: 10px;">Telegram</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/acg/" style="font-size: 10px;">acg</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/avs/" style="font-size: 11.43px;">avs</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/galgame/" style="font-size: 10px;">galgame</a> <a href="/tags/hgame/" style="font-size: 10px;">hgame</a> <a href="/tags/hostloc/" style="font-size: 10px;">hostloc</a> <a href="/tags/https/" style="font-size: 11.43px;">https</a> <a href="/tags/iptables/" style="font-size: 11.43px;">iptables</a> <a href="/tags/ipv6/" style="font-size: 10px;">ipv6</a> <a href="/tags/kms/" style="font-size: 10px;">kms</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lnmp/" style="font-size: 10px;">lnmp</a> <a href="/tags/mail/" style="font-size: 10px;">mail</a> <a href="/tags/megui/" style="font-size: 15.71px;">megui</a> <a href="/tags/nginx/" style="font-size: 12.86px;">nginx</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/potplayer/" style="font-size: 12.86px;">potplayer</a> <a href="/tags/pre/" style="font-size: 10px;">pre</a> <a href="/tags/pretime/" style="font-size: 10px;">pretime</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/rTorrent/" style="font-size: 10px;">rTorrent</a> <a href="/tags/rar/" style="font-size: 10px;">rar</a> <a href="/tags/rarbg/" style="font-size: 10px;">rarbg</a> <a href="/tags/rename/" style="font-size: 10px;">rename</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/rutorrent/" style="font-size: 10px;">rutorrent</a> <a href="/tags/seedbox/" style="font-size: 11.43px;">seedbox</a> <a href="/tags/shadowsocks/" style="font-size: 17.14px;">shadowsocks</a> <a href="/tags/ss-panel/" style="font-size: 10px;">ss-panel</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tftp/" style="font-size: 10px;">tftp</a> <a href="/tags/torrent/" style="font-size: 14.29px;">torrent</a> <a href="/tags/tracker/" style="font-size: 10px;">tracker</a> <a href="/tags/ts/" style="font-size: 10px;">ts</a> <a href="/tags/tsukaeru/" style="font-size: 11.43px;">tsukaeru</a> <a href="/tags/uTorrent/" style="font-size: 11.43px;">uTorrent</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vps/" style="font-size: 18.57px;">vps</a> <a href="/tags/一键备份/" style="font-size: 10px;">一键备份</a> <a href="/tags/分区表/" style="font-size: 10px;">分区表</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/反劫持/" style="font-size: 10px;">反劫持</a> <a href="/tags/反封锁/" style="font-size: 10px;">反封锁</a> <a href="/tags/合集/" style="font-size: 11.43px;">合集</a> <a href="/tags/嘉年华/" style="font-size: 10px;">嘉年华</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/大护法/" style="font-size: 10px;">大护法</a> <a href="/tags/字幕工具/" style="font-size: 10px;">字幕工具</a> <a href="/tags/字幕组/" style="font-size: 10px;">字幕组</a> <a href="/tags/安卓游戏/" style="font-size: 10px;">安卓游戏</a> <a href="/tags/开机启动/" style="font-size: 10px;">开机启动</a> <a href="/tags/指令集/" style="font-size: 10px;">指令集</a> <a href="/tags/搜索技术/" style="font-size: 17.14px;">搜索技术</a> <a href="/tags/木心/" style="font-size: 10px;">木心</a> <a href="/tags/水印/" style="font-size: 10px;">水印</a> <a href="/tags/漏洞/" style="font-size: 12.86px;">漏洞</a> <a href="/tags/激活工具/" style="font-size: 10px;">激活工具</a> <a href="/tags/百度网盘/" style="font-size: 11.43px;">百度网盘</a> <a href="/tags/监控/" style="font-size: 10px;">监控</a> <a href="/tags/盒子/" style="font-size: 10px;">盒子</a> <a href="/tags/直播/" style="font-size: 14.29px;">直播</a> <a href="/tags/种子/" style="font-size: 11.43px;">种子</a> <a href="/tags/端口/" style="font-size: 10px;">端口</a> <a href="/tags/签到/" style="font-size: 10px;">签到</a> <a href="/tags/纪录片/" style="font-size: 11.43px;">纪录片</a> <a href="/tags/纪念碑谷/" style="font-size: 10px;">纪念碑谷</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/网络封锁/" style="font-size: 11.43px;">网络封锁</a> <a href="/tags/网络时间同步/" style="font-size: 11.43px;">网络时间同步</a> <a href="/tags/美少女万華鏡/" style="font-size: 10px;">美少女万華鏡</a> <a href="/tags/脚本/" style="font-size: 10px;">脚本</a> <a href="/tags/视频压制/" style="font-size: 15.71px;">视频压制</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/评论系统/" style="font-size: 10px;">评论系统</a> <a href="/tags/跳转指令/" style="font-size: 10px;">跳转指令</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/运维/" style="font-size: 11.43px;">运维</a> <a href="/tags/逆流寻梦/" style="font-size: 10px;">逆流寻梦</a> <a href="/tags/锐速/" style="font-size: 10px;">锐速</a> <a href="/tags/预核准付款/" style="font-size: 10px;">预核准付款</a> <a href="/tags/驱动/" style="font-size: 10px;">驱动</a> <a href="/tags/高清直播/" style="font-size: 14.29px;">高清直播</a> <a href="/tags/高清知识/" style="font-size: 12.86px;">高清知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/26/105/">Windows10 获取数字许可证 批处理版</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/24/104/">ListAssFonts - ass 字幕字体分析工具</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/06/103/">周浩作品集（第二版）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/102/">windows 7 分区表转换和 USB 3.0 驱动注入</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/101/">字幕组网站签到脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://tristana.cn/" target="_blank">不点儿</a>
+          </li>
+        
+          <li>
+            <a href="https://www.xjh.me/" target="_blank">岁月小筑</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.xcatliu.com/" target="_blank">Xcat Liu&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.riverrun.xyz/" target="_blank">River&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="http://chuangzaoshi.com/" target="_blank">创意狮导航</a>
+          </li>
+        
+          <li>
+            <a href="http://www.awkxy.com/" target="_blank">Awkxy运维日志</a>
+          </li>
+        
+          <li>
+            <a href="https://www.azimiao.com/" target="_blank">梓喵出没</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.goagent.net/" target="_blank">小小</a>
+          </li>
+        
+          <li>
+            <a href="https://weicn.org/" target="_blank">WeiCN</a>
+          </li>
+        
+          <li>
+            <a href="https://wobeibk.com" target="_blank">我辈博客</a>
+          </li>
+        
+          <li>
+            <a href="https://so2x.com/" target="_blank">so2x</a>
+          </li>
+        
+          <li>
+            <a href="https://darrenliuwei.com/" target="_blank">刘伟的博客</a>
+          </li>
+        
+          <li>
+            <a href="https://affvps.net" target="_blank">AFFVPS</a>
+          </li>
+        
+          <li>
+            <a href="https://www.do1999.com/" target="_blank">Let me Attente</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">狡兔三窟</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://www.bfdz.ink/" target="_blank">www.bfdz.ink</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.coding.me/" target="_blank">bfdz.coding.me</a>
+          </li>
+        
+          <li>
+            <a href="https://bfdz.github.io/" target="_blank">bfdz.github.io</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">工具箱</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://cargo.hyperay.cc/" target="_blank">网盘</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/password.html" target="_blank">密码生成</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/ptgen.html" target="_blank">PT Gen</a>
+          </li>
+        
+          <li>
+            <a href="https://www.bfdz.ink/tools/btsearch.html" target="_blank">BT Search</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="https://creativecommons.org/licenses/by-nc/3.0/cn/" target="_blank"><img src="/images/88x31.png" alt="知识共享许可协议"></a>
+    <br>
+    除非另有说明，本站文章采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/cn/">知识共享署名-非商业性使用 3.0 中国大陆许可协议</a>授权
+      <br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      .
+      Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a> & <a href="https://pages.github.com/" style="font-weight: bold">GitHub Pages</a>
+      .
+      <br>
+      &copy; 2016-2018 BFDZ
+      
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="/js/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV, 
+            el: '.comment',
+            smiles_url: 'https://www.bfdz.ink/smiles',
+            verify: false,
+            app_id: 'jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz',
+            app_key: 'jcsUjAW740MvTyO5DX2mF0Ho',
+            placeholder: '',
+            avatar: 'identicon'
+        });
+    </script>
+
+
+<!-- JQ Start-->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.1.4.min.js' type='text/javascript'%3E%3C/script%3E"));}
+// ]]>
+</script>
+<!-- JQ end -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-64016301-4');
+</script>
+
+
+
+
+<script src="/js/script.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BFDZ</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.bfdz.ink/"/>
+  <updated>2018-07-26T12:02:36.789Z</updated>
+  <id>https://www.bfdz.ink/</id>
+  
+  <author>
+    <name>BFDZ</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows10 获取数字许可证 批处理版</title>
+    <link href="https://www.bfdz.ink/2018/07/26/105/"/>
+    <id>https://www.bfdz.ink/2018/07/26/105/</id>
+    <published>2018-07-26T11:33:00.000Z</published>
+    <updated>2018-07-26T12:02:36.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接获取Windows10 数字许可证,同一台电脑,即使重装系统,无需输入许可证密钥,只要联网就能自动永久获得授权.因为你的授权信息已经保存在微软服务器上了.<br>这是Windows10特有的方式,非KMS方式的180天循环授权.<br><a id="more"></a></p><hr><ul><li><strong>保留其他授权信息的操作</strong></li></ul><p>如果你同时有已授权的Office产品,而又不想失去其授权状态.<br>你可以做如下操作:</p><ol><li>备份系统激活信息.</li><li>初始化系统激活信息.</li><li>自动激活并获取数字激活许可证.</li><li>还原系统激活信息.</li><li>仅安装系统初始化密钥.</li><li>查看激活状态.</li></ol><ul><li><strong>注意</strong></li></ul><ol><li>激活时请保持电脑连网状态，否则无法顺利激活。</li><li>激活时请保持 Windows Update 服务为启动状态。</li><li>如果已使用密钥激活 Office 等产品，会丢失其激活状态。</li><li>如果自动激活闪退,请尝试先初始化系统激活信息。</li></ol><p>建议: <strong>备份激活信息后再操作</strong>。</p><ul><li><strong>功能列表</strong></li></ul><ol><li>自动激活并获取数字激活许可证。</li><li>删除(初始化)系统激活信息。</li><li>仅安装系统初始化密钥。</li><li>备份系统激活信息。</li><li>还原系统激活信息。</li><li>查看激活状态。</li><li>查看支持列表。</li></ol><ul><li><strong>使用须知</strong></li></ul><ol><li>获得的数字授权是基于硬件信息的永久授权,非KMS方式循环授权.</li><li><strong>该授权方式只适用于Windows10系统.</strong></li><li>获取授权时需要联网,重装后自动激活相同版本的系统.</li><li>此工具同时支持版本大于等于 Win7(Windows Server 2008) 系统的授权信息查询,备份,还原.</li></ol><ul><li><p><strong>支持的Windows10版本/初始化安装密钥</strong></p></li><li><p><strong>Windows 10 Cloud</strong></p><ul><li>V3WVW-N2PV2-CGWC3-34QGF-VMJ2C</li></ul></li><li><strong>Windows 10 CloudN</strong><ul><li>NH9J3-68WK7-6FB93-4K3DF-DJ4F6</li></ul></li><li><strong>Windows 10 Core</strong><ul><li>YTMG3-N6DKC-DKB77-7M9GH-8HVX7</li></ul></li><li><strong>Windows 10 CoreN</strong><ul><li>4CPRK-NM3K3-X6XXQ-RXX86-WXCHW</li></ul></li><li><strong>Windows 10 CoreCountrySpecific</strong><ul><li>N2434-X9D7W-8PF6X-8DV9T-8TYMD</li></ul></li><li><strong>Windows 10 CoreSingleLanguage</strong><ul><li>BT79Q-G7N6G-PGBYW-4YWX6-6F4BT</li></ul></li><li><strong>Windows 10 Education</strong><ul><li>YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY</li></ul></li><li><strong>Windows 10 EducationN</strong><ul><li>84NGF-MHBT6-FXBX8-QWJK7-DRR8H</li></ul></li><li><strong>Windows 10 Enterprise</strong><ul><li>XGVPP-NMH47-7TTHJ-W3FW7-8HV2C</li></ul></li><li><strong>Windows 10 EnterpriseN</strong><ul><li>WGGHN-J84D6-QYCPR-T7PJ7-X766F</li></ul></li><li><strong>Windows 10 EnterpriseS / LTSB</strong><ul><li>NK96Y-D9CD8-W44CQ-R8YTK-DYJWX</li></ul></li><li><strong>Windows 10 EnterpriseSN / LTSBN</strong><ul><li>RW7WN-FMT44-KRGBK-G44WK-QV7YK</li></ul></li><li><strong>Windows 10 Professional</strong><ul><li>VK7JG-NPHTM-C97JM-9MPGT-3V66T</li></ul></li><li><strong>Windows 10 ProfessionalSingleLanguage</strong><ul><li>G3KNM-CHG6T-R36X3-9QDG6-8M8K9</li></ul></li><li><strong>Windows 10 ProfessionalN</strong><ul><li>2B87N-8KFHP-DKV6R-Y2C8J-PKCKT</li></ul></li><li><strong>Windows 10 ProfessionalEducation</strong><ul><li>8PTT6-RNW4C-6V7J2-C2D3X-MHBPB</li></ul></li><li><strong>Windows 10 ProfessionalEducationN</strong><ul><li>GJTYN-HDMQY-FRR76-HVGC7-QPF8P</li></ul></li><li><strong>Windows 10 ProfessionalWorkstation</strong><ul><li>DXG7C-N36C4-C4HTG-X4T3X-2YV77</li></ul></li><li><p><strong>Windows 10 ProfessionalWorkstationN</strong></p><ul><li>WYPNQ-8C467-V2W6J-TX4WX-WT2RQ</li></ul></li><li><p><strong>下载地址</strong></p></li><li><p><strong>批处理版</strong>: <a href="https://cargo.hyperay.cc/software/%E8%A3%85%E6%9C%BA%E5%B7%A5%E5%85%B7/Win10Activation.zip" target="_blank" rel="noopener">Win10Activation.zip</a></p></li></ul><p><em>SHA1: f15fbb6f96469a209875f2696dca0eacbf4c783d</em></p><ul><li><strong>批处理打包exe版</strong>: <a href="https://cargo.hyperay.cc/software/%E8%A3%85%E6%9C%BA%E5%B7%A5%E5%85%B7/Win10Activation.exe" target="_blank" rel="noopener">Win10Activation.exe</a></li></ul><p><em>SHA1: 44acecf24ad4d83090a10ec89fcd5e4bd53576c4</em></p><hr><p>来源：<a href="https://moeclub.org/2018/06/06/627/" target="_blank" rel="noopener">https://moeclub.org/2018/06/06/627/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;直接获取Windows10 数字许可证,同一台电脑,即使重装系统,无需输入许可证密钥,只要联网就能自动永久获得授权.因为你的授权信息已经保存在微软服务器上了.&lt;br&gt;这是Windows10特有的方式,非KMS方式的180天循环授权.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="激活工具" scheme="https://www.bfdz.ink/tags/%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ListAssFonts - ass 字幕字体分析工具</title>
+    <link href="https://www.bfdz.ink/2018/07/24/104/"/>
+    <id>https://www.bfdz.ink/2018/07/24/104/</id>
+    <published>2018-07-24T05:15:00.000Z</published>
+    <updated>2018-07-24T05:30:15.909Z</updated>
+    
+    <content type="html"><![CDATA[<p>因為最近比較常看動畫，但每一套字幕用到的字型都不同<br>有時字型包裡又有缺漏，或是有些字型壓根就沒用到</p><p>於是自己寫了個小程式來判斷字幕檔裡到底用了哪些字型<br>(C# .NetFramework 4.5.2 環境)</p><a id="more"></a><hr><p><img src="https://wx2.sinaimg.cn/large/92253953gy1ftkvpzpgnvj20f60hn0sz.jpg" alt=""></p><p>主要功能</p><ol><li>列出.ass/.ssa字幕檔裡實際用到的字型，並以紅黑顏色來表示未安裝(紅/粉紅) 及已安裝字型(黑/藍)</li><li>列出系統裡已安裝的所有字型，包含英文/繁中/簡中/日文字型名</li><li>可選擇是否自動存成文字檔 (勾選右下 Save .txt)</li><li>可選擇是否導出字型文件 (勾選下方 Save Fonts)</li><li>按F12/Menu鍵可導出 debug 用的純文字文件，方便報錯/除錯</li><li>在繁中OS下，將可能缺字的字幕部分，另外生成 .NeedVerify.ass，方便字幕作者檢視</li></ol><p>操作方式</p><ol><li>可直接拖曳字幕檔案或目錄到其上，或用 Select 按鈕選目錄、或手動輸入目錄 enter 皆可</li><li>點 Installed Fonts 鈕，則列出系統已安裝字型</li><li>fonts.txt 會存於字幕目錄下，installedFonts.txt 則存於程式本身目錄下，若有勾選 Save Fonts，則會存到 字幕\Fonts\目錄下</li><li>字型會存到字幕目錄\Fonts\ 下，不管複製成功或失敗，結果都會顯示於字型後面，如最上面的圖　　copied 代表字型複製成功，not installed 代表系統未安裝此字幕，not found 代表在註冊表裡或系統字型文件夾裡找不到此字型</li></ol><p>截圖說明</p><p>截圖是以俺妹字幕為例，列出俺妹一二季全字幕檔實際用到的字型</p><p>目前除了黑色跟紅色，另外用藍色跟粉紅色來顯示特殊字型</p><p>黑色 - 已安裝字型<br>藍色 - 已安裝的特殊字型</p><p>紅色 - 未安裝字型<br>粉紅 - 未安裝的特殊字型</p><p>特殊字型的定義是，在 .ass/.ssa 裡正常定義也正常安裝，卻可能仍然沒有正常顯示出來的字型<br>發生的原因未知，如果有人知道原理，也請告知一下</p><p>例如</p><ol><li><p>日文字型 FOT-マティス Pro B (FOT-Matisse Pro B)<br>　在使用直式字型 @FOT-マティス Pro B 時，無法正常顯示，改成 @FOT-Matisse Pro B 則正常</p></li><li><p>華康中圓體(P) (DFPYuanMedium-B5)<br>　在使用 \fn華康中圓體(P) 時，無法正常顯示，改成 \fnDFPYuanMedium-B5 則正常</p></li><li><p>Noto 字型 (Google) + Style 行設定了錯誤的 encoding 時，如繁中 Windowns + 134(GB2313) 或簡中 Windows + 136(BIG5)</p></li><li><p>Source Hans/思源 字型 (Adobe) 跟 Noto 是一模一樣的字型 (只有字型名稱不同)<br>　思源黑體(Source Han Sans) = Noto Sans，思源宋體(Source Han Serif) = Noto Serif</p></li></ol><p>用特別的顏色來提醒使用者，這些字型可能要修改 .ass/.ssa 檔後才能正常顯示 (1/2/3)，或是避免重覆安裝 (4)</p><hr><p>更新日誌</p><p>v180623</p><ol><li>支援 騰祥、”BONX”、”Comic Runes” 字型</li><li>支援更多 “FOT”, “A-OTF”, “G-OTF” 字型</li><li>修正一些 “NeedVerify.ass” 遇到直式字幕的問題</li><li>修正 Win10 更新之後多了一些空行的問題</li></ol><p>下载</p><ul><li><a href="https://daye-my.sharepoint.com/:u:/g/personal/root_bfdz_ink/EWt6pVCHVk5MuTj24YnVPh8BiEWiK-CbKkr3X_J3sv9yqQ?e=K6063z" target="_blank" rel="noopener">OneDrive</a></li><li><a href="https://bfdz.stackstorage.com/s/qE12bUHbiwAGNph" target="_blank" rel="noopener">STACK</a></li><li><a href="https://cargo.hyperay.cc/?dir=software/%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener">资源库</a></li></ul><hr><p>来源：<a href="http://bbs.vcb-s.com/thread-1894-1-1.html" target="_blank" rel="noopener">http://bbs.vcb-s.com/thread-1894-1-1.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因為最近比較常看動畫，但每一套字幕用到的字型都不同&lt;br&gt;有時字型包裡又有缺漏，或是有些字型壓根就沒用到&lt;/p&gt;
+&lt;p&gt;於是自己寫了個小程式來判斷字幕檔裡到底用了哪些字型&lt;br&gt;(C# .NetFramework 4.5.2 環境)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="ListAssFonts" scheme="https://www.bfdz.ink/tags/ListAssFonts/"/>
+    
+      <category term="字幕工具" scheme="https://www.bfdz.ink/tags/%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>周浩作品集（第二版）</title>
+    <link href="https://www.bfdz.ink/2018/07/06/103/"/>
+    <id>https://www.bfdz.ink/2018/07/06/103/</id>
+    <published>2018-07-06T13:38:00.000Z</published>
+    <updated>2018-07-06T13:42:32.262Z</updated>
+    
+    <content type="html"><![CDATA[<p>更新了失效的百度网盘链接，全部替换为 OneDrive 分享链接。</p><p><strong>新增</strong></p><p>影片：</p><ul><li>7%</li><li>小彪和狗</li><li>日子</li><li>差馆II</li></ul><p>演讲：一席 周浩</p><p>访谈：真实与现实——《差馆 II》放映及周浩访谈</p><a id="more"></a><hr><h2 id="7-2017"><a href="#7-2017" class="headerlink" title="7% (2017)"></a>7% (2017)</h2><p>◎片　　名　7%<br>◎年　　代　2017<br>◎产　　地　中国大陆<br>◎类　　别　纪录片<br>◎豆瓣评分　6.2/10 from 108 users<br>◎豆瓣链接　<a href="https://movie.douban.com/subject/27176021/" target="_blank" rel="noopener">https://movie.douban.com/subject/27176021/</a><br>◎导　　演　周浩 Hao Zhou</p><p>◎简　　介</p><p>　　一部记录了腾讯“绝艺”诞生和夺冠全程的记录片10月12日在香港恒生管理学院首次试映，绝艺幕后团队在片中悉数亮相。一群技艺超群的IT工程师如何用电脑打败了其它机器人对手和超一流围棋选手？由曾蝉联第51届、52届金马奖最佳纪录片奖导演周浩执导的这部影片以贴身采访和翔实记录揭开其中的秘密。</p><blockquote><p>在线观看 <a href="https://v.qq.com/x/cover/li4gx4xjoqf9jk2/a0025stauhc.html" target="_blank" rel="noopener">腾讯视频</a><br>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EZrJeyLjVl9HsFZGpFSrIrABjoIikOnQSjAE48cldM6ZCg?e=ZAIKuE" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="大同（2015）"><a href="#大同（2015）" class="headerlink" title="大同（2015）"></a>大同（2015）</h2><p>◎译　　名　中国市长<br>◎片　　名　大同<br>◎年　　代　2015<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　山西大同方言<br>◎上映日期　2015-01(圣丹斯电影节)<br>◎IMDb评分  6.9/10 from 72 users<br>◎IMDb链接  <a href="http://www.imdb.com/title/tt4056808/" target="_blank" rel="noopener">http://www.imdb.com/title/tt4056808/</a><br>◎豆瓣评分　8.8/10 from 783 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/26276498/" target="_blank" rel="noopener">http://movie.douban.com/subject/26276498/</a><br>◎片　　长　86分钟<br>◎导　　演　周浩 Hao Zhou<br>◎主　　演　耿彦波</p><p>◎简　　介</p><p>　　曾经繁华的中国都市大同市，如今屹立在一堆废墟的旁边。这座城市不仅污染严重，还因其陈旧的基础设施和摇摇欲坠的经济前景而濒临瘫痪。但大同市长想要改变这一切，他大胆地宣布了一项试图重塑昔日的辉煌的新计划，要知道这座城市的文明已经有1600年了。<br>　　然而，伴随着这项计划的是非常高的成本。数以千计的房屋被推倒，50万居民（占大同市总人口的百分之三十）将在他的打理下被重新安置。这位市长成功与否，完全取决于他是否能让愤怒的工人群体以及越来越忐忑的统治精英冷静下来。纪录片《中国市长》惊人地捕捉到了一个男人，甚至是一个国家疯狂跳跃着进入一个越来越动荡的未来的过程。</p><blockquote><p>BT种子 <a href="https://rarbg.to/download.php?id=ht9sij6&amp;f=Storyville%202015%20The%20Chinese%20Mayor%20576p%20x264%20HDTV%20%5BMVGroup%20org%5D-%5Brarbg.com%5D.torrent" target="_blank" rel="noopener">The.Chinese.Mayor.576p.HDTV.x264.AAC.MVGroup.org.mkv </a> 800MB<br>下载链接(含中文外挂字幕) <a href="https://daye-my.sharepoint.com/:f:/g/personal/root_bfdz_ink/Ehf65C4Ys_JFs4j64S7LdskBMguj7Q0VbOW-i-nK0Rdyaw?e=GfKQtD" target="_blank" rel="noopener">OneDirve</a></p></blockquote><hr><h2 id="小彪和狗-2015"><a href="#小彪和狗-2015" class="headerlink" title="小彪和狗 (2015)"></a>小彪和狗 (2015)</h2><p>◎片　　名　小彪和狗<br>◎年　　代　2015<br>◎产　　地　中国大陆<br>◎类　　别　纪录片/短片<br>◎豆瓣评分　/10 from 0 users<br>◎豆瓣链接　<a href="https://movie.douban.com/subject/26951921/" target="_blank" rel="noopener">https://movie.douban.com/subject/26951921/</a><br>◎片　　长　12min<br>◎导　　演　周浩 Hao Zhou</p><p>◎简　　介</p><p>　　两届金马奖最佳纪录片导演周浩在2015年拍摄了纪录短片《小彪和狗》。15岁的贵州初二学生小彪在片中向他的同学们谈到自己的狗。</p><blockquote><p>在线观看 <a href="https://v.youku.com/v_show/id_XMTUwNzY0NjM5Mg==.html" target="_blank" rel="noopener">优酷</a><br>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EQ3fusjmnKtEkOEJzcMWDMQBXO-ZJb1YNg16jdGYatTmzA?e=9KtOC7" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="急诊室-2013"><a href="#急诊室-2013" class="headerlink" title="急诊室 (2013)"></a>急诊室 (2013)</h2><p>◎译　　名　急诊/120的故事<br>◎片　　名　急诊室<br>◎年　　代　2013<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　汉语普通话/粤语<br>◎上映日期　2013<br>◎豆瓣评分　7.7/10 from 253 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/21340768/" target="_blank" rel="noopener">http://movie.douban.com/subject/21340768/</a><br>◎片　　长　99分钟<br>◎导　　演　周浩</p><p>◎简　　介</p><p>　　这是导演有关中国社会公共空间系列纪录片的继续……<br>　　在中国南方的最大城市-广州一所医院的急诊室，摄制组在这前后呆十个月的时间。这是导演有关中国社会公共空间系列纪录片的继续……<br>　　在中国南方的最大城市–广州的一所医院的急诊室，摄制组在这前后呆了十个月的时间，他们跟随着日夜在市区内奔走的120急救车，用镜头去遭遇各种各样的急诊故事。<br>　　中国早已经是世界第二大经济体，但政府还是不得不承认自己是一个人口众多的发展中国家。随着城市化和工业化进程的加快，中国社会保障体系的建设远远落后于经济发展速度的矛盾日益呈现。<br>　　在急诊室，表面上离奇、荒诞的故事一一在镜头前“上演”。一方面，我们看到很多不懂得爱惜自己生命的人，另一方面，我们也表现出对一个健全有效的医疗保障体系渴望。<br>　　两千多年前，中国的哲人孟子已经提出，理想的“大同”社会应该是“老吾老以及人之老，幼吾幼以及人之幼”。近年，中国政府大张其鼓倡导的“和谐”社会似乎就是来源于此。社会理想的状况应该是让每个人都能有尊严活着，然后有尊严地死去。<br>　　最后，我们要特别感谢那些允许我们拍摄普通的中国人，成片时我们没法一一再联系到他们，并征求得他们的同意。是他们的故事让我们更加了解我们生存的社会，本片也将承诺不进行任何商业运作。</p><blockquote><p>在线观看 <a href="http://v.youku.com/v_show/id_XNTAxOTAwMjky.html?from=y1.2-2.4.22" target="_blank" rel="noopener">优酷</a></p></blockquote><hr><h2 id="棉花（2013）"><a href="#棉花（2013）" class="headerlink" title="棉花（2013）"></a>棉花（2013）</h2><p>◎片　　名　棉花<br>◎年　　代　2013<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　汉语普通话<br>◎豆瓣评分　7.5/10 from 279 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/4195650/" target="_blank" rel="noopener">http://movie.douban.com/subject/4195650/</a><br>◎片　　长　93分钟<br>◎导　　演　周浩 Hao Zhou</p><p>◎简　　介</p><p>　　中国的一粒棉花籽最后如何成为美国零售店里的有一条牛仔裤？在这个过程里究竟有多少耐人寻味的故事？本片将跟随那些被紧紧捆绑在绵延5000公里长的棉纺产业链上的人们，以棉花为线索，讲述他们的故事、描述中国人完成“中国制造”的整个接力过程。<br>　　《棉花》前所未有地揭示了当代中国农民、企业工人、纺织品商人……也就是工贸链条上形形色色人群之间不同生活的内在联系。他们虽然生活在不同的地方，做着不同的工作，但都被紧紧捆绑在棉花的产业链上：这些棉花和被制成的衣服，将生活状态截然不同的人们联结到一起，本片通过深入直接的采访记录他们的日常生活，思索不同人们共同面对的生活命题, 展示中国经济各环节的真正面貌。</p><p>◎获奖情况</p><p>　　第51届台北金马影展 (2014)<br>　　金马奖 最佳纪录片</p><p>　　第19届釜山国际电影节 (2014)<br>　　最佳纪录片奖(提名)</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:f:/g/personal/root_bfdz_ink/Eh2NRgfH4jFImUmvNDrrw18BLRcw_XYDHYD7VVzaF2LUgg?e=y5Gbbb" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="日子-2011"><a href="#日子-2011" class="headerlink" title="日子 (2011)"></a>日子 (2011)</h2><p>◎译　　名　AVillageLife<br>◎片　　名　日子<br>◎年　　代　2011<br>◎产　　地　中国大陆<br>◎语　　言　汉语普通话<br>◎豆瓣评分　6.9/10 from 158 users<br>◎豆瓣链接　<a href="https://movie.douban.com/subject/25955787/" target="_blank" rel="noopener">https://movie.douban.com/subject/25955787/</a><br>◎片　　长　51分钟<br>◎导　　演　周浩 Hao Zhou</p><p>◎简　　介</p><p>　　片长51分钟，只是记录了冬天四川达州农村，一对老夫妻家长里短的生活。 村里的年轻人都外出打工，这个村的人大都是到广东鲘门去打渔…… 2011年制作，法国剪辑。</p><blockquote><p>在线观看 <a href="https://v.youku.com/v_show/id_XNjcyMDA5MTgw.html" target="_blank" rel="noopener">优酷</a> 密码:0987651<br>在线观看 <a href="https://www.bilibili.com/video/av2716903/" target="_blank" rel="noopener">bilibili</a></p></blockquote><hr><h2 id="差馆Ⅱ-2011"><a href="#差馆Ⅱ-2011" class="headerlink" title="差馆Ⅱ (2011)"></a>差馆Ⅱ (2011)</h2><p>◎译　　名　差馆2<br>◎片　　名　差馆Ⅱ<br>◎年　　代　2011<br>◎产　　地　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　汉语普通话<br>◎豆瓣评分　8.3/10 from 327 users<br>◎豆瓣链接　<a href="https://movie.douban.com/subject/11528245/" target="_blank" rel="noopener">https://movie.douban.com/subject/11528245/</a><br>◎片　　长　70分钟<br>◎导　　演　周浩</p><p>◎简　　介</p><p>　　第二年（2011）春运，我们一如既往回到这个派出所……<br>　　除了那几位老“差人”，上一部片中的“新疆人”、“来广州混的少年”、“忏悔的青年”……没有一位再次出现。<br>　　派出所，普通人一生也难得进去一次，可也有人一个春运要进去好几次。故事就从一些总要在这进进出出的人说起……<br>　　影片似乎仍然是没有重点，结构松散，主题混沌。<br>　　其实，人本身就是一矛盾体，由人组成的社会注定也是如此。</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EW9oFBy_VP9Li6N2MkqLEvoB51rvxVhb9eeE6QqAQc2t9Q?e=rfbGXy" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="差馆（2010）"><a href="#差馆（2010）" class="headerlink" title="差馆（2010）"></a>差馆（2010）</h2><p>◎片　　名　差馆<br>◎年　　代　2010<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　汉语普通话<br>◎豆瓣评分　8.1/10 from 686 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/5343752/" target="_blank" rel="noopener">http://movie.douban.com/subject/5343752/</a><br>◎片　　长　67<br>◎导　　演　周浩</p><p>◎简　　介</p><p>　　广州火车站站前派出所，一个万象生的地方，在这里你能看到社会的各个折射面。</p><blockquote><p>在线观看 <a href="http://v.youku.com/v_show/id_XNTA4Mzc2MTU2.html" target="_blank" rel="noopener">优酷</a></p></blockquote><hr><h2 id="书记（2009）"><a href="#书记（2009）" class="headerlink" title="书记（2009）"></a>书记（2009）</h2><p>◎片　　名　书记<br>◎年　　代　2009<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　普通话/国语<br>◎上映日期　2009-03-28<br>◎IMDb评分  7.0/10 from 5 users<br>◎IMDb链接  <a href="http://www.imdb.com/title/tt1859619/" target="_blank" rel="noopener">http://www.imdb.com/title/tt1859619/</a><br>◎豆瓣评分　8.5/10 from 1,042 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/3629230/" target="_blank" rel="noopener">http://movie.douban.com/subject/3629230/</a><br>◎片　　长　102分钟<br>◎导　　演　周浩 Hao Zhou<br>◎主　　演　郭永昌</p><p>◎简　　介</p><p>　　中国被划分为34个省级行政区域，它们是又由大约1500多个县组成。<br>　　近年来，中国内陆的官员，大都面临着两大问题：一是怎么吸引投资，促进地方经济的发展；二是要想尽一切办法去化解因社会发展而滋生出的各种社会矛盾。<br>　　本片讲述了一位即将离任的县委书记，在离任前三个月内发生的故事。</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EVQvSKWDYeJBpsPdPQByNRIBkLPLm0QiECmM_Yx1NHVOnw?e=gwmcTY" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="龙哥（2008）"><a href="#龙哥（2008）" class="headerlink" title="龙哥（2008）"></a>龙哥（2008）</h2><p>◎片　　名　龙哥<br>◎年　　代　2008<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　普通话/国语<br>◎IMDb评分  7.3/10 from 9 users<br>◎IMDb链接  <a href="http://www.imdb.com/title/tt1677711/" target="_blank" rel="noopener">http://www.imdb.com/title/tt1677711/</a><br>◎豆瓣评分　8.3/10 from 607 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/3724118/" target="_blank" rel="noopener">http://movie.douban.com/subject/3724118/</a><br>◎片　　长　104分钟<br>◎导　　演　周浩</p><p>◎简　　介</p><p>　　导演认识了两位“朋友”。他与他们之间的交往构成了这部片子。开始，他并没有一个明确的计划要制作一部纪录片，但随着时间的推移，他开始有目的和他们交“朋友”。“朋友”们奇迹般地允许导演进入他们的生活，他们吸毒也贩毒的生活。<br>　　纪录片的制作者和被拍者之间到底应该是一种什么样的关系，这部影片给出了它的解释。</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EUzNhwPqyDhFtsYN7r4hggABElIox8_proGIjFWn39htSA?e=zdf4Cc" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="高三（2005）"><a href="#高三（2005）" class="headerlink" title="高三（2005）"></a>高三（2005）</h2><p>◎片　　名　高三<br>◎年　　代　2005<br>◎国　　家　中国大陆<br>◎类　　别　纪录片<br>◎语　　言　汉语普通话<br>◎上映日期　2005-11<br>◎IMDb评分  6.8/10 from 5 users<br>◎IMDb链接  <a href="http://www.imdb.com/title/tt4276994/" target="_blank" rel="noopener">http://www.imdb.com/title/tt4276994/</a><br>◎豆瓣评分　8.4/10 from 23,618 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/1761854/" target="_blank" rel="noopener">http://movie.douban.com/subject/1761854/</a><br>◎片　　长　95分钟/138分钟(完整版)<br>◎导　　演　周浩 Hao Zhou</p><p>◎简　　介</p><p>　　本片纪录了中国福建省一所普通中学一个高三毕业班的真实生活。高三的生活日复一日，简单而又沉重，痛苦却也快乐。<br>　　善良严厉的班主任，紧张刻苦的尖子生，逃避生活的“差生”，执着爱情的“早恋生”，学生的父母，每个亲历高三的人都有各自的感悟和超越高三的期望。影片的纪录真实、直白，透过高三生活的纪录，让人感到的不仅仅是为理想执着拼搏的浪漫，更有一种如鲠在喉的悲哀。</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EWfyeZnnAzdBkqCqx4KHS_UB27aeHde0Z-4JtQQ8tbCtYg?e=PcN4Ds" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="厚街（2002）"><a href="#厚街（2002）" class="headerlink" title="厚街（2002）"></a>厚街（2002）</h2><p>◎片　　名　厚街<br>◎年　　代　2002<br>◎国　　家　中国<br>◎类　　别　纪录片<br>◎豆瓣评分　7.7/10 from 220 users<br>◎豆瓣链接　<a href="http://movie.douban.com/subject/2136171/" target="_blank" rel="noopener">http://movie.douban.com/subject/2136171/</a><br>◎片　　长　91分钟<br>◎导　　演　周浩</p><p>◎简　　介</p><p>　　厚街又名后街，是珠江口的一个小镇，距离省会广州 45公里，香港80公里。20世纪80年代初至今，来自台湾、香港的资本和中国内地的大量廉价劳动力使它从农业小镇迅速发展为一个劳动密集型的工业城镇。工厂里的工人是进城打工的农民，他们从中国内地最贫困地区来到广东的厚街镇。工厂附近的出租屋是农民们进入城市的第一个落脚点，也是他们远离故乡后在千里之处建起的另一个家。本片真实记录了这些在厚街打工农民鲜为人知的生活状况，它们成为中国城市化进程中不可忽视的重要组成部分。</p><blockquote><p>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/Eds-pf6pOsREqtp5Wq0fqBcBzYjZNWIkC3qYGilEWzNsPA?e=hLN5vF" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr><h2 id="演讲和访谈"><a href="#演讲和访谈" class="headerlink" title="演讲和访谈"></a>演讲和访谈</h2><ul><li>一席 周浩 《以纪录片之名》</li></ul><blockquote><p>在线观看 <a href="https://www.bilibili.com/video/av3289206" target="_blank" rel="noopener">bilibili</a>  <a href="http://v.qq.com/x/page/x0147kd2nna.html" target="_blank" rel="noopener">腾讯视频</a></p></blockquote><ul><li>【纽约文化沙龙】真实与现实——《差馆 II》放映及周浩访谈</li></ul><blockquote><p>在线观看 <a href="https://www.youtube.com/watch?v=uCe_vD9caiA" target="_blank" rel="noopener">YouTube</a><br>下载链接 <a href="https://daye-my.sharepoint.com/:v:/g/personal/root_bfdz_ink/EdnOxskRtXxAkDyr2B7faPkBW-sPI615WMGMI53FaN28Jw?e=X8IJ4C" target="_blank" rel="noopener">OneDrive</a></p></blockquote><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;更新了失效的百度网盘链接，全部替换为 OneDrive 分享链接。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新增&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;影片：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;7%&lt;/li&gt;
+&lt;li&gt;小彪和狗&lt;/li&gt;
+&lt;li&gt;日子&lt;/li&gt;
+&lt;li&gt;差馆II&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;演讲：一席 周浩&lt;/p&gt;
+&lt;p&gt;访谈：真实与现实——《差馆 II》放映及周浩访谈&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="纪录片" scheme="https://www.bfdz.ink/categories/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
+    
+    
+      <category term="纪录片" scheme="https://www.bfdz.ink/tags/%E7%BA%AA%E5%BD%95%E7%89%87/"/>
+    
+      <category term="合集" scheme="https://www.bfdz.ink/tags/%E5%90%88%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows 7 分区表转换和 USB 3.0 驱动注入</title>
+    <link href="https://www.bfdz.ink/2018/06/28/102/"/>
+    <id>https://www.bfdz.ink/2018/06/28/102/</id>
+    <published>2018-06-28T12:35:00.000Z</published>
+    <updated>2018-06-28T13:59:52.865Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近碰到一些机器只有 USB 3.0 的接口，同时设备还不支持 GPT 分区表。这导致了系统无法安装问题和安装 windows 7 系统后键盘、鼠标无法使用的问题。</p><a id="more"></a><hr><p><strong>用 diskpart 命令将硬盘转换成 MBR 分区表，解决分区表问题。</strong></p><p>当windows安装程序进行到选择分区的步骤时，按下SHIFT+F10调出命令提示符</p><p><img src="https://wx3.sinaimg.cn/large/92253953gy1fsr8mez22ej20hu0dedhw.jpg" alt=""></p><p><img src="https://wx1.sinaimg.cn/large/92253953gy1fsr8mq7kahj20kw0g1gqr.jpg" alt=""></p><p>输入 diskpart 打开 diskpart 工具</p><ul><li>选择目标磁盘</li></ul><p>列出系统拥有的磁盘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list disk</span><br></pre></td></tr></table></figure></p><p>选择0号磁盘，请根据磁盘大小，自行判断你的目标磁盘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select disk 0</span><br></pre></td></tr></table></figure></p><p><img src="https://wx1.sinaimg.cn/large/92253953gy1fsr8myngiaj20kf0fxjw6.jpg" alt=""></p><ul><li>清空目标磁盘，并转换为 MBR 格式</li></ul><p>清除磁盘,该命令会抹去磁盘上所有数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean</span><br></pre></td></tr></table></figure></p><p>将磁盘分区表转换为 MBR 格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert mbr</span><br></pre></td></tr></table></figure></p><p>列出磁盘上的分区，因为我们刚转换成 MBR 格式，因此，分区为空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list partition</span><br></pre></td></tr></table></figure></p><p><img src="https://wx1.sinaimg.cn/large/92253953gy1fsr8nosde4j20ki08u0vl.jpg" alt=""></p><ul><li>建立主分区</li></ul><p>建立主分区，大小为 60000M，请根据自己需求调整，该分区用来安装 win7</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create partition primary size=60000</span><br></pre></td></tr></table></figure><hr><p><strong>使用 CeoMSX 给系统注入 USB 3.0 驱动</strong></p><p>我安装系统使用的是微 PE，先将 windows 7 镜像解压到机器的 D 盘，然后使用微 PE 内置的 windows 安装器将系统写入到 C 盘</p><p><img src="http://8.pic.pc6.com/thumb/up/2017-7/2017717165824487415856120_600_0.jpg" alt=""></p><p>安装完成后，不要重启系统，这时用 CeoMSX 给 C 盘的系统注入 USB 3.0 驱动。</p><p><img src="https://www.sysceo.com/forum/data/attachment/forum/201806/28/160112boeye2teu1ererur.png" alt=""></p><p>特别需要注意，要在系统写入 C 盘后，重启系统之前注入驱动。如果重启了系统，再注入驱动是没用的。</p><hr><p>参考资料：</p><ul><li><a href="https://jingyan.baidu.com/article/84b4f565c44ae760f6da32e4.html" target="_blank" rel="noopener">GPT转MBR分区</a></li><li><a href="https://blog.csdn.net/techzero/article/details/8921206" target="_blank" rel="noopener">GPT分区下安装Windows7 x64 完整教程</a></li><li><a href="https://www.sysceo.com/forum/thread-40272-1-1.html" target="_blank" rel="noopener">CeoMSX</a></li><li><a href="http://www.wepe.com.cn/" target="_blank" rel="noopener">微 PE 工具箱</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近碰到一些机器只有 USB 3.0 的接口，同时设备还不支持 GPT 分区表。这导致了系统无法安装问题和安装 windows 7 系统后键盘、鼠标无法使用的问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="分区表" scheme="https://www.bfdz.ink/tags/%E5%88%86%E5%8C%BA%E8%A1%A8/"/>
+    
+      <category term="驱动" scheme="https://www.bfdz.ink/tags/%E9%A9%B1%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字幕组网站签到脚本</title>
+    <link href="https://www.bfdz.ink/2018/06/24/101/"/>
+    <id>https://www.bfdz.ink/2018/06/24/101/</id>
+    <published>2018-06-24T10:34:00.000Z</published>
+    <updated>2018-06-24T10:52:59.129Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.zimuzu.tv" target="_blank" rel="noopener">字幕组网站</a>每天签到获得 1 积分，可用 100 积分升级金至尊会员。三个月未登录网站或者客户端的“金至尊会员”也会被降级到至尊会员。</p><a id="more"></a><hr><ul><li><p>脚本依赖 <code>curl</code> 和 <code>python</code>。</p></li><li><p>修改 <code>user</code> 和 <code>password</code> ，LOG 是脚本日志路径，再用 <code>crontab</code> 设个每天的定时任务即可。</p></li></ul><hr><p>源码：<a href="https://gist.github.com/a0167680e246f0be3248c9748b81d2ef.git" target="_blank" rel="noopener">zimuzu-sign.sh</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">ACCOUNT=<span class="string">"user"</span></span><br><span class="line">PASSWORD=<span class="string">"password"</span></span><br><span class="line">LOG=/var/<span class="built_in">log</span>/zimuzu-sign.log</span><br><span class="line"></span><br><span class="line"><span class="comment">#########################################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">urlEncode</span></span>() &#123;</span><br><span class="line">    python -c <span class="string">"</span></span><br><span class="line"><span class="string">import urllib, commands, os;</span></span><br><span class="line"><span class="string">var = commands.getoutput('echo \'<span class="variable">$1</span>\'');</span></span><br><span class="line"><span class="string">var = urllib.quote_plus(var);</span></span><br><span class="line"><span class="string">os.system('echo ' + var);"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DOMAIN=<span class="string">"http://www.zimuzu.tv"</span></span><br><span class="line">COOKIE=<span class="string">"zimuzu.cookie"</span></span><br><span class="line">REMEMBER=<span class="string">"1"</span></span><br><span class="line">REDIRECT=<span class="string">"<span class="variable">$DOMAIN</span>/user/sign"</span></span><br><span class="line"></span><br><span class="line">ExpectedResponseText=<span class="string">'&#123;"status":0,"info":"","data":0&#125;'</span></span><br><span class="line">RetryCount=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录</span></span><br><span class="line">curl -d <span class="string">"account=<span class="variable">$(urlEncode $ACCOUNT)</span>&amp;password=<span class="variable">$(urlEncode $PASSWORD)</span>&amp;remember=<span class="variable">$(urlEncode $REMEMBER)</span>&amp;url_back=<span class="variable">$(urlEncode $REDIRECT)</span>"</span> \</span><br><span class="line">    -c <span class="string">"<span class="variable">$COOKIE</span>"</span> -s <span class="string">"<span class="variable">$DOMAIN</span>/User/Login/ajaxLogin"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'登录......'</span></span><br><span class="line"></span><br><span class="line">sleep 1</span><br><span class="line"><span class="comment"># 签到</span></span><br><span class="line">curl -s --cookie <span class="string">"<span class="variable">$COOKIE</span>"</span> <span class="string">"<span class="variable">$REDIRECT</span>"</span> &gt; /dev/null</span><br><span class="line">curl -s --cookie <span class="string">"<span class="variable">$COOKIE</span>"</span> <span class="string">"<span class="variable">$DOMAIN</span>/user/login/getCurUserTopInfo"</span> &gt; /dev/null</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'签到......'</span></span><br><span class="line"></span><br><span class="line">sleep 1</span><br><span class="line"><span class="comment"># 积分日志</span></span><br><span class="line">BONUS=$(curl -s --cookie <span class="string">"<span class="variable">$COOKIE</span>"</span> <span class="string">"<span class="variable">$DOMAIN</span>/user/user"</span> | grep <span class="string">'sp3"&gt;积分'</span> | awk -F<span class="string">'[&gt;&lt;]'</span> <span class="string">'&#123;print $5&#125;'</span>)</span><br><span class="line">DATE=$(date <span class="string">"+%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span> 积分:<span class="variable">$BONUS</span> &gt;&gt; &amp;LOG</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.zimuzu.tv&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;字幕组网站&lt;/a&gt;每天签到获得 1 积分，可用 100 积分升级金至尊会员。三个月未登录网站或者客户端的“金至尊会员”也会被降级到至尊会员。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="脚本" scheme="https://www.bfdz.ink/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="字幕组" scheme="https://www.bfdz.ink/tags/%E5%AD%97%E5%B9%95%E7%BB%84/"/>
+    
+      <category term="签到" scheme="https://www.bfdz.ink/tags/%E7%AD%BE%E5%88%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高墙深度解析</title>
+    <link href="https://www.bfdz.ink/2018/06/24/100/"/>
+    <id>https://www.bfdz.ink/2018/06/24/100/</id>
+    <published>2018-06-24T05:03:00.000Z</published>
+    <updated>2018-06-24T05:06:50.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>谈下自己根据实际经历写的一些关于被墙原因及深度解析↑(几年日常使用30+主机商200余台虚机/杜甫分布世界各地的经历。)以下全是大白话<br>这里可以首先基本肯定的是，高墙墙你不是根据你机子的历史行为，而是根据高墙在发作那一刻扫描出的结果来决定墙不墙你。后面写不下了，看图片吧</p><a id="more"></a><hr><p><img src="https://ws4.sinaimg.cn/large/92253953gy1fsm6jlwc86j20xc0x8dmj.jpg" alt=""></p><p><img src="https://ws4.sinaimg.cn/large/92253953gy1fsm6jzv73hj20xc0ry0ww.jpg" alt=""></p><hr><p>via:<a href="https://twitter.com/wangzihao98/status/1009765408344137728" target="_blank" rel="noopener">https://twitter.com/wangzihao98/status/1009765408344137728</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;谈下自己根据实际经历写的一些关于被墙原因及深度解析↑(几年日常使用30+主机商200余台虚机/杜甫分布世界各地的经历。)以下全是大白话&lt;br&gt;这里可以首先基本肯定的是，高墙墙你不是根据你机子的历史行为，而是根据高墙在发作那一刻扫描出的结果来决定墙不墙你。后面写不下了，看图片吧&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络" scheme="https://www.bfdz.ink/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络封锁" scheme="https://www.bfdz.ink/tags/%E7%BD%91%E7%BB%9C%E5%B0%81%E9%94%81/"/>
+    
+      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CCTV5 官方互联网直播渠道合集</title>
+    <link href="https://www.bfdz.ink/2018/06/16/99/"/>
+    <id>https://www.bfdz.ink/2018/06/16/99/</id>
+    <published>2018-06-16T15:56:00.000Z</published>
+    <updated>2018-06-16T16:27:14.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>鉴于直播源很快就失效了，本人暂时不会再分享其他直播源。</p><p>整理一下官方的互联网全平台直播渠道，相比直播源，不用担心失效、不稳定之类的问题。</p><a id="more"></a><hr><p><strong>PC</strong></p><ul><li><p>央视网：<a href="http://tv.cctv.com/live/cctv5/" target="_blank" rel="noopener">http://tv.cctv.com/live/cctv5/</a></p></li><li><p>优酷直播：<a href="https://live.youku.com/" target="_blank" rel="noopener">https://live.youku.com/</a></p></li></ul><hr><p><strong>移动端</strong></p><ul><li><p>央视影音：<a href="http://app.cctv.com/appkhdxz/ydb/index.shtml" target="_blank" rel="noopener">http://app.cctv.com/appkhdxz/ydb/index.shtml</a></p></li><li><p>优酷：<a href="http://mobile.youku.com" target="_blank" rel="noopener">http://mobile.youku.com</a></p></li><li><p>咪咕直播：<a href="https://m.miguvideo.com" target="_blank" rel="noopener">https://m.miguvideo.com</a></p></li></ul><hr><p><strong>TV端/互联网机顶盒</strong></p><ul><li><p>CIBN酷喵影视</p></li><li><p>Bestv咪视通</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;鉴于直播源很快就失效了，本人暂时不会再分享其他直播源。&lt;/p&gt;
+&lt;p&gt;整理一下官方的互联网全平台直播渠道，相比直播源，不用担心失效、不稳定之类的问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
+    
+      <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
+    
+      <category term="CCTV5" scheme="https://www.bfdz.ink/tags/CCTV5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CCTV5直播源合集</title>
+    <link href="https://www.bfdz.ink/2018/06/15/98/"/>
+    <id>https://www.bfdz.ink/2018/06/15/98/</id>
+    <published>2018-06-14T17:24:00.000Z</published>
+    <updated>2018-06-14T17:40:27.159Z</updated>
+    
+    <content type="html"><![CDATA[<p>Windows 平台可使用 PotPlayer 、VLC 打开链接，Android 平台可使用 MxPlayer 、VLC 打开链接。</p><p>自己尝试，总会有一个能用。</p><a id="more"></a><hr><ul><li><p>辽宁沈阳移动CCTV5</p><blockquote><p><a href="http://hwottcdn.ln.chinamobile.com/PLTV/88888890/224/3221225497/index.m3u8" target="_blank" rel="noopener">http://hwottcdn.ln.chinamobile.com/PLTV/88888890/224/3221225497/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://223.110.243.157/PLTV/3/224/3221226324/index.m3u8" target="_blank" rel="noopener">http://223.110.243.157/PLTV/3/224/3221226324/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://183.207.249.6/PLTV/3/224/3221226324/index.m3u8" target="_blank" rel="noopener">http://183.207.249.6/PLTV/3/224/3221226324/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://223.110.243.136/PLTV/3/224/3221227166/index.m3u8" target="_blank" rel="noopener">http://223.110.243.136/PLTV/3/224/3221227166/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动蓝光源CCTV-5蓝光</p><blockquote><p><a href="http://223.110.241.204:6610/gitv/live1/G_CCTV-5-CQ/G_CCTV-5-CQ/" target="_blank" rel="noopener">http://223.110.241.204:6610/gitv/live1/G_CCTV-5-CQ/G_CCTV-5-CQ/</a></p></blockquote></li><li><p>江苏南京移动蓝光源CCTV-5+蓝光</p><blockquote><p><a href="http://223.110.241.204:6610/gitv/live1/G_CCTV-5PLUS-CQ/G_CCTV-5PLUS-CQ/" target="_blank" rel="noopener">http://223.110.241.204:6610/gitv/live1/G_CCTV-5PLUS-CQ/G_CCTV-5PLUS-CQ/</a></p></blockquote></li><li><p>江西南昌移动CCTV5</p><blockquote><p><a href="http://223.82.250.72/ysten-business/live/cctv-5/index.m3u8" target="_blank" rel="noopener">http://223.82.250.72/ysten-business/live/cctv-5/index.m3u8</a></p></blockquote></li><li><p>重庆联通CCTV-5高清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000304?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>重庆联通CCTV-5标清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000303?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>重庆联通CCTV5＋高清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000230?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>宁夏银川电信CCTV-5HD</p><blockquote><p>rtsp://124.224.238.165:554/PLTV/88888888/224/3221225890/10000100000000060000000000725782_0.smil</p></blockquote></li><li><p>宁夏银川电信CCTV5＋HD</p><blockquote><p>rtsp://124.224.238.165:554/PLTV/88889012/224/3221225943/10000100000000060000000000758560_0.smil</p></blockquote></li><li><p>广电电信CCTV-5＋高清</p><blockquote><p>rtsp://183.59.32.147:554/PLTV/88888905/224/3221227192/10000100000000060000000000987131_0.smil</p></blockquote></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows 平台可使用 PotPlayer 、VLC 打开链接，Android 平台可使用 MxPlayer 、VLC 打开链接。&lt;/p&gt;
+&lt;p&gt;自己尝试，总会有一个能用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
+    
+      <category term="potplayer" scheme="https://www.bfdz.ink/tags/potplayer/"/>
+    
+      <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
+    
+      <category term="CCTV5" scheme="https://www.bfdz.ink/tags/CCTV5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>央视和各省市直播源</title>
+    <link href="https://www.bfdz.ink/2018/06/09/97/"/>
+    <id>https://www.bfdz.ink/2018/06/09/97/</id>
+    <published>2018-06-09T14:11:00.000Z</published>
+    <updated>2018-06-09T14:22:48.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>覆盖央视高清频道、央视标清频道、各省卫视、部分地方台。使用 Potplayer 打开和播放。</p><a id="more"></a><hr><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DC/FA/E2/1528553077474.jpg" alt="CCTV5高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DD/9B/70/1528553118576.jpg" alt="CCTV5高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/1F/37/1528553217847.jpg" alt="CCTV9高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/46/8E/1528553227918.jpg" alt="湖南卫视高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/72/EC/1528553239276.jpg" alt="东方卫视高清"></p><hr><ul><li>网盘：</li></ul><blockquote><p><a href="https://bfdz.stackstorage.com/s/rdOWrixrcQl9EzT" target="_blank" rel="noopener">直播源</a> 密码：BFDZ</p></blockquote><ul><li>OneDrive:</li></ul><blockquote><p><a href="https://daye-my.sharepoint.com/:f:/g/personal/root_bfdz_ink/EtnoxxJ2NglLictF0ck1PBABHQ0PAWvo3DD5M99hvYLcsw?e=KhdhRG" target="_blank" rel="noopener">直播源</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;覆盖央视高清频道、央视标清频道、各省卫视、部分地方台。使用 Potplayer 打开和播放。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
+    
+      <category term="potplayer" scheme="https://www.bfdz.ink/tags/potplayer/"/>
+    
+      <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评</title>
+    <link href="https://www.bfdz.ink/2018/06/08/96/"/>
+    <id>https://www.bfdz.ink/2018/06/08/96/</id>
+    <published>2018-06-08T12:54:00.000Z</published>
+    <updated>2018-06-09T06:57:24.713Z</updated>
+    
+    <content type="html"><![CDATA[<p>tsukaeru VPS购买教程：<a href="https://www.bfdz.ink/2018/06/08/95/">tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程</a><br>每月18元，日本100M不限流量的KVM VPS，电信、联通直连，移动绕香港，性能、I/O、网络都很不错。<br><strong>关于折扣：为一次性折扣。</strong></p><a id="more"></a><hr><p><strong>欢迎到TeleGram群讨论</strong>（一般需要梯子）：<a href="https://t.me/zhujiwiki" target="_blank" rel="noopener">https://t.me/zhujiwiki</a></p><p><strong>1、系统信息、带宽、I/O测试</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">CPU model            : Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz</span><br><span class="line">Number of cores      : 1</span><br><span class="line">CPU frequency        : 2397.220 MHz</span><br><span class="line">Total size of Disk   : 18.2 GB (1.3 GB Used)</span><br><span class="line">Total amount of Mem  : 493 MB (71 MB Used)</span><br><span class="line">Total amount of Swap : 1906 MB (0 MB Used)</span><br><span class="line">System uptime        : 0 days 0 hour 1 min</span><br><span class="line">Load average         : 0.01, 0.01, 0.00</span><br><span class="line">OS                   : Debian GNU/Linux 7</span><br><span class="line">Arch                 : x86_64 (64 Bit)</span><br><span class="line">Kernel               : 3.2.0-5-amd64</span><br><span class="line">Virt                 : parallels</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">I/O speed( 32M )     : 555 MB/s</span><br><span class="line">I/O speed( 256M )    : 204 MB/s</span><br><span class="line">I/O speed( 2G )      : 887 MB/s</span><br><span class="line">Average I/O speed    : 548.7 MB/s</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Node Name         Upload Speed      Download Speed      Latency     </span><br><span class="line">Normal Node       81.03 Mbit/s      238.93 Mbit/s       42.912 ms  </span><br><span class="line">Xiangyang CT      82.60 Mbit/s      219.09 Mbit/s       66.338 ms  </span><br><span class="line">Shanghai  CT      37.61 Mbit/s      139.29 Mbit/s       44.054 ms  </span><br><span class="line">Chengdu   CT      50.23 Mbit/s      1.69 Mbit/s         000.000 ms </span><br><span class="line">Xi&apos;an     CU      56.41 Mbit/s      170.04 Mbit/s       101.091 ms </span><br><span class="line">Shanghai  CU      86.46 Mbit/s      258.93 Mbit/s       48.069 ms  </span><br><span class="line">Chongqing CU      78.34 Mbit/s      176.83 Mbit/s       64.392 ms  </span><br><span class="line">Xi&apos;an     CM      96.28 Mbit/s      259.48 Mbit/s       103.328 ms </span><br><span class="line">Shanghai  CM      2.02 Mbit/s       14.75 Mbit/s        99.037 ms  </span><br><span class="line">Chengdu   CM      12.97 Mbit/s      118.28 Mbit/s       279.422 ms </span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Total time   : 4 min 26 sec</span><br><span class="line">Current time : 2018-06-05 15:18:13</span><br><span class="line">Finished！</span><br></pre></td></tr></table></figure><p><strong>2、上传/下载带宽测试</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Retrieving speedtest.net server list...</span><br><span class="line">Selecting best server based on ping...</span><br><span class="line">Hosted by CHINA UNICOM JIANGSU COMPANY (Nanjing) [117.08 km]: 42.539 ms</span><br><span class="line">Testing download speed...........................</span><br><span class="line">Download: 263.24 Mbit/s</span><br><span class="line">Testing upload speed.............................</span><br><span class="line">Upload: 88.56 Mbit/s</span><br></pre></td></tr></table></figure><p><strong>3、国内访问速度</strong><br><img src="https://zhujiwiki.com/usr/uploads/2018/06/3361139289.jpg" alt="tsukaeru-ping.jpg" title="tsukaeru-ping.jpg"></p><p><strong>4、硬盘 I/O 性能测试</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=test bs=64k count=4k oflag=dsync</span><br><span class="line">4096+0 records in</span><br><span class="line">4096+0 records out</span><br><span class="line">268435456 bytes (268 MB) copied, 55.2358 s, 4.9 MB/s</span><br></pre></td></tr></table></figure><p><strong>5、UnixBench跑分</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Benchmark Run: Tue Jun 05 2018 15:24:16 - 15:52:28</span><br><span class="line">1 CPU in system; running 1 parallel copy of tests</span><br><span class="line"></span><br><span class="line">Dhrystone 2 using register variables       30188120.3 lps   (10.0 s, 7 samples)</span><br><span class="line">Double-Precision Whetstone                     3599.4 MWIPS (9.8 s, 7 samples)</span><br><span class="line">Execl Throughput                               3508.9 lps   (29.7 s, 2 samples)</span><br><span class="line">File Copy 1024 bufsize 2000 maxblocks        762094.3 KBps  (30.0 s, 2 samples)</span><br><span class="line">File Copy 256 bufsize 500 maxblocks          211887.8 KBps  (30.0 s, 2 samples)</span><br><span class="line">File Copy 4096 bufsize 8000 maxblocks       1932912.1 KBps  (30.0 s, 2 samples)</span><br><span class="line">Pipe Throughput                             1168163.0 lps   (10.0 s, 7 samples)</span><br><span class="line">Pipe-based Context Switching                 160235.3 lps   (10.0 s, 7 samples)</span><br><span class="line">Process Creation                               9495.2 lps   (30.0 s, 2 samples)</span><br><span class="line">Shell Scripts (1 concurrent)                   6447.4 lpm   (60.0 s, 2 samples)</span><br><span class="line">Shell Scripts (8 concurrent)                    845.8 lpm   (60.0 s, 2 samples)</span><br><span class="line">System Call Overhead                         924254.8 lps   (10.0 s, 7 samples)</span><br><span class="line"></span><br><span class="line">System Benchmarks Index Values               BASELINE       RESULT    INDEX</span><br><span class="line">Dhrystone 2 using register variables         116700.0   30188120.3   2586.8</span><br><span class="line">Double-Precision Whetstone                       55.0       3599.4    654.4</span><br><span class="line">Execl Throughput                                 43.0       3508.9    816.0</span><br><span class="line">File Copy 1024 bufsize 2000 maxblocks          3960.0     762094.3   1924.5</span><br><span class="line">File Copy 256 bufsize 500 maxblocks            1655.0     211887.8   1280.3</span><br><span class="line">File Copy 4096 bufsize 8000 maxblocks          5800.0    1932912.1   3332.6</span><br><span class="line">Pipe Throughput                               12440.0    1168163.0    939.0</span><br><span class="line">Pipe-based Context Switching                   4000.0     160235.3    400.6</span><br><span class="line">Process Creation                                126.0       9495.2    753.6</span><br><span class="line">Shell Scripts (1 concurrent)                     42.4       6447.4   1520.6</span><br><span class="line">Shell Scripts (8 concurrent)                      6.0        845.8   1409.6</span><br><span class="line">System Call Overhead                          15000.0     924254.8    616.2</span><br><span class="line">                                                                   ========</span><br><span class="line">System Benchmarks Index Score                                        1128.1</span><br></pre></td></tr></table></figure><p><strong>6、丢包测试</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Ping from 192.168.0.29 to 121.50.xxx.xxx</span><br><span class="line">==============================================================================</span><br><span class="line">06/05 14:24:56.117         Ping to 121.50.xxx.xxx with 32 bytes of data and 32 of TTL:</span><br><span class="line">06/05 14:24:56.207 PingMin #1 Reply 32 bytes from 121.50.xxx.xxx: time=85ms TTL=49, ave=85.00ms</span><br><span class="line">06/05 14:24:57.196 PingMax #2 Reply 32 bytes from 121.50.xxx.xxx: time=86ms TTL=49, ave=85.50ms</span><br><span class="line">06/05 14:24:58.196 PingMin #3 Reply 32 bytes from 121.50.xxx.xxx: time=84ms TTL=49, ave=85.00ms</span><br><span class="line"></span><br><span class="line">06/05 14:25:02.218 PingMax #7 Reply 32 bytes from 121.50.xxx.xxx: time=104ms TTL=49, ave=87.43ms</span><br><span class="line"></span><br><span class="line">06/05 14:25:09.216 PingMax #14 Reply 32 bytes from 121.50.xxx.xxx: time=106ms TTL=49, ave=87.79ms</span><br><span class="line"></span><br><span class="line">06/05 14:25:17.257 PingMax #22 Reply 32 bytes from 121.50.xxx.xxx: time=144ms TTL=49, ave=90.45ms</span><br><span class="line"></span><br><span class="line">06/05 14:26:23.283 PingMax #88 Reply 32 bytes from 121.50.xxx.xxx: time=176ms TTL=49, ave=91.27ms</span><br><span class="line"></span><br><span class="line">06/05 14:26:35.197         === 100 有效发送,   100 接收,     0.00% 丢失, 91.33ms 平均值  ===</span><br><span class="line">--- 结果 &amp; 统计信息 ------------------------------------------------------</span><br><span class="line">开始时间:  2018/06/05 14:24:56</span><br><span class="line">经过时间:            000:01:39</span><br><span class="line">结束时间:  2018/06/05 14:26:35</span><br><span class="line">----------------</span><br><span class="line">    100 总计发送  </span><br><span class="line">    0 无效接收 (除了超时的其它错误)                </span><br><span class="line">----------------</span><br><span class="line">    100 有效发送  </span><br><span class="line">    100 有效接收      </span><br><span class="line">    0 timed out (0.00% 丢失)</span><br><span class="line">Ping 最小值  84ms, 最大值  176ms, 平均值  91.33ms</span><br></pre></td></tr></table></figure><p><strong>7、路由追踪</strong><br>电信<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2892742268.jpg" alt="tsukaeru-trac-dx.jpg" title="tsukaeru-trac-dx.jpg"></p><p>联通<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/1556836237.jpg" alt="tsukaeru-trac-lt.jpg" title="tsukaeru-trac-lt.jpg"></p><p>移动<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/1025457647.jpg" alt="tsukaeru-trac-yd-1.jpg" title="tsukaeru-trac-yd-1.jpg"><br><img src="https://zhujiwiki.com/usr/uploads/2018/06/1013703484.jpg" alt="tsukaeru-trac-yd-2.jpg" title="tsukaeru-trac-yd-2.jpg"></p><p><strong>8、Youtube速度测试</strong><br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2152286243.jpg" alt="tsukaeru-youtube.jpg" title="tsukaeru-youtube.jpg"></p><hr><p>via:<a href="https://zhujiwiki.com/13433.html" target="_blank" rel="noopener">tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;tsukaeru VPS购买教程：&lt;a href=&quot;https://www.bfdz.ink/2018/06/08/95/&quot;&gt;tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程&lt;/a&gt;&lt;br&gt;每月18元，日本100M不限流量的KVM VPS，电信、联通直连，移动绕香港，性能、I/O、网络都很不错。&lt;br&gt;&lt;strong&gt;关于折扣：为一次性折扣。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="VPS" scheme="https://www.bfdz.ink/categories/VPS/"/>
+    
+    
+      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="tsukaeru" scheme="https://www.bfdz.ink/tags/tsukaeru/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程</title>
+    <link href="https://www.bfdz.ink/2018/06/08/95/"/>
+    <id>https://www.bfdz.ink/2018/06/08/95/</id>
+    <published>2018-06-08T12:45:00.000Z</published>
+    <updated>2018-06-09T06:57:40.760Z</updated>
+    
+    <content type="html"><![CDATA[<p>tsukaeru，提供100M不限流量的日本VPS，三网直连，很不错。</p><p>tsukaeru VPS测评：<a href="https://www.bfdz.ink/2018/06/08/96/">tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评</a></p><p><strong>一、购买tsukaeru KVM VPS</strong><br>1、进入官网：<a href="https://www.tsukaeru.net/" target="_blank" rel="noopener">www.tsukaeru.net</a><br><a id="more"></a></p><hr><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/3167642094.jpg" alt="tsukaeru-1.jpg" title="tsukaeru-1.jpg"></p><p>选择KVM，最好年付，因为是一次性折扣，而且有1000日元的安装费，月付很不划算。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/881861679.jpg" alt="tsukaeru-2.jpg" title="tsukaeru-2.jpg"></p><p>下面以512MB内的KVM VPS为例说明。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/4060159446.jpg" alt="tsukaeru-3.jpg" title="tsukaeru-3.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/1878689169.jpg" alt="tsukaeru-4.jpg" title="tsukaeru-4.jpg"></p><p>建议选择SSD硬盘的。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2464219040.jpg" alt="tsukaeru-5.jpg" title="tsukaeru-5.jpg"></p><p>建议选择年付及以上，其他不要选。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2449077414.jpg" alt="tsukaeru-6.jpg" title="tsukaeru-6.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/1916509014.jpg" alt="tsukaeru-7.jpg" title="tsukaeru-7.jpg"></p><p>2、注册账号，可以使用中文。名字、地址最好和身份证上的一样，这样会一次验证通过。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/3802064662.jpg" alt="tsukaeru-8.jpg" title="tsukaeru-8.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/2626608218.jpg" alt="tsukaeru-9.jpg" title="tsukaeru-9.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/175896993.jpg" alt="tsukaeru-10.jpg" title="tsukaeru-10.jpg"></p><p><strong><em>现在取消了验证！！</em></strong></p><p>3、付款<br>进入后台：<a href="https://cp.tsukaeru.ne.jp/" target="_blank" rel="noopener">https://cp.tsukaeru.ne.jp/</a><br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2478340823.jpg" alt="tsukaeru-11.jpg" title="tsukaeru-11.jpg"></p><p>选择自己的VPS，如果买了多个的话。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2796802700.jpg" alt="tsukaeru-12.jpg" title="tsukaeru-12.jpg"></p><p>进入付款页面。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/1518111661.jpg" alt="tsukaeru-13.jpg" title="tsukaeru-13.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/3734199030.jpg" alt="tsukaeru-14.jpg" title="tsukaeru-14.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/2028440531.jpg" alt="tsukaeru-15.jpg" title="tsukaeru-15.jpg"></p><p><strong>二、tsukaeru VPS的管理</strong><br>1、如图即可。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/3210971539.jpg" alt="tsukaeru-20.jpg" title="tsukaeru-20.jpg"></p><p>下图就是放行所有端口（tcp和udp）<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2358901329.jpg" alt="tsukaeru-21.jpg" title="tsukaeru-21.jpg"></p><hr><p>via:<a href="https://zhujiwiki.com/13465.html" target="_blank" rel="noopener">tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;tsukaeru，提供100M不限流量的日本VPS，三网直连，很不错。&lt;/p&gt;
+&lt;p&gt;tsukaeru VPS测评：&lt;a href=&quot;https://www.bfdz.ink/2018/06/08/96/&quot;&gt;tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一、购买tsukaeru KVM VPS&lt;/strong&gt;&lt;br&gt;1、进入官网：&lt;a href=&quot;https://www.tsukaeru.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.tsukaeru.net&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="VPS" scheme="https://www.bfdz.ink/categories/VPS/"/>
+    
+    
+      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="tsukaeru" scheme="https://www.bfdz.ink/tags/tsukaeru/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PT站自动登陆及读取消息脚本</title>
+    <link href="https://www.bfdz.ink/2018/06/07/94/"/>
+    <id>https://www.bfdz.ink/2018/06/07/94/</id>
+    <published>2018-06-07T11:35:00.000Z</published>
+    <updated>2018-06-07T11:49:06.645Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>可供一般PT站自动登陆，已保留账号之用。</li><li>填写邮箱后可以接受登陆失败的信息和未读消息。</li><li>默认读取收件箱和系统收件箱，并标记为已读。</li><li>默认邮箱程序为 mailx，请自行配置，否则不要填写邮箱。</li><li>严禁作为商业用途，转载至个人网站/个人博客 需注明moeclub.org是作者。</li></ul><a id="more"></a><hr><p>使用方法</p><ul><li>以MT为例，将代码中的中文全部替换为自己的信息。</li><li>可使用 bash -x shell.sh 进行调试。</li><li>支持 MT,CHD,HDTime 等等。</li><li>MT需要设置 Decrypt=’0′; CHD,HDTime需要设置 Decrypt=’1′;其他站可自行测试。</li></ul><p>配置邮箱通知:<br>参考:<a href="https://moeclub.org/2017/04/27/154/" target="_blank" rel="noopener">在VPS上配置邮件通知</a></p><p>文件下载:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO chinese.sh <span class="string">'https://moeclub.org/attachment/LinuxShell/PT/Login/chinese.sh'</span></span><br></pre></td></tr></table></figure><p>也可参考:一些国外PT站自动登陆脚本<br>附上完整代码:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment"># User Data, You should modify it.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> TheHost=<span class="string">'https://tp.m-team.cc'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> Account=<span class="string">'username=用户名&amp;password=密码'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> MyeMail=<span class="string">'邮箱'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> Decrypt=<span class="string">'0'</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment"># Do not modify the following.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HostUrl=<span class="string">"<span class="variable">$(echo "$&#123;TheHost&#125;" |awk -F '://|/' '&#123;print $2&#125;')</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> dirCookie=<span class="string">'/tmp/cookie.txt'</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">Request</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">URL=<span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">DATA=<span class="string">"<span class="variable">$&#123;2:-&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">ItRef=<span class="string">"<span class="variable">$&#123;3:-login.php&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">[[ -z <span class="string">"<span class="variable">$(echo "$&#123;URL&#125;" |grep '://')</span>"</span> ]] &amp;&amp; <span class="built_in">echo</span> <span class="string">"Error! URL incorrect. "</span> &amp;&amp; <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line">[ -n <span class="string">"<span class="variable">$&#123;Decrypt&#125;</span>"</span> ] &amp;&amp; [ <span class="string">"<span class="variable">$&#123;Decrypt&#125;</span>"</span> -eq <span class="string">'1'</span> ] &amp;&amp; [ <span class="string">"<span class="variable">$&#123;ItRef&#125;</span>"</span> != <span class="string">'login.php'</span> ] &amp;&amp; &#123;</span><br><span class="line"></span><br><span class="line">curl -k --silent \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Host: '</span><span class="variable">$&#123;HostUrl&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:45.0) Gecko/20100101 Firefox/45.0'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept-Language: zh-CN,en-US;q=0.8,zh;q=0.5,en;q=0.3'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept-Encoding: gzip, deflate'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Referer: '</span><span class="variable">$&#123;TheHost&#125;</span><span class="string">'/'</span><span class="variable">$&#123;ItRef&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Connection: keep-alive'</span> \</span><br><span class="line"></span><br><span class="line">-b <span class="string">''</span><span class="variable">$&#123;dirCookie&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-c <span class="string">''</span><span class="variable">$&#123;dirCookie&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line"><span class="variable">$&#123;DATA&#125;</span> <span class="string">''</span><span class="variable">$&#123;URL&#125;</span><span class="string">''</span> |gzip -dc </span><br><span class="line"></span><br><span class="line">&#125; || &#123;</span><br><span class="line"></span><br><span class="line">curl -k --silent \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Host: '</span><span class="variable">$&#123;HostUrl&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:45.0) Gecko/20100101 Firefox/45.0'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept-Language: zh-CN,en-US;q=0.8,zh;q=0.5,en;q=0.3'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Accept-Encoding: gzip, deflate'</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Referer: '</span><span class="variable">$&#123;TheHost&#125;</span><span class="string">'/'</span><span class="variable">$&#123;ItRef&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-H <span class="string">'Connection: keep-alive'</span> \</span><br><span class="line"></span><br><span class="line">-b <span class="string">''</span><span class="variable">$&#123;dirCookie&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line">-c <span class="string">''</span><span class="variable">$&#123;dirCookie&#125;</span><span class="string">''</span> \</span><br><span class="line"></span><br><span class="line"><span class="variable">$&#123;DATA&#125;</span> <span class="string">''</span><span class="variable">$&#123;URL&#125;</span><span class="string">''</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">uMessages</span></span>()&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> ReceiveBox=<span class="string">''</span><span class="variable">$&#123;1:-action=viewmailbox&amp;box=1&amp;unread=yes&#125;</span><span class="string">''</span></span><br><span class="line"></span><br><span class="line">[[ -z <span class="string">"<span class="variable">$(echo "$(Request ''$&#123;TheHost&#125;'/usercp.php' '-X GET' 'index.php')</span>"</span> |grep <span class="string">'messages.php'</span> |grep <span class="string">'embedded'</span>)<span class="string">" ]] &amp;&amp; export Unread='0' || export Unread='1'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ "</span><span class="variable">$&#123;Unread&#125;</span><span class="string">" -eq '1' ] &amp;&amp; ReadIt="</span>$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$(Request ''$&#123;TheHost&#125;'/messages.php?'$&#123;ReceiveBox&#125;'' '-X GET' 'messages.php')</span>"</span> |grep -A1 <span class="string">'unreadpm'</span> |grep <span class="string">'messages.php?action=viewmessage'</span>)<span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ "</span><span class="variable">$&#123;Unread&#125;</span><span class="string">" -eq '1' ] &amp;&amp; [ -n "</span><span class="variable">$&#123;ReadIt&#125;</span><span class="string">" ] &amp;&amp; [ -n "</span>$(<span class="built_in">which</span> mailx)<span class="string">" ] &amp;&amp; TheMessage="</span>$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$(echo "$&#123;ReadIt&#125;" |awk -F '"' '&#123;print $2&#125;')</span>"</span> |head -n 1)<span class="string">" &amp;&amp; echo "</span>$(Request <span class="string">''</span><span class="variable">$&#123;TheHost&#125;</span><span class="string">'/'</span><span class="variable">$&#123;TheMessage&#125;</span><span class="string">''</span> <span class="string">'-X GET'</span> <span class="string">'messages.php'</span>)<span class="string">" &gt;/dev/null</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ "</span><span class="variable">$&#123;Unread&#125;</span><span class="string">" -eq '1' ] &amp;&amp; [ -n "</span><span class="variable">$&#123;ReadIt&#125;</span><span class="string">" ] &amp;&amp; [ -n "</span>$(<span class="built_in">which</span> mailx)<span class="string">" ] &amp;&amp; [ -n "</span><span class="variable">$&#123;TheMessage&#125;</span><span class="string">" ] &amp;&amp; echo -e "</span>New Message\n\n<span class="string">"<span class="variable">$(echo "$&#123;ReadIt&#125;" |awk -F '&lt;|&gt;' '&#123;print $5&#125;' |head -n 1)</span>"</span>\n<span class="string">"<span class="variable">$&#123;TheHost&#125;</span>"</span>/<span class="string">"<span class="variable">$&#123;TheMessage&#125;</span>"</span>\n<span class="string">" |mailx -s "</span>Notice <span class="keyword">for</span> <span class="variable">$&#123;HostUrl&#125;</span><span class="string">" "</span><span class="variable">$&#123;MyeMail&#125;</span><span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ "</span><span class="variable">$&#123;Unread&#125;</span><span class="string">" -eq '0' ] || uMessages 'action=viewmailbox&amp;box=-2&amp;unread=yes'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Request ''<span class="variable">$&#123;TheHost&#125;</span>'/takelogin.php' '-X POST -d '<span class="variable">$&#123;Account&#125;</span>'' &gt;/dev/null</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[[ -n "</span>$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$(Request ''$&#123;TheHost&#125;'/usercp.php' '-X GET' 'index.php')</span>"</span> |grep <span class="string">'logout.php'</span>)<span class="string">" ]] &amp;&amp; Login='1' || Login='0'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[[ "</span><span class="variable">$&#123;Login&#125;</span><span class="string">" -eq '1' ]] &amp;&amp; &#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">echo -e "</span><span class="comment">#$&#123;HostUrl&#125;#\nLogin Success! " </span></span><br><span class="line"></span><br><span class="line">[ -n <span class="string">"<span class="variable">$&#123;MyeMail&#125;</span>"</span> ] &amp;&amp; uMessages;</span><br><span class="line"></span><br><span class="line">rm -rf <span class="string">"<span class="variable">$&#123;dirCookie&#125;</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line">&#125; || &#123;</span><br><span class="line"></span><br><span class="line">[ -n <span class="string">"<span class="variable">$&#123;MyeMail&#125;</span>"</span> ] &amp;&amp; [ -n <span class="string">"<span class="variable">$(which mailx)</span>"</span> ] &amp;&amp; <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$(date "+%F [%T]")</span>\nLogin Fail! "</span> |mailx -s <span class="string">"Notice for <span class="variable">$&#123;HostUrl&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;MyeMail&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"#<span class="variable">$&#123;HostUrl&#125;</span>#\nLogin Fail! "</span> &amp;&amp; rm -rf <span class="string">"<span class="variable">$&#123;dirCookie&#125;</span>"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;可供一般PT站自动登陆，已保留账号之用。&lt;/li&gt;
+&lt;li&gt;填写邮箱后可以接受登陆失败的信息和未读消息。&lt;/li&gt;
+&lt;li&gt;默认读取收件箱和系统收件箱，并标记为已读。&lt;/li&gt;
+&lt;li&gt;默认邮箱程序为 mailx，请自行配置，否则不要填写邮箱。&lt;/li&gt;
+&lt;li&gt;严禁作为商业用途，转载至个人网站/个人博客 需注明moeclub.org是作者。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="脚本" scheme="https://www.bfdz.ink/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="PT" scheme="https://www.bfdz.ink/tags/PT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub Pages 自定义域名正式支持 HTTPS</title>
+    <link href="https://www.bfdz.ink/2018/05/03/93/"/>
+    <id>https://www.bfdz.ink/2018/05/03/93/</id>
+    <published>2018-05-03T11:50:00.000Z</published>
+    <updated>2018-05-03T11:58:21.166Z</updated>
+    
+    <content type="html"><![CDATA[<p>来自 GitHub 的官方公告 <a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">Custom domains on GitHub Pages gain support for HTTPS</a>，从 5 月 1 日开始，托管在 GitHub Pages 上面的网站，自定义域名也可以使用 HTTPS 了，之前只有 github.io 的三级域名支持 HTTPS。</p><a id="more"></a><hr><p>公告介绍了配置方法，在 Pages 项目仓库的设置中，先删掉以前绑定的自定义域名，然后重新添加域名来激活证书的颁发程序，再勾选 Enforce HTTPS。公告称证书颁发时间是一个小时内，我在配置后有很长时间博客都是处于证书错误阶段，证书显示来自 <code>*.github.com</code> ,所以实际证书颁发可能需要几个小时。</p><p>和 Coding Pages 相比，GitHub 的配置不够人性化。Coding 的配置中有证书颁发进度，有效期等提示，并且 Coding 早在去年 7 月就增加了支持自定义域名 HTTPS。但是 Github 优势在于其快速的全球 CDN，强大的防御能力。毕竟 Github 抗过全球最大峰值流量的 DDOS ，感觉稳定性应该是最好的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来自 GitHub 的官方公告 &lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Custom domains on GitHub Pages gain support for HTTPS&lt;/a&gt;，从 5 月 1 日开始，托管在 GitHub Pages 上面的网站，自定义域名也可以使用 HTTPS 了，之前只有 github.io 的三级域名支持 HTTPS。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
+    
+    
+      <category term="运维" scheme="https://www.bfdz.ink/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="Hexo" scheme="https://www.bfdz.ink/tags/Hexo/"/>
+    
+      <category term="GitHub Pages" scheme="https://www.bfdz.ink/tags/GitHub-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>绅士站整理</title>
+    <link href="https://www.bfdz.ink/2018/05/01/92/"/>
+    <id>https://www.bfdz.ink/2018/05/01/92/</id>
+    <published>2018-05-01T10:00:00.000Z</published>
+    <updated>2018-05-01T10:18:22.951Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些被认证了或者服务器在欧美，需自备富强工具访问。</p><a id="more"></a><hr><p><strong>种子</strong></p><p>1 . NYAA：全球最大的亚洲动漫站，分表站和里站，表站正经向，里站绅士向。</p><ul><li><a href="https://nyaa.si/" target="_blank" rel="noopener">表站</a></li><li><a href="https://sukebei.nyaa.si/" target="_blank" rel="noopener">里站</a></li></ul><p>2 . AniRena：最新动漫和种子</p><ul><li><a href="https://www.anirena.com/" target="_blank" rel="noopener">AniRena</a></li></ul><p>3 . Tokyo Toshokan：东京图书馆，专注日本资源</p><ul><li><a href="https://www.tokyotosho.info/" target="_blank" rel="noopener">Tokyo Toshokan</a></li></ul><p>4 . Mteam：玩 PT 的应该都知道，馒头的特色</p><ul><li><a href="https://tp.m-team.cc/" target="_blank" rel="noopener">Mteam</a></li></ul><hr><p><strong>本子</strong></p><p>1 . E站：里站有表站搜不到的萝莉和重口</p><ul><li><a href="https://e-hentai.org/" target="_blank" rel="noopener">表站</a></li><li><a href="https://exhentai.org/" target="_blank" rel="noopener">里站</a></li></ul><p>2 . 南+：曾经叫北+、魂+</p><ul><li><a href="https://www.south-plus.net/" target="_blank" rel="noopener">南+</a></li></ul><hr><p><strong>图站</strong></p><p>1 . P站：打开R18，就是一个新天地</p><ul><li><a href="https://www.pixiv.net/" target="_blank" rel="noopener">pixiv</a></li></ul><p>2 . K站：有了K站，再也不用担心找不到壁纸啦</p><ul><li><a href="http://konachan.com/" target="_blank" rel="noopener">konachan</a></li></ul><p>3 . Multi-service image search：一个图片搜索站</p><ul><li><a href="http://iqdb.org/" target="_blank" rel="noopener">Multi-service image search</a></li></ul><p>4 . Sankaku Complex：chan是二次元，idol是三次元</p><ul><li><a href="https://www.sankakucomplex.com/" target="_blank" rel="noopener">Sankaku Complex</a></li><li><a href="https://chan.sankakucomplex.com/" target="_blank" rel="noopener">chan</a></li><li><a href="https://idol.sankakucomplex.com/" target="_blank" rel="noopener">idol</a></li></ul><p>5 . nijie：需要注册，感觉是想要做成一个只有R18的Pixiv的样子</p><ul><li><a href="http://nijie.info/" target="_blank" rel="noopener">nijie</a></li></ul><p>6 . 桃色虹画像：没什么好说的，满天坠的小黄图</p><ul><li><a href="http://momoniji.com/" target="_blank" rel="noopener">桃色虹画像</a></li></ul><p>7 . 绝对领域：擦边向三次元福利</p><ul><li><a href="http://www.jdlingyu.fun/" target="_blank" rel="noopener">绝对领域</a></li></ul><hr><p><strong>博客</strong></p><p>1 . 琉璃神社</p><ul><li><a href="https://www.llss.pw/wp/" target="_blank" rel="noopener">琉璃神社</a></li><li><a href="https://www.llss.pw/" target="_blank" rel="noopener">llss</a></li><li><a href="https://www.hacg.wiki/" target="_blank" rel="noopener">hacg</a></li></ul><p>2 . 绅士仓库：右边友情链接的一堆网站才是重点</p><ul><li><a href="https://cangku.in/" target="_blank" rel="noopener">绅士仓库</a></li></ul><p>3 . 灵梦御所</p><ul><li><a href="https://blog.reimu.net/" target="_blank" rel="noopener">灵梦御所</a></li></ul><p>4 . 猫之仓库</p><ul><li><a href="https://www.catacg.com/" target="_blank" rel="noopener">猫の仓库</a></li></ul><p>5 . MyGalgame</p><ul><li><a href="https://www.mygalgame.com/" target="_blank" rel="noopener">MyGalgame</a></li></ul><p>6 . hentai4daily：体验不怎么样，很多链接是网赚网盘，其实这个站有的其他站也能找到</p><ul><li><a href="http://hentai4daily.com/" target="_blank" rel="noopener">hentai4daily</a></li></ul><hr><p><strong>论坛</strong></p><p>1 . Mikocon - 2DJGAME ：mikocon 是国际站，2djgame 是中文站，两个坛子资源一样的</p><ul><li><a href="http://bbs.mikocon.com/forum.php" target="_blank" rel="noopener">mikocon</a></li><li><a href="https://bbs4.2djgame.net/home/forum.php" target="_blank" rel="noopener">2djgame</a></li></ul><p>2 . ZodGame：找 I 社作品的好去处</p><ul><li><a href="https://www.zodgame.us/" target="_blank" rel="noopener">ZodGame</a></li></ul><p>3 . 绯月Galgame：2DFan 附属资源站</p><ul><li><a href="http://bbs.2dkf.com/" target="_blank" rel="noopener">绯月Galgame</a></li></ul><p>4 . HongFire：歪果仁开发了不少工具和模组</p><ul><li><a href="http://www.hongfire.com/forum/" target="_blank" rel="noopener">HongFire</a></li></ul><p>5 . 灵梦广场：灵梦御所附属论坛</p><ul><li><a href="https://acg.is/" target="_blank" rel="noopener">灵梦广场</a></li></ul><hr><p><strong>攻略/补丁</strong></p><p>1 . 2DFan：galgame 介绍、补丁、攻略</p><ul><li><a href="https://www.2dfan.com/" target="_blank" rel="noopener">2DFan</a></li></ul><p>2 . 誠也の部屋</p><ul><li><a href="http://seiya-saiga.com/" target="_blank" rel="noopener">誠也の部屋</a></li></ul><hr><p><strong>在线视频</strong></p><p>1 . FC2 Video：名站，无论是三次元还是二次元都有不少很棒的视频</p><ul><li><a href="https://video.fc2.com/en/" target="_blank" rel="noopener">FC2 Video</a></li></ul><p>2 . xvideos：全球最大的 xxx 视频站，东西方三次元和二次元的内容都有</p><ul><li><a href="http://www.xvideos.com/" target="_blank" rel="noopener">xvideos</a></li></ul><p>3 . Pronhub：类型和 xvideos 一样，甚至有很多重复内容</p><ul><li><a href="https://www.pornhub.com/" target="_blank" rel="noopener">Pronhub</a></li></ul><p>4 . vimeo：原以为vimeo是个很正经的网站，不过一搜MMD好像不少R18的样子</p><ul><li><a href="https://vimeo.com/" target="_blank" rel="noopener">vimeo</a></li></ul><hr><p>指路人：<a href="https://acg.is/d/47" target="_blank" rel="noopener">https://acg.is/d/47</a><br>在原文基础上有所增减。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有些被认证了或者服务器在欧美，需自备富强工具访问。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="acg" scheme="https://www.bfdz.ink/tags/acg/"/>
+    
+      <category term="galgame" scheme="https://www.bfdz.ink/tags/galgame/"/>
+    
+      <category term="hgame" scheme="https://www.bfdz.ink/tags/hgame/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ffmpeg 常用命令</title>
+    <link href="https://www.bfdz.ink/2018/04/25/91/"/>
+    <id>https://www.bfdz.ink/2018/04/25/91/</id>
+    <published>2018-04-25T14:48:00.000Z</published>
+    <updated>2018-04-25T14:53:43.099Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>ffmepg是个神器，因此写一下自己平时使用过程中经常用到的命令</strong></p><a id="more"></a><hr><p>1.剪切视频</p><p>ffmpeg -ss xx:xx:xx -i URL\inputfile_name.format -vcodec copy -acodec copy -t xx:xx:xx outputfile_name.format</p><p>||-ss 开始时间 xx:xx:xx ；-t 持续时间 xx:xx:xx 时间可以具体到帧数，但是你要自己看清楚；format 常见有mp4\ts\mov\flv\f4v\avi||</p><p>eg：ffmpeg -ss 00:00:07.800 -i E:\test.ts -vcodec copy -acodec copy -t 00:00:19.640 test_new.ts</p><hr><p>2.加黑边<br>1、ffmpeg –i URL\inputfile_name.format –vcodec Codec_Type –s 1280<em>720 –an –f Codec_Type outputfile_name.format<br>||Codec_Type 常见有 h264\x264\f4v\Xvid；–s 强制分辨率,一般都是1280</em>720或是1920*1080 ||<br>2、-vf pad=1920:1080:0:140 w,h,x,y</p><p>eg1:ffmpeg -i F:\2_new.ts – vcodec h264 – s 1920*1080 – an –f h264 2_newget.ts<br>eg2:ffmpeg -i F:\01test.264 -vf pad=1920:1080:0:140 F:\01test2.264</p><hr><p>3.分离视频音频流<br>ffmpeg -i URL\input_file.format -vcodec copy -an output_file.video_format　　 //分离视频流<br>ffmpeg -i URL\input_file.format -acodec copy -vn output_file.audio_format　　 //分离音频流</p><p>eg:ffmpeg -i M:\test.ts -acodec copy -vn output_file.ac3</p><hr><p>4.指定音频转换码率<br>ffmpeg -i URL\input_file.format -acodec copy -ab bitrats -vn output_file.audio_format</p><p>eg:ffmpeg -i F:\test\test_file.flv -acodec aac -ab 127.55k -vn test_audio.m4a</p><p><em>-ab 127.55k输出是128kb/s,不知道为什么，需要进一步研究</em></p><hr><p>5.ts/flv/f4v/mp4无损互转<br>ffmpeg -i URL\input_file.format -vcodec copy -acodec copy URL\output_file.format<br>ffmpeg -i URL\input_file.format -c copy -bsf h264_mp4toannexb URL\output_file.format<br>ffmpeg -i URL\input_file.ts -c copy -bsf:a aac_adtstoasc URL\output_file.mp4</p><p>eg:ffmpeg -i F:\test.f4v -vcodec copy -acodec copy S05EP01.mp4<br>eg:ffmpeg -i F:\ls\P01.flv -c copy -bsf h264_mp4toannexb F:\ls2\P01.ts</p><hr><p>6.合并音频视频<br>ffmpeg -i URL\input_video_file.format -i URL\input_audio_file.format -vcodec copy -acodec copy output_file.format</p><hr><p>7.下载m3u8文件对应的视频<br>ffmpeg -i m3u8_links -acodec copy -vcodec copy -f mp4 output.mp4<br>ffmpeg -i m3u8_links -c copy -bsf:a aac_adtstoasc output.mp4</p><p>eg:ffmpeg -i D:\Downloads\test.ts -c copy -bsf:a aac_adtstoasc D:\Downloads\test_new.mp4</p><hr><p>8.导出序列图片<br>ffmpeg -i URL\input_video_file.format URL\example.%d.jpg<br>Ffmpeg –i F:\test\test.mp4 –r 25 –f image2 F:\test\jpg\image-%3d.jpg<br>eg:ffmpeg -i F:\test\test.mp4 F:\test\jpg\example.%d.jpg</p><hr><p>9.切黑边</p><p>ffmpeg -i F:\test\38.mp4 -vf “crop=1920:800:0:140” -b 6000k F:\38.mp4</p><hr><p>10.合并分段，输出单文件<br>Win系统：<br>ffmpeg -f concat -i E:\test\list.txt -c copy output.mp4<br>Linux系统：<br>ffmpeg -f concat -i <strong>list.txt</strong> -c copy output.mp4 （注：此时list要在运行ffmpg的，目录里）</p><p>ffmpeg -ss 00:00:00 -i</p><hr><p>Links:<br>1.Video codec<br><a href="https://en.wikipedia.org/wiki/Video_codec" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Video_codec</a><br>2.x264<br><a href="https://en.wikipedia.org/wiki/X264" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/X264</a></p><hr><p>via:<a href="https://www.web-dl.cc/?page_id=141" target="_blank" rel="noopener">https://www.web-dl.cc/?page_id=141</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;ffmepg是个神器，因此写一下自己平时使用过程中经常用到的命令&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
+    
+    
+      <category term="ffmpeg" scheme="https://www.bfdz.ink/tags/ffmpeg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Paypal 链接-预核准付款/币种转换/汇率调整/美区/港区/国区注册等</title>
+    <link href="https://www.bfdz.ink/2018/04/25/90/"/>
+    <id>https://www.bfdz.ink/2018/04/25/90/</id>
+    <published>2018-04-25T05:23:00.000Z</published>
+    <updated>2018-04-25T05:38:48.606Z</updated>
+    
+    <content type="html"><![CDATA[<p>再也不怕找不到各种被 Payapl 隐藏的按钮了!</p><a id="more"></a><p><strong>注册:</strong></p><ul><li><a href="https://www.paypal.com/us/webapps/mpp/account-selection" target="_blank" rel="noopener">美区 Paypal</a></li><li><a href="https://www.paypal.com/hk/webapps/mpp/account-selection" target="_blank" rel="noopener">港区 Paypal</a></li><li><a href="https://www.paypal.com/c2/webapps/mpp/account-selection" target="_blank" rel="noopener">国区 Paypal</a></li></ul><p><strong>功能:</strong></p><ul><li>预核准付款:</li></ul><p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_manage-paylist" target="_blank" rel="noopener">https://www.paypal.com/cgi-bin/webscr?cmd=_manage-paylist</a></p><ul><li>转账给朋友:</li></ul><p><a href="https://www.paypal.com/myaccount/transfer/fx/fees" target="_blank" rel="noopener">https://www.paypal.com/myaccount/transfer/fx/fees</a></p><ul><li>管理货币余额:</li></ul><p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_profile-currencies" target="_blank" rel="noopener">https://www.paypal.com/cgi-bin/webscr?cmd=_profile-currencies</a></p><ul><li>调整汇率转换方式(兑换选项):</li></ul><p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_profile-merchant-pull-funding" target="_blank" rel="noopener">https://www.paypal.com/cgi-bin/webscr?cmd=_profile-merchant-pull-funding</a></p><ul><li>查看账户限制:</li></ul><p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_show-limits" target="_blank" rel="noopener">https://www.paypal.com/cgi-bin/webscr?cmd=_show-limits</a></p><ul><li>查看交易历史</li></ul><p><a href="https://history.paypal.com/cgi-bin/webscr?cmd=_history-details-from-hub" target="_blank" rel="noopener">https://history.paypal.com/cgi-bin/webscr?cmd=_history-details-from-hub</a></p><ul><li>查看冻结款项</li></ul><p><a href="https://history.paypal.com/cgi-bin/webscr?cmd=_history-release-cycle" target="_blank" rel="noopener">https://history.paypal.com/cgi-bin/webscr?cmd=_history-release-cycle</a></p><ul><li>货币转换计算器</li></ul><p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_currency-calculator" target="_blank" rel="noopener">https://www.paypal.com/cgi-bin/webscr?cmd=_currency-calculator</a></p><ul><li>致电客户服务</li></ul><p><a href="https://www.paypal.com/smarthelp/contact-us" target="_blank" rel="noopener">https://www.paypal.com/smarthelp/contact-us</a></p><hr><p>via:<a href="https://moeclub.org/2017/10/28/452/?v=140" target="_blank" rel="noopener">https://moeclub.org/2017/10/28/452/?v=140</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;再也不怕找不到各种被 Payapl 隐藏的按钮了!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="Paypal" scheme="https://www.bfdz.ink/tags/Paypal/"/>
+    
+      <category term="预核准付款" scheme="https://www.bfdz.ink/tags/%E9%A2%84%E6%A0%B8%E5%87%86%E4%BB%98%E6%AC%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搜索 bilibili 隐藏视频的方法</title>
+    <link href="https://www.bfdz.ink/2018/04/20/89/"/>
+    <id>https://www.bfdz.ink/2018/04/20/89/</id>
+    <published>2018-04-20T13:22:00.000Z</published>
+    <updated>2018-04-20T14:04:03.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里说的隐藏视频是指： B 站的站内搜索结果中隐藏的视频。</p><p>例如 <a href="https://www.bilibili.com/video/av5486725/" target="_blank" rel="noopener">av5486725</a> ，这个高清版的 《角逐超高空》就在 B 站的搜索结果中被隐藏了。</p><a id="more"></a><p><img src="https://i.loli.net/2018/04/20/5ad9ea4e35890.jpg" alt="B 站搜索"></p><p>后来发现谷歌的搜索结果会有 B 站的视频，于是尝试谷歌的视频搜索，第一个搜索结果就是被隐藏的视频。</p><p><img src="https://i.loli.net/2018/04/20/5ad9eb5547711.jpg" alt="谷歌搜索"></p><p>这个方法用其他影片也可以得到验证。</p><hr><p>由此可以得知，B 站出于某些原因在搜索结果中隐藏了视频，而谷歌爬取了 B 站后，没有对搜索结果做出隐藏处理。</p><p>那么，如果用国内的搜索引擎呢？</p><ul><li>搜狗</li></ul><p>搜狗视频 搜索</p><p><a href="https://imgchr.com/i/CKInYQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKInYQ.jpg" alt="搜狗视频"></a></p><p>搜狗网址 搜索：通过指定网址搜索</p><p><a href="https://imgchr.com/i/CKImFg" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKImFg.jpg" alt="搜狗网址"></a></p><ul><li>百度</li></ul><p>百度视频 搜索</p><p><a href="https://imgchr.com/i/CKIVw8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKIVw8.jpg" alt="百度视频.jpg"></a></p><p>百度网址 搜索</p><p><a href="https://imgchr.com/i/CKIZTS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKIZTS.jpg" alt="百度网址.jpg"></a></p><p>360影视 搜索</p><p><a href="https://imgchr.com/i/CKIkOP" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKIkOP.jpg" alt="360影视.jpg"></a></p><p>360网址 搜索</p><p><a href="https://imgchr.com/i/CKIEef" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/04/20/CKIEef.jpg" alt="360网址.jpg"></a></p><hr><p>国内各大搜索引擎的视频搜索来源都没有 B 站。而在网址搜索中有 B 站，并且能和谷歌一样搜出被隐藏的视频。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里说的隐藏视频是指： B 站的站内搜索结果中隐藏的视频。&lt;/p&gt;
+&lt;p&gt;例如 &lt;a href=&quot;https://www.bilibili.com/video/av5486725/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;av5486725&lt;/a&gt; ，这个高清版的 《角逐超高空》就在 B 站的搜索结果中被隐藏了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="搜索技术" scheme="https://www.bfdz.ink/tags/%E6%90%9C%E7%B4%A2%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="B站" scheme="https://www.bfdz.ink/tags/B%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>公共图床收集和对比</title>
+    <link href="https://www.bfdz.ink/2018/04/14/88/"/>
+    <id>https://www.bfdz.ink/2018/04/14/88/</id>
+    <published>2018-04-14T05:22:00.000Z</published>
+    <updated>2018-04-14T05:26:32.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>收集了一些公共图床，并进行功能上的对比。</p><p>对比项说明：</p><ul><li>注册帐号：上传图片是否需要先注册帐号</li><li>HTTPS：图片外链是否支持 HTTPS</li><li>PNG 格式：是否支持上传 PNG 格式的图片</li><li>图片大小上限：上传图片的最大体积</li><li>强制压缩：图片是否会被网站压缩</li><li>自定义缩略图：是否支持超过三种尺寸的缩略图</li><li>国内平均响应：使用 ipip 的国内 ping 得出结果，作为图床速度的参考</li></ul><a id="more"></a><p>谷歌表格：<a href="https://docs.google.com/spreadsheets/d/19mRufenjbzFcCPPnqxBG1I_Iip9zIyFnz56Z7A9Lf1Y/edit?usp=sharing" target="_blank" rel="noopener">图床收集</a></p><p>公共图床</p><p><img src="https://i.loli.net/2018/04/14/5ad18eea702b1.jpg" alt="公共图床.jpg"></p><p>非常规：利用非图床网站实现的图片外链</p><p><img src="https://i.loli.net/2018/04/14/5ad18f8cc8e42.jpg" alt="非常规图床.jpg"></p><p>不推荐：服务不稳定，网站或图片外链无法访问的图床</p><p><img src="https://i.loli.net/2018/04/14/5ad18f8cc3c20.jpg" alt="不推荐.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;收集了一些公共图床，并进行功能上的对比。&lt;/p&gt;
+&lt;p&gt;对比项说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注册帐号：上传图片是否需要先注册帐号&lt;/li&gt;
+&lt;li&gt;HTTPS：图片外链是否支持 HTTPS&lt;/li&gt;
+&lt;li&gt;PNG 格式：是否支持上传 PNG 格式的图片&lt;/li&gt;
+&lt;li&gt;图片大小上限：上传图片的最大体积&lt;/li&gt;
+&lt;li&gt;强制压缩：图片是否会被网站压缩&lt;/li&gt;
+&lt;li&gt;自定义缩略图：是否支持超过三种尺寸的缩略图&lt;/li&gt;
+&lt;li&gt;国内平均响应：使用 ipip 的国内 ping 得出结果，作为图床速度的参考&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="图床" scheme="https://www.bfdz.ink/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ss-panel 魔改版搭建踩坑记</title>
+    <link href="https://www.bfdz.ink/2018/04/09/87/"/>
+    <id>https://www.bfdz.ink/2018/04/09/87/</id>
+    <published>2018-04-09T00:51:00.000Z</published>
+    <updated>2018-04-09T00:56:06.930Z</updated>
+    
+    <content type="html"><![CDATA[<p>版本和环境：</p><ul><li>Debian 8</li><li>ss-panel v4</li><li>lnmp 1.4</li></ul><p>ss-panel v4 魔改版改动不大，可直接套用 sspanel v3 魔改版的教程。详细的搭建过程见参考资料，本文主要记录各种教程没提到的问题和解决方法。</p><a id="more"></a><hr><h2 id="网站报错-ERROR-500"><a href="#网站报错-ERROR-500" class="headerlink" title="网站报错 ERROR 500"></a>网站报错 ERROR 500</h2><p>起因是PHP基于 <code>open_basedir</code> 设置，来限制 PHP 程序跨目录访问的安全策略，其使用 <a href="https://secure.php.net/manual/zh/configuration.file.per-user.php" target="_blank" rel="noopener">.user.ini</a> 文件和 <code>nginx</code> 来配合（作用和 .htaccess 文件相同，这个是基于 Apache httpd 服务器）。</p><blockquote><p><code>lnmp1.4</code> 一键安装对其配置是存在于 <code>/usr/local/nginx/conf/fastcgi.conf</code> 文件 <code>fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=$document_root/:/tmp/:/proc/&quot;;</code>，个人感觉这个设计有点别扭，这个配置对所有站点都写死了不灵活。</p></blockquote><p>对于详细错误的解释：由于我们在站点配置文件（<code>/usr/local/nginx/conf/vhost/{WEB_SITE}.conf</code>），网站根目录配置 <code>root /home/wwwroot/{WEB_SITE_NAME};</code> 这一行进行修改（修改成了 <code>root /home/wwwroot/{WEB_SITE_NAME}\public;</code> ），因此 <code>open_basedir=$document_root/...</code> 中 <code>$document_root</code> 指的是网站的 <code>public</code> 目录，而非 <code>/home/wwwroot/{WEB_SITE_NAME}</code>，在读取 <code>bootstrap.php</code> 文件（而该文件正好位于 <code>/home/wwwroot/{WEB_SITE_NAME}</code> 目录下，在 <code>public</code> 目录上一层）时出错，受跨目录访问安全限制。</p><p>主要有两种解决方案：</p><ol><li><p>直接注释掉 <code>fastcgi.conf</code> 文件中的 <code>fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=$document_root/:/tmp/:/proc/&quot;;</code> 这一行，一棒子打死了目录访问安全策略</p></li><li><p>在 <code>fastcgi.conf</code> 文件中，修改 <code>fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=$document_root/:/tmp/:/proc/&quot;;</code> ，以 <code>test.com</code> 为例（此域名为添加vhost时输入的域名），修改内容如下：（这样做的坏处时每次添加vhost时都需要手动添加⊙﹏⊙）</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/conf/fastcgi.conf</span><br><span class="line">fastcgi_param PHP_ADMIN_VALUE <span class="string">"open_basedir=/home/wwwroot/test.com/:/tmp/:/proc/"</span>;</span><br></pre></td></tr></table></figure><hr><h2 id="setuptools-版本过低"><a href="#setuptools-版本过低" class="headerlink" title="setuptools 版本过低"></a>setuptools 版本过低</h2><p>搭建后端 shadowsocks-manyuser ，安装 python 依赖时报 setuptools 版本过低的错误。</p><p>因为 Debian 的 pip 软件包太老了，用 python 官方提供的方法安装 setuptools 即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/ez_setup.py -O - | python</span><br></pre></td></tr></table></figure><hr><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://lala.im/88.html" target="_blank" rel="noopener">详细安装ss-panel-v3魔改版前端+后端教程</a></li><li><a href="https://github.com/iMeiji/shadowsocks_install/wiki/%E6%90%AD%E5%BB%BA-sspanel-v3-%E9%AD%94%E6%94%B9%E7%89%88%E8%AE%B0%E5%BD%95" target="_blank" rel="noopener">搭建 sspanel v3 魔改版记录</a></li><li><a href="http://smallcheck.net/2017/06/09/lnmp-ss-more/#%E8%AE%BF%E9%97%AE%E5%89%8D%E7%AB%AF%E7%BD%91%E7%AB%99-ss-panel-v3-mod-%E7%9B%B4%E6%8E%A5%E6%8A%A5%E9%94%99ERROR-500" target="_blank" rel="noopener">lnmp &amp; ss的那些事</a></li><li><a href="https://pypi.python.org/pypi/setuptools/18.5" target="_blank" rel="noopener">setuptools 18.5</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;版本和环境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Debian 8&lt;/li&gt;
+&lt;li&gt;ss-panel v4&lt;/li&gt;
+&lt;li&gt;lnmp 1.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ss-panel v4 魔改版改动不大，可直接套用 sspanel v3 魔改版的教程。详细的搭建过程见参考资料，本文主要记录各种教程没提到的问题和解决方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
+    
+    
+      <category term="shadowsocks" scheme="https://www.bfdz.ink/tags/shadowsocks/"/>
+    
+      <category term="ss-panel" scheme="https://www.bfdz.ink/tags/ss-panel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 检测 IP 端口连接是否正常</title>
+    <link href="https://www.bfdz.ink/2018/04/01/86/"/>
+    <id>https://www.bfdz.ink/2018/04/01/86/</id>
+    <published>2018-04-01T09:50:00.000Z</published>
+    <updated>2018-04-01T09:51:35.746Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 socket 库检测端口连接</p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#encoding:utf8</span></span><br><span class="line"><span class="comment">#author: linuxhub.org</span></span><br><span class="line"><span class="comment">#Python检测IP端口连接是否正常</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_open</span><span class="params">(ip,port)</span>:</span></span><br><span class="line">              s= socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">              <span class="keyword">try</span>:</span><br><span class="line">                            s.connect((ip,int(port)))</span><br><span class="line">                            s.shutdown(<span class="number">2</span>)</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">              <span class="keyword">except</span>:</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>: </span><br><span class="line"> </span><br><span class="line">            host = <span class="string">'192.168.0.202'</span></span><br><span class="line">            port = <span class="string">'6379'</span></span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> is_open(host, port):</span><br><span class="line">                            <span class="keyword">print</span> <span class="string">"OK"</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">print</span> <span class="string">"NO"</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 socket 库检测端口连接&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="脚本" scheme="https://www.bfdz.ink/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="python" scheme="https://www.bfdz.ink/tags/python/"/>
+    
+      <category term="端口" scheme="https://www.bfdz.ink/tags/%E7%AB%AF%E5%8F%A3/"/>
+    
+  </entry>
+  
+</feed>
