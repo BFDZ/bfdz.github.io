@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.bfdz.ink/about/index.html</loc>
+    
+    <lastmod>2018-10-20T13:35:51.810Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bfdz.ink/2018/10/04/107/</loc>
     
     <lastmod>2018-10-04T13:49:48.864Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://www.bfdz.ink/tools/ptsearch.html</loc>
+    <loc>https://www.bfdz.ink/tools/ptgen.html</loc>
     
     <lastmod>2018-06-21T12:33:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bfdz.ink/tools/ptgen.html</loc>
+    <loc>https://www.bfdz.ink/tools/ptsearch.html</loc>
     
     <lastmod>2018-06-21T12:33:00.000Z</lastmod>
     
@@ -222,13 +229,6 @@
     <loc>https://www.bfdz.ink/2018/03/16/81/</loc>
     
     <lastmod>2018-03-16T14:17:09.761Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.bfdz.ink/about/index.html</loc>
-    
-    <lastmod>2018-03-11T11:58:44.613Z</lastmod>
     
   </url>
   
