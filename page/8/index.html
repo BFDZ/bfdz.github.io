@@ -133,6 +133,112 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2017/01/09/39/">
+                
+                    Linux 安装 NFS Server
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2017-01-09
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。</p>
+<h2 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian / Ubuntu"></a>Debian / Ubuntu</h2><h3 id="NFS-Server-安装"><a href="#NFS-Server-安装" class="headerlink" title="NFS Server 安装"></a>NFS Server 安装</h3><ul>
+<li>安装 NFS</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nfs-kernel-server nfs-common</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2017/01/09/39/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/NFS/"><i class="fa fa-tag fa-fw"></i>&nbsp;NFS</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/12/31/38/">
+                
+                    Ubuntu 配置 tftp 服务器
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-12-31
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p><strong>配置 tftp 服务器</strong></p>
+<ul>
+<li>安装 tftp 客户端、服务端和 xinetd 服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tftp-hpa tftpd-hpa xinetd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建共享目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/tftpboot</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置权限</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /home/tftpboot</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2016/12/31/38/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/ARM/"><i class="fa fa-tag fa-fw"></i>&nbsp;ARM</a>
+                
+                    <a href="/tags/tftp/"><i class="fa fa-tag fa-fw"></i>&nbsp;tftp</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2016/12/29/37/">
                 
                     Markdown 语法高亮的常用语言关键字
@@ -303,9 +409,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
-                
                     <a href="/tags/BBR/"><i class="fa fa-tag fa-fw"></i>&nbsp;BBR</a>
+                
+                    <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
                 
             </div>
         
@@ -494,100 +600,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/11/11/29/">
-                
-                    升级 openssl 环境至 openssl-1.0.2j
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-11-11
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Linux/">Linux</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>1、查看源版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@~]<span class="comment"># openssl version -a</span></span><br><span class="line">OpenSSL 1.0.1g</span><br></pre></td></tr></table></figure>
-<p>2、下载 openssl-1.0.2j.tar.gz</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.openssl.org/<span class="built_in">source</span>/openssl-1.0.2j.tar.gz</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2016/11/11/29/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
-                
-                    <a href="/tags/openssl/"><i class="fa fa-tag fa-fw"></i>&nbsp;openssl</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/11/08/28/">
-                
-                    LNMP配置启用HTTPS
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-11-08
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/HTTPS/">HTTPS</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>HTTPS证书使用由Let’s Encrypt提供的免费证书，有个很方便的小工具可以帮助快速获得证书，参见<a href="https://github.com/Neilpang/acme.sh" target="_blank" rel="noopener">https://github.com/Neilpang/acme.sh</a></p>
-<p>LNMP在使用acme.sh申请证书之前需要修改站点的nginx配置，否则会因无法验证导致申请失败。<br>
-        
-            <div class="readmore">
-                <a href="/2016/11/08/28/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
-                
-                    <a href="/tags/lnmp/"><i class="fa fa-tag fa-fw"></i>&nbsp;lnmp</a>
-                
-                    <a href="/tags/https/"><i class="fa fa-tag fa-fw"></i>&nbsp;https</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -635,9 +647,9 @@
                 
                     <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>5</div></a></li>
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>28</div></a></li>
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>29</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
                 

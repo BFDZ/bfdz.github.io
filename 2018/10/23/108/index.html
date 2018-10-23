@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Cloudflare 下 Nginx 获取用户真实 IP 地址 | BFDZ</title>
+  <meta name="description" content="BFDZ的博客" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="BFDZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				BFDZ
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/about'>
+    									<i class='fa fa-user fa-'></i>&nbsp;关于
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">BFDZ</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/about'><i class='fa fa-user fa-fw'></i>&nbsp;关于</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-108" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Cloudflare 下 Nginx 获取用户真实 IP 地址
+            
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-23&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>惯例性滴先Google了一下，发现了这篇文章</p>
+<ul>
+<li><a href="https://support.cloudflare.com/hc/en-us/articles/200170706-How-do-I-restore-original-visitor-IP-with-Nginx" target="_blank" rel="noopener">How do I restore original visitor IP with Nginx? – Cloudflare Support</a></li>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_realip_module.html" target="_blank" rel="noopener">Module ngx_http_realip_module - Nginx</a></li>
+</ul>
+<p>看起来挺简单的嘛，在nginx配置文件中加一段地址说明就好了的事。。<br>然而在重启时却发现，报错了。。。。。新添加的”set_real_ip_from”没有被认出来，导致新配置的文件不被认可就没能重启。。</p>
+<a id="more"></a>
+<p>于是认真的看了下说明。</p>
+<blockquote>
+<p>This module is not built by default, it should be enabled with the –with-http_realip_module configuration parameter.</p>
+</blockquote>
+<p>原来如此嘛，是当初安装的时候没有安装所需要的模块呀~</p>
+<p>那就开始在已经配置好的nginx上添加未编译安装模块吧。</p>
+<p>使用 lnmp.org 提供的一件包可以编辑lnmp.conf文件，添加nginx编译属性，然后使用upgrade.sh来无人值守升级避免下述问题。</p>
+<p>1、看下编译安装nginx的时候，都编译安装的哪些模块。执行命令：<code>/usr/local/nginx/sbin/nginx -V</code>，得到一下信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@WiseImpressionable-VM src]<span class="comment"># /usr/local/nginx/sbin/nginx -V</span></span><br><span class="line">nginx version: nginx/1.10.0</span><br><span class="line">built by gcc 4.4.7 20120313 (Red Hat 4.4.7-17) (GCC)</span><br><span class="line">built with OpenSSL 1.0.1e-fips 11 Feb 2013</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --user=www --group=www --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-ipv6 --with-http_sub_module</span><br></pre></td></tr></table></figure>
+<p>2、进入到nginx的安装目录，（这里吐槽下Virmach，果真是垃圾VPS提供商。母鸡的IPv6服务坏了快一个月都没能好）。我这里用的是当初我安装lnmp时候留下来的安装包。如果没有的话，可以用wget的方法从nginx官网上重新得到安装包。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/lnmp1.3-full/src</span><br><span class="line">tar -xf nginx-1.10.0.tar.gz</span><br><span class="line"><span class="built_in">cd</span> nginx-1.10.0</span><br></pre></td></tr></table></figure>
+<p>3、重新./configure ，添加所需要的模块后使用make编译。格式应该是这样的：”./configure “ + 第一步得到的configure arguments信息 + 你想要添加的模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-ipv6 --with-http_sub_module --with-http_realip_module</span></span><br><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># make</span></span><br></pre></td></tr></table></figure>
+<p>千万要注意：到这里就可以了，千万不要make install，不然文件就会被覆盖了。</p>
+<p>4、备份原先配置，杀掉nginx进程，然后替换nginx二进制文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak</span></span><br><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># killall nginx</span></span><br><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># killall nginx</span></span><br><span class="line">nginx: no process killed</span><br><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># cp ./objs/nginx /usr/local/nginx/sbin/</span></span><br><span class="line">cp: overwrite `/usr/<span class="built_in">local</span>/nginx/sbin/nginx<span class="string">'? yes</span></span><br></pre></td></tr></table></figure>
+<p>5、更改站点的nginx配置文件，在location / {} 中加入第一篇文章中提到的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">set_real_ip_from 103.21.244.0/22;</span><br><span class="line">set_real_ip_from 103.22.200.0/22;</span><br><span class="line">set_real_ip_from 103.31.4.0/22;</span><br><span class="line">set_real_ip_from 104.16.0.0/12;</span><br><span class="line">set_real_ip_from 108.162.192.0/18;</span><br><span class="line">set_real_ip_from 131.0.72.0/22;</span><br><span class="line">set_real_ip_from 141.101.64.0/18;</span><br><span class="line">set_real_ip_from 162.158.0.0/15;</span><br><span class="line">set_real_ip_from 172.64.0.0/13;</span><br><span class="line">set_real_ip_from 173.245.48.0/20;</span><br><span class="line">set_real_ip_from 188.114.96.0/20;</span><br><span class="line">set_real_ip_from 190.93.240.0/20;</span><br><span class="line">set_real_ip_from 197.234.240.0/22;</span><br><span class="line">set_real_ip_from 198.41.128.0/17;</span><br><span class="line">set_real_ip_from 199.27.128.0/21;</span><br><span class="line">set_real_ip_from 2400:cb00::/32;</span><br><span class="line">set_real_ip_from 2606:4700::/32;</span><br><span class="line">set_real_ip_from 2803:f800::/32;</span><br><span class="line">set_real_ip_from 2405:b500::/32;</span><br><span class="line">set_real_ip_from 2405:8100::/32;</span><br><span class="line">set_real_ip_from 2c0f:f248::/32;</span><br><span class="line">set_real_ip_from 2a06:98c0::/29;</span><br><span class="line"><span class="comment"># use any of the following two</span></span><br><span class="line">real_ip_header CF-Connecting-IP;</span><br><span class="line"><span class="comment">#real_ip_header X-Forwarded-For;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、重启nginx服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp nginx restart</span><br></pre></td></tr></table></figure>
+<p>我这里用的是lnmp带的命令，你还可以使用下面的命令来重启并检查nginx运行情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># /usr/local/nginx/sbin/nginx</span></span><br><span class="line">[root@WiseImpressionable-VM nginx-1.10.0]<span class="comment"># netstat -anpt | grep nginx</span></span><br><span class="line">tcp 0 0 0.0.0.0:80 0.0.0.0:* LISTEN 23371/nginx</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">**2018.01.01 更**</span><br><span class="line"></span><br><span class="line">7、自动更新 cloudflare-real-ip 清单</span><br><span class="line">如果你是使用lnmp.org提供的一键包来安装的，请参照进行。</span><br><span class="line"></span><br><span class="line">在nginx配置目录创建cloudflare_ip.conf文件</span><br><span class="line">`touch /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf`</span><br><span class="line"></span><br><span class="line">修改原有的vhost配置，将原来第五步配置的信息改为</span><br><span class="line">`include cloudflare_ip.conf;`</span><br><span class="line"></span><br><span class="line">创建自更新脚本update_cloudflare_ip.sh（假定该文件放在 /root 目录下），内容如下：</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"#Cloudflare"</span> &gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `curl https://www.cloudflare.com/ips-v4`; <span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"set_real_ip_from <span class="variable">$i</span>;"</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `curl https://www.cloudflare.com/ips-v6`; <span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"set_real_ip_from <span class="variable">$i</span>;"</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"# use any of the following two"</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"real_ip_header CF-Connecting-IP;"</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"#real_ip_header X-Forwarded-For;"</span> &gt;&gt; /usr/<span class="built_in">local</span>/nginx/conf/cloudflare_ip.conf;</span><br></pre></td></tr></table></figure>
+<p>配置crontab</p>
+<p><code>0 5 * * 1 /bin/bash /root/update_cloudflare_ip.sh</code></p>
+<p>↑ 每周一的上午5点更新</p>
+<hr>
+<p>作者：Rhilip<br>链接：<a href="https://blog.rhilip.info/archives/256/" target="_blank" rel="noopener">https://blog.rhilip.info/archives/256/</a><br>来源：<a href="https://blog.rhilip.info/" target="_blank" rel="noopener">https://blog.rhilip.info/</a></p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/nginx/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;nginx</a>
+                
+                    <a href="/tags/Cloudflare/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Cloudflare</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/10/23/109/" rel="prev" title="Google Analytics 加载优化">
+                                  
+                                      Google Analytics 加载优化
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Google Analytics
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>linux
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/04/107/" rel="prev" title="江湖儿女">
+                                    
+                                        江湖儿女
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>江湖儿女
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>贾樟柯
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/23/109/">Google Analytics 加载优化</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/04/107/">江湖儿女</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/08/31/106/">VapourSynthEditor 汉化版</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/07/26/105/">Windows10 获取数字许可证 批处理版</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/07/24/104/">ListAssFonts - ass 字幕字体分析工具</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Cloudflare 下 Nginx 获取用户真实 IP 地址',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>29</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>17</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>10</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>7</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tristana.cn/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;不点儿
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.xjh.me/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;岁月小筑
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.xcatliu.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Xcat Liu&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.riverrun.xyz/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;River&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://chuangzaoshi.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;创意狮导航
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.awkxy.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Awkxy运维日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.azimiao.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;梓喵出没
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.goagent.net/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;小小
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://weicn.org/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;WeiCN
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wobeibk.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;我辈博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://so2x.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;so2x
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://darrenliuwei.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;刘伟的博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://affvps.net/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;AFFVPS
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.do1999.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Let me Attente
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.weimo.info/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;未末小城
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget mirror'>
+    <div class='header'><i class="fa fa-clone fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;镜像</div>
+    <div class='content'>
+        <ul class="entry" id="mirror">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bfdz.ink/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;www.bfdz.ink
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.coding.me/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;bfdz.coding.me
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.github.io/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;bfdz.github.io
+                    </div>
+                </a></li>
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:root@bfdz.ink" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/bfdz" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=42333392" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://www.bfdz.ink/atom.xml" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>Theme by <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> ,Hosted by <a href="https://pages.coding.me" target="_blank" class="codename">Coding Pages</a> & <a href="https://pages.github.com/" target="_blank" class="codename">GitHub Pages</a> ,
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-4","https://ga.nas.ink",window,document,navigator,location);
+</script>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz",
+                appKey: "jcsUjAW740MvTyO5DX2mF0Ho",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'identicon',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>

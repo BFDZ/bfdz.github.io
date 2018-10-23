@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Google Analytics 加载优化 | BFDZ</title>
+  <meta name="description" content="BFDZ的博客" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="BFDZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				BFDZ
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/about'>
+    									<i class='fa fa-user fa-'></i>&nbsp;关于
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">BFDZ</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/about'><i class='fa fa-user fa-fw'></i>&nbsp;关于</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-109" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Google Analytics 加载优化
+            
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-23&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Hexo/">Hexo</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p>
+<p>因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。</p>
+<p><a href="https://github.com/giuem/ga-proxy" target="_blank" rel="noopener">GitHub Repo</a> （求 Star🌚</p>
+<a id="more"></a>
+<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>目前关于 Google Analytics 大致有两种方案，一种是本文使用介绍的，另一种是利用 Nginx 的 post_action。</p>
+<p>前者需要多一次 HTTP 请求，后者有点麻烦，还要过滤搜索引擎 UA，不适用于使用 CDN 的网站。</p>
+<p>本文所采用的方案是基于 <a href="https://stneng.com/google-analytics-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%EF%BC%88%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82%EF%BC%89/" target="_blank" rel="noopener">Google Analytics 异步请求（服务端请求）</a> 提供的代码修改的 Go 版本。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-使用我提供的服务"><a href="#1-使用我提供的服务" class="headerlink" title="1. 使用我提供的服务"></a>1. 使用我提供的服务</h3><p>将下面的代码加到你的网站的任意位置，同时修改 <code>&quot;UA-xxxx-x&quot;</code> 为你自己的跟踪代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,d,e</span>)</span>&#123;<span class="keyword">var</span> f=c.screen,g=<span class="built_in">encodeURIComponent</span>,h=[<span class="string">"ga="</span>+a,<span class="string">"dt="</span>+g(d.title),<span class="string">"dr="</span>+g(d.referrer),<span class="string">"ul="</span>+(e.language||e.browserLanguage||e.userLanguage),<span class="string">"sd="</span>+f.colorDepth+<span class="string">"-bit"</span>,<span class="string">"sr="</span>+f.width+<span class="string">"x"</span>+f.height,<span class="string">"vp="</span>+<span class="built_in">Math</span>.max(d.documentElement.clientWidth,c.innerWidth||<span class="number">0</span>)+<span class="string">"x"</span>+<span class="built_in">Math</span>.max(d.documentElement.clientHeight,c.innerHeight||<span class="number">0</span>),<span class="string">"z="</span>+ +<span class="keyword">new</span> <span class="built_in">Date</span>];c.__ga_img=<span class="keyword">new</span> Image,c.__ga_img.src=b+<span class="string">"?"</span>+h.join(<span class="string">"&amp;"</span>)&#125;(<span class="string">"UA-xxxx-x"</span>,<span class="string">"https://ga.giuem.com"</span>,<span class="built_in">window</span>,<span class="built_in">document</span>,navigator,location);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>目前已经部署海外线路（由 CloudFlare 提供），国内为腾讯云上海机房</strong></p>
+<h3 id="2-自己部署服务"><a href="#2-自己部署服务" class="headerlink" title="2. 自己部署服务"></a>2. 自己部署服务</h3><ol>
+<li>安装</li>
+</ol>
+<p>你可以选择自己 <a href="https://github.com/giuem/ga-proxy#build" target="_blank" rel="noopener">编译</a> 或者从 <a href="https://github.com/giuem/ga-proxy/releases/latest" target="_blank" rel="noopener">release</a> 下载我编译好的二进制文件。</p>
+<ol start="2">
+<li>运行</li>
+</ol>
+<p>./ga_proxy [arguments]</p>
+<p>-d, -debug 输出调试信息<br>-s, -skip_ssl 跳过 SSL 验证<br>-l, -listen 监听地址</p>
+<p>要使用后台运行，你可以借助 <code>nohup</code> 或 <code>screen</code> 或 <code>Docker</code>。</p>
+<ol start="3">
+<li>添加 JavaScript 代码</li>
+</ol>
+<p>把上面的那段代码里的 <code>&quot;https://ga.giuem.com&quot;</code> 改成你自己的地址就行了。</p>
+<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p>整个请求花费 33 ms, 156 B 流量可以说是非常快了。服务器的 Ping 值在 29 ms 左右，中间 4 ms 的损失主要花在 SSL 上了，速度还是挺不错的。</p>
+<p>相比之下，原生的请求先加载了一个 12.3 KB 大小的 JS 文件，然后才发送统计，总耗时 300 ms，emmmmm 我就不作过多评价了。</p>
+<hr>
+<p>来源：<a href="https://www.giuem.com/google-analytics-loading-optimize/" target="_blank" rel="noopener">https://www.giuem.com/google-analytics-loading-optimize/</a></p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/Google-Analytics/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Google Analytics</a>
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;linux</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/23/108/" rel="prev" title="Cloudflare 下 Nginx 获取用户真实 IP 地址">
+                                    
+                                        Cloudflare 下 Nginx 获取用户真实 IP 地址
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>nginx
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Cloudflare
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/23/108/">Cloudflare 下 Nginx 获取用户真实 IP 地址</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/04/107/">江湖儿女</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/08/31/106/">VapourSynthEditor 汉化版</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/07/26/105/">Windows10 获取数字许可证 批处理版</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/07/24/104/">ListAssFonts - ass 字幕字体分析工具</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Google Analytics 加载优化',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>29</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>17</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>10</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>7</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tristana.cn/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;不点儿
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.xjh.me/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;岁月小筑
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.xcatliu.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Xcat Liu&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.riverrun.xyz/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;River&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://chuangzaoshi.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;创意狮导航
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.awkxy.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Awkxy运维日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.azimiao.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;梓喵出没
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.goagent.net/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;小小
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://weicn.org/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;WeiCN
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wobeibk.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;我辈博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://so2x.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;so2x
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://darrenliuwei.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;刘伟的博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://affvps.net/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;AFFVPS
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.do1999.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Let me Attente
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.weimo.info/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;未末小城
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget mirror'>
+    <div class='header'><i class="fa fa-clone fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;镜像</div>
+    <div class='content'>
+        <ul class="entry" id="mirror">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bfdz.ink/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;www.bfdz.ink
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.coding.me/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;bfdz.coding.me
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.github.io/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;bfdz.github.io
+                    </div>
+                </a></li>
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#序"><span class="toc-text">序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用我提供的服务"><span class="toc-text">1. 使用我提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-自己部署服务"><span class="toc-text">2. 自己部署服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用效果"><span class="toc-text">使用效果</span></a></li></ol>
+        </div>
+    </section>
+
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:root@bfdz.ink" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/bfdz" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=42333392" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://www.bfdz.ink/atom.xml" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>Theme by <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> ,Hosted by <a href="https://pages.coding.me" target="_blank" class="codename">Coding Pages</a> & <a href="https://pages.github.com/" target="_blank" class="codename">GitHub Pages</a> ,
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-4","https://ga.nas.ink",window,document,navigator,location);
+</script>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz",
+                appKey: "jcsUjAW740MvTyO5DX2mF0Ho",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'identicon',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
