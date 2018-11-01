@@ -178,7 +178,7 @@ $(function () {
             alert("空字符，请检查输入");
         } else if (/^http/.test(input_value)) {
             query_btn.disable();
-            $.getJSON("https://api.rhilip.info/tool/movieinfo/gen", {
+            $.getJSON("https://api.nas.ink/movieinfo/gen", {
                 url: input_value
             }).success(function (data) {
                 out_textarea.val(data["success"] ? data["format"] : data["error"]);
