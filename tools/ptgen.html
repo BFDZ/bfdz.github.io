@@ -208,8 +208,13 @@ $(function () {
 new ClipboardJS('.btn-clipboard');
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-5"></script>
 <script>
-!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-5","https://ga.giuem.com",window,document,navigator,location);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-64016301-5');
 </script>
 </body>
 </html>
