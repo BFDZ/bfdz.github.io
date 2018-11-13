@@ -9,7 +9,12 @@ var customSearch;
 		const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
 		$('html, body').animate({ 'scrollTop': $elem.offset().top - correction }, 400);
 	};
-
+	document.onkeydown = function() {
+    	if (event.keyCode == 9) {
+      		return false;
+    		}
+  	}
+	
 	function setHeader() {
 		if (!window.subData) return;
 		const $wrapper = $('header .wrapper');

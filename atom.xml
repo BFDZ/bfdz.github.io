@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>BFDZ</title>
-  
+  <icon>https://www.gravatar.com/avatar/39a46f8a8535589b4b2447373fb1676c</icon>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>BFDZ</name>
-    
+    <email>root@bfdz.ink</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -96,9 +96,9 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
     
     
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
       <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
   </entry>
   
