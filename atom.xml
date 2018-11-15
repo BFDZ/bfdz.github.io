@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2018-11-09T11:18:10.076Z</updated>
+  <updated>2018-11-15T17:00:11.687Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows 配置启用 NFS 共享</title>
+    <link href="https://www.bfdz.ink/2018/11/16/112/"/>
+    <id>https://www.bfdz.ink/2018/11/16/112/</id>
+    <published>2018-11-15T16:10:00.000Z</published>
+    <updated>2018-11-15T17:00:11.687Z</updated>
+    
+    <content type="html"><![CDATA[<p>适用系统：Windows 7/10<br>软件：WinNFSd<br>软件发布地址：<a href="https://github.com/winnfsd/winnfsd/releases" target="_blank" rel="noopener">https://github.com/winnfsd/winnfsd/releases</a></p><p>文件共享服务常见的几种方法有：FTP、Samba、NFS 。Windows 家用版内置的共享功能是采用的 Samba，服务器版才内置有 nfs server，所以在家用电脑上开启 NFS 共享需要另外安装 NFS 服务端。<br>网络上常见的配置 nfs 共享教程均是使用 haneWIN NFS Server ，但这个软件是收费的，而且也长时间没更新。本文将介绍一款免费开源的软件 WinNFSd。</p><a id="more"></a><hr><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>从 GitHub 的发布地址下载 WinNFSd，新建一个文件夹，例如：<code>C:\winnfsd</code>,将 WinNFSd 放入其中。</p><h2 id="配置共享路径"><a href="#配置共享路径" class="headerlink" title="配置共享路径"></a>配置共享路径</h2><p>在 winnfsd 文件夹中新建文本 <code>exports.txt</code>，打开 exports ，填写需要共享的路径，例如：<code>F:\Videos</code>。（国外教程说路径要从第二行开始才有用，但我在 win10 上尝试在第一行写也有用，可能这个 bug 已经修复了。）</p><h2 id="创建启动脚本"><a href="#创建启动脚本" class="headerlink" title="创建启动脚本"></a>创建启动脚本</h2><p>在 winnfsd 文件夹中新建脚本 <code>nfsservice.bat</code>, 填写 <code>winnfsd.exe -id 0 0 -log off -pathFile &quot;C:\winnfsd\exports.txt&quot;</code> 并保存。右键 <code>nfsservice.bat</code> 发送快捷方式到桌面，然后将快捷方式移动到用户的启动路径内 <code>%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 。双击 nfsservice.bat 程序就会启动，或者重启电脑程序会开机启动。</p><hr><p>参考资料：</p><ul><li><a href="https://forum.kodi.tv/showthread.php?tid=329452" target="_blank" rel="noopener">Add NFS server capabilities to Windows (free)</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;适用系统：Windows 7/10&lt;br&gt;软件：WinNFSd&lt;br&gt;软件发布地址：&lt;a href=&quot;https://github.com/winnfsd/winnfsd/releases&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/winnfsd/winnfsd/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;文件共享服务常见的几种方法有：FTP、Samba、NFS 。Windows 家用版内置的共享功能是采用的 Samba，服务器版才内置有 nfs server，所以在家用电脑上开启 NFS 共享需要另外安装 NFS 服务端。&lt;br&gt;网络上常见的配置 nfs 共享教程均是使用 haneWIN NFS Server ，但这个软件是收费的，而且也长时间没更新。本文将介绍一款免费开源的软件 WinNFSd。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
+    
+    
+      <category term="nfs" scheme="https://www.bfdz.ink/tags/nfs/"/>
+    
+  </entry>
   
   <entry>
     <title>PT-Gen 后端搭建</title>
@@ -515,32 +538,6 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/tags/Hexo/"/>
     
       <category term="GitHub Pages" scheme="https://www.bfdz.ink/tags/GitHub-Pages/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>绅士站整理</title>
-    <link href="https://www.bfdz.ink/2018/05/01/92/"/>
-    <id>https://www.bfdz.ink/2018/05/01/92/</id>
-    <published>2018-05-01T10:00:00.000Z</published>
-    <updated>2018-05-01T10:18:22.951Z</updated>
-    
-    <content type="html"><![CDATA[<p>有些被认证了或者服务器在欧美，需自备富强工具访问。</p><a id="more"></a><hr><p><strong>种子</strong></p><p>1 . NYAA：全球最大的亚洲动漫站，分表站和里站，表站正经向，里站绅士向。</p><ul><li><a href="https://nyaa.si/" target="_blank" rel="noopener">表站</a></li><li><a href="https://sukebei.nyaa.si/" target="_blank" rel="noopener">里站</a></li></ul><p>2 . AniRena：最新动漫和种子</p><ul><li><a href="https://www.anirena.com/" target="_blank" rel="noopener">AniRena</a></li></ul><p>3 . Tokyo Toshokan：东京图书馆，专注日本资源</p><ul><li><a href="https://www.tokyotosho.info/" target="_blank" rel="noopener">Tokyo Toshokan</a></li></ul><p>4 . Mteam：玩 PT 的应该都知道，馒头的特色</p><ul><li><a href="https://tp.m-team.cc/" target="_blank" rel="noopener">Mteam</a></li></ul><hr><p><strong>本子</strong></p><p>1 . E站：里站有表站搜不到的萝莉和重口</p><ul><li><a href="https://e-hentai.org/" target="_blank" rel="noopener">表站</a></li><li><a href="https://exhentai.org/" target="_blank" rel="noopener">里站</a></li></ul><p>2 . 南+：曾经叫北+、魂+</p><ul><li><a href="https://www.south-plus.net/" target="_blank" rel="noopener">南+</a></li></ul><hr><p><strong>图站</strong></p><p>1 . P站：打开R18，就是一个新天地</p><ul><li><a href="https://www.pixiv.net/" target="_blank" rel="noopener">pixiv</a></li></ul><p>2 . K站：有了K站，再也不用担心找不到壁纸啦</p><ul><li><a href="http://konachan.com/" target="_blank" rel="noopener">konachan</a></li></ul><p>3 . Multi-service image search：一个图片搜索站</p><ul><li><a href="http://iqdb.org/" target="_blank" rel="noopener">Multi-service image search</a></li></ul><p>4 . Sankaku Complex：chan是二次元，idol是三次元</p><ul><li><a href="https://www.sankakucomplex.com/" target="_blank" rel="noopener">Sankaku Complex</a></li><li><a href="https://chan.sankakucomplex.com/" target="_blank" rel="noopener">chan</a></li><li><a href="https://idol.sankakucomplex.com/" target="_blank" rel="noopener">idol</a></li></ul><p>5 . nijie：需要注册，感觉是想要做成一个只有R18的Pixiv的样子</p><ul><li><a href="http://nijie.info/" target="_blank" rel="noopener">nijie</a></li></ul><p>6 . 桃色虹画像：没什么好说的，满天坠的小黄图</p><ul><li><a href="http://momoniji.com/" target="_blank" rel="noopener">桃色虹画像</a></li></ul><p>7 . 绝对领域：擦边向三次元福利</p><ul><li><a href="http://www.jdlingyu.fun/" target="_blank" rel="noopener">绝对领域</a></li></ul><hr><p><strong>博客</strong></p><p>1 . 琉璃神社</p><ul><li><a href="https://www.llss.pw/wp/" target="_blank" rel="noopener">琉璃神社</a></li><li><a href="https://www.llss.pw/" target="_blank" rel="noopener">llss</a></li><li><a href="https://www.hacg.wiki/" target="_blank" rel="noopener">hacg</a></li></ul><p>2 . 绅士仓库：右边友情链接的一堆网站才是重点</p><ul><li><a href="https://cangku.in/" target="_blank" rel="noopener">绅士仓库</a></li></ul><p>3 . 灵梦御所</p><ul><li><a href="https://blog.reimu.net/" target="_blank" rel="noopener">灵梦御所</a></li></ul><p>4 . 猫之仓库</p><ul><li><a href="https://www.catacg.com/" target="_blank" rel="noopener">猫の仓库</a></li></ul><p>5 . MyGalgame</p><ul><li><a href="https://www.mygalgame.com/" target="_blank" rel="noopener">MyGalgame</a></li></ul><p>6 . hentai4daily：体验不怎么样，很多链接是网赚网盘，其实这个站有的其他站也能找到</p><ul><li><a href="http://hentai4daily.com/" target="_blank" rel="noopener">hentai4daily</a></li></ul><hr><p><strong>论坛</strong></p><p>1 . Mikocon - 2DJGAME ：mikocon 是国际站，2djgame 是中文站，两个坛子资源一样的</p><ul><li><a href="http://bbs.mikocon.com/forum.php" target="_blank" rel="noopener">mikocon</a></li><li><a href="https://bbs4.2djgame.net/home/forum.php" target="_blank" rel="noopener">2djgame</a></li></ul><p>2 . ZodGame：找 I 社作品的好去处</p><ul><li><a href="https://www.zodgame.us/" target="_blank" rel="noopener">ZodGame</a></li></ul><p>3 . 绯月Galgame：2DFan 附属资源站</p><ul><li><a href="http://bbs.2dkf.com/" target="_blank" rel="noopener">绯月Galgame</a></li></ul><p>4 . HongFire：歪果仁开发了不少工具和模组</p><ul><li><a href="http://www.hongfire.com/forum/" target="_blank" rel="noopener">HongFire</a></li></ul><p>5 . 灵梦广场：灵梦御所附属论坛</p><ul><li><a href="https://acg.is/" target="_blank" rel="noopener">灵梦广场</a></li></ul><hr><p><strong>攻略/补丁</strong></p><p>1 . 2DFan：galgame 介绍、补丁、攻略</p><ul><li><a href="https://www.2dfan.com/" target="_blank" rel="noopener">2DFan</a></li></ul><p>2 . 誠也の部屋</p><ul><li><a href="http://seiya-saiga.com/" target="_blank" rel="noopener">誠也の部屋</a></li></ul><hr><p><strong>在线视频</strong></p><p>1 . FC2 Video：名站，无论是三次元还是二次元都有不少很棒的视频</p><ul><li><a href="https://video.fc2.com/en/" target="_blank" rel="noopener">FC2 Video</a></li></ul><p>2 . xvideos：全球最大的 xxx 视频站，东西方三次元和二次元的内容都有</p><ul><li><a href="http://www.xvideos.com/" target="_blank" rel="noopener">xvideos</a></li></ul><p>3 . Pronhub：类型和 xvideos 一样，甚至有很多重复内容</p><ul><li><a href="https://www.pornhub.com/" target="_blank" rel="noopener">Pronhub</a></li></ul><p>4 . vimeo：原以为vimeo是个很正经的网站，不过一搜MMD好像不少R18的样子</p><ul><li><a href="https://vimeo.com/" target="_blank" rel="noopener">vimeo</a></li></ul><hr><p>指路人：<a href="https://acg.is/d/47" target="_blank" rel="noopener">https://acg.is/d/47</a><br>在原文基础上有所增减。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有些被认证了或者服务器在欧美，需自备富强工具访问。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="acg" scheme="https://www.bfdz.ink/tags/acg/"/>
-    
-      <category term="galgame" scheme="https://www.bfdz.ink/tags/galgame/"/>
-    
-      <category term="hgame" scheme="https://www.bfdz.ink/tags/hgame/"/>
     
   </entry>
   

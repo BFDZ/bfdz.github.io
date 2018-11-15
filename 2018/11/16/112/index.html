@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Windows 配置启用 NFS 共享 | BFDZ</title>
+  <meta name="description" content="BFDZ的博客" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="BFDZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.loli.net/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				BFDZ
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='https://www.bfdz.ink/archives/'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='https://www.bfdz.ink/about/'>
+    									<i class='fa fa-user fa-'></i>&nbsp;关于
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">BFDZ</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='https://www.bfdz.ink/archives/'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='https://www.bfdz.ink/about/'><i class='fa fa-user fa-fw'></i>&nbsp;关于</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-112" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Windows 配置启用 NFS 共享
+            
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-16&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Windows/">Windows</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>适用系统：Windows 7/10<br>软件：WinNFSd<br>软件发布地址：<a href="https://github.com/winnfsd/winnfsd/releases" target="_blank" rel="noopener">https://github.com/winnfsd/winnfsd/releases</a></p>
+<p>文件共享服务常见的几种方法有：FTP、Samba、NFS 。Windows 家用版内置的共享功能是采用的 Samba，服务器版才内置有 nfs server，所以在家用电脑上开启 NFS 共享需要另外安装 NFS 服务端。<br>网络上常见的配置 nfs 共享教程均是使用 haneWIN NFS Server ，但这个软件是收费的，而且也长时间没更新。本文将介绍一款免费开源的软件 WinNFSd。</p>
+<a id="more"></a>
+<hr>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>从 GitHub 的发布地址下载 WinNFSd，新建一个文件夹，例如：<code>C:\winnfsd</code>,将 WinNFSd 放入其中。</p>
+<h2 id="配置共享路径"><a href="#配置共享路径" class="headerlink" title="配置共享路径"></a>配置共享路径</h2><p>在 winnfsd 文件夹中新建文本 <code>exports.txt</code>，打开 exports ，填写需要共享的路径，例如：<code>F:\Videos</code>。（国外教程说路径要从第二行开始才有用，但我在 win10 上尝试在第一行写也有用，可能这个 bug 已经修复了。）</p>
+<h2 id="创建启动脚本"><a href="#创建启动脚本" class="headerlink" title="创建启动脚本"></a>创建启动脚本</h2><p>在 winnfsd 文件夹中新建脚本 <code>nfsservice.bat</code>, 填写 <code>winnfsd.exe -id 0 0 -log off -pathFile &quot;C:\winnfsd\exports.txt&quot;</code> 并保存。右键 <code>nfsservice.bat</code> 发送快捷方式到桌面，然后将快捷方式移动到用户的启动路径内 <code>%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 。双击 nfsservice.bat 程序就会启动，或者重启电脑程序会开机启动。</p>
+<hr>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://forum.kodi.tv/showthread.php?tid=329452" target="_blank" rel="noopener">Add NFS server capabilities to Windows (free)</a></li>
+</ul>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/nfs/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;nfs</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/09/111/" rel="prev" title="PT-Gen 后端搭建">
+                                    
+                                        PT-Gen 后端搭建
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>linux
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>pt
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/09/111/">PT-Gen 后端搭建</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/31/110/">电影简介生成工具</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/23/109/">Google Analytics 加载优化</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/23/108/">Cloudflare 下 Nginx 获取用户真实 IP 地址</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/10/04/107/">江湖儿女</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Windows 配置启用 NFS 共享',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>30</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>18</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>10</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>7</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xiaoxun.jpg">
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tristana.cn/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/64mb.ico">
+                        
+                        &nbsp;&nbsp;不点儿
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.xjh.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xjh.ico">
+                        
+                        &nbsp;&nbsp;岁月小筑
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.xcatliu.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xcatliu.ico">
+                        
+                        &nbsp;&nbsp;Xcat Liu&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://chuangzaoshi.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;创意狮导航
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.azimiao.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/azimiao.ico">
+                        
+                        &nbsp;&nbsp;梓喵出没
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.goagent.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;小小
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://weicn.org/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/weicn.ico">
+                        
+                        &nbsp;&nbsp;WeiCN
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wobeibk.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wobeibk.ico">
+                        
+                        &nbsp;&nbsp;我辈博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://affvps.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/affvps.png">
+                        
+                        &nbsp;&nbsp;AFFVPS
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.do1999.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/do1999.ico">
+                        
+                        &nbsp;&nbsp;Let me Attente
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.weimo.info/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;未末小城
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.wushile.top/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wushile.ico">
+                        
+                        &nbsp;&nbsp;小吴博客
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        <section class='m_widget mirror'>
+    <div class='header'><i class="fa fa-clone fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;镜像</div>
+    <div class='content'>
+        <ul class="entry" id="mirror">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bfdz.ink/">
+                    <div class='name'>
+                        
+                            <img src="/favicon.ico">
+                        
+                        &nbsp;&nbsp;www.bfdz.ink
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.coding.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/coding.ico">
+                        
+                        &nbsp;&nbsp;bfdz.coding.me
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.github.io/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/github.ico">
+                        
+                        &nbsp;&nbsp;bfdz.github.io
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置共享路径"><span class="toc-text">配置共享路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建启动脚本"><span class="toc-text">创建启动脚本</span></a></li></ol>
+        </div>
+    </section>
+
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:root@bfdz.ink" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/bfdz" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=42333392" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://www.bfdz.ink/atom.xml" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>Theme by <a href="https://github.com/BFDZ/hexo-theme-material-x" target="_blank" class="codename">Material X</a> ,Hosted by <a href="https://pages.coding.me" target="_blank" class="codename">Coding Pages</a> & <a href="https://pages.github.com/" target="_blank" class="codename">GitHub Pages</a> ,
+		view <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> times.
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-4","https://ga.giuem.com",window,document,navigator,location);
+</script>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz",
+                appKey: "jcsUjAW740MvTyO5DX2mF0Ho",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'identicon',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>

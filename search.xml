@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Windows 配置启用 NFS 共享</title>
+      <link href="/2018/11/16/112/"/>
+      <url>/2018/11/16/112/</url>
+      
+        <content type="html"><![CDATA[<p>适用系统：Windows 7/10<br>软件：WinNFSd<br>软件发布地址：<a href="https://github.com/winnfsd/winnfsd/releases" target="_blank" rel="noopener">https://github.com/winnfsd/winnfsd/releases</a></p><p>文件共享服务常见的几种方法有：FTP、Samba、NFS 。Windows 家用版内置的共享功能是采用的 Samba，服务器版才内置有 nfs server，所以在家用电脑上开启 NFS 共享需要另外安装 NFS 服务端。<br>网络上常见的配置 nfs 共享教程均是使用 haneWIN NFS Server ，但这个软件是收费的，而且也长时间没更新。本文将介绍一款免费开源的软件 WinNFSd。</p><a id="more"></a><hr><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>从 GitHub 的发布地址下载 WinNFSd，新建一个文件夹，例如：<code>C:\winnfsd</code>,将 WinNFSd 放入其中。</p><h2 id="配置共享路径"><a href="#配置共享路径" class="headerlink" title="配置共享路径"></a>配置共享路径</h2><p>在 winnfsd 文件夹中新建文本 <code>exports.txt</code>，打开 exports ，填写需要共享的路径，例如：<code>F:\Videos</code>。（国外教程说路径要从第二行开始才有用，但我在 win10 上尝试在第一行写也有用，可能这个 bug 已经修复了。）</p><h2 id="创建启动脚本"><a href="#创建启动脚本" class="headerlink" title="创建启动脚本"></a>创建启动脚本</h2><p>在 winnfsd 文件夹中新建脚本 <code>nfsservice.bat</code>, 填写 <code>winnfsd.exe -id 0 0 -log off -pathFile &quot;C:\winnfsd\exports.txt&quot;</code> 并保存。右键 <code>nfsservice.bat</code> 发送快捷方式到桌面，然后将快捷方式移动到用户的启动路径内 <code>%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 。双击 nfsservice.bat 程序就会启动，或者重启电脑程序会开机启动。</p><hr><p>参考资料：</p><ul><li><a href="https://forum.kodi.tv/showthread.php?tid=329452" target="_blank" rel="noopener">Add NFS server capabilities to Windows (free)</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nfs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>PT-Gen 后端搭建</title>
       <link href="/2018/11/09/111/"/>
       <url>/2018/11/09/111/</url>
