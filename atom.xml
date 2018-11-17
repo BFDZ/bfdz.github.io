@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2018-11-15T17:00:11.687Z</updated>
+  <updated>2018-11-17T17:34:40.548Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>影片编码查询和规则说明</title>
+    <link href="https://www.bfdz.ink/2018/11/18/113/"/>
+    <id>https://www.bfdz.ink/2018/11/18/113/</id>
+    <published>2018-11-17T16:11:00.000Z</published>
+    <updated>2018-11-17T17:34:40.548Z</updated>
+    
+    <content type="html"><![CDATA[<p>影片编码查询网址：<a href="https://www.zgdypw.cn/#/film.html" target="_blank" rel="noopener">https://www.zgdypw.cn/#/film.html</a></p><p>每一部在中国大陆上映的电影必须经过审批，取得电影片公映许可证（俗称龙标）。影片编码即电影片公映许可证上的影片排次号。</p><p>此网站可以查询所有获得影片编码的电影，并导出数据。</p><a id="more"></a><hr><p>影片编码规则说明</p><p><img src="https://ws3.sinaimg.cn/large/92253953gy1fxbkipgkaej20pw20pqf1.jpg" alt="影片编码规则说明"></p><p>电影片公映许可证示例</p><p><img src="https://wx2.sinaimg.cn/large/92253953gy1fxbkfgpqyyj20h80nxt9h.jpg" alt="电影片公映许可证"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;影片编码查询网址：&lt;a href=&quot;https://www.zgdypw.cn/#/film.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.zgdypw.cn/#/film.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;每一部在中国大陆上映的电影必须经过审批，取得电影片公映许可证（俗称龙标）。影片编码即电影片公映许可证上的影片排次号。&lt;/p&gt;
+&lt;p&gt;此网站可以查询所有获得影片编码的电影，并导出数据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="影片编码" scheme="https://www.bfdz.ink/tags/%E5%BD%B1%E7%89%87%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="龙标" scheme="https://www.bfdz.ink/tags/%E9%BE%99%E6%A0%87/"/>
+    
+      <category term="电影放映许可证" scheme="https://www.bfdz.ink/tags/%E7%94%B5%E5%BD%B1%E6%94%BE%E6%98%A0%E8%AE%B8%E5%8F%AF%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows 配置启用 NFS 共享</title>
@@ -119,9 +147,9 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
     
     
-      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
-    
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
     
   </entry>
   
@@ -512,32 +540,6 @@
     
     
       <category term="PT" scheme="https://www.bfdz.ink/tags/PT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Pages 自定义域名正式支持 HTTPS</title>
-    <link href="https://www.bfdz.ink/2018/05/03/93/"/>
-    <id>https://www.bfdz.ink/2018/05/03/93/</id>
-    <published>2018-05-03T11:50:00.000Z</published>
-    <updated>2018-05-03T11:58:21.166Z</updated>
-    
-    <content type="html"><![CDATA[<p>来自 GitHub 的官方公告 <a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">Custom domains on GitHub Pages gain support for HTTPS</a>，从 5 月 1 日开始，托管在 GitHub Pages 上面的网站，自定义域名也可以使用 HTTPS 了，之前只有 github.io 的三级域名支持 HTTPS。</p><a id="more"></a><hr><p>公告介绍了配置方法，在 Pages 项目仓库的设置中，先删掉以前绑定的自定义域名，然后重新添加域名来激活证书的颁发程序，再勾选 Enforce HTTPS。公告称证书颁发时间是一个小时内，我在配置后有很长时间博客都是处于证书错误阶段，证书显示来自 <code>*.github.com</code> ,所以实际证书颁发可能需要几个小时。</p><p>和 Coding Pages 相比，GitHub 的配置不够人性化。Coding 的配置中有证书颁发进度，有效期等提示，并且 Coding 早在去年 7 月就增加了支持自定义域名 HTTPS。但是 Github 优势在于其快速的全球 CDN，强大的防御能力。毕竟 Github 抗过全球最大峰值流量的 DDOS ，感觉稳定性应该是最好的。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;来自 GitHub 的官方公告 &lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Custom domains on GitHub Pages gain support for HTTPS&lt;/a&gt;，从 5 月 1 日开始，托管在 GitHub Pages 上面的网站，自定义域名也可以使用 HTTPS 了，之前只有 github.io 的三级域名支持 HTTPS。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
-    
-    
-      <category term="运维" scheme="https://www.bfdz.ink/tags/%E8%BF%90%E7%BB%B4/"/>
-    
-      <category term="Hexo" scheme="https://www.bfdz.ink/tags/Hexo/"/>
-    
-      <category term="GitHub Pages" scheme="https://www.bfdz.ink/tags/GitHub-Pages/"/>
     
   </entry>
   
