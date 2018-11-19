@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>简单的 onedrive 上传工具</title>
+      <link href="/2018/11/19/114/"/>
+      <url>/2018/11/19/114/</url>
+      
+        <content type="html"><![CDATA[<p>工具网址：<a href="https://github.com/0oVicero0/OneDrive" target="_blank" rel="noopener">https://github.com/0oVicero0/OneDrive</a></p><p>特性:<br>1.支持文件夹上传.<br>2.支持获取文件的匿名直链.<br>3.纯shell支持.</p><a id="more"></a><hr><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO- <span class="string">"https://raw.githubusercontent.com/0oVicero0/OneDrive/master/OneDrive.sh"</span> |bash</span><br></pre></td></tr></table></figure><h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onedrive -a</span><br></pre></td></tr></table></figure><p>复制授权链接到浏览器打开，确认授权以后，浏览器进入空白页面，复制地址栏 <code>code=</code> 后面的字符串粘贴到 shell 窗口并按 Enter。</p><h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">onedrive --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#####################################################################</span></span><br><span class="line">Usage: onedrive [OPTIONS] file1 [file2...]</span><br><span class="line">       onedrive<span class="_">-d</span> folder</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -d, --debug        Enable debug mode</span><br><span class="line">  -a, --authorize    Run authorization process</span><br><span class="line">  -f, --folder       Upload files into this remote folder</span><br><span class="line">  -c, --creat        Creat remote folder.<span class="string">"</span></span><br><span class="line"><span class="string">                     Directory names are separated with a slash, e.g.</span></span><br><span class="line"><span class="string">                     rootFolder/subFolder</span></span><br><span class="line"><span class="string">                     Do NOT use a trailing slash!</span></span><br><span class="line"><span class="string">  -h, --help         Show this help</span></span><br><span class="line"><span class="string">  -r, --rename       Rename the files during upload</span></span><br><span class="line"><span class="string">                     For each file you specify you MUST also specify</span></span><br><span class="line"><span class="string">                     the remote filename as the subsequent parameter</span></span><br><span class="line"><span class="string">                     Be especially careful with globbing!</span></span><br><span class="line"><span class="string">  -s, --silent       Silent mode for use in crontab scripts.</span></span><br><span class="line"><span class="string">                     Return only exit code.</span></span><br><span class="line"><span class="string">  -ls,--list         Show the itmes in this directory.</span></span><br><span class="line"><span class="string">  -l, --link         Show the file share link.</span></span><br><span class="line"><span class="string">      </span></span><br><span class="line"><span class="string">#####################################################################</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> onedrive </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>影片编码查询和规则说明</title>
       <link href="/2018/11/18/113/"/>
       <url>/2018/11/18/113/</url>
@@ -1742,9 +1765,9 @@
             
             <tag> linux </tag>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
@@ -1931,7 +1954,7 @@
       
       <categories>
           
-          <category> 学习笔记 </category>
+          <category> ARM </category>
           
       </categories>
       
@@ -1990,9 +2013,9 @@
       
         <tags>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
