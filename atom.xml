@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2018-11-19T02:10:22.602Z</updated>
+  <updated>2018-11-29T09:18:42.908Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云 24元/月/1GB内存/香港/新加坡</title>
+    <link href="https://www.bfdz.ink/2018/11/29/115/"/>
+    <id>https://www.bfdz.ink/2018/11/29/115/</id>
+    <published>2018-11-29T09:09:00.000Z</published>
+    <updated>2018-11-29T09:18:42.908Z</updated>
+    
+    <content type="html"><![CDATA[<p>阿里云，特色是稳定，国内、香港、新加坡等线路均有，适合各种需求。最新推出了轻量应用服务器，即KVM VPS，其中有香港数据中心，而且给的30Mbps带宽，相当给力！每账户限5台！同时，每台服务器均可创建3个快照，每账户最多15个，这为备份和搬家提供了绝好功用。</p><a id="more"></a><hr><p><strong>最低套餐配置</strong></p><p>轻量 1GB<br>vCPU：1<br>内存：1 GB<br>空间：25 GB SSD（RAID 10）<br>流量：1 TB / 月（30 Mbps 端口）<br>IPv4：1<br>24元/月</p><p>轻量 2GB<br>vCPU：1<br>内存：2 GB<br>空间：40 GB SSD（RAID 10）<br>流量：2 TB / 月（30 Mbps 端口）<br>IPv4：1<br>34元/月</p><hr><p><strong>购买地址</strong></p><p>香港VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy</a></p><p>新加坡VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy</a></p><p>香港测试IP：149.129.85.xxx（xxx改为1-255之间的数字）</p><p>新加坡测评IP：149.129.49.xxx</p><hr><p><strong>其他链接</strong></p><p>轻量云服务器管理地址：<a href="https://swas.console.aliyun.com/#/servers" target="_blank" rel="noopener">https://swas.console.aliyun.com/#/servers</a></p><p>脚本一键重装纯净Linux或者dd安装Windows系统：<a href="https://moeclub.org/2018/04/03/603/" target="_blank" rel="noopener">https://moeclub.org/2018/04/03/603/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;阿里云，特色是稳定，国内、香港、新加坡等线路均有，适合各种需求。最新推出了轻量应用服务器，即KVM VPS，其中有香港数据中心，而且给的30Mbps带宽，相当给力！每账户限5台！同时，每台服务器均可创建3个快照，每账户最多15个，这为备份和搬家提供了绝好功用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="VPS" scheme="https://www.bfdz.ink/categories/VPS/"/>
+    
+    
+      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="阿里云" scheme="https://www.bfdz.ink/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+      <category term="香港" scheme="https://www.bfdz.ink/tags/%E9%A6%99%E6%B8%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>简单的 onedrive 上传工具</title>
@@ -170,9 +196,9 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
     
     
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
       <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
   </entry>
   
@@ -500,32 +526,6 @@
     <summary type="html">
     
       &lt;p&gt;tsukaeru VPS购买教程：&lt;a href=&quot;https://www.bfdz.ink/2018/06/08/95/&quot;&gt;tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程&lt;/a&gt;&lt;br&gt;每月18元，日本100M不限流量的KVM VPS，电信、联通直连，移动绕香港，性能、I/O、网络都很不错。&lt;br&gt;&lt;strong&gt;关于折扣：为一次性折扣。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="VPS" scheme="https://www.bfdz.ink/categories/VPS/"/>
-    
-    
-      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
-    
-      <category term="tsukaeru" scheme="https://www.bfdz.ink/tags/tsukaeru/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程</title>
-    <link href="https://www.bfdz.ink/2018/06/08/95/"/>
-    <id>https://www.bfdz.ink/2018/06/08/95/</id>
-    <published>2018-06-08T12:45:00.000Z</published>
-    <updated>2018-06-09T06:57:40.760Z</updated>
-    
-    <content type="html"><![CDATA[<p>tsukaeru，提供100M不限流量的日本VPS，三网直连，很不错。</p><p>tsukaeru VPS测评：<a href="https://www.bfdz.ink/2018/06/08/96/">tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评</a></p><p><strong>一、购买tsukaeru KVM VPS</strong><br>1、进入官网：<a href="https://www.tsukaeru.net/" target="_blank" rel="noopener">www.tsukaeru.net</a><br><a id="more"></a></p><hr><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/3167642094.jpg" alt="tsukaeru-1.jpg" title="tsukaeru-1.jpg"></p><p>选择KVM，最好年付，因为是一次性折扣，而且有1000日元的安装费，月付很不划算。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/881861679.jpg" alt="tsukaeru-2.jpg" title="tsukaeru-2.jpg"></p><p>下面以512MB内的KVM VPS为例说明。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/4060159446.jpg" alt="tsukaeru-3.jpg" title="tsukaeru-3.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/1878689169.jpg" alt="tsukaeru-4.jpg" title="tsukaeru-4.jpg"></p><p>建议选择SSD硬盘的。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2464219040.jpg" alt="tsukaeru-5.jpg" title="tsukaeru-5.jpg"></p><p>建议选择年付及以上，其他不要选。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2449077414.jpg" alt="tsukaeru-6.jpg" title="tsukaeru-6.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/1916509014.jpg" alt="tsukaeru-7.jpg" title="tsukaeru-7.jpg"></p><p>2、注册账号，可以使用中文。名字、地址最好和身份证上的一样，这样会一次验证通过。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/3802064662.jpg" alt="tsukaeru-8.jpg" title="tsukaeru-8.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/2626608218.jpg" alt="tsukaeru-9.jpg" title="tsukaeru-9.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/175896993.jpg" alt="tsukaeru-10.jpg" title="tsukaeru-10.jpg"></p><p><strong><em>现在取消了验证！！</em></strong></p><p>3、付款<br>进入后台：<a href="https://cp.tsukaeru.ne.jp/" target="_blank" rel="noopener">https://cp.tsukaeru.ne.jp/</a><br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2478340823.jpg" alt="tsukaeru-11.jpg" title="tsukaeru-11.jpg"></p><p>选择自己的VPS，如果买了多个的话。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2796802700.jpg" alt="tsukaeru-12.jpg" title="tsukaeru-12.jpg"></p><p>进入付款页面。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/1518111661.jpg" alt="tsukaeru-13.jpg" title="tsukaeru-13.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/3734199030.jpg" alt="tsukaeru-14.jpg" title="tsukaeru-14.jpg"></p><p><img src="https://zhujiwiki.com/usr/uploads/2018/06/2028440531.jpg" alt="tsukaeru-15.jpg" title="tsukaeru-15.jpg"></p><p><strong>二、tsukaeru VPS的管理</strong><br>1、如图即可。<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/3210971539.jpg" alt="tsukaeru-20.jpg" title="tsukaeru-20.jpg"></p><p>下图就是放行所有端口（tcp和udp）<br><img src="https://zhujiwiki.com/usr/uploads/2018/06/2358901329.jpg" alt="tsukaeru-21.jpg" title="tsukaeru-21.jpg"></p><hr><p>via:<a href="https://zhujiwiki.com/13465.html" target="_blank" rel="noopener">tsukaeru日本100M不限流量KVM VPS购买、账号验证、VPS使用教程</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;tsukaeru，提供100M不限流量的日本VPS，三网直连，很不错。&lt;/p&gt;
-&lt;p&gt;tsukaeru VPS测评：&lt;a href=&quot;https://www.bfdz.ink/2018/06/08/96/&quot;&gt;tsukaeru 512MB内存 100M带宽 不限流量 日本KVM VPS测评&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一、购买tsukaeru KVM VPS&lt;/strong&gt;&lt;br&gt;1、进入官网：&lt;a href=&quot;https://www.tsukaeru.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.tsukaeru.net&lt;/a&gt;&lt;br&gt;
     
     </summary>
     

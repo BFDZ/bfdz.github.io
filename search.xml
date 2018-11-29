@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>阿里云 24元/月/1GB内存/香港/新加坡</title>
+      <link href="/2018/11/29/115/"/>
+      <url>/2018/11/29/115/</url>
+      
+        <content type="html"><![CDATA[<p>阿里云，特色是稳定，国内、香港、新加坡等线路均有，适合各种需求。最新推出了轻量应用服务器，即KVM VPS，其中有香港数据中心，而且给的30Mbps带宽，相当给力！每账户限5台！同时，每台服务器均可创建3个快照，每账户最多15个，这为备份和搬家提供了绝好功用。</p><a id="more"></a><hr><p><strong>最低套餐配置</strong></p><p>轻量 1GB<br>vCPU：1<br>内存：1 GB<br>空间：25 GB SSD（RAID 10）<br>流量：1 TB / 月（30 Mbps 端口）<br>IPv4：1<br>24元/月</p><p>轻量 2GB<br>vCPU：1<br>内存：2 GB<br>空间：40 GB SSD（RAID 10）<br>流量：2 TB / 月（30 Mbps 端口）<br>IPv4：1<br>34元/月</p><hr><p><strong>购买地址</strong></p><p>香港VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy</a></p><p>新加坡VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy</a></p><p>香港测试IP：149.129.85.xxx（xxx改为1-255之间的数字）</p><p>新加坡测评IP：149.129.49.xxx</p><hr><p><strong>其他链接</strong></p><p>轻量云服务器管理地址：<a href="https://swas.console.aliyun.com/#/servers" target="_blank" rel="noopener">https://swas.console.aliyun.com/#/servers</a></p><p>脚本一键重装纯净Linux或者dd安装Windows系统：<a href="https://moeclub.org/2018/04/03/603/" target="_blank" rel="noopener">https://moeclub.org/2018/04/03/603/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> VPS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vps </tag>
+            
+            <tag> 阿里云 </tag>
+            
+            <tag> 香港 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>简单的 onedrive 上传工具</title>
       <link href="/2018/11/19/114/"/>
       <url>/2018/11/19/114/</url>
@@ -142,9 +169,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> Google Analytics </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
