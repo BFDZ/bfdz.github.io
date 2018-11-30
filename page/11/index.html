@@ -133,6 +133,50 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2016/05/26/16/">
+                
+                    vim中文乱码的解决方法
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-05-26
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>系统环境:cnetos6和debian7下都测试可行</p>
+<p>在用户主目录<code>~</code>下的创建<code>.vimrc</code>文件，加上fileencodings、enc、fencs，代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line"><span class="built_in">set</span> enc=utf8</span><br><span class="line"><span class="built_in">set</span> fencs=utf8,gbk,gb2312,gb18030</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2016/05/26/16/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vim/"><i class="fa fa-tag fa-fw"></i>&nbsp;vim</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2016/05/23/15/">
                 
                     资源搜索技术二之西班牙篇
@@ -561,56 +605,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/04/20/6/">
-                
-                    Debian/CentOS下编译安装shadowsocks-libev
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-04-20
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Linux/">Linux</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br></pre></td></tr></table></figure>
-<p>下载源码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/shadowsocks/shadowsocks-libev.git</span><br></pre></td></tr></table></figure></p>
-<p>开始编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> shadowsocks-libev</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure --prefix=/usr &amp;&amp; make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
-        
-            <div class="readmore">
-                <a href="/2016/04/20/6/" class="flat-box">阅读全文</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
-                
-                    <a href="/tags/shadowsocks/"><i class="fa fa-tag fa-fw"></i>&nbsp;shadowsocks</a>
-                
-                    <a href="/tags/Centos/"><i class="fa fa-tag fa-fw"></i>&nbsp;Centos</a>
-                
-                    <a href="/tags/Debian/"><i class="fa fa-tag fa-fw"></i>&nbsp;Debian</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -662,7 +656,7 @@
                 
                     <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>30</div></a></li>
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>31</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
                 

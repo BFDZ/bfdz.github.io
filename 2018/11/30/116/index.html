@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本 | BFDZ</title>
+  <meta name="description" content="BFDZ的博客" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="BFDZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.loli.net/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				BFDZ
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='https://www.bfdz.ink/archives/'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='https://www.bfdz.ink/about/'>
+    									<i class='fa fa-user fa-'></i>&nbsp;关于
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">BFDZ</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='https://www.bfdz.ink/archives/'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='https://www.bfdz.ink/about/'><i class='fa fa-user fa-fw'></i>&nbsp;关于</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-116" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本
+            
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-30&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>Vicer 突然临时关闭了博客，这是原文和脚本的备份。</p>
+</blockquote>
+<p>脚本：<a href="https://pan.nas.ink/script/InstallNET.sh" target="_blank" rel="noopener">https://pan.nas.ink/script/InstallNET.sh</a></p>
+<p>第 328 行有一个压缩包，如果你也要备份这个脚本，建议把压缩包也下载好，然后修改链接。</p>
+<a id="more"></a>
+<hr>
+<p><strong>背景</strong>:</p>
+<ul>
+<li>适用于由 GRUB 引导的 CentOS, Ubuntu, Debian 系统.</li>
+<li>使用官方发行版去掉模板预装的软件.</li>
+<li>同时也可以解决内核版本与软件不兼容的问题。</li>
+<li>只要有 root 权限,还您一个纯净的系统。</li>
+</ul>
+<p><strong>注意</strong>:</p>
+<ul>
+<li>全自动安装默认 root 密码: <code>Vicer</code>,安装完成后请立即更改密码.</li>
+<li>能够全自动重装 Debian/Ubuntu/CentOS 等系统.</li>
+<li>同时提供dd安装镜像功能,例如: 全自动无救援 dd 安装 windows 系统</li>
+<li>全自动安装 CentOS 时默认提供 VNC 功能,可使用 VNC Viewer 查看进度,</li>
+<li>VNC 端口为 1 或者 5901,可自行尝试连接.(成功后 VNC 功能会消失.)</li>
+<li>目前 CentOS 系统只支持任意版本重装为 CentOS 6.x 及以下版本.</li>
+<li><strong>特别注意: <code>OpenVZ</code> 构架不适用.</strong></li>
+</ul>
+<hr>
+<p><strong>更新</strong>:</p>
+<p>[2018.11.12]<br>修复了一写错误逻辑.</p>
+<p>[2018.10.31]<br>增加 –loader 参数.(用于定制镜像)</p>
+<p>[2018.08.10]<br>修复一些Bug.<br>增加 -i 参数.(用于指定网卡)</p>
+<p>[2018.06.09]<br>支持自定义远程桌面端口并打开相关防火墙端口(默认为3389).<br>自动扩展系统盘空间为整个硬盘.<br>增加 -rdp 参数.(用于更换RDP端口,并强制打开该端口防火墙)</p>
+<p>[2018.04.17]<br>修复对grub.conf抓取识别的问题.</p>
+<p>[2018.04.06]<br>优化正则表达式.<br>丢弃对grep -P的依赖.</p>
+<p>[2018.04.03]<br>合并Debian/Ubuntu/CentOS/dd安装镜像功能.<br>使用最少依赖原则.<br>优化部分流程.<br>修复一些已知BUG.</p>
+<hr>
+<p><strong>依赖包</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#二进制文件    Debian/Ubuntu    RedHat/CentOS</span><br><span class="line">iconv         [libc-bin]       [glibc-common]</span><br><span class="line">xz            [xz-utils]       [xz]</span><br><span class="line">awk           [gawk]           [gawk]</span><br><span class="line">sed           [sed]            [sed]</span><br><span class="line">file          [file]           [file]</span><br><span class="line">grep          [grep]           [grep]</span><br><span class="line">openssl       [openssl]        [openssl]</span><br><span class="line">cpio          [cpio]           [cpio]</span><br><span class="line">gzip          [gzip]           [gzip]</span><br><span class="line">cat,cut..     [coreutils]      [coreutils]</span><br></pre></td></tr></table></figure>
+<p><strong>确保安装了所需软件</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#Debian/Ubuntu:</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line"></span><br><span class="line">#RedHat/CentOS:</span><br><span class="line">yum install -y xz openssl gawk file</span><br></pre></td></tr></table></figure></p>
+<p><strong>如果出现了错误,请运行</strong>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Debian/Ubuntu:</span></span><br><span class="line">apt-get update</span><br><span class="line"> </span><br><span class="line"><span class="comment">#RedHat/CentOS:</span></span><br><span class="line">yum update</span><br></pre></td></tr></table></figure></p>
+<p><strong>快速使用示例</strong>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- <span class="string">'https://moeclub.org/attachment/LinuxShell/InstallNET.sh'</span>) -d 8 -v 64 -a</span><br></pre></td></tr></table></figure></p>
+<p><strong>下载及说明</strong>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO InstallNET.sh <span class="string">'https://moeclub.org/attachment/LinuxShell/InstallNET.sh'</span> &amp;&amp; chmod a+x InstallNET.sh</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Usage:</span><br><span class="line">        bash InstallNET.sh      -d/--debian [dist-name]</span><br><span class="line">                                -u/--ubuntu [dist-name]</span><br><span class="line">                                -c/--centos [dist-version]</span><br><span class="line">                                -v/--ver [32/i386|64/amd64]</span><br><span class="line">                                --ip-addr/--ip-gate/--ip-mask</span><br><span class="line">                                -apt/-yum/--mirror</span><br><span class="line">                                -dd/--image</span><br><span class="line">                                -a/-m</span><br><span class="line"> </span><br><span class="line"><span class="comment"># dist-name: 发行版本代号</span></span><br><span class="line"><span class="comment"># dist-version: 发行版本号</span></span><br><span class="line"><span class="comment"># -apt/-yum/--mirror : 使用定义镜像</span></span><br><span class="line"><span class="comment"># -a/-m : 询问是否能进入VNC自行操作. -a 为不提示(一般用于全自动安装), -m 为提示.</span></span><br></pre></td></tr></table></figure>
+<p><strong>使用示例</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#使用默认镜像全自动安装</span><br><span class="line">bash InstallNET.sh -d 8 -v 64 -a</span><br><span class="line"> </span><br><span class="line">#使用自定义镜像全自动安装</span><br><span class="line">bash InstallNET.sh -c 6.9 -v 64 -a --mirror &apos;http://mirror.centos.org/centos&apos;</span><br><span class="line"></span><br><span class="line"># 以下示例中,将X.X.X.X替换为自己的网络参数.</span><br><span class="line"># --ip-addr :IP Address/IP地址</span><br><span class="line"># --ip-gate :Gateway   /网关</span><br><span class="line"># --ip-mask :Netmask   /子网掩码</span><br><span class="line"> </span><br><span class="line">#使用自定义镜像自定义网络参数全自动安装</span><br><span class="line">#bash InstallNET.sh -u 16.04 -v 64 -a --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x --mirror &apos;http://archive.ubuntu.com/ubuntu&apos;</span><br><span class="line"> </span><br><span class="line">#使用自定义网络参数全自动dd方式安装</span><br><span class="line">#bash InstallNET.sh --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x -dd &apos;https://moeclub.org/get-win7embx86-auto&apos;</span><br><span class="line"> </span><br><span class="line">#使用自定义网络参数全自动dd方式安装存储在谷歌网盘中的镜像(调用文件ID的方式)</span><br><span class="line">#bash InstallNET.sh --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x -dd &quot;$(echo &quot;1cqVl2wSGx92UTdhOxU9pW3wJgmvZMT_J&quot; |xargs -n1 bash &lt;(wget --no-check-certificate -qO- &apos;https://moeclub.org/get-gdlink&apos;))&quot;</span><br><span class="line"> </span><br><span class="line">#使用自定义网络参数全自动dd方式安装存储在谷歌网盘中的镜像</span><br><span class="line">#bash InstallNET.sh --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x -dd &quot;$(echo &quot;https://drive.google.com/open?id=1cqVl2wSGx92UTdhOxU9pW3wJgmvZMT_J&quot; |xargs -n1 bash &lt;(wget --no-check-certificate -qO- &apos;https://moeclub.org/get-gdlink&apos;))&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>一些可用镜像地址</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 推荐使用带有 /GoogleDrive/&lt;File_ID&gt; 链接, 速度更快.</span><br><span class="line"># 当然也可以使用自己GoogleDrive中储存的镜像,使用方式:</span><br><span class="line">  https://image.moeclub.org/GoogleDrive/&lt;File_ID&gt;</span><br><span class="line"> </span><br><span class="line"># win7emb_x86.tar.gz:</span><br><span class="line">  https://image.moeclub.org/GoogleDrive/1srhylymTjYS-Ky8uLw4R6LCWfAo1F3s7</span><br><span class="line">  https://image.moeclub.org/win7emb_x86.tar.gz</span><br><span class="line"> </span><br><span class="line"># win8.1emb_x64.tar.gz:</span><br><span class="line">  https://image.moeclub.org/GoogleDrive/1cqVl2wSGx92UTdhOxU9pW3wJgmvZMT_J</span><br><span class="line">  https://image.moeclub.org/win8.1emb_x64.tar.gz</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>一些提示</strong>:</p>
+<p>特别注意:<br>萌咖提供的dd安装镜像<br>远程登陆账号为: Administrator<br>远程登陆密码为: Vicer<br>仅修改了主机名,可放心使用.(建议自己制作.)</p>
+<p>在dd安装系统镜像时:<br>在你的机器上全新安装,如果你有VNC,可以看到全部过程.<br>在dd安装镜像的过程中,不会走进度条(进度条一直显示为0%).完成后将会自动重启.<br>分区界面标题一般显示为: “Starting up the partitioner“<br>使用谷歌网盘中储存的镜像: [无限制大小] 获取谷歌网盘文件临时直接下载链接</p>
+<p>在全自动安装CentOS时:<br>如果看到 “Starting graphical installation” 或者类似表达,则表示正在安装.<br>正常情况下只需要耐心等待安装完成即可.<br>如果需要查看进度,使用VNC Viewer(或者其他VNC连接工具)<br>连接提示中的IP地址:端口进行连接.(端口一般为1或者5901)</p>
+<hr>
+<p>via:<a href="https://moeclub.org/2018/04/03/603/" target="_blank" rel="noopener">https://moeclub.org/2018/04/03/603/</a></p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/vps/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;vps</a>
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/一键重装/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;一键重装</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/29/115/" rel="prev" title="阿里云 24元/月/1GB内存/香港/新加坡">
+                                    
+                                        阿里云 24元/月/1GB内存/香港/新加坡
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>vps
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>阿里云
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>香港
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/29/115/">阿里云 24元/月/1GB内存/香港/新加坡</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/19/114/">简单的 onedrive 上传工具</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/18/113/">影片编码查询和规则说明</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/16/112/">Windows 配置启用 NFS 共享</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/09/111/">PT-Gen 后端搭建</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>31</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>18</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>5</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>11</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>7</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xiaoxun.jpg">
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tristana.cn/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/64mb.ico">
+                        
+                        &nbsp;&nbsp;不点儿
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.xjh.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xjh.ico">
+                        
+                        &nbsp;&nbsp;岁月小筑
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.xcatliu.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xcatliu.ico">
+                        
+                        &nbsp;&nbsp;Xcat Liu&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://chuangzaoshi.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;创意狮导航
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.azimiao.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/azimiao.ico">
+                        
+                        &nbsp;&nbsp;梓喵出没
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.goagent.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;小小
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://cuojue.org/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/weicn.ico">
+                        
+                        &nbsp;&nbsp;浅秋枫影
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wobeibk.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wobeibk.ico">
+                        
+                        &nbsp;&nbsp;我辈博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://affvps.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/affvps.png">
+                        
+                        &nbsp;&nbsp;AFFVPS
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.do1999.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/do1999.ico">
+                        
+                        &nbsp;&nbsp;Let me Attente
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.weimo.info/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;未末小城
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.wushile.top/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wushile.ico">
+                        
+                        &nbsp;&nbsp;小吴博客
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        <section class='m_widget mirror'>
+    <div class='header'><i class="fa fa-clone fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;镜像</div>
+    <div class='content'>
+        <ul class="entry" id="mirror">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bfdz.ink/">
+                    <div class='name'>
+                        
+                            <img src="/favicon.ico">
+                        
+                        &nbsp;&nbsp;www.bfdz.ink
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.coding.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/coding.ico">
+                        
+                        &nbsp;&nbsp;bfdz.coding.me
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.github.io/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/github.ico">
+                        
+                        &nbsp;&nbsp;bfdz.github.io
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:root@bfdz.ink" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/bfdz" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=42333392" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://www.bfdz.ink/atom.xml" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>本站文章采用<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</div>
+    <div>Theme by <a href="https://github.com/BFDZ/hexo-theme-material-x" target="_blank" class="codename">Material X</a> ,Hosted by <a href="https://pages.coding.me" target="_blank" class="codename">Coding Pages</a> & <a href="https://pages.github.com/" target="_blank" class="codename">GitHub Pages</a> ,
+		view <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> times.
+    </div>
+	<div>&copy; 2016-2018 BFDZ</div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-4","https://ga.giuem.com",window,document,navigator,location);
+</script>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'true' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz",
+                appKey: "jcsUjAW740MvTyO5DX2mF0Ho",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'identicon',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
