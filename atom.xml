@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2018-11-30T14:32:17.818Z</updated>
+  <updated>2018-12-08T15:09:06.602Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VapourSynthEditor-r19-64bit</title>
+    <link href="https://www.bfdz.ink/2018/12/08/117/"/>
+    <id>https://www.bfdz.ink/2018/12/08/117/</id>
+    <published>2018-12-08T14:59:00.000Z</published>
+    <updated>2018-12-08T15:09:06.602Z</updated>
+    
+    <content type="html"><![CDATA[<p>基于 VapourSynthEditor-r19 源码编译，未知的原因导致 r18 的汉化文件无法用在 r19 上面，所以这是“原汁原味”的英文原版。<br><a id="more"></a></p><hr><p><strong>下载</strong></p><blockquote><p>文件: VapourSynthEditor-r19-64bit.zip<br>MD5: 16F6031DB90DA31F84660CD02E42CF3F<br>SHA1: 9827B5004591FA4E6C8774CEFA9A54C94CCEDE4B<br>SHA256: E705278268633E2CCF6411837D59A1227567B74EAC5367BDE57F11BD52FFE277</p></blockquote><p>OneDrive: <a href="https://pan.nas.ink/Encoder/tools/VapourSynthEditor/" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a><br>STACK: <a href="https://bfdz.stackstorage.com/s/U1u4XKPLwLVIWCQ" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a><br>cargo: <a href="https://cargo.hyperay.cc/Encoder/tools/VapourSynthEditor-r19-64bit.zip" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基于 VapourSynthEditor-r19 源码编译，未知的原因导致 r18 的汉化文件无法用在 r19 上面，所以这是“原汁原味”的英文原版。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="视频压制" scheme="https://www.bfdz.ink/categories/%E8%A7%86%E9%A2%91%E5%8E%8B%E5%88%B6/"/>
+    
+    
+      <category term="vsedit" scheme="https://www.bfdz.ink/tags/vsedit/"/>
+    
+      <category term="VapourSynth" scheme="https://www.bfdz.ink/tags/VapourSynth/"/>
+    
+  </entry>
   
   <entry>
     <title>Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本</title>
@@ -515,32 +539,6 @@
       <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
     
       <category term="CCTV5" scheme="https://www.bfdz.ink/tags/CCTV5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>央视和各省市直播源</title>
-    <link href="https://www.bfdz.ink/2018/06/09/97/"/>
-    <id>https://www.bfdz.ink/2018/06/09/97/</id>
-    <published>2018-06-09T14:11:00.000Z</published>
-    <updated>2018-06-09T14:22:48.762Z</updated>
-    
-    <content type="html"><![CDATA[<p>覆盖央视高清频道、央视标清频道、各省卫视、部分地方台。使用 Potplayer 打开和播放。</p><a id="more"></a><hr><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DC/FA/E2/1528553077474.jpg" alt="CCTV5高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DD/9B/70/1528553118576.jpg" alt="CCTV5高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/1F/37/1528553217847.jpg" alt="CCTV9高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/46/8E/1528553227918.jpg" alt="湖南卫视高清"></p><p><img src="http://bbs1.people.com.cn/postImages/Y0/E4/DF/72/EC/1528553239276.jpg" alt="东方卫视高清"></p><hr><ul><li>网盘：</li></ul><blockquote><p><a href="https://bfdz.stackstorage.com/s/rdOWrixrcQl9EzT" target="_blank" rel="noopener">直播源</a> 密码：BFDZ</p></blockquote><ul><li>OneDrive:</li></ul><blockquote><p><a href="https://daye-my.sharepoint.com/:f:/g/personal/root_bfdz_ink/EtnoxxJ2NglLictF0ck1PBABHQ0PAWvo3DD5M99hvYLcsw?e=KhdhRG" target="_blank" rel="noopener">直播源</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;覆盖央视高清频道、央视标清频道、各省卫视、部分地方台。使用 Potplayer 打开和播放。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
-    
-    
-      <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
-    
-      <category term="potplayer" scheme="https://www.bfdz.ink/tags/potplayer/"/>
-    
-      <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
     
   </entry>
   

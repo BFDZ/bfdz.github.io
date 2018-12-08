@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>VapourSynthEditor-r19-64bit</title>
+      <link href="/2018/12/08/117/"/>
+      <url>/2018/12/08/117/</url>
+      
+        <content type="html"><![CDATA[<p>基于 VapourSynthEditor-r19 源码编译，未知的原因导致 r18 的汉化文件无法用在 r19 上面，所以这是“原汁原味”的英文原版。<br><a id="more"></a></p><hr><p><strong>下载</strong></p><blockquote><p>文件: VapourSynthEditor-r19-64bit.zip<br>MD5: 16F6031DB90DA31F84660CD02E42CF3F<br>SHA1: 9827B5004591FA4E6C8774CEFA9A54C94CCEDE4B<br>SHA256: E705278268633E2CCF6411837D59A1227567B74EAC5367BDE57F11BD52FFE277</p></blockquote><p>OneDrive: <a href="https://pan.nas.ink/Encoder/tools/VapourSynthEditor/" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a><br>STACK: <a href="https://bfdz.stackstorage.com/s/U1u4XKPLwLVIWCQ" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a><br>cargo: <a href="https://cargo.hyperay.cc/Encoder/tools/VapourSynthEditor-r19-64bit.zip" target="_blank" rel="noopener">VapourSynthEditor-r19-64bit</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 视频压制 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vsedit </tag>
+            
+            <tag> VapourSynth </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本</title>
       <link href="/2018/11/30/116/"/>
       <url>/2018/11/30/116/</url>
@@ -1973,9 +1998,9 @@
             
             <tag> linux </tag>
             
-            <tag> tftp </tag>
-            
             <tag> ARM </tag>
+            
+            <tag> tftp </tag>
             
         </tags>
       

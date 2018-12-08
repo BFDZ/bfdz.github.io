@@ -133,6 +133,53 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2017/12/03/67/">
+                
+                    Ubuntu/Debian 配置 IPv6 地址
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2017-12-03
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h2><p>使用命令 <code>ifconfig</code> 查看网卡中 ipv6 地址的配置，一般看到如下结果，ipv6 是无效的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qlen 1000</span><br><span class="line">        inet6 fe80::601:1cff:fe11:5b01/64 scope link </span><br><span class="line">           valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+<p>ping 谷歌搜索的 ipv6 地址来测试服务器能否连接 ipv6 公网。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping6 ipv6.google.com</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2017/12/03/67/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/ipv6/"><i class="fa fa-tag fa-fw"></i>&nbsp;ipv6</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2017/11/21/66/">
                 
                     盒子剩余空间检测脚本
@@ -521,53 +568,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2017/10/21/57/">
-                
-                    IDC 机房网络质量监控（三网）
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2017-10-21
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/实用网站/">实用网站</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Ping Cat 是一款基于 Python 开发的用于检测 IDC 机房 ping 值的在线工具，尤其在想要购买 VPS 的时候，可以使用该工具来检测 IDC 商家的线路是否稳定，通过长期观察后可对购买起到参考作用。</p>
-<p>网址：<a href="http://ping.cat" target="_blank" rel="noopener">http://ping.cat</a></p>
-        
-            <div class="readmore">
-                <a href="/2017/10/21/57/" class="flat-box">阅读全文</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vps/"><i class="fa fa-tag fa-fw"></i>&nbsp;vps</a>
-                
-                    <a href="/tags/IDC/"><i class="fa fa-tag fa-fw"></i>&nbsp;IDC</a>
-                
-                    <a href="/tags/监控/"><i class="fa fa-tag fa-fw"></i>&nbsp;监控</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -643,7 +643,7 @@
                 
                     <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>11</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>7</div></a></li>
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>8</div></a></li>
                 
             </ul>
         
@@ -896,7 +896,7 @@
 </script>
 
     <script>setLoadingBarProgress(80);</script>
-    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 <script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
 <script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
 <!-- 访问统计 -->
