@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2018-12-08T15:09:06.602Z</updated>
+  <updated>2018-12-14T14:09:14.448Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>墙与梯的较量</title>
+    <link href="https://www.bfdz.ink/2018/12/14/118/"/>
+    <id>https://www.bfdz.ink/2018/12/14/118/</id>
+    <published>2018-12-14T05:03:00.000Z</published>
+    <updated>2018-12-14T14:09:14.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>在某个 Telegram 群讨论到了现在很多 10 多岁的年轻人都学会翻墙了，想起我小的时候，大概也是在 10 岁左右第一次翻墙。作为经历过多次墙与梯的升级的网虫，把这个写下来也算是一个对童年的回忆了……</p><a id="more"></a><hr><p><img src="/images/118/118.jpg" alt=""></p><hr><p>转载来源:<a href="https://webcache.googleusercontent.com/search?q=cache:https://blog.yandere.moe/moe/gfw-vs-proxy/97.html" target="_blank" rel="noopener">墙与梯的较量——那些年我们一起用过的翻墙手段</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在某个 Telegram 群讨论到了现在很多 10 多岁的年轻人都学会翻墙了，想起我小的时候，大概也是在 10 岁左右第一次翻墙。作为经历过多次墙与梯的升级的网虫，把这个写下来也算是一个对童年的回忆了……&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络" scheme="https://www.bfdz.ink/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络封锁" scheme="https://www.bfdz.ink/tags/%E7%BD%91%E7%BB%9C%E5%B0%81%E9%94%81/"/>
+    
+      <category term="vpn" scheme="https://www.bfdz.ink/tags/vpn/"/>
+    
+      <category term="ss" scheme="https://www.bfdz.ink/tags/ss/"/>
+    
+  </entry>
   
   <entry>
     <title>VapourSynthEditor-r19-64bit</title>
@@ -62,9 +88,9 @@
       <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
     
     
-      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
-    
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
     
       <category term="一键重装" scheme="https://www.bfdz.ink/tags/%E4%B8%80%E9%94%AE%E9%87%8D%E8%A3%85/"/>
     
@@ -480,9 +506,9 @@
       <category term="网络" scheme="https://www.bfdz.ink/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="网络封锁" scheme="https://www.bfdz.ink/tags/%E7%BD%91%E7%BB%9C%E5%B0%81%E9%94%81/"/>
-    
       <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="网络封锁" scheme="https://www.bfdz.ink/tags/%E7%BD%91%E7%BB%9C%E5%B0%81%E9%94%81/"/>
     
   </entry>
   
@@ -506,35 +532,6 @@
     
     
       <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
-    
-      <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
-    
-      <category term="CCTV5" scheme="https://www.bfdz.ink/tags/CCTV5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CCTV5直播源合集</title>
-    <link href="https://www.bfdz.ink/2018/06/15/98/"/>
-    <id>https://www.bfdz.ink/2018/06/15/98/</id>
-    <published>2018-06-14T17:24:00.000Z</published>
-    <updated>2018-06-14T17:40:27.159Z</updated>
-    
-    <content type="html"><![CDATA[<p>Windows 平台可使用 PotPlayer 、VLC 打开链接，Android 平台可使用 MxPlayer 、VLC 打开链接。</p><p>自己尝试，总会有一个能用。</p><a id="more"></a><hr><ul><li><p>辽宁沈阳移动CCTV5</p><blockquote><p><a href="http://hwottcdn.ln.chinamobile.com/PLTV/88888890/224/3221225497/index.m3u8" target="_blank" rel="noopener">http://hwottcdn.ln.chinamobile.com/PLTV/88888890/224/3221225497/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://223.110.243.157/PLTV/3/224/3221226324/index.m3u8" target="_blank" rel="noopener">http://223.110.243.157/PLTV/3/224/3221226324/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://183.207.249.6/PLTV/3/224/3221226324/index.m3u8" target="_blank" rel="noopener">http://183.207.249.6/PLTV/3/224/3221226324/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动CCTV5</p><blockquote><p><a href="http://223.110.243.136/PLTV/3/224/3221227166/index.m3u8" target="_blank" rel="noopener">http://223.110.243.136/PLTV/3/224/3221227166/index.m3u8</a></p></blockquote></li><li><p>江苏南京移动蓝光源CCTV-5蓝光</p><blockquote><p><a href="http://223.110.241.204:6610/gitv/live1/G_CCTV-5-CQ/G_CCTV-5-CQ/" target="_blank" rel="noopener">http://223.110.241.204:6610/gitv/live1/G_CCTV-5-CQ/G_CCTV-5-CQ/</a></p></blockquote></li><li><p>江苏南京移动蓝光源CCTV-5+蓝光</p><blockquote><p><a href="http://223.110.241.204:6610/gitv/live1/G_CCTV-5PLUS-CQ/G_CCTV-5PLUS-CQ/" target="_blank" rel="noopener">http://223.110.241.204:6610/gitv/live1/G_CCTV-5PLUS-CQ/G_CCTV-5PLUS-CQ/</a></p></blockquote></li><li><p>江西南昌移动CCTV5</p><blockquote><p><a href="http://223.82.250.72/ysten-business/live/cctv-5/index.m3u8" target="_blank" rel="noopener">http://223.82.250.72/ysten-business/live/cctv-5/index.m3u8</a></p></blockquote></li><li><p>重庆联通CCTV-5高清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000304?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>重庆联通CCTV-5标清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000303?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>重庆联通CCTV5＋高清</p><blockquote><p>rtsp://123.147.113.84:554/04000001/01000000004000000000000000000230?AuthInfo=xxx&amp;userid=</p></blockquote></li><li><p>宁夏银川电信CCTV-5HD</p><blockquote><p>rtsp://124.224.238.165:554/PLTV/88888888/224/3221225890/10000100000000060000000000725782_0.smil</p></blockquote></li><li><p>宁夏银川电信CCTV5＋HD</p><blockquote><p>rtsp://124.224.238.165:554/PLTV/88889012/224/3221225943/10000100000000060000000000758560_0.smil</p></blockquote></li><li><p>广电电信CCTV-5＋高清</p><blockquote><p>rtsp://183.59.32.147:554/PLTV/88888905/224/3221227192/10000100000000060000000000987131_0.smil</p></blockquote></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Windows 平台可使用 PotPlayer 、VLC 打开链接，Android 平台可使用 MxPlayer 、VLC 打开链接。&lt;/p&gt;
-&lt;p&gt;自己尝试，总会有一个能用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Windows" scheme="https://www.bfdz.ink/categories/Windows/"/>
-    
-    
-      <category term="直播" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD/"/>
-    
-      <category term="potplayer" scheme="https://www.bfdz.ink/tags/potplayer/"/>
     
       <category term="高清直播" scheme="https://www.bfdz.ink/tags/%E9%AB%98%E6%B8%85%E7%9B%B4%E6%92%AD/"/>
     
