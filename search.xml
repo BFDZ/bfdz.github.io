@@ -221,9 +221,9 @@
       
         <tags>
             
-            <tag> Google Analytics </tag>
-            
             <tag> linux </tag>
+            
+            <tag> Google Analytics </tag>
             
         </tags>
       
@@ -1844,9 +1844,9 @@
             
             <tag> linux </tag>
             
-            <tag> TCP </tag>
-            
             <tag> BBR </tag>
+            
+            <tag> TCP </tag>
             
         </tags>
       
@@ -1998,9 +1998,9 @@
             
             <tag> linux </tag>
             
-            <tag> ARM </tag>
-            
             <tag> tftp </tag>
+            
+            <tag> ARM </tag>
             
         </tags>
       
@@ -2092,9 +2092,9 @@
       
         <tags>
             
-            <tag> TCP </tag>
-            
             <tag> BBR </tag>
+            
+            <tag> TCP </tag>
             
         </tags>
       
