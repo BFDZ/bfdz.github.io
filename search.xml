@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>TnP压制组标准&amp;规范</title>
+      <link href="/2018/12/23/119/"/>
+      <url>/2018/12/23/119/</url>
+      
+        <content type="html"><![CDATA[<p>这是 TnP 压制组在 m-team 站内论坛公开发布的压制标准，和其他顶级压制小组的标准规范大同小异。对于想学习压制或者组建压制组的人来说具有参考意义。</p><a id="more"></a><hr><p><strong>压制组标准&amp;规则</strong></p><p><strong>目的</strong><br>规范化内部小组压制作品，提高制作质量</p><p><strong>压制任务申请</strong><br><strong>流程</strong></p><p>所有的压制都会在 <a href="https://tp.m-team.cc/todo.php" target="_blank" rel="noopener">https://tp.m-team.cc/todo.php</a> 发布压制任务，Internal成员可以前往认领任务。</p><ul><li>Internal成员不建议一次认领多个任务（但不包括同一电影的不同分辨率）。</li><li>认领首发电影压制需要尽可能快发布，非首发电影建议2周内发布。</li><li>管理人员保留对超过限定压制时间的任务重新指派压制人的权利。</li></ul><p><strong>格式</strong><br>所有的视频、音频、字幕流等都必须封装在mkv中</p><p><strong>视频流</strong><br>所有的压制都建议使用最佳的源进行制作，这意味着可能需要下载多个源进行截图对比。使用更好的源制作的压制可能会代替掉旧的、基于更差的源制作的作品。建议在职人论坛（<a href="https://tp.m-team.cc/forums.php?action=viewforum&amp;forumid=11" target="_blank" rel="noopener">https://tp.m-team.cc/forums.php?action=viewforum&amp;forumid=11</a> ）展示你做的对比，以便其他成员观看和评论。</p><p>x264是暂时唯一推荐的视频编码。对于x265的补充规定会另外叙述。其余编码因为编码效率和质量等问题不应再采用。对于源视频中存在的问题，鼓励进行修复，但不强制规定。同时，Source vs Encode对比截图也是<strong>必须</strong>添加到种子详情描述中的，使用滤镜修复的问题区域必须添加Source vs Filtered vs Encode对比截图。</p><p>对于10bit压制，推荐添加Source vs 10Bit Encode vs 8Bit Encode截图证明10bit的必要性。</p><p><strong>音频流</strong><br>对于压制，不推荐使用体积过大的无损音轨（占总mkv文件体积超过1/3）。</p><p>允许的格式 (无损格式):</p><ul><li>DTS:X / DTS-HD MA.</li><li>Atmos / TrueHD. 通常杜比Atmos/TrueHD由于旧设备兼容性问题，都会内嵌AC3内核，推荐一并封装至mkv中。</li><li>FLAC. 对于单声道/立体声必须使用FLAC，以及源音频格式为LPCM格式必须转换成FLAC格式。 </li></ul><p>允许的格式 (有损格式):</p><ul><li>DTS (and other lossy variants). 推荐直接使用DTS-HD/DTS:X中的DTS核心。请务必注意768Kbps的DTS核心不应该使用在压制中，原因是DTS核心的低效编码使得其效果反而不如AC3 640Kbps。如有需要可以使用DTS-HD Master Suite对8声道的DTS-HD/DTS:X音轨进行重新制作，提取DTS-ES 6.1核心。</li><li>Dolby Digital (and other lossy variants). 一般直接从Atmos/TrueHD中提取，如果需要压制，可以使用Sony Sound Forge Pro制作，它是Dolby官方授权的编码器。</li><li>AAC. 只允许出现在单声道/立体声中，一般使用在导评音轨上。如果是视频主音轨，推荐使用FDK AAC制作，如果是导评音轨，可以使用QAAC制作。</li></ul><p>特殊的不允许使用的格式:</p><ul><li>LPCM. 无论任何情况都不应该出现极为低效的LPCM格式。必须转码至无损的FLAC格式（单声道/立体声）或者使用DTS-HD Master Suite制作成DTS-HD MA格式（多声道）。</li></ul><p>导评音轨如果在源上存在，必须进行封装。可以选择直接封装或者进行压制再封装。对于压制，推荐立体声的导评成品码率控制在80Kbps左右。</p><p><strong>字幕</strong><br>必须封装源中带有的英文字幕以及中文字幕（如果存在）。并且，必须在mkvtoolnix中正确标注字幕类型。</p><ul><li>对于英文字幕，主要存在SDH、Non-SDH、Forced三种类型。SDH全称为Subtitles for the deaf or hard-of-hearing，即听力障碍专用字幕，明显特征为存在很多非对白的描述性字幕。Non-SDH则为普通常见的英语字幕。Forced为非英语对白字幕，即英语电影中只针对外语部分的字幕。</li><li>对于英文字幕，封装OCR的.SRT格式也是必须的。鉴于大部分压制员的母语为中文而非英语，OCR可以交由其他人完成。一般在国外站点论坛均有很多母语为英语的用户，并且可以提供OCR处理，详细事宜清联系TnP组组长Nginx。</li><li>对于中文字幕，主要需要标注简体、繁体、粤语，对应Simplified、Traditional、Cantonese。中文字幕由于其识别难度大，校对成本高，不推荐每一片都进行中文的OCR处理，热门电影也可以寻求WEBDL片源自带中字进行匹配。</li><li>评论音轨字幕需要注明为评论字幕。</li></ul><p><strong>章节</strong><br>源中如果存在章节，必须一并封装。如果有具体章节名（非1、2、3…等，存在具体含义的章节名），推荐合理命名。</p><ul><li>章节名为英文，必须参照源菜单手动录入。</li><li>章节名为非英文，推荐按照Chapter X (原外文章节名)命名。如果录入外文章节名有困难可以只提供Chapter X形式命名。</li><li>不存在具体章节名，统一使用ChapterGrabber软件生成命名Chapter X。</li></ul><p><strong>文件信息</strong><br>针对各种类型的作品发布前需要注意填写的信息。</p><p><strong>压制</strong><br>音视频流的Title填入相关信息。</p><ul><li>视频流可以填入”压制人ID @ TnP”以及视频轨道对应信息。</li><li>音频流可以填入特殊音轨说明，如导评音轨应填写”Commentary with director Christopher Nolan”。</li><li>具体每条轨道的编码格式等信息，必须填写。</li></ul><p>举例</p><ul><li>EncoderID @ TnP / x264 / 16888 kbps / 1080p / 23.976 fps / 16:9 / High Profile 4.1</li><li>DTS-HD Master Audio / 5.1 / 48 kHz / 3826 kbps / 24-bit</li><li>Commentary with director Christopher Nolan / Dolby Digital Audio / 2.0 / 48 kHz / 224 kbps / 16-bit</li><li>FLAC Audio / 1.0 / 48 kHz / 579 kbps / 24-bit</li></ul><p><strong>默认轨道</strong><br>对于语言为英语的电影：</p><ul><li>默认轨道应设置在：视频轨道、第一音频轨道、英文Forced字幕轨道（如有）</li><li>非默认轨道应该设置在：除以上的所有轨道</li></ul><p>对于语言为非英语的电影：</p><ul><li>默认轨道应该设置在：视频轨道、第一音频轨道、第一英文字幕轨道</li><li>非默认轨道应该设置在：除以上所有轨道</li></ul><p>错误设置默认轨道选项会导致REPACK/PROPER</p><p><strong>命名</strong></p><ul><li>使用英文命名，以IMDB标题为准。如果电影标题为非英语标题，使用IMDB的”World-wide”标题。如红海行动标题为Operation Red Sea （<a href="https://www.imdb.com/title/tt6878882/releaseinfo?ref_=tt_ql_dt_2" target="_blank" rel="noopener">https://www.imdb.com/title/tt6878882/releaseinfo?ref_=tt_ql_dt_2</a> ）。</li><li>作品题目中需要包含特定的版本信息和片源地区（不填则为默认US或首发片源，推荐存在不同地区片源的时候填写），如加长版（Extended Cut）和日版（JPN）</li></ul><p><strong>电影命名</strong><br>压制: Title.Year.Edition.Source.Resolution.Acodec.Vcodec-Tag</p><p>举例:</p><ul><li>Captain.America.The.Winter.Soldier.2014.BluRay.1080p.DTS.x264-TnP</li><li>X-Men.Days.of.Future.Past.2014.Hybrid.1080p.BluRay.AC3.x264-TnP</li><li>Interstellar.2014.JPN.1080p.BluRay.DTS-HD.MA.5.1.x264-TnP</li><li>Maze.Runner.2014.REPACK.BluRay.720p.DD5.1.x264-TnP</li><li>Zootopia.2014.GER.Extended.Cut.BluRay.1080p.Atmos.7.1.x264-TnP</li></ul><p>以下是命名中可能用到的编码格式以及对应缩写供参考。<br><img src="https://tp.m-team.cc/attachments/201808/2018082916134098d24df8a196f9b76344beecf2d89752.png" alt="V_.png"></p><p><img src="https://tp.m-team.cc/attachments/201808/20180829161347f5cb714b9b8f6906c3c7c296143810c1.jpg" alt="A_.jpg"></p><p><strong>种子详情</strong><br>种子详情需要包含NFO，务必提供恰当的截图进行展示。<br>NFO需要包括：</p><ul><li>压制源信息，尽可能涵盖地区、版本、来源小组。一般源文件名即可满足要求。</li><li>视频信息、音频信息。主要为分辨率、帧率、编码方式和码率等。</li><li>字幕信息。主要为字幕语言。</li><li>x264输出日志信息，一般包括”x264 [info]: frame “、”x264 [info]: consecutive B-frames”等。</li><li>章节信息。是否包含章节（Yes/No）、章节是否命名（Numbered/Named）。<br>NFO模板小组统一，详细模板查看本版对应主题帖。</li></ul><p>恰当的截图包括：</p><ul><li>Source vs Encode对比截图，Encode必须选取压缩程度最大的B帧，推荐Source选取P帧。</li><li>截图使用AVS脚本在恰当位置显示帧信息，包括当前帧数/总帧数、帧类型等。</li><li>可能的情况下添加与0day及其他P2P小组的对比截图。如”Source vs Encode vs VietHD vs SPARKS”。</li></ul><p><strong>作品发布后的问题</strong><br><strong>REPACK/PROPER</strong><br>作品发布后，主要有以下情况需要进行REPACK/PROPER</p><ul><li>对已经发布过的、存在严重问题（如切边有误、花屏、封装有误、音视频流播放有问题等）的作品进行修复，必须进行REPACK/PROPER。重新制作的作品需要在标题中Edition位置注明REPACK（由原发布者自行重新制作）或PROPER（由其他成员制作），并且需要在种子详情明显位置注明修正的问题。</li><li>对已经发布过的作品，发布后寻找到新的质量更好（视频、音频）的源，推荐进行REPACK/PROPER，并且需要给出不同源的对比截图。</li></ul><p>所有的REPACK/PROPER都会导致原来的作品被删除，新的作品进行置顶和Free处理。</p><hr><p>转载来源:<a href="https://tp.m-team.cc/forums.php?action=viewtopic&amp;forumid=53&amp;topicid=27317" target="_blank" rel="noopener">TnP压制组标准&amp;规范 / TnP Rules and Standards （11/9更新 添加默认轨道要求）</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TnP </tag>
+            
+            <tag> 视频压制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>墙与梯的较量</title>
       <link href="/2018/12/14/118/"/>
       <url>/2018/12/14/118/</url>
@@ -71,9 +96,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> 一键重装 </tag>
             
@@ -471,9 +496,9 @@
       
         <tags>
             
-            <tag> 网络封锁 </tag>
-            
             <tag> vps </tag>
+            
+            <tag> 网络封锁 </tag>
             
         </tags>
       
@@ -1275,9 +1300,9 @@
       
         <tags>
             
-            <tag> nginx </tag>
-            
             <tag> linux </tag>
+            
+            <tag> nginx </tag>
             
         </tags>
       
@@ -1871,9 +1896,9 @@
             
             <tag> linux </tag>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
@@ -2119,9 +2144,9 @@
       
         <tags>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
@@ -2724,9 +2749,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> iptables </tag>
             

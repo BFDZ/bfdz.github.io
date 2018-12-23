@@ -133,6 +133,52 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2016/05/13/9/">
+                
+                    vps使用iptables防火墙封常用邮件端口
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-05-13
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>添加规则<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp -m multiport --dport 25,110,465:587,993:995 -j DROP</span><br><span class="line">iptables -A INPUT -p udp -m multiport --dport 25,110,465:587,993:995 -j DROP</span><br><span class="line">iptables -A OUTPUT -p tcp -m multiport --dport 25,110,465:587,993:995 -j DROP</span><br><span class="line">iptables -A OUTPUT -p udp -m multiport --dport 25,110,465:587,993:995 -j DROP</span><br></pre></td></tr></table></figure></p>
+        
+            <div class="readmore">
+                <a href="/2016/05/13/9/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/vps/"><i class="fa fa-tag fa-fw"></i>&nbsp;vps</a>
+                
+                    <a href="/tags/iptables/"><i class="fa fa-tag fa-fw"></i>&nbsp;iptables</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2016/05/05/8/">
                 
                     安装shadowsocks-go版本
@@ -511,7 +557,7 @@
                 
                     <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>31</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>8</div></a></li>
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>9</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>4</div></a></li>
                 
