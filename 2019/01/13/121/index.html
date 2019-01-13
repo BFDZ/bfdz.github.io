@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Ampache 私人云音乐搭建和使用 | BFDZ</title>
+  <meta name="description" content="BFDZ的博客" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="BFDZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.loli.net/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				BFDZ
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='https://www.bfdz.ink/archives/'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='https://www.bfdz.ink/about/'>
+    									<i class='fa fa-user fa-'></i>&nbsp;关于
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">BFDZ</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='https://www.bfdz.ink/archives/'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='https://www.bfdz.ink/about/'><i class='fa fa-user fa-fw'></i>&nbsp;关于</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-121" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Ampache 私人云音乐搭建和使用
+            
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2019-01-13&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Ampache 是一个​基于网络的音频/视频流应用程序和文件管理器。它最初是为了利用 Apache 的 Mod_mp3 而编写的，后来增加了流式传输方法，可以支持你从任何平台的网络设备访问自己的视频和音乐。</p>
+<p>和 Plex 相比，这款程序全部功能都是免费开源的，并且支持包括 Plex 在内的多种客户端 API 和网络传输协议。</p>
+<p>项目网址：<a href="https://github.com/ampache/ampache" target="_blank" rel="noopener">https://github.com/ampache/ampache</a></p>
+<a id="more"></a>
+<hr>
+<hr>
+<h1 id="服务端搭建"><a href="#服务端搭建" class="headerlink" title="服务端搭建"></a>服务端搭建</h1><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
+<li><p>web 服务程序，下列之一</p>
+<ul>
+<li>Apache</li>
+<li>lighttpd</li>
+<li>nginx</li>
+<li>IIS</li>
+</ul>
+</li>
+<li><p>PHP 5.6 或者更高版本</p>
+</li>
+<li><p>PHP 模块：</p>
+<ul>
+<li>PDO</li>
+<li>PDO_MYSQL</li>
+<li>hash</li>
+<li>session</li>
+<li>json</li>
+<li>simplexml (可选)</li>
+<li>curl (可选)</li>
+<li>对于 FreeBSD 系统必须加载一下模块:<ul>
+<li>php-xml</li>
+<li>php-dom</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MySQL 5.x</p>
+</li>
+</ul>
+<p>本文的演示环境：</p>
+<ul>
+<li>lnmp 1.5</li>
+<li>vps<ul>
+<li>Debian 7</li>
+<li>1 CPU</li>
+<li>512 MB 内存</li>
+<li>20G 硬盘</li>
+</ul>
+</li>
+</ul>
+<p>linux 服务器上推荐使用 <a href="https://lnmp.org/" target="_blank" rel="noopener">lnmp</a> 安装环境。如果只是用来做音乐服务器，对 vps 的配置要求不高，因为音乐文件的体积也不大，码率要求也低。</p>
+<hr>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>安装完 lnmp ，然后创建网站目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost list</span><br></pre></td></tr></table></figure>
+<p>下载程序，注意不要 git clone ，要从 Release 下载最新版本完整程序安装包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/wwwroot/test.nas.ink/</span><br><span class="line">wget https://github.com/ampache/ampache/releases/download/3.9.0/ampache-3.9.0_all.zip</span><br><span class="line">unzip ampache-3.9.0_all.zip</span><br></pre></td></tr></table></figure>
+<p>修改 config 目录权限，确保安装时配置文件可写入。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 -R config/</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="选择语言"><a href="#选择语言" class="headerlink" title="选择语言"></a>选择语言</h3><p>访问你配置的网站域名，如果没出错，会出现这个安装页面。</p>
+<p><img src="https://ws2.sinaimg.cn/large/92253953gy1fz538xki2lj20zk0i6q4e.jpg" alt="image"></p>
+<p>Ampache 支持包括中文在内的多种语言。</p>
+<h3 id="环境检测"><a href="#环境检测" class="headerlink" title="环境检测"></a>环境检测</h3><p>PHP 整型大小一项会有警告，但貌似影响可以忽略不计。如果其他项没问题，点击继续。</p>
+<p><img src="https://wx1.sinaimg.cn/large/92253953gy1fz53bur38kj20yv184nb8.jpg" alt="image"></p>
+<h3 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h3><p>填写端口和密码，然后点击插入数据库。</p>
+<p><img src="https://wx4.sinaimg.cn/large/92253953gy1fz53guvyb2j20yo0q7goh.jpg" alt="image"></p>
+<h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>如果程序安装包解压在网站根目录，web 路径留空，不用填。<br><img src="https://ws3.sinaimg.cn/large/92253953gy1fz53jsqp3qj20wd0m5775.jpg" alt=""></p>
+<p>填写 MySQL 用户名和密码</p>
+<p><img src="https://ws3.sinaimg.cn/large/92253953gy1fz53mpe9m9j20x80krwi4.jpg" alt="image"></p>
+<p>其他设置都保存默认即可，除非你清楚选项的作用。</p>
+<p><img src="https://wx3.sinaimg.cn/large/92253953gy1fz53pfmrfgj20x00dumys.jpg" alt="image"></p>
+<p>点击查看文件栏，然后点击第一行配置文件后面的写。如果提示写入错误，请检查 config 目录权限。</p>
+<h3 id="配置管理员用户名和密码"><a href="#配置管理员用户名和密码" class="headerlink" title="配置管理员用户名和密码"></a>配置管理员用户名和密码</h3><p><img src="https://ws2.sinaimg.cn/large/92253953gy1fz53r2qkrcj20w80gpabq.jpg" alt="image"></p>
+<h3 id="检查更新"><a href="#检查更新" class="headerlink" title="检查更新"></a>检查更新</h3><p><img src="https://ws2.sinaimg.cn/large/92253953gy1fz53u4ma9kj20x20ni76v.jpg" alt="image"></p>
+<p>目前是最新版，无需更新。</p>
+<p><img src="https://wx4.sinaimg.cn/large/92253953gy1fz53ujksyej20wb09d3zc.jpg" alt="image"></p>
+<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><p>现在已经安装成功，返回网站首页即可使用了。<br><img src="https://ws1.sinaimg.cn/large/92253953gy1fz53w6565qj20ny0jrdgr.jpg" alt="image"></p>
+<hr>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><p>目录就是服务器上存储音乐文件的路径，设置目录后 Ampache 可以扫描路径下的音乐文件，将歌曲信息添加到程序的曲库里。</p>
+<p>首先在服务器上创建一个目录，用于存放音乐文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/wwwroot/test.nas.ink/music</span><br></pre></td></tr></table></figure>
+<p>使用 ftp 上传文件到目录。因为 linux 系统没装中文语言，上传后文件名会乱码，所以我都是把文件压缩后上传，再解压。</p>
+<p><img src="https://ws4.sinaimg.cn/large/92253953gy1fz54bn55kmj213m0mbafh.jpg" alt="image"></p>
+<p>登录 ampache 后台，第一次进入会提示创建目录。</p>
+<p><img src="https://wx1.sinaimg.cn/large/92253953gy1fz54de43bjj21h50pn76u.jpg" alt="image"></p>
+<p>或者点左侧管理员图标，也可添加目录。</p>
+<p><img src="https://wx4.sinaimg.cn/large/92253953gy1fz54nrp3l3j21hc0gr75x.jpg" alt=""></p>
+<p>目录名称随意填写，目录类型选 local 。文件名样式按照你上传的音乐文件样式修改，需和你上传的音乐文件名样式对应，右边有参数说明。目录样式按实际情况修改。路径填写你之前创建的目录，注意是绝对路径。然后点击添加目录。</p>
+<p><img src="https://wx3.sinaimg.cn/large/92253953gy1fz54feb3jsj21hb0njq81.jpg" alt="image"></p>
+<h2 id="扫描目录"><a href="#扫描目录" class="headerlink" title="扫描目录"></a>扫描目录</h2><p>第一次添加目录会自动扫描一次，以后上传了新歌可以在目录列表里手动扫描。</p>
+<p><img src="https://wx3.sinaimg.cn/large/92253953gy1fz54r581c0j21ha0l3n05.jpg" alt="image"></p>
+<p>扫描完以后，在歌曲标题里面，点击播放按钮可通过网页播放歌曲。</p>
+<p><img src="https://wx3.sinaimg.cn/large/92253953gy1fz54pz036rj21hc0q477g.jpg" alt=""></p>
+<h2 id="流式播放"><a href="#流式播放" class="headerlink" title="流式播放"></a>流式播放</h2><p>ampache 的网页播放十分简陋，并且不知什么原因 flac 格式无法播放。ampache 能够覆盖全平台的方式是网络串流。</p>
+<p>点击网页右侧的播放方式选项，默认选项：网络播放器，即通过网页播放。现在改成 流。</p>
+<p><img src="https://wx1.sinaimg.cn/large/92253953gy1fz57aiq8yhj21hc0q9dj5.jpg" alt="image"></p>
+<p>然后再点击歌曲的播放按钮，就不会再网页播放，而是会提示下载一个 m3u 文件。接触过直播源或者在线视频抓取的同学应该知道 m3u8 这种文件，m3u 是一种 Windows-1252格式纯文本文件，可以指定一个或多个多媒体文件的位置，而 M3U8 就是 UTF-8 编码的 M3U。</p>
+<p><img src="https://wx2.sinaimg.cn/large/92253953gy1fz54q4fhy7j21h70nx786.jpg" alt=""></p>
+<p>下载后，即可使用本地支持 m3u 的播放器打开。列如 VLC、foobar2000。</p>
+<p><img src="https://wx1.sinaimg.cn/large/92253953gy1fz54q6gx7wj21hc0sx0yj.jpg" alt=""></p>
+<p>foobar2000 打开，需要播放过一次才会显示歌曲名等信息，不知道是不是我的版本有问题。所以还是建议用 VLC 播放，VLC 在几乎所有平台是都有对应安装包。</p>
+<h2 id="播放列表"><a href="#播放列表" class="headerlink" title="播放列表"></a>播放列表</h2><p>如果想把全部歌曲生成 m3u 添加到本地播放器曲库，可以通过创建智能播放列表的方式，将全部歌曲生成一个 m3u 文件。</p>
+<p><img src="https://ws2.sinaimg.cn/large/92253953gy1fz5671huiqj21gq0g9tao.jpg" alt="image"></p>
+<p>不用添加任何规则，点击创建就是把所以歌曲保存成列表。</p>
+<p><img src="https://ws2.sinaimg.cn/large/92253953gy1fz5671ktevj21h50h70uy.jpg" alt="image"></p>
+<p>然后点播放按钮下载 m3u 文件。</p>
+<p><img src="https://ws4.sinaimg.cn/large/92253953gy1fz5671ogbyj21gp0ecgnp.jpg" alt="image"></p>
+<p>把 m3u 文件拖入 VLC 的媒体库，点击展开列表。</p>
+<p><img src="https://wx1.sinaimg.cn/large/92253953gy1fz54q6gx7wj21hc0sx0yj.jpg" alt=""></p>
+<h2 id="key-的有效期"><a href="#key-的有效期" class="headerlink" title="key 的有效期"></a>key 的有效期</h2><p>程序默认设置 key 的有效期是 7 个小时，也就是添加到本地播放器媒体库的歌曲 7 个小时后会无法播放。</p>
+<p>在管理员，System，将 分享链接的默认有效期改成 0 ，本地的 m3u 歌曲列表就不会失效了。</p>
+<p><img src="https://ws3.sinaimg.cn/large/92253953gy1fz56denyadj21gq0p9jwv.jpg" alt="image"></p>
+<p>如果再要使其失效，可以手动刷新 API key</p>
+<p><img src="https://wx4.sinaimg.cn/large/92253953gy1fz56jkbtwhj21gx0daabw.jpg" alt="image"></p>
+<p><img src="https://wx4.sinaimg.cn/large/92253953gy1fz56jkf7clj21hb0jl41g.jpg" alt="image"></p>
+<hr>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>Ampache 还有很多功能我没搞清楚怎么用，目前唯一知道的是采用流媒体方式播放，其他的 API 没搞明白怎么配置。在安卓上有个应用叫 MPDroid ，可以访问 Ampache 服务器，但是使用体验十分差。Plex 做的不错，但移动端是收费的。找了一圈发现还是 VLC 最强大。</p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/音乐/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;音乐</a>
+                
+                    <a href="/tags/Ampache/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Ampache</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/01/08/120/" rel="prev" title="2019 年十大热门 BT 站">
+                                    
+                                        2019 年十大热门 BT 站
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>BT
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>torrent
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://www.bfdz.ink/2019/01/08/120/">2019 年十大热门 BT 站</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/12/23/119/">TnP压制组标准&amp;规范</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/12/14/118/">墙与梯的较量</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/12/08/117/">VapourSynthEditor-r19-64bit</a></li>
+            
+                <li><a href="https://www.bfdz.ink/2018/11/30/116/">Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Ampache 私人云音乐搭建和使用',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>5</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>32</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>18</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>5</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>9</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>11</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>8</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xiaoxun.jpg">
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.xjh.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xjh.ico">
+                        
+                        &nbsp;&nbsp;岁月小筑
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.xcatliu.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/xcatliu.ico">
+                        
+                        &nbsp;&nbsp;Xcat Liu&#39;s Blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://chuangzaoshi.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;创意狮导航
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.azimiao.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/azimiao.ico">
+                        
+                        &nbsp;&nbsp;梓喵出没
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.goagent.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;小小
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://cuojue.org/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/weicn.ico">
+                        
+                        &nbsp;&nbsp;浅秋枫影
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wobeibk.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wobeibk.ico">
+                        
+                        &nbsp;&nbsp;我辈博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://affvps.net/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/affvps.png">
+                        
+                        &nbsp;&nbsp;AFFVPS
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.do1999.com/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/do1999.ico">
+                        
+                        &nbsp;&nbsp;Let me Attente
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://blog.weimo.info/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/user-circle.png">
+                        
+                        &nbsp;&nbsp;未末小城
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.wushile.top/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/wushile.ico">
+                        
+                        &nbsp;&nbsp;小吴博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.laba.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/laba.ico">
+                        
+                        &nbsp;&nbsp;大喇叭
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        <section class='m_widget mirror'>
+    <div class='header'><i class="fa fa-clone fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;镜像</div>
+    <div class='content'>
+        <ul class="entry" id="mirror">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bfdz.ink/">
+                    <div class='name'>
+                        
+                            <img src="/favicon.ico">
+                        
+                        &nbsp;&nbsp;www.bfdz.ink
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.coding.me/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/coding.ico">
+                        
+                        &nbsp;&nbsp;bfdz.coding.me
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://bfdz.github.io/">
+                    <div class='name'>
+                        
+                            <img src="/images/ico/github.ico">
+                        
+                        &nbsp;&nbsp;bfdz.github.io
+                    </div>
+                </a></li>
+            
+        </ul>
+
+    </div>
+</section>
+    
+    
+        
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务端搭建"><span class="toc-text">服务端搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#要求"><span class="toc-text">要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择语言"><span class="toc-text">选择语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境检测"><span class="toc-text">环境检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库配置"><span class="toc-text">数据库配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成配置文件"><span class="toc-text">生成配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置管理员用户名和密码"><span class="toc-text">配置管理员用户名和密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查更新"><span class="toc-text">检查更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装完成"><span class="toc-text">安装完成</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用说明"><span class="toc-text">使用说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建目录"><span class="toc-text">创建目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扫描目录"><span class="toc-text">扫描目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流式播放"><span class="toc-text">流式播放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#播放列表"><span class="toc-text">播放列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#key-的有效期"><span class="toc-text">key 的有效期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+        </div>
+    </section>
+
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:root@bfdz.ink" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/bfdz" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=42333392" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://www.bfdz.ink/atom.xml" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>本站文章采用<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</div>
+    <div>Theme by <a href="https://github.com/BFDZ/hexo-theme-material-x" target="_blank" class="codename">Material X</a> ,Hosted by <a href="https://pages.coding.me" target="_blank" class="codename">Coding Pages</a> & <a href="https://pages.github.com/" target="_blank" class="codename">GitHub Pages</a> ,
+		view <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> times.
+    </div>
+	<div>&copy; 2016-2019 BFDZ</div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+Date.now()];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-4","https://ga.giuem.com",window,document,navigator,location);
+</script>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="/js/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'true' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "jpuLXrdKdE1ghmREGuALwKCw-gzGzoHsz",
+                appKey: "jcsUjAW740MvTyO5DX2mF0Ho",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'identicon',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
