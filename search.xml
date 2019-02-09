@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>种子文件编辑工具 Torrent File Editor</title>
+      <link href="/2019/02/09/122/"/>
+      <url>/2019/02/09/122/</url>
+      
+        <content type="html"><![CDATA[<p>Torrent File Editor 是一款开源免费的种子文件编辑工具，支持 Windows 和 Mac 平台，以及自带中文语言。</p><p>下载地址：<a href="https://sourceforge.net/projects/torrent-file-editor/" target="_blank" rel="noopener">https://sourceforge.net/projects/torrent-file-editor/</a></p><a id="more"></a><hr><p>特点：</p><ul><li>新建 .torrent 文件</li><li>通过简单、人性化的界面编辑种子文件</li><li>以 JSON 格式编辑 .torrent 文件</li><li>添加，删除和交换种子文件内的文件</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Torrent File Editor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Ampache 私人云音乐搭建和使用</title>
       <link href="/2019/01/13/121/"/>
       <url>/2019/01/13/121/</url>
@@ -148,9 +171,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> vps </tag>
+            
+            <tag> linux </tag>
             
             <tag> 一键重装 </tag>
             
@@ -548,9 +571,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> 网络封锁 </tag>
+            
+            <tag> vps </tag>
             
         </tags>
       
@@ -1352,9 +1375,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> nginx </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -2801,9 +2824,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> vps </tag>
+            
+            <tag> linux </tag>
             
             <tag> iptables </tag>
             
