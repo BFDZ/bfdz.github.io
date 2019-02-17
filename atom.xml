@@ -143,9 +143,9 @@
       <category term="PT" scheme="https://www.bfdz.ink/categories/PT/"/>
     
     
-      <category term="TnP" scheme="https://www.bfdz.ink/tags/TnP/"/>
-    
       <category term="视频压制" scheme="https://www.bfdz.ink/tags/%E8%A7%86%E9%A2%91%E5%8E%8B%E5%88%B6/"/>
+    
+      <category term="TnP" scheme="https://www.bfdz.ink/tags/TnP/"/>
     
   </entry>
   
@@ -409,9 +409,9 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
     
     
-      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
-    
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
     
   </entry>
   
