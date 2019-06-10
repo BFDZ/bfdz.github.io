@@ -6,70 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="PT Gen | 电影、动漫、游戏简介生成工具，根据豆瓣、IMDb、Bangumi、Steam链接自动生成简介">
-	<meta name="keywords" content="电影查询 电影简介 简介生成 电影介绍生成 豆瓣简介 " />
+    <meta name="keywords" content="电影查询 电影简介 简介生成 电影介绍生成 豆瓣简介 " />
     <meta name="author" content="BFDZ">
 
     <title>PT Gen 简介查询生成工具 | 豆瓣 IMDb Bangumi Steam</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <style type="text/css">
-        /* Move down content because we have a fixed navbar that is 50px tall */
-        body {
-            padding-top: 50px;
-        }
-
-        /*
-         * Top navigation
-         * Hide default border to remove 1px line.
-         */
-        .navbar-fixed-top {
-            border: 0;
-        }
-
-        /* Main content */
-        .main {
-            padding: 20px;
-            margin-top: 0;
-        }
-
-        @media (min-width: 768px) {
-            .main {
-                padding-right: 40px;
-                padding-left: 40px;
-            }
-        }
-
-        #input_value {
-            width: 400px;
-        }
-
-        .zero-clipboard {
-            position: relative;
-        }
-
-        .btn-clipboard {
-            position: absolute;
-            top: 8px;
-            right: 21px;
-            z-index: 10;
-            display: block;
-            padding: 5px 8px;
-            font-size: 12px;
-            color: #767676;
-            cursor: pointer;
-            background-color: #fff;
-            border: 1px solid #e1e1e8;
-            border-radius: 0 4px 0 4px;
-        }
+body{padding-top:50px}
+.navbar-fixed-top{border:0}
+.main{padding:20px;margin-top:0}
+@media (min-width:768px){.main{padding-right:40px;padding-left:40px}
+}#input_value{width:400px}
+.zero-clipboard{position:relative}
+.btn-clipboard{position:absolute;top:8px;right:21px;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px 0 4px}
+ul.timeline{list-style-type:none;position:relative}
+ul.timeline:before{content:' ';background:#d4d9df;display:inline-block;position:absolute;left:29px;width:2px;height:100%;z-index:400}
+ul.timeline > li{margin:20px 0;padding-left:20px}
+ul.timeline > li:before{content:' ';background:white;display:inline-block;position:absolute;border-radius:50%;border:3px solid #22c0e8;left:20px;width:20px;height:20px;z-index:400}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js" integrity="sha256-9uAoNWHdszsUDhSXf/rVcWOqKPfi5/8V5R4UdbZle2A=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js" integrity="sha256-nwhzW/P9gnvWMPOm84MK8BzQRRMdi8iutxMuYsYcOgw=" crossorigin="anonymous"></script>
     <![endif]-->
 </head>
 
@@ -89,7 +52,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-			    <li><a href="https://www.bfdz.ink/2018/10/31/110/" target="_blank">问题反馈</a></li>
+				<li><a href="//www.bfdz.ink/" target="_blank">Blog</a>
+				</li>
+                <li><a href="//github.com/BFDZ/PT-Gen" target="_blank">Docs</a>
+                </li>
                 <li><a href="//blog.rhilip.info" target="_blank">Powered By @Rhilip</a></li>
             </ul>
         </div>
@@ -99,46 +65,90 @@
 <div class="container-fluid main">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <div class="form-inline">
-                <div class="form-group">
-                    <label class="sr-only" for="input_value">Input value</label>
-                    <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam等资源链接"
-                           id="input_value"/>
-                </div>
-                <button class="btn btn-success" id="query_btn">查询</button>
-            </div>
-        </div>
-        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <hr>
-        </div>
-        <div id="gen_help" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" style="display: none">
-
-        </div>
-        <div id="gen_out" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <div class="zero-clipboard">
-                <button class="btn btn-clipboard" data-clipboard-target="#movie_info">复制</button>
-            </div>
-            <textarea class="form-control" rows=22 id="movie_info"></textarea>
-        </div>
-		<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <div class="table-responsive">
-            </div>
-            <hr>
             <div>
-			Hosted by GitHub Pages,
-			<span id="busuanzi_container_page_pv" style='display:none'>view <span id="busuanzi_value_page_pv"></span> times.</span>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="input_value">Input value</label>
+                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam等资源链接"
+                               id="input_value"/>
+                    </div>
+                    <button class="btn btn-success" id="query_btn">查询</button>
+                    <div class="checkbox" id="force_douban_div" style="display: none;">
+                        <label for="force_douban" class="checkbox"></label>
+                        <input type="checkbox" class="form-control" id="force_douban" checked="checked"/> 通过豆瓣查询
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="gen_help" style="display: none"></div>
+            <div id="gen_out">
+                <div class="zero-clipboard">
+                    <button class="btn btn-clipboard" data-clipboard-target="#movie_info">复制</button>
+                </div>
+                <textarea class="form-control" rows=22 id="movie_info"></textarea>
+            </div>
+            <hr>
+            <div id="gen_history">
+                <h4>更新历史</h4>
+                <ul class="timeline">
+                    <li>
+                        <a href="#" class="float-right">2019-05-15</a>
+                        <p>前端页面和后端API添加豆瓣apikey</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2019-05-03</a>
+                        <p>定制修改豆瓣海报链接为私有节点</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2019-04-10</a>
+                        <p>1. 增加数据库缓存以及后台自动更新过期信息<br>
+                            2. 上线IMDb格式，如果输入IMDb链接但要输出原格式，请勾选 <kbd>通过豆瓣查询</kbd><br>
+                            3. 增加API请求频率限制，以<code>X-RATELIMIT-*</code>响应头展示。<br>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2019-02-23</a>
+                        <p>修改CDN为jsDelivr</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2018-6-22</a>
+                        <p>增加前端豆瓣搜索（通过豆瓣API）支持</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2018-04-17</a>
+                        <p>增加Steam信息生成</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2018-03-17</a>
+                        <p>上线前端页面</p>
+                    </li>
+                    <li>
+                        <a href="#" class="float-right">2017-10-14</a>
+                        <p>API初版上线，初版支持Douban以及Bangumi简介生成</p>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div id="gen_replace">
+                <h4>相关替代</h4>
+                此处列出可以替代本平台的用户脚本，以便在 <code>Pt-Gen</code> 失效或返回数据陈旧时使用
+                <ul style="margin-top: 10px">
+                    <li>豆瓣： <a href="https://greasyfork.org/en/scripts/38878" target="_blank">电影信息查询脚本</a> 或
+                        <a href="https://greasyfork.org/scripts/329484" target="_blank">豆瓣资源下载大师</a></li>
+                    <li>Bangumi： Bangumi Info Export <a href="https://git.io/fjm3l" target="_blank">脚本</a>，
+                        <a href="https://bgm.tv/dev/app/103" target="_blank">应用平台</a></li>
+                </ul>
             </div>
         </div>
     </div>
-
 </div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdn.bootcss.com/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.0/dist/clipboard.min.js" integrity="sha256-meF2HJJ2Tcruwz3z4XcxYDRMxKprjdruBHc3InmixCQ=" crossorigin="anonymous"></script>
 
 <script>   // 页面信息填充
 // TODO Version and Version Log
@@ -154,7 +164,7 @@ function jsonp(url, arg, fn) {
     for (let key in arg) {
         queryString += key + '=' + arg[key] + '&'
     }
-    url += '?' + queryString + 'callback=' + funName;
+    url += '&' + queryString + 'callback=' + funName;
 
     window[funName] = fn;
     srpt.src = url;
@@ -178,6 +188,14 @@ $(function () {
         query_btn.html("查询");
     };
 
+   input_btn.on('input change',function () {
+       if (input_btn.val().match(/imdb/)) {
+           $('#force_douban_div').show();
+       } else {
+           $('#force_douban_div').hide();
+       }
+    });
+
     query_btn.click(function () {
         gen_help.hide();
         gen_out.show();
@@ -186,19 +204,29 @@ $(function () {
             alert("空字符，请检查输入");
         } else if (/^http/.test(input_value)) {
             query_btn.disable();
-            $.getJSON("https://api.nas.ink/movieinfo/gen", {
+
+            let param = {
                 url: input_value
-            }).success(function (data) {
-                out_textarea.val(data["success"] ? data["format"] : data["error"]);
-            }).error(function () {
-                alert("Error occured!");
+            };
+            if (input_value.match(/imdb/) && $('#force_douban').prop('checked')) {
+                let sid = input_value.match(/tt\d+/)[0];
+                param = {
+                    site: 'douban',
+                    sid: sid
+                }
+            }
+
+            $.getJSON("https://api.nas.ink/infogen", param).success(function (data) {
+                out_textarea.val(data["success"] === false ? data["error"] : data["format"]);
+            }).fail(function (jqXHR) {
+                alert(jqXHR.status === 429 ? 'Met Rate Limit, Retry later~' : "Error occured!");
             }).complete(function () {
                 query_btn.enable();
             });
         } else {  // Search from Douban
             gen_help.show();
             gen_out.hide();
-            jsonp("https://api.douban.com/v2/movie/search", {q: input_value}, function (resj) {
+            jsonp("https://api.douban.com/v2/movie/search?apikey=0dad551ec0f84ed02907ff5c42e8ec70", {q: input_value}, function (resj) {
                 gen_help.html(resj.subjects.reduce((accumulator, currentValue) => {
                     return accumulator += `<tr><td>${currentValue.year}</td><td>${currentValue.subtype}</td><td>${currentValue.title}</td><td><a href='${currentValue.alt}' target='_blank'>${currentValue.alt}</a></td><td><a href='javascript:void(0);' class="gen-search-choose" data-url="${currentValue.alt}">选择</a></td></tr>`;
                 }, "<table id='gen_help_table' class='table table-striped table-hover'><thead><tr><th>年代</th><th>类别</th><th>标题</th><th>豆瓣链接</th><th>行为</th></tr></thead><tbody>"));
@@ -215,15 +243,9 @@ $(function () {
 <script>   // 页面复制相关
 new ClipboardJS('.btn-clipboard');
 </script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-5"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-64016301-5');
+!function(a,b,c,d,e){var f=c.screen,g=encodeURIComponent,h=["ga="+a,"dt="+g(d.title),"dr="+g(d.referrer),"ul="+(e.language||e.browserLanguage||e.userLanguage),"sd="+f.colorDepth+"-bit","sr="+f.width+"x"+f.height,"vp="+Math.max(d.documentElement.clientWidth,c.innerWidth||0)+"x"+Math.max(d.documentElement.clientHeight,c.innerHeight||0),"z="+ +new Date];c.__ga_img=new Image,c.__ga_img.src=b+"?"+h.join("&")}("UA-64016301-5","https://ga.giuem.com",window,document,navigator,location);
 </script>
 </body>
 </html>
