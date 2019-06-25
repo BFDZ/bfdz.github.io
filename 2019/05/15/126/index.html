@@ -164,7 +164,7 @@
 <li>修改了 API 路径，由原来的 <code>/movieinfo/gen</code> 改为 <code>/infogen</code></li>
 <li>去掉了 run.py</li>
 </ol>
-<p>建议之前使用 v0.3.5 的朋友按此教程升级到 v0.4.4，同时前端页面也要注意更新。</p>
+<p>建议之前使用 v0.3.5 的朋友按此教程升级到 v0.4.5，同时前端页面也要注意更新。</p>
 <hr>
 <p>服务器必备的软件环境：</p>
 <ul>
@@ -207,7 +207,7 @@
 <hr>
 <h2 id="下载-PT-Gen"><a href="#下载-PT-Gen" class="headerlink" title="下载 PT-Gen"></a>下载 PT-Gen</h2><p>lnmp 新建主机，设置网站根目录和配置文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure>
-<p>进入网站根目录并下载程序源码, v0.3.5 用户先杀掉uwsig进程和删除网站目录里面的 PT-Gen。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/api.example.com</span><br><span class="line">wget https://github.com/BFDZ/PT-Gen/archive/0.4.4.tar.gz</span><br><span class="line">tar xzvf 0.4.4.tar.gz</span><br><span class="line">mv PT-Gen*/* ./</span><br></pre></td></tr></table></figure></p>
+<p>进入网站根目录并下载程序源码, v0.3.5 用户先杀掉uwsig进程和删除网站目录里面的 PT-Gen。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/api.example.com</span><br><span class="line">wget https://github.com/BFDZ/PT-Gen/archive/0.4.5.tar.gz</span><br><span class="line">tar xzvf 0.4.5.tar.gz</span><br><span class="line">mv PT-Gen*/* ./</span><br></pre></td></tr></table></figure></p>
 <p>修改数据库文件权限,使 www 用户可以读写数据库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 database/</span><br></pre></td></tr></table></figure></p>
 <p>安装依赖库</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r requirement.txt</span><br></pre></td></tr></table></figure>
@@ -269,9 +269,9 @@
                             
                                 <h6 class="tags">
                                     
-                                        <i class="fa fa-tag fa-fw"></i>HBO
-                                    
                                         <i class="fa fa-tag fa-fw"></i>欧美剧
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>HBO
                                     
                                 </h6>
                             
