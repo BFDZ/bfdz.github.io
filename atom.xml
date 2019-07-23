@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-06-25T16:14:21.686Z</updated>
+  <updated>2019-07-23T18:02:26.990Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PbootCMS 部署教程</title>
+    <link href="https://www.bfdz.ink/2019/07/24/127/"/>
+    <id>https://www.bfdz.ink/2019/07/24/127/</id>
+    <published>2019-07-23T23:08:00.000Z</published>
+    <updated>2019-07-23T18:02:26.990Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="演示环境"><a href="#演示环境" class="headerlink" title="演示环境"></a>演示环境</h2><ul><li>系统: Linux</li><li>面板：lnmp<ul><li>nginx</li><li>php-7.2</li></ul></li></ul><a id="more"></a><h2 id="创建网站"><a href="#创建网站" class="headerlink" title="创建网站"></a>创建网站</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/24/eAdd9f.jpg" alt=""></p><p>因为 PbootCMS 要求开启环境的 Pathinfo 模式支持，所以 Enable PHP Pathinfo 这一项必须选 y ，其他选项随意。</p><h2 id="下载和配置"><a href="#下载和配置" class="headerlink" title="下载和配置"></a>下载和配置</h2><p>进入网站目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/demo.example.com/</span><br></pre></td></tr></table></figure></p><p>下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/hnaoyun/PbootCMS/archive/V1.4.2.tar.gz</span><br></pre></td></tr></table></figure></p><p>解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf V1.4.2.tar.gz </span><br><span class="line">mv PbootCMS-1.4.2/* ./</span><br></pre></td></tr></table></figure></p><p>配置权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R www ./*</span><br><span class="line">chgrp -R www ./*</span><br></pre></td></tr></table></figure></p><h2 id="配置授权码"><a href="#配置授权码" class="headerlink" title="配置授权码"></a>配置授权码</h2><p>进入 PbootCMS 官网页面 <a href="https://www.pbootcms.com/freesn.html" target="_blank" rel="noopener">https://www.pbootcms.com/freesn.html</a> ，输入自己网站的域名免费获取永久授权码。</p><p><img src="https://s2.ax1x.com/2019/07/24/eA07fx.jpg" alt=""></p><p>登陆自己网站后台，在 <code>全局配置</code> &gt;&gt; <code>配置参数</code> 中填写系统授权码并提交，这时候网站就已经可以访问了。</p><p>系统后台默认访问路径：http://域名/admin.php 账号：admin 密码：123456</p><p><img src="https://s2.ax1x.com/2019/07/24/eABptI.jpg" alt=""></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>最后注意修改后台管理员的默认密码和点击自动修改数据库路径。</p><p><img src="https://s2.ax1x.com/2019/07/24/eABnNn.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;演示环境&quot;&gt;&lt;a href=&quot;#演示环境&quot; class=&quot;headerlink&quot; title=&quot;演示环境&quot;&gt;&lt;/a&gt;演示环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;系统: Linux&lt;/li&gt;
+&lt;li&gt;面板：lnmp&lt;ul&gt;
+&lt;li&gt;nginx&lt;/li&gt;
+&lt;li&gt;php-7.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="PbootCMS" scheme="https://www.bfdz.ink/tags/PbootCMS/"/>
+    
+  </entry>
   
   <entry>
     <title>PT-Gen v0.4.x 搭建教程</title>
@@ -77,9 +108,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
-    
       <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
+    
+      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
     
   </entry>
   
@@ -103,9 +134,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
-    
       <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
+    
+      <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
     
   </entry>
   
@@ -502,9 +533,9 @@
       <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
     
     
-      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
-    
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
     
   </entry>
   
@@ -534,30 +565,6 @@
       <category term="nginx" scheme="https://www.bfdz.ink/tags/nginx/"/>
     
       <category term="Cloudflare" scheme="https://www.bfdz.ink/tags/Cloudflare/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>江湖儿女</title>
-    <link href="https://www.bfdz.ink/2018/10/04/107/"/>
-    <id>https://www.bfdz.ink/2018/10/04/107/</id>
-    <published>2018-10-04T13:36:00.000Z</published>
-    <updated>2019-02-22T15:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws4.sinaimg.cn/large/92253953gy1fvwj1p9q63j20f00l0q7l.jpg" alt=""></p><a id="more"></a><p>◎译　　名　Ash is Purest White / Les Eternels / Money &amp; Love / 灰烬是最洁白的 / 金钱与爱情<br>◎片　　名　江湖儿女<br>◎年　　代　2018<br>◎产　　地　中国大陆 / 法国 / 日本<br>◎类　　别　爱情 / 犯罪<br>◎语　　言　汉语普通话 / 山西方言 / 湖北方言 / 重庆方言<br>◎上映日期　2018-05-11(戛纳电影节) / 2018-09-21(中国大陆)<br>◎IMDb评分　6.9/10 from 478 users<br>◎IMDb链接　<a href="http://www.imdb.com/title/tt7298400" target="_blank" rel="noopener">http://www.imdb.com/title/tt7298400</a><br>◎豆瓣评分　7.7/10 from 90538 users<br>◎豆瓣链接　<a href="https://movie.douban.com/subject/26972258/" target="_blank" rel="noopener">https://movie.douban.com/subject/26972258/</a><br>◎片　　长　137分钟(中国大陆)<br>◎导　　演　贾樟柯 Zhangke Jia<br>◎编　　剧　贾樟柯 Zhangke Jia<br>◎主　　演　赵涛 Tao Zhao<br>　　　　　　廖凡 Fan Liao<br>　　　　　　徐峥 Zheng Xu<br>　　　　　　梁嘉艳 Casper Liang<br>　　　　　　刁亦男 Yi’nan Diao<br>　　　　　　张一白 Yibai Zhang<br>　　　　　　丁嘉丽 Jiali Ding<br>　　　　　　张译 Yi Zhang<br>　　　　　　董子健 Zijian Dong<br>　　　　　　李宣 Xuan Li<br>　　　　　　查娜 Chana<br>　　　　　　冯家妹 Jiamei Feng<br>　　　　　　康亢 Kang Kang<br>　　　　　　张晓军 Xiaojun Zhang<br>　　　　　　柳敏 Min Liu<br>　　　　　　王谭 Tan Wang<br>　　　　　　原文倩 Wenqian Yuan</p><p>◎标　　签　中国大陆 | 文艺 | 人性 | 社会 | 剧情 | 2018 | 爱情 | 犯罪</p><p>◎简　　介  </p><p>　　故事开始于2001年的山西大同，巧巧（赵涛 饰）和斌斌（廖凡 饰）相恋多年，巧巧一心希望能够和斌斌成家过安稳的生活，但斌斌身为当地的大佬，有着自己更高远的志向。一场意外中，斌斌遭人暗算危在旦夕，巧巧拿着斌斌私藏的手枪挺身而出救了斌斌，自己却因为非法持枪而被判处了五年的监禁。<br>一晃眼五年过去，出狱后的巧巧发现整个世界都发生了翻天覆地的变化，唯一不变的是她对斌斌真挚的感情。巧巧跋山涉水寻找斌斌的下落，但此时的斌斌早已经失去了往日的锋芒，而且身边已有了新的女友。身无分文的巧巧靠着自己的智慧摸爬滚打，终于为自己挣得了一片天地。</p><p>◎获奖情况  </p><p>　　第71届戛纳电影节(2018)<br>　　主竞赛单元 金棕榈奖(提名) 贾樟柯</p><p>　　第55届台北金马影展(2018)<br>　　金马奖 最佳女主角(提名) 赵涛</p><hr><blockquote><p>1080p 无水印 在线观看和下载<br>链接：<a href="https://pan.nas.ink/%E7%94%B5%E5%BD%B1/%E4%B8%AD%E5%9B%BD/%E6%B1%9F%E6%B9%96%E5%84%BF%E5%A5%B3.2018/" target="_blank" rel="noopener">https://pan.nas.ink/%E7%94%B5%E5%BD%B1/%E4%B8%AD%E5%9B%BD/%E6%B1%9F%E6%B9%96%E5%84%BF%E5%A5%B3.2018/</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/92253953gy1fvwj1p9q63j20f00l0q7l.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电影" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E5%BD%B1/"/>
-    
-    
-      <category term="江湖儿女" scheme="https://www.bfdz.ink/tags/%E6%B1%9F%E6%B9%96%E5%84%BF%E5%A5%B3/"/>
-    
-      <category term="贾樟柯" scheme="https://www.bfdz.ink/tags/%E8%B4%BE%E6%A8%9F%E6%9F%AF/"/>
     
   </entry>
   

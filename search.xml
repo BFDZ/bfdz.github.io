@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>PbootCMS 部署教程</title>
+      <link href="/2019/07/24/127/"/>
+      <url>/2019/07/24/127/</url>
+      
+        <content type="html"><![CDATA[<h2 id="演示环境"><a href="#演示环境" class="headerlink" title="演示环境"></a>演示环境</h2><ul><li>系统: Linux</li><li>面板：lnmp<ul><li>nginx</li><li>php-7.2</li></ul></li></ul><a id="more"></a><h2 id="创建网站"><a href="#创建网站" class="headerlink" title="创建网站"></a>创建网站</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/24/eAdd9f.jpg" alt=""></p><p>因为 PbootCMS 要求开启环境的 Pathinfo 模式支持，所以 Enable PHP Pathinfo 这一项必须选 y ，其他选项随意。</p><h2 id="下载和配置"><a href="#下载和配置" class="headerlink" title="下载和配置"></a>下载和配置</h2><p>进入网站目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/demo.example.com/</span><br></pre></td></tr></table></figure></p><p>下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/hnaoyun/PbootCMS/archive/V1.4.2.tar.gz</span><br></pre></td></tr></table></figure></p><p>解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf V1.4.2.tar.gz </span><br><span class="line">mv PbootCMS-1.4.2/* ./</span><br></pre></td></tr></table></figure></p><p>配置权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R www ./*</span><br><span class="line">chgrp -R www ./*</span><br></pre></td></tr></table></figure></p><h2 id="配置授权码"><a href="#配置授权码" class="headerlink" title="配置授权码"></a>配置授权码</h2><p>进入 PbootCMS 官网页面 <a href="https://www.pbootcms.com/freesn.html" target="_blank" rel="noopener">https://www.pbootcms.com/freesn.html</a> ，输入自己网站的域名免费获取永久授权码。</p><p><img src="https://s2.ax1x.com/2019/07/24/eA07fx.jpg" alt=""></p><p>登陆自己网站后台，在 <code>全局配置</code> &gt;&gt; <code>配置参数</code> 中填写系统授权码并提交，这时候网站就已经可以访问了。</p><p>系统后台默认访问路径：http://域名/admin.php 账号：admin 密码：123456</p><p><img src="https://s2.ax1x.com/2019/07/24/eABptI.jpg" alt=""></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>最后注意修改后台管理员的默认密码和点击自动修改数据库路径。</p><p><img src="https://s2.ax1x.com/2019/07/24/eABnNn.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> PbootCMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>PT-Gen v0.4.x 搭建教程</title>
       <link href="/2019/05/15/126/"/>
       <url>/2019/05/15/126/</url>
@@ -44,9 +69,9 @@
       
         <tags>
             
-            <tag> 欧美剧 </tag>
-            
             <tag> HBO </tag>
+            
+            <tag> 欧美剧 </tag>
             
         </tags>
       
@@ -69,9 +94,9 @@
       
         <tags>
             
-            <tag> Netflix </tag>
-            
             <tag> 欧美剧 </tag>
+            
+            <tag> Netflix </tag>
             
         </tags>
       
@@ -448,9 +473,9 @@
       
         <tags>
             
-            <tag> Google Analytics </tag>
-            
             <tag> linux </tag>
+            
+            <tag> Google Analytics </tag>
             
         </tags>
       
@@ -2071,9 +2096,9 @@
             
             <tag> linux </tag>
             
-            <tag> TCP </tag>
-            
             <tag> BBR </tag>
+            
+            <tag> TCP </tag>
             
         </tags>
       
@@ -2319,9 +2344,9 @@
       
         <tags>
             
-            <tag> TCP </tag>
-            
             <tag> BBR </tag>
+            
+            <tag> TCP </tag>
             
         </tags>
       
