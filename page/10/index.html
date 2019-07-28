@@ -143,6 +143,64 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2016/12/31/38/">
+                
+                    Ubuntu 配置 tftp 服务器
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-12-31
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Linux/">Linux</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p><strong>配置 tftp 服务器</strong></p>
+<ul>
+<li>安装 tftp 客户端、服务端和 xinetd 服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tftp-hpa tftpd-hpa xinetd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建共享目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/tftpboot</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置权限</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /home/tftpboot</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2016/12/31/38/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/ARM/"><i class="fa fa-tag fa-fw"></i>&nbsp;ARM</a>
+                
+                    <a href="/tags/tftp/"><i class="fa fa-tag fa-fw"></i>&nbsp;tftp</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2016/12/29/37/">
                 
                     Markdown 语法高亮的常用语言关键字
@@ -313,9 +371,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/BBR/"><i class="fa fa-tag fa-fw"></i>&nbsp;BBR</a>
-                
                     <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
+                
+                    <a href="/tags/BBR/"><i class="fa fa-tag fa-fw"></i>&nbsp;BBR</a>
                 
             </div>
         
@@ -551,53 +609,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/11/08/28/">
-                
-                    LNMP配置启用HTTPS
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-11-08
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/HTTPS/">HTTPS</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>HTTPS证书使用由Let’s Encrypt提供的免费证书，有个很方便的小工具可以帮助快速获得证书，参见<a href="https://github.com/Neilpang/acme.sh" target="_blank" rel="noopener">https://github.com/Neilpang/acme.sh</a></p>
-<p>LNMP在使用acme.sh申请证书之前需要修改站点的nginx配置，否则会因无法验证导致申请失败。<br>
-        
-            <div class="readmore">
-                <a href="/2016/11/08/28/" class="flat-box">阅读全文</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
-                
-                    <a href="/tags/lnmp/"><i class="fa fa-tag fa-fw"></i>&nbsp;lnmp</a>
-                
-                    <a href="/tags/https/"><i class="fa fa-tag fa-fw"></i>&nbsp;https</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -651,7 +662,7 @@
                 
                     <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>34</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>9</div></a></li>
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>10</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>4</div></a></li>
                 

@@ -148,6 +148,56 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2019/07/28/128/">
+                
+                    使用 Cloudflare Worker 构建 Pt-Gen
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2019-07-28
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/PT/">PT</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>最早的时候，Pt-Gen是作为Pt-help的一个子项，使用flask内置的web server提供服务，后来BFDZ将其单独提取出来（<a href="https://github.com/BFDZ/PT-Gen" target="_blank" rel="noopener">BFDZ/PT-Gen</a>），但是仍然存在部署较为困难的问题。</p>
+<p>过去近1年的Pt-Gen的运行中，我曾经迁移过多次宿主机。目前托给ourhelp组的Pt-Gen服务器更是远在欧洲大陆。此外因为网络的问题，也导致部分时间段与豆瓣服务器无法连接，导致Pt-Gen服务的SLA特别差。</p>
+<p>近期，我得知八蠢想要构建基于AWS lambda的Pt-Gen，也正好最近看到了有关Cloudflare Worker的一些介绍。正好这也是Cf-worker的用途之一——“构建完全依赖于 Web API 的“无服务器”应用程序”。</p>
+<p>然而，与AWS lambda不同的是，cf-worker只支持Javscript。于是将原来Pt-Gen改成javascript的格式并使用Travis CI进行自动构建。</p>
+<p>项目地址： <a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank" rel="noopener">https://github.com/Rhilip/pt-gen-cfworker</a><br>项目Demo地址： <a href="https://ptgen.rhilip.workers.dev/" target="_blank" rel="noopener">https://ptgen.rhilip.workers.dev/</a><br>
+        
+            <div class="readmore">
+                <a href="/2019/07/28/128/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/pt/"><i class="fa fa-tag fa-fw"></i>&nbsp;pt</a>
+                
+                    <a href="/tags/Cloudflare-Worker/"><i class="fa fa-tag fa-fw"></i>&nbsp;Cloudflare Worker</a>
+                
+                    <a href="/tags/转载/"><i class="fa fa-tag fa-fw"></i>&nbsp;转载</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2019/07/24/127/">
                 
                     PbootCMS 部署教程
@@ -291,9 +341,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/HBO/"><i class="fa fa-tag fa-fw"></i>&nbsp;HBO</a>
-                
                     <a href="/tags/欧美剧/"><i class="fa fa-tag fa-fw"></i>&nbsp;欧美剧</a>
+                
+                    <a href="/tags/HBO/"><i class="fa fa-tag fa-fw"></i>&nbsp;HBO</a>
                 
             </div>
         
@@ -337,9 +387,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/欧美剧/"><i class="fa fa-tag fa-fw"></i>&nbsp;欧美剧</a>
-                
                     <a href="/tags/Netflix/"><i class="fa fa-tag fa-fw"></i>&nbsp;Netflix</a>
+                
+                    <a href="/tags/欧美剧/"><i class="fa fa-tag fa-fw"></i>&nbsp;欧美剧</a>
                 
             </div>
         
@@ -561,7 +611,7 @@
                 
                     <li><a class="flat-box" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>34</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>9</div></a></li>
+                    <li><a class="flat-box" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>10</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>4</div></a></li>
                 

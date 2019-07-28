@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>使用 Cloudflare Worker 构建 Pt-Gen</title>
+      <link href="/2019/07/28/128/"/>
+      <url>/2019/07/28/128/</url>
+      
+        <content type="html"><![CDATA[<p>最早的时候，Pt-Gen是作为Pt-help的一个子项，使用flask内置的web server提供服务，后来BFDZ将其单独提取出来（<a href="https://github.com/BFDZ/PT-Gen" target="_blank" rel="noopener">BFDZ/PT-Gen</a>），但是仍然存在部署较为困难的问题。</p><p>过去近1年的Pt-Gen的运行中，我曾经迁移过多次宿主机。目前托给ourhelp组的Pt-Gen服务器更是远在欧洲大陆。此外因为网络的问题，也导致部分时间段与豆瓣服务器无法连接，导致Pt-Gen服务的SLA特别差。</p><p>近期，我得知八蠢想要构建基于AWS lambda的Pt-Gen，也正好最近看到了有关Cloudflare Worker的一些介绍。正好这也是Cf-worker的用途之一——“构建完全依赖于 Web API 的“无服务器”应用程序”。</p><p>然而，与AWS lambda不同的是，cf-worker只支持Javscript。于是将原来Pt-Gen改成javascript的格式并使用Travis CI进行自动构建。</p><p>项目地址： <a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank" rel="noopener">https://github.com/Rhilip/pt-gen-cfworker</a><br>项目Demo地址： <a href="https://ptgen.rhilip.workers.dev/" target="_blank" rel="noopener">https://ptgen.rhilip.workers.dev/</a><br><a id="more"></a><br>Cloudflare Worker介绍<br>文档： <a href="https://workers.cloudflare.com/docs" target="_blank" rel="noopener">https://workers.cloudflare.com/docs</a></p><p>Cloudflare Worker是Cloudflare推出的serverless服务，可以使用Javascript以及WebAssembly语言进行编程，其最简单的代码示例如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1\. Register a FetchEvent listener that sends a custom</span></span><br><span class="line"><span class="comment">// response for the given request.</span></span><br><span class="line">addEventListener(<span class="string">'fetch'</span>, event =&gt; &#123;</span><br><span class="line">event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 2\. Return a custom request object</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">handleRequest</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Response(<span class="string">"hello world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并提供了相应的CLI工具 <a href="https://github.com/cloudflare/wrangler" target="_blank" rel="noopener">Wrangler</a> 进行APP构建。此外，还提供了很简洁的调试界面。</p><p><strong>最为良心的Cloudflare Worker是可以免费使用的（免费计划一天最多100,000次请求）</strong></p><h2 id="部署基于Cloudflare-Worker的Pt-Gen"><a href="#部署基于Cloudflare-Worker的Pt-Gen" class="headerlink" title="部署基于Cloudflare Worker的Pt-Gen"></a>部署基于Cloudflare Worker的Pt-Gen</h2><p>和原项目相比，Pt-Gen-cfworker并不需要你在VPS上搭建复杂（并不）的Python3+uwsgi工具链，只需要你有Cloudflare帐号就可以。</p><p>本教程并不介绍Cloudflare帐号的注册方法（请自己搜索），仅分有无Node.js环境对不同用户部署方法进行介绍。</p><h3 id="1-无Node环境直接部署"><a href="#1-无Node环境直接部署" class="headerlink" title="1.无Node环境直接部署"></a>1.无Node环境直接部署</h3><p>因为项目主文件 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/master/index.js" target="_blank" rel="noopener">index.js</a> 加载了两个npm库用于解析页面，所以并不能直接使用。不过在项目的build分支中，我使用Travis CI自动构建了 可以用于CF-Worker的 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/build/script.js" target="_blank" rel="noopener">script.js</a> 。</p><p>所以进入Cloudflare的Worker面板，并创建新的Worker。<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/2591219312.png" alt=""><br><img src="https://blog.rhilip.info/usr/uploads/2019/07/1417315508.png" alt=""></p><p>在Worker代码的编辑器里面，首先修改左上角的Worker名称，这个名称会影响到后面生成的Worker域名（除非你使用已经在CF中注册的其他域名）。然后将 build分支的 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/build/script.js" target="_blank" rel="noopener">script.js</a> 文件全部复制到左侧的代码框中替换Cloudflare默认的代码块。</p><p>最后点击Run，如果右侧出现如下图的JSON块说明部署成功。之后你就可以直接使用worker域名进行访问。</p><p>如我这边部署的域名是<code>https://ptgen.rhilip.workers.dev/</code>。<br>则获取豆瓣的信息则请求地址如下： <code>https://ptgen.rhilip.workers.dev/?url=https://movie.douban.com/subject/1297880/</code>。<br>请求链接格式和Python写的Pt-Gen相同，既可以使用<code>&amp;url=.....</code> ，也可以使用<code>&amp;site=....&amp;sid=....</code>。且返回字段格式尽可能与原repo相同。<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/1494080402.png" alt=""><br><img src="https://blog.rhilip.info/usr/uploads/2019/07/3901039727.png" alt=""></p><h3 id="2-Node环境下使用Wrangler部署"><a href="#2-Node环境下使用Wrangler部署" class="headerlink" title="2.Node环境下使用Wrangler部署"></a>2.Node环境下使用Wrangler部署</h3><p>如果你本地有Node环境，或者希望对Pt-Gen-cfworker有改进的需要，你可以自己构建Worker文件。</p><blockquote><p>Wrangler 文档： <a href="https://github.com/cloudflare/wrangler" target="_blank" rel="noopener">https://github.com/cloudflare/wrangler</a></p></blockquote><ol><li>安装Wrangler并注册全局信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i @cloudflare/wrangler -g</span><br><span class="line">wrangler config <span class="string">"<span class="variable">$&#123;CF_EMAIL&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;CF_API_KEY&#125;</span>"</span></span><br></pre></td></tr></table></figure></li></ol><p>其中 <code>${CF_EMAIL}</code>为你的Cloudflare帐号，而 <code>${CF_API_KEY}</code> 你可以在你帐号的Profile页面中找到Global API Key。</p><ol start="2"><li>取得项目源代码并配置Wrangler信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Rhilip/pt-gen-cfworker.git</span><br><span class="line">cp wrangler.toml.sample wrangler.toml</span><br><span class="line">sed -i <span class="string">"s/CF_ACCOUNT_ID/<span class="variable">$&#123;CF_ACCOUNT_ID&#125;</span>/g"</span> wrangler.toml</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li></ol><p>使用git clone或者zip包下载项目源代码后，需要编辑<code>wrangler.toml</code>文件的相关键值，并将<code>account_id</code>值改成你在Worker界面右侧API栏中看到的值，<code>name</code> 值会影响到部署时的值，默认为<code>ptgen</code>。如果你不愿部署在<code>..workers.dev</code>域名下，你可以再参照Wrangler文档，添加<code>zone_id</code>，<code>route</code>等信息，本处不再累述。</p><ol start="3"><li>部署到workers.dev上<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#wrangler build # 构造</span></span><br><span class="line"><span class="comment">#wrangler preview # 构造并预览</span></span><br><span class="line">wrangler publish <span class="comment"># 构造并发布</span></span><br></pre></td></tr></table></figure></li></ol><p>如果配置好wrangler信息并使用 <code>wrangler publish</code>，会直接部署，并 提示如下信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wrangler publish</span><br><span class="line">⬇️ Installing wasm-pack...</span><br><span class="line">⬇️ Installing wranglerjs...</span><br><span class="line">Built successfully.</span><br><span class="line">Successfully published your script.</span><br><span class="line">Successfully made your script available at ptgen.rhilip.workers.dev</span><br><span class="line">✨ Success! Your worker was successfully published. ✨</span><br></pre></td></tr></table></figure></p><p>而如果使用<code>wrangler preview</code>则会在构建完后，弹出<code>https://cloudflareworkers.com/</code>开头的网页。此时你可以使用console等方法对脚本进行调试。</p><p>除了使用wrangler，本人还在<code>package.json</code>中设置了<code>alias</code>，你也可以使用 <code>npm {build,preview,publish}</code> （在IDE中）快速调用。</p><h3 id="Travis-CI-自动构建"><a href="#Travis-CI-自动构建" class="headerlink" title="Travis-CI 自动构建"></a>Travis-CI 自动构建</h3><p>本项目使用Travis-CI对主分支的更新进行自动构建生成build分支信息。</p><p>相关配置文件写在 .travis.yml 中。请自行查阅，并在Travis-CI中对以下环境变量进行设置：<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/3885747407.png" alt=""></p><hr><p>著作权归作者所有。<br>商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：Rhilip<br>链接：<a href="https://blog.rhilip.info/archives/1095/" target="_blank" rel="noopener">https://blog.rhilip.info/archives/1095/</a><br>来源：<a href="https://blog.rhilip.info/" target="_blank" rel="noopener">https://blog.rhilip.info/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pt </tag>
+            
+            <tag> Cloudflare Worker </tag>
+            
+            <tag> 转载 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>PbootCMS 部署教程</title>
       <link href="/2019/07/24/127/"/>
       <url>/2019/07/24/127/</url>
@@ -69,9 +96,9 @@
       
         <tags>
             
-            <tag> HBO </tag>
-            
             <tag> 欧美剧 </tag>
+            
+            <tag> HBO </tag>
             
         </tags>
       
@@ -94,9 +121,9 @@
       
         <tags>
             
-            <tag> 欧美剧 </tag>
-            
             <tag> Netflix </tag>
+            
+            <tag> 欧美剧 </tag>
             
         </tags>
       
@@ -296,9 +323,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> 一键重装 </tag>
             
@@ -696,9 +723,9 @@
       
         <tags>
             
-            <tag> 网络封锁 </tag>
-            
             <tag> vps </tag>
+            
+            <tag> 网络封锁 </tag>
             
         </tags>
       
@@ -1500,9 +1527,9 @@
       
         <tags>
             
-            <tag> nginx </tag>
-            
             <tag> linux </tag>
+            
+            <tag> nginx </tag>
             
         </tags>
       
@@ -2096,9 +2123,9 @@
             
             <tag> linux </tag>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
@@ -2344,9 +2371,9 @@
       
         <tags>
             
-            <tag> BBR </tag>
-            
             <tag> TCP </tag>
+            
+            <tag> BBR </tag>
             
         </tags>
       
@@ -2949,9 +2976,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> iptables </tag>
             
