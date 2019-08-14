@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-07-28T07:44:58.114Z</updated>
+  <updated>2019-08-14T15:14:53.874Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>KMS激活方法</title>
+    <link href="https://www.bfdz.ink/2019/08/14/129/"/>
+    <id>https://www.bfdz.ink/2019/08/14/129/</id>
+    <published>2019-08-14T15:05:00.000Z</published>
+    <updated>2019-08-14T15:14:53.874Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>支持Windows操作系统(VL),Office软件(VL). 已支持到最新的Windows和Office! 支持激活 Windows10 和 Office2019.</strong></p><a id="more"></a><hr><ul><li>Windows:<br>以管理员身份打开命令提示符,然执行下列命令：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">::cd /d &quot;%SystemRoot%\system32&quot;</span><br><span class="line">slmgr /skms kms.bfdz.ink</span><br><span class="line">slmgr /ato</span><br><span class="line">slmgr /xpr</span><br></pre></td></tr></table></figure><ul><li>Office:<br>以管理员身份打开命令提示符,进入软件安装目录,然后执行下列命令(这里以Office 2013为例):  </li></ul><p>进入32位版本安装目录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /d &quot;%ProgramFiles(x86)%\Microsoft Office\Office15&quot;</span><br></pre></td></tr></table></figure><p>进入64位版本安装目录:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /d &quot;%ProgramFiles%\Microsoft Office\Office15&quot;</span><br></pre></td></tr></table></figure><p>然后执行下列命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:kms.bfdz.ink</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure></p><p><strong>通过以上步骤就可以免费激活你的Windows系统和Office软件.</strong> 如果激活失败或输入过其他密钥,请先替换为<a href="https://technet.microsoft.com/en-us/library/jj612867.aspx" target="_blank" rel="noopener">微软官方GVLK密钥</a>.(<a href="https://moeclub.org/2018/12/02/710/" target="_blank" rel="noopener">点击查看</a>) 以安装政府版密钥为例(Ent G 400 Years):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B</span><br></pre></td></tr></table></figure></p><hr><p>注意:</p><ul><li><p>KMS方式激活的有效期只有180天.</p></li><li><p>每隔一段时间系统会自动KMS服务器请求续期.</p></li><li><p>只要本博客能够访问,这些都是自动的.无需人为干预.</p></li><li><p>只允许中国ip访问.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;支持Windows操作系统(VL),Office软件(VL). 已支持到最新的Windows和Office! 支持激活 Windows10 和 Office2019.&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="KMS" scheme="https://www.bfdz.ink/tags/KMS/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Cloudflare Worker 构建 Pt-Gen</title>
@@ -540,32 +562,6 @@
       <category term="pt" scheme="https://www.bfdz.ink/tags/pt/"/>
     
       <category term="电影" scheme="https://www.bfdz.ink/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google Analytics 加载优化</title>
-    <link href="https://www.bfdz.ink/2018/10/23/109/"/>
-    <id>https://www.bfdz.ink/2018/10/23/109/</id>
-    <published>2018-10-23T05:54:00.000Z</published>
-    <updated>2019-02-22T15:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p><p>因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。</p><p><a href="https://github.com/giuem/ga-proxy" target="_blank" rel="noopener">GitHub Repo</a> （求 Star🌚</p><a id="more"></a><h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>目前关于 Google Analytics 大致有两种方案，一种是本文使用介绍的，另一种是利用 Nginx 的 post_action。</p><p>前者需要多一次 HTTP 请求，后者有点麻烦，还要过滤搜索引擎 UA，不适用于使用 CDN 的网站。</p><p>本文所采用的方案是基于 <a href="https://stneng.com/google-analytics-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%EF%BC%88%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82%EF%BC%89/" target="_blank" rel="noopener">Google Analytics 异步请求（服务端请求）</a> 提供的代码修改的 Go 版本。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-使用我提供的服务"><a href="#1-使用我提供的服务" class="headerlink" title="1. 使用我提供的服务"></a>1. 使用我提供的服务</h3><p>将下面的代码加到你的网站的任意位置，同时修改 <code>&quot;UA-xxxx-x&quot;</code> 为你自己的跟踪代码。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,d,e</span>)</span>&#123;<span class="keyword">var</span> f=c.screen,g=<span class="built_in">encodeURIComponent</span>,h=[<span class="string">"ga="</span>+a,<span class="string">"dt="</span>+g(d.title),<span class="string">"dr="</span>+g(d.referrer),<span class="string">"ul="</span>+(e.language||e.browserLanguage||e.userLanguage),<span class="string">"sd="</span>+f.colorDepth+<span class="string">"-bit"</span>,<span class="string">"sr="</span>+f.width+<span class="string">"x"</span>+f.height,<span class="string">"vp="</span>+<span class="built_in">Math</span>.max(d.documentElement.clientWidth,c.innerWidth||<span class="number">0</span>)+<span class="string">"x"</span>+<span class="built_in">Math</span>.max(d.documentElement.clientHeight,c.innerHeight||<span class="number">0</span>),<span class="string">"z="</span>+ +<span class="keyword">new</span> <span class="built_in">Date</span>];c.__ga_img=<span class="keyword">new</span> Image,c.__ga_img.src=b+<span class="string">"?"</span>+h.join(<span class="string">"&amp;"</span>)&#125;(<span class="string">"UA-xxxx-x"</span>,<span class="string">"https://ga.giuem.com"</span>,<span class="built_in">window</span>,<span class="built_in">document</span>,navigator,location);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><p><strong>目前已经部署海外线路（由 CloudFlare 提供），国内为腾讯云上海机房</strong></p><h3 id="2-自己部署服务"><a href="#2-自己部署服务" class="headerlink" title="2. 自己部署服务"></a>2. 自己部署服务</h3><ol><li>安装</li></ol><p>你可以选择自己 <a href="https://github.com/giuem/ga-proxy#build" target="_blank" rel="noopener">编译</a> 或者从 <a href="https://github.com/giuem/ga-proxy/releases/latest" target="_blank" rel="noopener">release</a> 下载我编译好的二进制文件。</p><ol start="2"><li>运行</li></ol><p>./ga_proxy [arguments]</p><p>-d, -debug 输出调试信息<br>-s, -skip_ssl 跳过 SSL 验证<br>-l, -listen 监听地址</p><p>要使用后台运行，你可以借助 <code>nohup</code> 或 <code>screen</code> 或 <code>Docker</code>。</p><ol start="3"><li>添加 JavaScript 代码</li></ol><p>把上面的那段代码里的 <code>&quot;https://ga.giuem.com&quot;</code> 改成你自己的地址就行了。</p><h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p>整个请求花费 33 ms, 156 B 流量可以说是非常快了。服务器的 Ping 值在 29 ms 左右，中间 4 ms 的损失主要花在 SSL 上了，速度还是挺不错的。</p><p>相比之下，原生的请求先加载了一个 12.3 KB 大小的 JS 文件，然后才发送统计，总耗时 300 ms，emmmmm 我就不作过多评价了。</p><hr><p>来源：<a href="https://www.giuem.com/google-analytics-loading-optimize/" target="_blank" rel="noopener">https://www.giuem.com/google-analytics-loading-optimize/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。&lt;/p&gt;
-&lt;p&gt;因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/giuem/ga-proxy&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub Repo&lt;/a&gt; （求 Star🌚&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://www.bfdz.ink/categories/Hexo/"/>
-    
-    
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
-      <category term="Google Analytics" scheme="https://www.bfdz.ink/tags/Google-Analytics/"/>
     
   </entry>
   

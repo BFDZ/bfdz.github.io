@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>KMS激活方法</title>
+      <link href="/2019/08/14/129/"/>
+      <url>/2019/08/14/129/</url>
+      
+        <content type="html"><![CDATA[<p><strong>支持Windows操作系统(VL),Office软件(VL). 已支持到最新的Windows和Office! 支持激活 Windows10 和 Office2019.</strong></p><a id="more"></a><hr><ul><li>Windows:<br>以管理员身份打开命令提示符,然执行下列命令：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">::cd /d &quot;%SystemRoot%\system32&quot;</span><br><span class="line">slmgr /skms kms.bfdz.ink</span><br><span class="line">slmgr /ato</span><br><span class="line">slmgr /xpr</span><br></pre></td></tr></table></figure><ul><li>Office:<br>以管理员身份打开命令提示符,进入软件安装目录,然后执行下列命令(这里以Office 2013为例):  </li></ul><p>进入32位版本安装目录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /d &quot;%ProgramFiles(x86)%\Microsoft Office\Office15&quot;</span><br></pre></td></tr></table></figure><p>进入64位版本安装目录:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /d &quot;%ProgramFiles%\Microsoft Office\Office15&quot;</span><br></pre></td></tr></table></figure><p>然后执行下列命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:kms.bfdz.ink</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure></p><p><strong>通过以上步骤就可以免费激活你的Windows系统和Office软件.</strong> 如果激活失败或输入过其他密钥,请先替换为<a href="https://technet.microsoft.com/en-us/library/jj612867.aspx" target="_blank" rel="noopener">微软官方GVLK密钥</a>.(<a href="https://moeclub.org/2018/12/02/710/" target="_blank" rel="noopener">点击查看</a>) 以安装政府版密钥为例(Ent G 400 Years):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B</span><br></pre></td></tr></table></figure></p><hr><p>注意:</p><ul><li><p>KMS方式激活的有效期只有180天.</p></li><li><p>每隔一段时间系统会自动KMS服务器请求续期.</p></li><li><p>只要本博客能够访问,这些都是自动的.无需人为干预.</p></li><li><p>只允许中国ip访问.</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>使用 Cloudflare Worker 构建 Pt-Gen</title>
       <link href="/2019/07/28/128/"/>
       <url>/2019/07/28/128/</url>
@@ -500,9 +523,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> Google Analytics </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
