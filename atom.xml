@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-08-14T15:14:53.874Z</updated>
+  <updated>2019-08-22T17:22:42.511Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用iptables+ipset限制端口</title>
+    <link href="https://www.bfdz.ink/2019/08/22/130/"/>
+    <id>https://www.bfdz.ink/2019/08/22/130/</id>
+    <published>2019-08-22T03:08:00.000Z</published>
+    <updated>2019-08-22T17:22:42.511Z</updated>
+    
+    <content type="html"><![CDATA[<p>利用iptables+ipset限制端口，只允许国内访问。</p><a id="more"></a><hr><p>Debian下，先安装</p><p><code>apt-get install ipset</code></p><p>创建ipset的 chnroute IP集</p><p><code>ipset create chnroute hash:net maxelem 65536</code></p><p>自动下载更新ipset国内IP路由脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">ipset create chnroute <span class="built_in">hash</span>:net maxelem 65536</span><br><span class="line">wget --no-check-certificate -O- <span class="string">'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'</span>| awk -F\| <span class="string">'/CN\|ipv4/ &#123; printf("%s/%d\n", $4, 32-log($5)/log(2)) &#125;'</span>&gt;/etc/chnroute.txt</span><br><span class="line">ipset flush chnroute</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> ip;<span class="keyword">do</span></span><br><span class="line">ipset add chnroute <span class="variable">$ip</span></span><br><span class="line"><span class="keyword">done</span>&lt;/etc/chnroute.txt</span><br><span class="line">ipset save chnroute &gt;/etc/chnroute.conf</span><br></pre></td></tr></table></figure><p>保存脚本为chnroute.sh 到/etc目录下，并且赋予执行权限</p><p><code>chmod +x /etc/chnroute.sh</code></p><p>添加crontab计划任务，每天执行一次更新。</p><p><code>crontab -e</code></p><p>添加</p><p><code>0 0 * * * /etc/chnroute.sh</code></p><p>显示chnroute列表</p><p><code>ipset list chnroute</code></p><p>iptables限制，只允许ipset的 chnroute IP集内IP连接到7000端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m set--match -set chnroute src -p tcp --dport 7000 -j ACCEPT</span><br><span class="line">iptables -A INPUT -m set--match -set chnroute src -p udp --dport 7000 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 7000 -j DROP</span><br><span class="line">iptables -A INPUT -p udp --dport 7000 -j DROP</span><br></pre></td></tr></table></figure><p>7000端口为frps参数的bind_port = 7000，主要限制国外IP连接到此frps通讯端口，即可。</p><hr><p>转载:<a href="https://bob.kim/wallip" target="_blank" rel="noopener">利用iptables+ipset限制，只允许国内IP连接到frps服务</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;利用iptables+ipset限制端口，只允许国内访问。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
+    
+      <category term="iptables" scheme="https://www.bfdz.ink/tags/iptables/"/>
+    
+  </entry>
   
   <entry>
     <title>KMS激活方法</title>
@@ -533,35 +557,6 @@
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
       <category term="pt" scheme="https://www.bfdz.ink/tags/pt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电影简介生成工具</title>
-    <link href="https://www.bfdz.ink/2018/10/31/110/"/>
-    <id>https://www.bfdz.ink/2018/10/31/110/</id>
-    <published>2018-10-31T11:39:00.000Z</published>
-    <updated>2019-02-22T15:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这几天 movieinfogen 因为流量超额，网站已经不能使用，所以给大家推荐一下其他的电影简介生成工具。</p><h2 id="PT-Gen"><a href="#PT-Gen" class="headerlink" title="PT-Gen"></a>PT-Gen</h2><ul><li><a href="https://rhilip.github.io/PT-help/ptgen" target="_blank" rel="noopener">https://rhilip.github.io/PT-help/ptgen</a></li><li><a href="https://www.bfdz.ink/tools/ptgen">https://www.bfdz.ink/tools/ptgen</a></li></ul><p>这是 Rhilip 开发的一个简介生成工具，网站界面和功能与 movieinfogen 相似。</p><a id="more"></a><h3 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h3><ul><li>支持使用Douban链接来生成电影、剧集简介（movieinfogen格式）</li><li>支持使用Bangumi链接来生成动漫信息（BYR推荐 Story、Staff、Cast格式）</li><li>支持使用Steam链接来生成游戏信息</li><li>豆瓣、Bangumi不用登陆（因此也导致部分资源不可查询）</li><li>支持在豆瓣上有imdb号的资源</li><li>支持豆瓣搜索</li></ul><h3 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h3><ul><li>豆瓣搜索</li></ul><p><img src="https://www.z4a.net/images/2018/10/31/798501736.jpg" alt=""></p><ul><li>豆瓣信息</li></ul><p><img src="https://www.z4a.net/images/2018/10/31/2176764395.jpg" alt=""></p><ul><li>Bangumi信息</li></ul><p><img src="https://www.z4a.net/images/2018/10/31/318637092.jpg" alt=""></p><ul><li>Steam信息</li></ul><p><img src="https://www.z4a.net/images/2018/10/31/4257925728.jpg" alt=""></p><hr><h2 id="豆瓣资源下载大师"><a href="#豆瓣资源下载大师" class="headerlink" title="豆瓣资源下载大师"></a>豆瓣资源下载大师</h2><ul><li><a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a></li></ul><p>豆瓣资源下载大师是一个托管在Greasy Fork的浏览器脚本，除了搜索电影资源，还附带生成电影简介的功能。<br>安装以后豆瓣电影的信息页会出现一个生成信息按钮，点击可生成和 movieinfogen 相似的电影简介信息。</p><p><img src="https://i.loli.net/2018/10/31/5bd9998d3780b.png" alt=""><br><img src="https://i.loli.net/2018/10/31/5bd9998d2e72d.png" alt=""></p><hr><p>参考资料：<a href="https://blog.rhilip.info/archives/800/" target="_blank" rel="noopener">https://blog.rhilip.info/archives/800/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这几天 movieinfogen 因为流量超额，网站已经不能使用，所以给大家推荐一下其他的电影简介生成工具。&lt;/p&gt;
-&lt;h2 id=&quot;PT-Gen&quot;&gt;&lt;a href=&quot;#PT-Gen&quot; class=&quot;headerlink&quot; title=&quot;PT-Gen&quot;&gt;&lt;/a&gt;PT-Gen&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://rhilip.github.io/PT-help/ptgen&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://rhilip.github.io/PT-help/ptgen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bfdz.ink/tools/ptgen&quot;&gt;https://www.bfdz.ink/tools/ptgen&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这是 Rhilip 开发的一个简介生成工具，网站界面和功能与 movieinfogen 相似。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="pt" scheme="https://www.bfdz.ink/tags/pt/"/>
-    
-      <category term="电影" scheme="https://www.bfdz.ink/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   

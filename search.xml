@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>利用iptables+ipset限制端口</title>
+      <link href="/2019/08/22/130/"/>
+      <url>/2019/08/22/130/</url>
+      
+        <content type="html"><![CDATA[<p>利用iptables+ipset限制端口，只允许国内访问。</p><a id="more"></a><hr><p>Debian下，先安装</p><p><code>apt-get install ipset</code></p><p>创建ipset的 chnroute IP集</p><p><code>ipset create chnroute hash:net maxelem 65536</code></p><p>自动下载更新ipset国内IP路由脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">ipset create chnroute <span class="built_in">hash</span>:net maxelem 65536</span><br><span class="line">wget --no-check-certificate -O- <span class="string">'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'</span>| awk -F\| <span class="string">'/CN\|ipv4/ &#123; printf("%s/%d\n", $4, 32-log($5)/log(2)) &#125;'</span>&gt;/etc/chnroute.txt</span><br><span class="line">ipset flush chnroute</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> ip;<span class="keyword">do</span></span><br><span class="line">ipset add chnroute <span class="variable">$ip</span></span><br><span class="line"><span class="keyword">done</span>&lt;/etc/chnroute.txt</span><br><span class="line">ipset save chnroute &gt;/etc/chnroute.conf</span><br></pre></td></tr></table></figure><p>保存脚本为chnroute.sh 到/etc目录下，并且赋予执行权限</p><p><code>chmod +x /etc/chnroute.sh</code></p><p>添加crontab计划任务，每天执行一次更新。</p><p><code>crontab -e</code></p><p>添加</p><p><code>0 0 * * * /etc/chnroute.sh</code></p><p>显示chnroute列表</p><p><code>ipset list chnroute</code></p><p>iptables限制，只允许ipset的 chnroute IP集内IP连接到7000端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m set--match -set chnroute src -p tcp --dport 7000 -j ACCEPT</span><br><span class="line">iptables -A INPUT -m set--match -set chnroute src -p udp --dport 7000 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 7000 -j DROP</span><br><span class="line">iptables -A INPUT -p udp --dport 7000 -j DROP</span><br></pre></td></tr></table></figure><p>7000端口为frps参数的bind_port = 7000，主要限制国外IP连接到此frps通讯端口，即可。</p><hr><p>转载:<a href="https://bob.kim/wallip" target="_blank" rel="noopener">利用iptables+ipset限制，只允许国内IP连接到frps服务</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> iptables </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>KMS激活方法</title>
       <link href="/2019/08/14/129/"/>
       <url>/2019/08/14/129/</url>
@@ -1550,9 +1575,9 @@
       
         <tags>
             
-            <tag> nginx </tag>
-            
             <tag> linux </tag>
+            
+            <tag> nginx </tag>
             
         </tags>
       
