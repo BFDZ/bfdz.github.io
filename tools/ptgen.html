@@ -216,7 +216,7 @@ $(function () {
                 }
             }
 
-            $.getJSON("https://api.douban.workers.dev", param).success(function (data) {
+            $.getJSON("https://api.nas.ink/infogen", param).success(function (data) {
                 out_textarea.val(data["success"] === false ? data["error"] : data["format"]);
             }).fail(function (jqXHR) {
                 alert(jqXHR.status === 429 ? 'Met Rate Limit, Retry later~' : "Error occured!");
