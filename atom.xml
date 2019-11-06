@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-10-22T14:12:11.154Z</updated>
+  <updated>2019-11-06T14:24:13.034Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高清电视直播IPTV</title>
+    <link href="https://www.bfdz.ink/2019/11/06/133/"/>
+    <id>https://www.bfdz.ink/2019/11/06/133/</id>
+    <published>2019-11-06T14:11:00.000Z</published>
+    <updated>2019-11-06T14:24:13.034Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是北京邮电大学和 BYR-Team 提供的校园直播，拥有央视高清及各大卫视高清频道。</p><p>浏览器在线观看：<a href="https://v4.uhd.app/" target="_blank" rel="noopener">https://v4.uhd.app/</a></p><p>PC端和移动端直播源：<a href="http://ivi.bupt.edu.cn/" target="_blank" rel="noopener">http://ivi.bupt.edu.cn/</a></p><p><img src="https://ae01.alicdn.com/kf/H27af28f2756b4b66bd217684793e3f4b1.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是北京邮电大学和 BYR-Team 提供的校园直播，拥有央视高清及各大卫视高清频道。&lt;/p&gt;
+&lt;p&gt;浏览器在线观看：&lt;a href=&quot;https://v4.uhd.app/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://v4.uhd.ap
+      
+    
+    </summary>
+    
+      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="IPTV" scheme="https://www.bfdz.ink/tags/IPTV/"/>
+    
+      <category term="直播源" scheme="https://www.bfdz.ink/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/"/>
+    
+  </entry>
   
   <entry>
     <title>批量生成带二维码海报免费软件</title>
@@ -231,9 +259,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
-    
       <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
+    
+      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
     
   </entry>
   
@@ -257,9 +285,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
-    
       <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
+    
+      <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
     
   </entry>
   
@@ -468,9 +496,9 @@
       <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
     
     
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
       <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
       <category term="一键重装" scheme="https://www.bfdz.ink/tags/%E4%B8%80%E9%94%AE%E9%87%8D%E8%A3%85/"/>
     
@@ -522,34 +550,6 @@
     
     
       <category term="onedrive" scheme="https://www.bfdz.ink/tags/onedrive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>影片编码查询和规则说明</title>
-    <link href="https://www.bfdz.ink/2018/11/18/113/"/>
-    <id>https://www.bfdz.ink/2018/11/18/113/</id>
-    <published>2018-11-17T16:11:00.000Z</published>
-    <updated>2019-02-22T15:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>影片编码查询网址：<a href="https://www.zgdypw.cn/#/film.html" target="_blank" rel="noopener">https://www.zgdypw.cn/#/film.html</a></p><p>每一部在中国大陆上映的电影必须经过审批，取得电影片公映许可证（俗称龙标）。影片编码即电影片公映许可证上的影片排次号。</p><p>此网站可以查询所有获得影片编码的电影，并导出数据。</p><a id="more"></a><hr><p>影片编码规则说明</p><p><img src="https://wx1.sinaimg.cn/large/92253953gy1fxdln53ko7j20pw0zsjuv.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/large/92253953gy1fxdlhp4hrpj20oq0q2793.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/large/92253953gy1fxdlhp9hlqj20o40uktda.jpg" alt=""></p><p>电影片公映许可证示例</p><p><img src="https://wx2.sinaimg.cn/large/92253953gy1fxbkfgpqyyj20h80nxt9h.jpg" alt="电影片公映许可证"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;影片编码查询网址：&lt;a href=&quot;https://www.zgdypw.cn/#/film.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.zgdypw.cn/#/film.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;每一部在中国大陆上映的电影必须经过审批，取得电影片公映许可证（俗称龙标）。影片编码即电影片公映许可证上的影片排次号。&lt;/p&gt;
-&lt;p&gt;此网站可以查询所有获得影片编码的电影，并导出数据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="实用网站" scheme="https://www.bfdz.ink/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="影片编码" scheme="https://www.bfdz.ink/tags/%E5%BD%B1%E7%89%87%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="龙标" scheme="https://www.bfdz.ink/tags/%E9%BE%99%E6%A0%87/"/>
-    
-      <category term="电影放映许可证" scheme="https://www.bfdz.ink/tags/%E7%94%B5%E5%BD%B1%E6%94%BE%E6%98%A0%E8%AE%B8%E5%8F%AF%E8%AF%81/"/>
     
   </entry>
   
