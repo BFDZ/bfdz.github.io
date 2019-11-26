@@ -283,9 +283,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
-    
       <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
+    
+      <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
     
   </entry>
   
@@ -309,9 +309,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
-    
       <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
+    
+      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
     
   </entry>
   
@@ -520,9 +520,9 @@
       <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
     
     
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
       <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
+    
+      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
       <category term="一键重装" scheme="https://www.bfdz.ink/tags/%E4%B8%80%E9%94%AE%E9%87%8D%E8%A3%85/"/>
     
