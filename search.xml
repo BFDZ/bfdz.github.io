@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ipv6 测试站上线</title>
+      <link href="/2019/11/26/135/"/>
+      <url>/2019/11/26/135/</url>
+      
+        <content type="html"><![CDATA[<p>21 号晚上 coding pages 发生严重故障导致本站不可访问，于是连夜将博客迁移到自己的“小鸡”（vps）上。迁移时发现“小鸡”的ipv6居然是可用的，虽然官方套餐里面只写了ipv4，但既然机房分配了ipv6，不用白不用，所以顺便部署上线了本站的 ipv6 测试站: <a href="https://ipv6.bfdz.ink" target="_blank" rel="noopener">https://ipv6.bfdz.ink</a></p><p>考虑到国内不同地区连接国外ipv6网络的速度可能不快，主站目前还是只设置 ipv4 地址，ipv6 测试站只开放 ipv6 地址，如果你能访问这个博客的 ipv6 域名，说明你的网络已经支持ipv6了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日志 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ipv6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>V2Ray 部署之“三步走”教程</title>
       <link href="/2019/11/23/134/"/>
       <url>/2019/11/23/134/</url>
@@ -504,9 +529,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> 一键重装 </tag>
             
@@ -936,9 +961,9 @@
       
         <tags>
             
-            <tag> 网络封锁 </tag>
-            
             <tag> vps </tag>
+            
+            <tag> 网络封锁 </tag>
             
         </tags>
       
@@ -1532,9 +1557,9 @@
       
         <tags>
             
-            <tag> 漏洞 </tag>
-            
             <tag> rTorrent </tag>
+            
+            <tag> 漏洞 </tag>
             
         </tags>
       
@@ -1559,9 +1584,9 @@
       
         <tags>
             
-            <tag> uTorrent </tag>
-            
             <tag> 漏洞 </tag>
+            
+            <tag> uTorrent </tag>
             
         </tags>
       
@@ -1669,9 +1694,9 @@
       
         <tags>
             
-            <tag> uTorrent </tag>
-            
             <tag> 漏洞 </tag>
+            
+            <tag> uTorrent </tag>
             
         </tags>
       
@@ -1804,9 +1829,9 @@
       
         <tags>
             
-            <tag> nginx </tag>
-            
             <tag> linux </tag>
+            
+            <tag> nginx </tag>
             
         </tags>
       
@@ -2614,9 +2639,9 @@
             
             <tag> linux </tag>
             
-            <tag> ARM </tag>
-            
             <tag> tftp </tag>
+            
+            <tag> ARM </tag>
             
         </tags>
       
@@ -3371,9 +3396,9 @@
       
         <tags>
             
-            <tag> vps </tag>
-            
             <tag> linux </tag>
+            
+            <tag> vps </tag>
             
             <tag> iptables </tag>
             

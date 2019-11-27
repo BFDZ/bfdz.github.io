@@ -133,6 +133,68 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2017/07/13/45/">
+                
+                    快速搭梯子脚本vpsins.sh
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2017-07-13
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/脚本/">脚本</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>购买的vps到手后，往往第一步就是改配置和搭梯子，所以我写了个脚本来去掉重复的工作，方便自己以后快速搭建梯子。</p>
+<p><strong>安装环境：</strong></p>
+<blockquote>
+<ul>
+<li>系统环境：Debian, Ubuntu</li>
+<li>虚拟化架构: KVM</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>安装选项：</strong></p>
+<blockquote>
+<ul>
+<li>1.配置vim</li>
+<li>2.修改时区</li>
+<li>3.安装ss</li>
+<li>4.安装chacha20</li>
+<li>5.安装ss-bash</li>
+</ul>
+</blockquote>
+        
+            <div class="readmore">
+                <a href="/2017/07/13/45/" class="flat-box">阅读全文</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
+                
+                    <a href="/tags/shadowsocks/"><i class="fa fa-tag fa-fw"></i>&nbsp;shadowsocks</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2017/07/13/44/">
                 
                     Debian/Ubuntu TCP BBR 改进版/增强版
@@ -466,9 +528,9 @@
                 
                     <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
                 
-                    <a href="/tags/ARM/"><i class="fa fa-tag fa-fw"></i>&nbsp;ARM</a>
-                
                     <a href="/tags/tftp/"><i class="fa fa-tag fa-fw"></i>&nbsp;tftp</a>
+                
+                    <a href="/tags/ARM/"><i class="fa fa-tag fa-fw"></i>&nbsp;ARM</a>
                 
             </div>
         
@@ -562,55 +624,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/12/12/35/">
-                
-                    Linux Kernel 4.9 正式发布
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2016-12-12
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Linux/">Linux</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <blockquote>
-<p>上一篇博文<a href="http://www.bfdz.ink/2016/12/08/34/">开启TCP BBR拥塞控制算法</a>使用的内核是 4.9rc 版，如今可替换为正式版。</p>
-</blockquote>
-<h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><p>Linus Torvalds 在内核邮件列表上宣布正式释出 Linux Kernel 4.9，4.10合并窗口开启。为期两周的合并窗口预计将在圣诞节这天关闭，Linus表示因为假期的原因他考虑缩短或延长合并窗口，最有可能的做法是缩短而不是延长，以便于开发者们能度过一个平静的圣诞假期。Linux Kernel 4.9的主要特性包括：<a href="http://lwn.net/Articles/692953/" target="_blank" rel="noopener">虚拟映射内核栈分配</a>，英特尔的粗粒度保护机制<a href="https://lwn.net/Articles/689395/" target="_blank" rel="noopener">pkeys系统调用</a>，<a href="https://lwn.net/Articles/701165/" target="_blank" rel="noopener">BBR拥堵控制算法</a>，支持模块化智能手机的<a href="https://lwn.net/Articles/648400/" target="_blank" rel="noopener">Greybus</a>子系统，大量的文件系统改进，驱动更新如改进 AMD Radeon GPU 支持，bug修正，等等。4.9包含了16,216个非合并变更集，是内核项目历史上最忙碌的开发周期，AMD贡献了最多的行变更，最活跃的开发者中就有开发AMD PowerPlay驱动的Rex Zhu。</p>
-<hr>
-<h2 id="关于-BBR"><a href="#关于-BBR" class="headerlink" title="关于 BBR"></a>关于 BBR</h2><p>经过几天使用体验，Linux Kernel 4.9 新增的BBR拥塞控制算法确实对vps网络速度的提升很大。以最近测试位于迈阿密的vps为例，在 Ubuntu 16.04 - Linxu Kernel 3.04 上，从vps到国内的下载速度只有不到 5Mbps ，而在更换至 4.9 版内核并开启BBR后，下载速度高达46Mbps，效果能与锐速相媲美。而锐速是收费软件，BBR则是免费开源的且内核自带。<br>
-        
-            <div class="readmore">
-                <a href="/2016/12/12/35/" class="flat-box">阅读全文</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;linux</a>
-                
-                    <a href="/tags/BBR/"><i class="fa fa-tag fa-fw"></i>&nbsp;BBR</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -671,6 +684,8 @@
                     <li><a class="flat-box" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>21</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>7</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>1</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>2</div></a></li>
                 

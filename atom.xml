@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-11-24T09:21:03.203Z</updated>
+  <updated>2019-11-27T12:14:38.058Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ipv6 测试站上线</title>
+    <link href="https://www.bfdz.ink/2019/11/26/135/"/>
+    <id>https://www.bfdz.ink/2019/11/26/135/</id>
+    <published>2019-11-26T14:53:00.000Z</published>
+    <updated>2019-11-27T12:14:38.058Z</updated>
+    
+    <content type="html"><![CDATA[<p>21 号晚上 coding pages 发生严重故障导致本站不可访问，于是连夜将博客迁移到自己的“小鸡”（vps）上。迁移时发现“小鸡”的ipv6居然是可用的，虽然官方套餐里面只写了ipv4，但既然机房分配了ipv6，不用白不用，所以顺便部署上线了本站的 ipv6 测试站: <a href="https://ipv6.bfdz.ink" target="_blank" rel="noopener">https://ipv6.bfdz.ink</a></p><p>考虑到国内不同地区连接国外ipv6网络的速度可能不快，主站目前还是只设置 ipv4 地址，ipv6 测试站只开放 ipv6 地址，如果你能访问这个博客的 ipv6 域名，说明你的网络已经支持ipv6了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;21 号晚上 coding pages 发生严重故障导致本站不可访问，于是连夜将博客迁移到自己的“小鸡”（vps）上。迁移时发现“小鸡”的ipv6居然是可用的，虽然官方套餐里面只写了ipv4，但既然机房分配了ipv6，不用白不用，所以顺便部署上线了本站的 ipv6 测试站:
+      
+    
+    </summary>
+    
+      <category term="日志" scheme="https://www.bfdz.ink/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="ipv6" scheme="https://www.bfdz.ink/tags/ipv6/"/>
+    
+  </entry>
   
   <entry>
     <title>V2Ray 部署之“三步走”教程</title>
@@ -520,37 +545,11 @@
       <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
     
     
-      <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
-    
       <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
     
-      <category term="一键重装" scheme="https://www.bfdz.ink/tags/%E4%B8%80%E9%94%AE%E9%87%8D%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云 24元/月/1GB内存/香港/新加坡</title>
-    <link href="https://www.bfdz.ink/2018/11/29/115/"/>
-    <id>https://www.bfdz.ink/2018/11/29/115/</id>
-    <published>2018-11-29T09:09:00.000Z</published>
-    <updated>2019-02-22T15:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>阿里云，特色是稳定，国内、香港、新加坡等线路均有，适合各种需求。最新推出了轻量应用服务器，即KVM VPS，其中有香港数据中心，而且给的30Mbps带宽，相当给力！每账户限5台！同时，每台服务器均可创建3个快照，每账户最多15个，这为备份和搬家提供了绝好功用。</p><a id="more"></a><hr><p><strong>最低套餐配置</strong></p><p>轻量 1GB<br>vCPU：1<br>内存：1 GB<br>空间：25 GB SSD（RAID 10）<br>流量：1 TB / 月（30 Mbps 端口）<br>IPv4：1<br>24元/月</p><p>轻量 2GB<br>vCPU：1<br>内存：2 GB<br>空间：40 GB SSD（RAID 10）<br>流量：2 TB / 月（30 Mbps 端口）<br>IPv4：1<br>34元/月</p><hr><p><strong>购买地址</strong></p><p>香港VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=cn-hongkong#/buy</a></p><p>新加坡VPS：<a href="https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy" target="_blank" rel="noopener">https://common-buy.aliyun.com/?commodityCode=swas&amp;regionId=ap-southeast-1#/buy</a></p><p>香港测试IP：149.129.85.xxx（xxx改为1-255之间的数字）</p><p>新加坡测评IP：149.129.49.xxx</p><hr><p><strong>其他链接</strong></p><p>轻量云服务器管理地址：<a href="https://swas.console.aliyun.com/#/servers" target="_blank" rel="noopener">https://swas.console.aliyun.com/#/servers</a></p><p>脚本一键重装纯净Linux或者dd安装Windows系统：<a href="https://moeclub.org/2018/04/03/603/" target="_blank" rel="noopener">https://moeclub.org/2018/04/03/603/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;阿里云，特色是稳定，国内、香港、新加坡等线路均有，适合各种需求。最新推出了轻量应用服务器，即KVM VPS，其中有香港数据中心，而且给的30Mbps带宽，相当给力！每账户限5台！同时，每台服务器均可创建3个快照，每账户最多15个，这为备份和搬家提供了绝好功用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="VPS" scheme="https://www.bfdz.ink/categories/VPS/"/>
-    
-    
       <category term="vps" scheme="https://www.bfdz.ink/tags/vps/"/>
     
-      <category term="阿里云" scheme="https://www.bfdz.ink/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
-      <category term="香港" scheme="https://www.bfdz.ink/tags/%E9%A6%99%E6%B8%AF/"/>
+      <category term="一键重装" scheme="https://www.bfdz.ink/tags/%E4%B8%80%E9%94%AE%E9%87%8D%E8%A3%85/"/>
     
   </entry>
   
