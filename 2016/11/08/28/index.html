@@ -910,7 +910,7 @@ LNMP在使用acme.sh申请证书之前需要修改站点的nginx配置，否则�
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'true' == true;
+  var verify = 'false' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -918,8 +918,8 @@ LNMP在使用acme.sh申请证书之前需要修改站点的nginx配置，否则�
     verify: verify,
     guest_info: guest_info,
     
-    appId: "",
-    appKey: "",
+    appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
+    appKey: "xCtxMDBxturft2Dnd2wG6udr",
     placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'identicon',
