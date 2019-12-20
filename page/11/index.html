@@ -225,6 +225,98 @@
       
         
   <h2 class="title">
+    <a href="/2016/12/28/36/">
+      ARM 汇编指令的条件执行
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2016-12-28</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/ARM/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>ARM</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>在ARM模式下，任何一条数据处理指令可以选择是否根据操作的结果来更新CPSR寄存器中的ALU状态标志位。在数据处理指令中使用S后缀来实现该功能。</p>
+<p><em>不要在CMP,CMN,TST或者TEQ指令中使用S后缀。这些比较指令总是会更新标志位。</em></p>
+<p>在Thumb模式下，所有数据处理指令都更新CPSR中的标志位。有一个例外就是：当一个或更多个高寄存器被用在MOV和ADD指令时，此时MOV和ADD不能更新状态标志.</p>
+<p>几乎所有的ARM指令都可以根据CPSR中的ALU状态标志位来条件执行。参见条件执行后缀表。</p>
+      
+        <div class="readmore">
+          <a href="/2016/12/28/36/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/ARM/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> ARM</a>
+        
+          <a href="/tags/指令集/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 指令集</a>
+        
+          <a href="/tags/跳转指令/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 跳转指令</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2016/12/12/35/">
       Linux Kernel 4.9 正式发布
     </a>
@@ -386,9 +478,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/TCP/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> TCP</a>
-        
           <a href="/tags/BBR/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> BBR</a>
+        
+          <a href="/tags/TCP/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> TCP</a>
         
       </div>
     
@@ -1017,94 +1109,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2016/10/31/26/">
-      一键备份脚本backup.sh
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2016-10-31</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/脚本/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>脚本</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>做网站最重要的是什么？数据！数据，是网站之本，备份，是每一个站长都应该重视的事情。但同时，备份也是一件繁琐和重复的事情。所以，这些事情，肯定能做到自动化的。<br>下面来介绍一下这个一键备份脚本 backup.sh。</p>
-<p><strong>总结一下 backup.sh 特点：</strong><br>1、支持 MySQL/MariaDB/Percona 的数据库全量备份或选择备份；<br>2、支持指定目录或文件的备份；<br>3、支持加密备份文件（需安装 openssl 命令，可选）；<br>4、支持上传至 Google Drive（需先安装 gdrive 并配置，可选）；<br>5、支持在删除指定天数本地旧的备份文件的同时，也删除 Google Drive 上的同名文件（可选）。<br>
-      
-        <div class="readmore">
-          <a href="/2016/10/31/26/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/linux/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> linux</a>
-        
-          <a href="/tags/一键备份/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 一键备份</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1263,7 +1267,7 @@
         
           <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(1)</div></a></li>
         
