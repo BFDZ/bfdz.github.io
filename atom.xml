@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2019-12-24T12:28:49.102Z</updated>
+  <updated>2019-12-24T12:45:44.191Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.bfdz.ink/2019/12/24/137/"/>
     <id>https://www.bfdz.ink/2019/12/24/137/</id>
     <published>2019-12-24T12:17:00.000Z</published>
-    <updated>2019-12-24T12:28:49.102Z</updated>
+    <updated>2019-12-24T12:45:44.191Z</updated>
     
-    <content type="html"><![CDATA[<p>庆余年泄露的第 34 至 46 集源帧率是 18 FPS，YUV 4:2:2, 很多人反应播放设备黑屏及低帧卡顿问题，故重编码为最常见的 YUV420，以解决播放设备不兼容问题。补帧至 25 FPS，很大程度缓解卡顿现象。</p><p>此资源转载自馒头，感谢制作者。</p><a id="more"></a><ul><li><p>谷歌网盘<br>  E34-46(补帧版)：<a href="https://drive.google.com/drive/folders/1kNHNt6TjJvwPWwYOOyolEERpDmoR-jYh?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1kNHNt6TjJvwPWwYOOyolEERpDmoR-jYh?usp=sharing</a></p><p>  <strong>如果出现下载次数被限制的提示，先右键复制文件，然后到自己的谷歌硬盘里下载</strong></p></li><li><p>BFDZ 的网盘（免扶墙）<br>  E34-46(补帧版)：待更新</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>庆余年泄露的第 34 至 46 集源帧率是 18 FPS，YUV 4:2:2, 很多人反应播放设备黑屏及低帧卡顿问题，故重编码为最常见的 YUV420，以解决播放设备不兼容问题。补帧至 25 FPS，很大程度缓解卡顿现象。</p><p>此资源转载自馒头，感谢制作者。</p><a id="more"></a><ul><li><p>谷歌网盘<br>  E34-46(补帧版)：<a href="https://drive.google.com/drive/folders/1kNHNt6TjJvwPWwYOOyolEERpDmoR-jYh?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1kNHNt6TjJvwPWwYOOyolEERpDmoR-jYh?usp=sharing</a></p><p>  <strong>如果出现下载次数被限制的提示，先右键复制文件，然后到自己的谷歌硬盘里下载</strong></p></li><li><p>BFDZ 的网盘（免扶墙）<br>  E34-46(补帧版)：待更新</p></li></ul><hr><p>Mediainfo</p><p>General<br>Complete name                  : 庆余年.Qing.Yu.Nian.2019.E34.WEB-DL.1080p.H264.AAC-REPACK.mp4<br>Format                         : MPEG-4<br>Format profile                 : Base Media<br>Codec ID                       : isom (isom)<br>File size                      : 1.62 GiB<br>Duration                       : 41 min 5 s<br>Overall bit rate mode          : Variable<br>Overall bit rate               : 5 641 kb/s<br>Encoded date                   : UTC 2019-12-22 01:48:34<br>Tagged date                    : UTC 2019-12-22 01:48:34</p><p>Video<br>ID                             : 1<br>Format                         : AVC<br>Format/Info                    : Advanced Video Codec<br>Format profile                 : High@L4<br>Format settings                : CABAC / 4 Ref Frames<br>Format settings, CABAC         : Yes<br>Format settings, Reference fra : 4 frames<br>Codec ID                       : avc1<br>Codec ID/Info                  : Advanced Video Coding<br>Duration                       : 41 min 5 s<br>Bit rate                       : 5 508 kb/s<br>Maximum bit rate               : 36.3 Mb/s<br>Width                          : 1 920 pixels<br>Height                         : 1 080 pixels<br>Display aspect ratio           : 16:9<br>Frame rate mode                : Constant<br>Frame rate                     : 25.200 FPS<br>Color space                    : YUV<br>Chroma subsampling             : 4:2:0<br>Bit depth                      : 8 bits<br>Scan type                      : Progressive<br>Bits/(Pixel*Frame)             : 0.105<br>Stream size                    : 1.58 GiB (98%)<br>Writing library                : x264 core 157 r2935 545de2f<br>Encoded date                   : UTC 2019-12-21 19:12:33<br>Tagged date                    : UTC 2019-12-22 01:49:00<br>Codec configuration box        : avcC</p><p>Audio<br>ID                             : 2<br>Format                         : AAC LC<br>Format/Info                    : Advanced Audio Codec Low Complexity<br>Codec ID                       : mp4a-67-2<br>Duration                       : 41 min 5 s<br>Bit rate mode                  : Variable<br>Bit rate                       : 129 kb/s<br>Maximum bit rate               : 141 kb/s<br>Channel(s)                     : 2 channels<br>Channel layout                 : L R<br>Sampling rate                  : 44.1 kHz<br>Frame rate                     : 43.066 FPS (1024 SPF)<br>Compression mode               : Lossy<br>Stream size                    : 37.8 MiB (2%)<br>Encoded date                   : UTC 2019-12-22 01:48:47<br>Tagged date                    : UTC 2019-12-22 01:49:00</p>]]></content>
     
     <summary type="html">
     
@@ -358,9 +358,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
-    
       <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
+    
+      <category term="HBO" scheme="https://www.bfdz.ink/tags/HBO/"/>
     
   </entry>
   
@@ -384,9 +384,9 @@
       <category term="电视剧" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
     
-      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
-    
       <category term="Netflix" scheme="https://www.bfdz.ink/tags/Netflix/"/>
+    
+      <category term="欧美剧" scheme="https://www.bfdz.ink/tags/%E6%AC%A7%E7%BE%8E%E5%89%A7/"/>
     
   </entry>
   
