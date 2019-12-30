@@ -909,7 +909,7 @@
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  var guest_info = 'nick,mail'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
@@ -923,7 +923,7 @@
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~",
+    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
     pageSize:'10',
     avatar:'identicon',
     lang:'zh-cn',
