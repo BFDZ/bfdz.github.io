@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>shadowsocks 优化 | BFDZ</title>
+    
   
-  
-  <meta name="description" content="BFDZ的博客">
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="BFDZ">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>shadowsocks 优化 - BFDZ</title>
+  
+    <meta name="keywords" content="shadowsocks">
+  
+  
+    <meta name="description" content="
+通过学习这篇文章，个人采用的优化措施：优化内核参数+TCP优化+锐速+安装gevent+CHACHA20+22端口，仅供参考。
+
+1. 系统层面基于kvm架构vps的优化这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open  ">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -57,27 +88,28 @@
 
 <body>
   
-  
   <div class="cover-wrapper">
     <cover class='cover post half'>
       
         
-  <h1 class='title'>BFDZ</h1>
+  <p class="title ">BFDZ</p>
+  
 
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
       <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
     </form>
   </div>
 
-<div class='menu navgation'>
+<div class='menu navigation'>
   <ul class='h-list'>
     
       
         <li>
-          <a class="nav home" href="/"
+          <a class="nav home "
+            href="/"
             
             
             id="home">
@@ -86,9 +118,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/archives/"
             
             
             id="archives">
@@ -97,9 +128,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/friends/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/friends/"
             
             
             id="friends">
@@ -108,9 +138,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/about/"
             
             
             id="about">
@@ -124,19 +153,26 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header ">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar"></div>
   </div>
-
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/' >
-        
-          BFDZ
-        
-      </a>
-			<div class='menu navgation'>
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
 				<ul class='h-list'>
           
   					
@@ -152,8 +188,6 @@
   						<li>
 								<a class="nav flat-box" href="/archives/"
                   
-                    rel="nofollow"
-                  
                   
                   id="archives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
@@ -163,8 +197,6 @@
   						<li>
 								<a class="nav flat-box" href="/friends/"
                   
-                    rel="nofollow"
-                  
                   
                   id="friends">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
@@ -173,8 +205,6 @@
       			
   						<li>
 								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
                   
                   
                   id="about">
@@ -186,36 +216,35 @@
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
+	<aside class="menu-phone white-box">
     <header>
-		<nav class="menu navgation">
+		<nav class="menu navigation">
       <ul>
         
           
@@ -231,8 +260,6 @@
             <li>
 							<a class="nav flat-box" href="/archives/"
                 
-                  rel="nofollow"
-                
                 
                 id="archives">
 								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
@@ -242,8 +269,6 @@
             <li>
 							<a class="nav flat-box" href="/friends/"
                 
-                  rel="nofollow"
-                
                 
                 id="friends">
 								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
@@ -252,8 +277,6 @@
           
             <li>
 							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
                 
                 
                 id="about">
@@ -273,11 +296,14 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box card-shadow  article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -301,10 +327,11 @@
           
         
           
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2016-10-25</p>
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
   </a>
 </div>
 
@@ -324,20 +351,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2016年10月25日</p>
+  </a>
+</div>
 
           
         
@@ -354,28 +373,39 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <blockquote>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
 <p>通过学习这篇文章，个人采用的优化措施：优化内核参数+TCP优化+锐速+安装gevent+CHACHA20+22端口，仅供参考。</p>
 </blockquote>
-<h3 id="1-系统层面"><a href="#1-系统层面" class="headerlink" title="1. 系统层面"></a>1. 系统层面</h3><p>基于kvm架构vps的优化<br>这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open<br><a id="more"></a>   </p>
+<h3 id="1-系统层面"><a href="#1-系统层面" class="headerlink" title="1. 系统层面"></a>1. 系统层面</h3><p>基于kvm架构vps的优化<br>这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open  </p>
+<a id="more"></a>   
 <p>####1.1优化内核参数<br>编辑<code>vi /etc/sysctl.conf</code><br>复制进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># max open files</span><br><span class="line">fs.file-max = 51200</span><br><span class="line"># max read buffer</span><br><span class="line">net.core.rmem_max = 67108864</span><br><span class="line"># max write buffer</span><br><span class="line">net.core.wmem_max = 67108864</span><br><span class="line"># default read buffer</span><br><span class="line">net.core.rmem_default = 65536</span><br><span class="line"># default write buffer</span><br><span class="line">net.core.wmem_default = 65536</span><br><span class="line"># max processor input queue</span><br><span class="line">net.core.netdev_max_backlog = 4096</span><br><span class="line"># max backlog</span><br><span class="line">net.core.somaxconn = 4096</span><br><span class="line"></span><br><span class="line"># resist SYN flood attacks</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line"># reuse timewait sockets when safe</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line"># turn off fast timewait sockets recycling</span><br><span class="line">net.ipv4.tcp_tw_recycle = 0</span><br><span class="line"># short FIN timeout</span><br><span class="line">net.ipv4.tcp_fin_timeout = 30</span><br><span class="line"># short keepalive time</span><br><span class="line">net.ipv4.tcp_keepalive_time = 1200</span><br><span class="line"># outbound port range</span><br><span class="line">net.ipv4.ip_local_port_range = 10000 65000</span><br><span class="line"># max SYN backlog</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 4096</span><br><span class="line"># max timewait sockets held by system simultaneously</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 5000</span><br><span class="line"># TCP receive buffer</span><br><span class="line">net.ipv4.tcp_rmem = 4096 87380 67108864</span><br><span class="line"># TCP write buffer</span><br><span class="line">net.ipv4.tcp_wmem = 4096 65536 67108864</span><br><span class="line"># turn on path MTU discovery</span><br><span class="line">net.ipv4.tcp_mtu_probing = 1</span><br><span class="line"></span><br><span class="line"># for high-latency network</span><br><span class="line">net.ipv4.tcp_congestion_control = hybla</span><br><span class="line"># forward ivp4</span><br><span class="line">net.ipv4.ip_forward = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># max open files</span><br><span class="line">fs.file-max &#x3D; 51200</span><br><span class="line"># max read buffer</span><br><span class="line">net.core.rmem_max &#x3D; 67108864</span><br><span class="line"># max write buffer</span><br><span class="line">net.core.wmem_max &#x3D; 67108864</span><br><span class="line"># default read buffer</span><br><span class="line">net.core.rmem_default &#x3D; 65536</span><br><span class="line"># default write buffer</span><br><span class="line">net.core.wmem_default &#x3D; 65536</span><br><span class="line"># max processor input queue</span><br><span class="line">net.core.netdev_max_backlog &#x3D; 4096</span><br><span class="line"># max backlog</span><br><span class="line">net.core.somaxconn &#x3D; 4096</span><br><span class="line"></span><br><span class="line"># resist SYN flood attacks</span><br><span class="line">net.ipv4.tcp_syncookies &#x3D; 1</span><br><span class="line"># reuse timewait sockets when safe</span><br><span class="line">net.ipv4.tcp_tw_reuse &#x3D; 1</span><br><span class="line"># turn off fast timewait sockets recycling</span><br><span class="line">net.ipv4.tcp_tw_recycle &#x3D; 0</span><br><span class="line"># short FIN timeout</span><br><span class="line">net.ipv4.tcp_fin_timeout &#x3D; 30</span><br><span class="line"># short keepalive time</span><br><span class="line">net.ipv4.tcp_keepalive_time &#x3D; 1200</span><br><span class="line"># outbound port range</span><br><span class="line">net.ipv4.ip_local_port_range &#x3D; 10000 65000</span><br><span class="line"># max SYN backlog</span><br><span class="line">net.ipv4.tcp_max_syn_backlog &#x3D; 4096</span><br><span class="line"># max timewait sockets held by system simultaneously</span><br><span class="line">net.ipv4.tcp_max_tw_buckets &#x3D; 5000</span><br><span class="line"># TCP receive buffer</span><br><span class="line">net.ipv4.tcp_rmem &#x3D; 4096 87380 67108864</span><br><span class="line"># TCP write buffer</span><br><span class="line">net.ipv4.tcp_wmem &#x3D; 4096 65536 67108864</span><br><span class="line"># turn on path MTU discovery</span><br><span class="line">net.ipv4.tcp_mtu_probing &#x3D; 1</span><br><span class="line"></span><br><span class="line"># for high-latency network</span><br><span class="line">net.ipv4.tcp_congestion_control &#x3D; hybla</span><br><span class="line"># forward ivp4</span><br><span class="line">net.ipv4.ip_forward &#x3D; 1</span><br></pre></td></tr></table></figure>
+
 <p>保存生效<br><code>sysctl -p</code><br>其中最后的hybla是为高延迟网络（如美国，欧洲）准备的算法，需要内核支持，测试内核是否支持，在终端输入：<br><code>sysctl net.ipv4.tcp_available_congestion_control</code><br>如果结果中有hybla，则证明你的内核已开启hybla，如果没有hybla，可以用命令<code>modprobe tcp_hybla</code>开启。</p>
 <p>对于低延迟的网络（如日本，香港等），可以使用<code>htcp</code>，可以非常显著的提高速度，首先使用<code>modprobe tcp_htcp</code>开启，再将<code>net.ipv4.tcp_congestion_control = hybla</code>改为<code>net.ipv4.tcp_congestion_control = htcp</code>，建议EC2日本用户使用这个算法。</p>
 <hr>
-<p>####1.2 TCP优化<br>1.修改文件句柄数限制<br>如果是ubuntu/centos均可修改<code>/etc/sysctl.conf</code><br>找到<code>fs.file-max</code>这一行，修改其值为<code>1024000</code>，并保存退出。然后执行<code>sysctl -p</code>使其生效<br>修改<code>vi /etc/security/limits.conf</code>文件，加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           512000</span><br><span class="line">*               hard    nofile          1024000</span><br></pre></td></tr></table></figure></p>
+<p>####1.2 TCP优化<br>1.修改文件句柄数限制<br>如果是ubuntu/centos均可修改<code>/etc/sysctl.conf</code><br>找到<code>fs.file-max</code>这一行，修改其值为<code>1024000</code>，并保存退出。然后执行<code>sysctl -p</code>使其生效<br>修改<code>vi /etc/security/limits.conf</code>文件，加入  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*               soft    nofile           512000</span><br><span class="line">*               hard    nofile          1024000</span><br></pre></td></tr></table></figure>
 <p>针对centos,还需要修改<code>vi /etc/pam.d/common-session</code>文件，加入<br><code>session required pam_limits.so</code>  </p>
 <p>2.修改<code>vi /etc/profile</code>文件，加入<br><code>ulimit -SHn 1024000</code><br>然后重启服务器执行<code>ulimit -n</code>，查询返回1024000即可。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sysctl.conf报错解决方法</span><br><span class="line">修复modprobe的：</span><br><span class="line">rm -f /sbin/modprobe </span><br><span class="line">ln -s /bin/true /sbin/modprobe</span><br><span class="line">修复sysctl的：</span><br><span class="line">rm -f /sbin/sysctl </span><br><span class="line">ln -s /bin/true /sbin/sysctl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sysctl.conf报错解决方法</span><br><span class="line">修复modprobe的：</span><br><span class="line">rm -f &#x2F;sbin&#x2F;modprobe </span><br><span class="line">ln -s &#x2F;bin&#x2F;true &#x2F;sbin&#x2F;modprobe</span><br><span class="line">修复sysctl的：</span><br><span class="line">rm -f &#x2F;sbin&#x2F;sysctl </span><br><span class="line">ln -s &#x2F;bin&#x2F;true &#x2F;sbin&#x2F;sysctl</span><br></pre></td></tr></table></figure>
 <hr>
 <p>####1.3 锐速<br>锐速是TCP底层加速软件,官方已停止推出永久免费版本,但网上有破解版可以继续使用。需要购买的话先到锐速官网注册帐号,并确认<a href="http://dl.serverspeeder.com/ls.do?m=availables" target="_blank" rel="noopener">内核版本</a>是否支持锐速的版本。  </p>
-<p>一键安装速锐破解版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</span><br></pre></td></tr></table></figure></p>
-<p>一键卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh uninstall -f</span><br></pre></td></tr></table></figure></p>
-<p>设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Enter your accelerated interface(s) [eth0]: eth0</span><br><span class="line">Enter your outbound bandwidth [1000000 kbps]: 1000000</span><br><span class="line">Enter your inbound bandwidth [1000000 kbps]: 1000000</span><br><span class="line">Configure shortRtt-bypass [0 ms]: 0</span><br><span class="line">Auto load ServerSpeeder on linux start-up? [n]:y #是否开机自启</span><br><span class="line">Run ServerSpeeder now? [y]:y #是否现在启动</span><br></pre></td></tr></table></figure></p>
+<p>一键安装速锐破解版  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;91yun&#x2F;serverspeeder&#x2F;master&#x2F;serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</span><br></pre></td></tr></table></figure>
+
+<p>一键卸载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chattr -i &#x2F;serverspeeder&#x2F;etc&#x2F;apx* &amp;&amp; &#x2F;serverspeeder&#x2F;bin&#x2F;serverSpeeder.sh uninstall -f</span><br></pre></td></tr></table></figure>
+
+<p>设置  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Enter your accelerated interface(s) [eth0]: eth0</span><br><span class="line">Enter your outbound bandwidth [1000000 kbps]: 1000000</span><br><span class="line">Enter your inbound bandwidth [1000000 kbps]: 1000000</span><br><span class="line">Configure shortRtt-bypass [0 ms]: 0</span><br><span class="line">Auto load ServerSpeeder on linux start-up? [n]:y #是否开机自启</span><br><span class="line">Run ServerSpeeder now? [y]:y #是否现在启动</span><br></pre></td></tr></table></figure>
 <p>执行<code>lsmod</code>，看到有<code>appex0</code>模块即说明锐速已正常安装并启动。   </p>
-<p>至此，安装就结束了，但还有后续配置。<br>修改<code>vi /serverspeeder/etc/config</code>文件的几个参数以使锐速更好的工作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">accppp=&quot;1&quot; #加速PPTP、L2TP V-P-N；设为1表示开启，设为0表示关闭</span><br><span class="line">advinacc=&quot;1&quot; #高级入向加速开关；设为 1 表示开启，设为 0 表示关闭；开启此功能可以得到更好的流入方向流量加速效果；</span><br><span class="line">maxmode=&quot;1&quot; #最大传输模式；设为 1 表示开启；设为 0 表示关闭；开启后会进一步提高加速效果，但是可能会降低有效数据率。</span><br><span class="line">rsc=&quot;1&quot; #网卡接收端合并开关；设为 1 表示开启，设为 0 表示关闭；在有些较新的网卡驱动中，带有 RSC 算法的，需要打开该功能。</span><br><span class="line">l2wQLimit=&quot;512 4096&quot; #从 LAN 到 WAN 加速引擎在缓冲池充满和空闲时分别能够缓存的数据包队列的长度的上限；该值设置的高会获得更好的加速效果，但是会消耗更多的内存</span><br><span class="line">w2lQLimit=&quot;512 4096&quot; #从 WAN 到 LAN 加速引擎在缓冲池充满和空闲时分别能够缓存的数据包队列的长度的上限；该值设置的高会获得更好的加速效果，但是会消耗更多的内存</span><br></pre></td></tr></table></figure></p>
+<p>至此，安装就结束了，但还有后续配置。<br>修改<code>vi /serverspeeder/etc/config</code>文件的几个参数以使锐速更好的工作  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">accppp&#x3D;&quot;1&quot; #加速PPTP、L2TP V-P-N；设为1表示开启，设为0表示关闭</span><br><span class="line">advinacc&#x3D;&quot;1&quot; #高级入向加速开关；设为 1 表示开启，设为 0 表示关闭；开启此功能可以得到更好的流入方向流量加速效果；</span><br><span class="line">maxmode&#x3D;&quot;1&quot; #最大传输模式；设为 1 表示开启；设为 0 表示关闭；开启后会进一步提高加速效果，但是可能会降低有效数据率。</span><br><span class="line">rsc&#x3D;&quot;1&quot; #网卡接收端合并开关；设为 1 表示开启，设为 0 表示关闭；在有些较新的网卡驱动中，带有 RSC 算法的，需要打开该功能。</span><br><span class="line">l2wQLimit&#x3D;&quot;512 4096&quot; #从 LAN 到 WAN 加速引擎在缓冲池充满和空闲时分别能够缓存的数据包队列的长度的上限；该值设置的高会获得更好的加速效果，但是会消耗更多的内存</span><br><span class="line">w2lQLimit&#x3D;&quot;512 4096&quot; #从 WAN 到 LAN 加速引擎在缓冲池充满和空闲时分别能够缓存的数据包队列的长度的上限；该值设置的高会获得更好的加速效果，但是会消耗更多的内存</span><br></pre></td></tr></table></figure>
+
 <p>重读配置以使配置生效<code>/serverspeeder/bin/serverSpeeder.sh reload</code>   </p>
 <p>查看锐速当前状态<code>/serverspeeder/bin/serverSpeeder.sh stats</code>  </p>
 <p>查看所有命令<code>/serverspeeder/bin/serverSpeeder.sh help</code>  </p>
@@ -383,48 +413,103 @@
 <p>启动<code>/serverspeeder/bin/serverSpeeder.sh start</code>  </p>
 <p>重启锐速<code>service serverSpeeder restart</code>  </p>
 <hr>
-<p>####1.4 开启TCP Fast Open<br>这个需要服务器和客户端都是Linux 3.7+的内核，一般Linux的服务器发行版只有debian jessie有3.7+的，客户端用Linux更是珍稀动物，所以这个不多说，如果你的服务器端和客户端都是Linux 3.7+的内核，那就在服务端和客户端的<code>vi /etc/sysctl.conf</code>文件中再加上一行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># turn on TCP Fast Open on both client and server side</span><br><span class="line">net.ipv4.tcp_fastopen = 3</span><br></pre></td></tr></table></figure></p>
+<p>####1.4 开启TCP Fast Open<br>这个需要服务器和客户端都是Linux 3.7+的内核，一般Linux的服务器发行版只有debian jessie有3.7+的，客户端用Linux更是珍稀动物，所以这个不多说，如果你的服务器端和客户端都是Linux 3.7+的内核，那就在服务端和客户端的<code>vi /etc/sysctl.conf</code>文件中再加上一行。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># turn on TCP Fast Open on both client and server side</span><br><span class="line">net.ipv4.tcp_fastopen &#x3D; 3</span><br></pre></td></tr></table></figure>
 <p>然后把<code>vi /etc/shadowsocks.json</code>配置文件中”fast_open”: false改为”fast_open”: true。这样速度也将会有非常显著的提升。</p>
 <hr>
 <h3 id="2-加密层面"><a href="#2-加密层面" class="headerlink" title="2. 加密层面"></a>2. 加密层面</h3><p>####2.1 安装M2Crypto<br>这个可以提高SS的加密速度，安装办法：<br>Debian/Ubuntu<br><code>apt-get install python-m2crypto</code><br>安装之后重启SS，速度将会有一定的提升  </p>
-<p>CentOS<br>先安装依赖包：<br><code>yum install -y openssl-devel gcc swig python-devel autoconf libtool</code><br>安装setuptools：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/iMeiji/shadowsocks_install/master/ez_setup.py</span><br><span class="line">python ez_setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>CentOS<br>先安装依赖包：<br><code>yum install -y openssl-devel gcc swig python-devel autoconf libtool</code><br>安装setuptools：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;iMeiji&#x2F;shadowsocks_install&#x2F;master&#x2F;ez_setup.py</span><br><span class="line">python ez_setup.py install</span><br></pre></td></tr></table></figure>
 <p>再通过pip安装M2Crypto：<br><code>pip install M2Crypto</code><br>或者<code>pip install M2Crypto --upgrade</code>  </p>
 <hr>
-<p>####2.2 安装 gevent<br>安装 gevent可以提高 Shadowsocks 的性能。<br>Debian/Ubuntu<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-dev</span><br><span class="line">apt-get install libevent-dev</span><br><span class="line">apt-get install python-setuptools</span><br><span class="line">apt-get install python-gevent</span><br><span class="line">easy_install greenlet</span><br><span class="line">easy_install gevent</span><br></pre></td></tr></table></figure></p>
-<p>CentOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libevent</span><br><span class="line">pip install greenlet</span><br><span class="line">pip install gevent</span><br></pre></td></tr></table></figure></p>
+<p>####2.2 安装 gevent<br>安装 gevent可以提高 Shadowsocks 的性能。<br>Debian/Ubuntu  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-dev</span><br><span class="line">apt-get install libevent-dev</span><br><span class="line">apt-get install python-setuptools</span><br><span class="line">apt-get install python-gevent</span><br><span class="line">easy_install greenlet</span><br><span class="line">easy_install gevent</span><br></pre></td></tr></table></figure>
+
+<p>CentOS  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libevent</span><br><span class="line">pip install greenlet</span><br><span class="line">pip install gevent</span><br></pre></td></tr></table></figure>
+
 <hr>
-<p>####2.3 使用CHACHA20加密算法<br>首先，安装libsodium，让系统支持chacha20算法。<br>Debian/Ubuntu<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get install build-essential</span><br><span class="line">wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz</span><br><span class="line">tar xf LATEST.tar.gz &amp;&amp; cd libsodium*</span><br><span class="line">./configure &amp;&amp; make &amp;&amp; make install</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
-<p>CentOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yum groupinstall &quot;Development Tools&quot;</span><br><span class="line">wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz</span><br><span class="line">tar zxf LATEST.tar.gz</span><br><span class="line">cd libsodium* </span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">vi /etc/ld.so.conf</span><br><span class="line">添加一行：</span><br><span class="line">/usr/local/lib</span><br><span class="line">保存退出后，运行命令：</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
+<p>####2.3 使用CHACHA20加密算法<br>首先，安装libsodium，让系统支持chacha20算法。<br>Debian/Ubuntu   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get install build-essential</span><br><span class="line">wget https:&#x2F;&#x2F;download.libsodium.org&#x2F;libsodium&#x2F;releases&#x2F;LATEST.tar.gz</span><br><span class="line">tar xf LATEST.tar.gz &amp;&amp; cd libsodium*</span><br><span class="line">.&#x2F;configure &amp;&amp; make &amp;&amp; make install</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+<p>CentOS  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yum groupinstall &quot;Development Tools&quot;</span><br><span class="line">wget https:&#x2F;&#x2F;download.libsodium.org&#x2F;libsodium&#x2F;releases&#x2F;LATEST.tar.gz</span><br><span class="line">tar zxf LATEST.tar.gz</span><br><span class="line">cd libsodium* </span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">vi &#x2F;etc&#x2F;ld.so.conf</span><br><span class="line">添加一行：</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;lib</span><br><span class="line">保存退出后，运行命令：</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
 <p>然后修改ss加密方式：<br><code>vi /etc/shadowsocks.json</code><br>“method”:”aes-256-cfb”改成”method”:”chacha20”,重启SS即可<code>/etc/init.d/shadowsocks restart</code>    </p>
 <hr>
 <h3 id="3-网络层面"><a href="#3-网络层面" class="headerlink" title="3. 网络层面"></a>3. 网络层面</h3><p>此外，选择合适的端口也能优化梯子的速度，广大SS用户的实践经验表明，检查站（GFW）存在一种机制来降低自身的运算压力，即常用的协议端口（如http，smtp，ssh，https，ftp等）的检查较少，所以建议SS绑定这些常用的端口（如：21，22，25，80，443），速度也会有显著提升。<br>如果你还要给小伙伴爬，那我建议开启多个端口而不是共用，这样网络会更加顺畅。  </p>
 <p>####3.1 防火墙设置（如有）<br>自动调整MTU<br><code>iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu</code>  </p>
 <p>开启 NAT （记得把 eth0 改成自己的网卡名，openvz 的基本是 venet0 ）<br><code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code>  </p>
 <p>开启 IPv4 的转发<br><code>sysctl -w net.ipv4.ip_forward=1</code>  </p>
-<p>打开 443 端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line">iptables -I INPUT -p udp --dport 443 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<p>打开 443 端口  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line">iptables -I INPUT -p udp --dport 443 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
 <p>重启防火墙iptables：<br><code>service iptables restart</code>  </p>
 <hr>
 <p>参考<br><a href="https://www.zxc.so/shadowsocks-ladder.html" target="_blank" rel="noopener">https://www.zxc.so/shadowsocks-ladder.html</a><br><a href="https://teddysun.com/339.html" target="_blank" rel="noopener">https://teddysun.com/339.html</a> </p>
 <hr>
 <p>转载来源<br><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="noopener">https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize</a> </p>
 
-      </div>
-      
-      
-        <br>
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  
+
+<section class="widget copyright  card-shadow desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.bfdz.ink/2016/10/25/25/>https://www.bfdz.ink/2016/10/25/25/</a></p>
+          
+        
+          
+            <p>扫描下面的二维码，请博主喝杯咖啡~</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
 
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-02-22T23:52:50+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年2月22日</p>
-  </a>
-</div>
+          
 
         
       
@@ -436,122 +521,159 @@
 
         
       
+    </div>
+  </section>
+
+
         
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2016/10/31/26/" rel="prev" title="一键备份脚本backup.sh">
+                                  
+                                      一键备份脚本backup.sh
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a> <a class="tag" href="/tags/%E4%B8%80%E9%94%AE%E5%A4%87%E4%BB%BD/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 一键备份</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2016/09/10/24/" rel="prev" title="0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍">
+                                    
+                                        0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E9%AB%98%E6%B8%85%E7%9F%A5%E8%AF%86/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 高清知识</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.bfdz.ink/2016/10/25/25/&title=shadowsocks 优化 | BFDZ&summary=
-通过学习这篇文章，个人采用的优化措施：优化内核参数+TCP优化+锐速+安装gevent+CHACHA20+22端口，仅供参考。
-
-1. 系统层面基于kvm架构vps的优化这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
+    
       
     
       
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.bfdz.ink/2016/10/25/25/&title=shadowsocks 优化 | BFDZ&summary=
-通过学习这篇文章，个人采用的优化措施：优化内核参数+TCP优化+锐速+安装gevent+CHACHA20+22端口，仅供参考。
-
-1. 系统层面基于kvm架构vps的优化这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
+    
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://www.bfdz.ink/2016/10/25/25/&title=shadowsocks 优化 | BFDZ&summary=
-通过学习这篇文章，个人采用的优化措施：优化内核参数+TCP优化+锐速+安装gevent+CHACHA20+22端口，仅供参考。
+    
+      
+    
+      
+        
 
-1. 系统层面基于kvm架构vps的优化这方面SS给出了非常详尽的优化指南，主要有：优化内核参数，开启TCP Fast Open"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
+<section class="widget qrcode  card-shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>打赏</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://img.vim-cn.com/86/adc4a04aaaac32fffe4543225cffbec17cbae7.png'
+        
+          height='120px'
+        >
+      
+    
+      
+        <img src='https://img.vim-cn.com/cc/f4a788ac40138f5cfaaa5fe32079b06c7ca815.png'
+        
+          height='120px'
+        >
       
     
   </div>
-</div>
+</section>
 
-
-
-        
       
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget related_posts  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\11\14\30\" title="Shadowsocks流量管理脚本ss-bash" rel="bookmark">Shadowsocks流量管理脚本ss-bash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2017\07\13\45\" title="快速搭梯子脚本vpsins.sh" rel="bookmark">快速搭梯子脚本vpsins.sh</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\04\20\6\" title="Debian/CentOS下编译安装shadowsocks-libev" rel="bookmark">Debian/CentOS下编译安装shadowsocks-libev</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\05\05\8\" title="安装shadowsocks-go版本" rel="bookmark">安装shadowsocks-go版本</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\04\09\87\" title="ss-panel 魔改版搭建踩坑记" rel="bookmark">ss-panel 魔改版搭建踩坑记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\05\13\10\" title="Apache/Nginx 配置 301 重定向" rel="bookmark">Apache/Nginx 配置 301 重定向</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\10\23\108\" title="Cloudflare 下 Nginx 获取用户真实 IP 地址" rel="bookmark">Cloudflare 下 Nginx 获取用户真实 IP 地址</a></h3></div></li></ul>
     </div>
   </section>
 
 
       
+    
       
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2016/10/31/26/" rel="prev" title="一键备份脚本backup.sh">
-                                
-                                    一键备份脚本backup.sh
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a> <a class="tag" href="/tags/一键备份/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 一键备份</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2016/09/10/24/" rel="prev" title="0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍">
-                                  
-                                      0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/高清知识/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 高清知识</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-          </div>
+    
       
-    </section>
-  </article>
+    
+      
+    
+      
+    
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments card-shadow ">
     <section class="article typo">
       <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
@@ -568,6 +690,7 @@
   </article>
 
 
+  
 
 
 
@@ -588,235 +711,48 @@
 <aside class='l_side'>
   
     
+      
     
       
-      
         
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class='content pure'>
+
+  <section class="widget toc-wrapper  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-系统层面"><span class="toc-text">1. 系统层面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-加密层面"><span class="toc-text">2. 加密层面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-网络层面"><span class="toc-text">3. 网络层面</span></a></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget category'>
-    
-<header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/categories/"
-    title="blog/categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/ARM/" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/BT/" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/HTTPS/" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/PT/" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/VPS/" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Windows/" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/实用网站/" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/日志/" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/游戏/" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/纪录片/" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网盘/" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网络/" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/脚本/" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/视频压制/" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>(8)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;开源项目</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="/tools/ptgen" href="/tools/ptgen"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;PT-Gen
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
       
     
-
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 </aside>
 
-<footer id="footer" class="clearfix">
-  
+<footer class="clearfix ">
+  <br><br>
   
     <div class="social-wrapper">
       
@@ -846,7 +782,7 @@
       
         
           <a href="https://music.163.com/#/user/home?id=42333392"
-            class="social fas fa-music flat-btn"
+            class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -854,12 +790,13 @@
       
     </div>
   
+  
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">material-x</a>
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
     作为主题
     
       ，
@@ -869,7 +806,12 @@
     
     。
   </div>
-  <div>&copy; 2016-2020 BFDZ</div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -878,38 +820,26 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -928,30 +858,6 @@
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -959,21 +865,18 @@
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="/js/volantis.js"></script>
-    
+<script src="/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail'.split(',').filter(function(item){
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'false' == true;
+  var verify = 'true' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -983,26 +886,35 @@
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
+    placeholder: "快来评论吧~",
     pageSize:'10',
-    avatar:'identicon',
+    avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="/js/search.js"></script>
 
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1086,8 +998,11 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   let LAZY_LOAD_IMAGE = "";
   $(".article-entry").find("fancybox").find("img").each(function () {
@@ -1105,6 +1020,7 @@
       $(this).wrap(element);
   });
 </script>
+
 
 
 

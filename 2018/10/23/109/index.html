@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>Google Analytics 加载优化 | BFDZ</title>
+    
   
-  
-  <meta name="description" content="BFDZ的博客">
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="BFDZ">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>Google Analytics 加载优化 - BFDZ</title>
+  
+    <meta name="keywords" content="Google Analytics,linux">
+  
+  
+    <meta name="description" content="最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。
+因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。
+GitHub Repo （求 Star🌚">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -57,27 +87,28 @@
 
 <body>
   
-  
   <div class="cover-wrapper">
     <cover class='cover post half'>
       
         
-  <h1 class='title'>BFDZ</h1>
+  <p class="title ">BFDZ</p>
+  
 
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
       <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
     </form>
   </div>
 
-<div class='menu navgation'>
+<div class='menu navigation'>
   <ul class='h-list'>
     
       
         <li>
-          <a class="nav home" href="/"
+          <a class="nav home "
+            href="/"
             
             
             id="home">
@@ -86,9 +117,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/archives/"
             
             
             id="archives">
@@ -97,9 +127,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/friends/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/friends/"
             
             
             id="friends">
@@ -108,9 +137,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/about/"
             
             
             id="about">
@@ -124,19 +152,26 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header ">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar"></div>
   </div>
-
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/' >
-        
-          BFDZ
-        
-      </a>
-			<div class='menu navgation'>
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
 				<ul class='h-list'>
           
   					
@@ -152,8 +187,6 @@
   						<li>
 								<a class="nav flat-box" href="/archives/"
                   
-                    rel="nofollow"
-                  
                   
                   id="archives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
@@ -163,8 +196,6 @@
   						<li>
 								<a class="nav flat-box" href="/friends/"
                   
-                    rel="nofollow"
-                  
                   
                   id="friends">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
@@ -173,8 +204,6 @@
       			
   						<li>
 								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
                   
                   
                   id="about">
@@ -186,36 +215,35 @@
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
+	<aside class="menu-phone white-box">
     <header>
-		<nav class="menu navgation">
+		<nav class="menu navigation">
       <ul>
         
           
@@ -231,8 +259,6 @@
             <li>
 							<a class="nav flat-box" href="/archives/"
                 
-                  rel="nofollow"
-                
                 
                 id="archives">
 								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
@@ -242,8 +268,6 @@
             <li>
 							<a class="nav flat-box" href="/friends/"
                 
-                  rel="nofollow"
-                
                 
                 id="friends">
 								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
@@ -252,8 +276,6 @@
           
             <li>
 							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
                 
                 
                 id="about">
@@ -273,11 +295,14 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box card-shadow  article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -301,10 +326,11 @@
           
         
           
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-10-23</p>
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
   </a>
 </div>
 
@@ -324,20 +350,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2018年10月23日</p>
+  </a>
+</div>
 
           
         
@@ -354,17 +372,20 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p>
 <p>因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。</p>
 <p><a href="https://github.com/giuem/ga-proxy" target="_blank" rel="noopener">GitHub Repo</a> （求 Star🌚</p>
 <a id="more"></a>
+
 <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>目前关于 Google Analytics 大致有两种方案，一种是本文使用介绍的，另一种是利用 Nginx 的 post_action。</p>
 <p>前者需要多一次 HTTP 请求，后者有点麻烦，还要过滤搜索引擎 UA，不适用于使用 CDN 的网站。</p>
 <p>本文所采用的方案是基于 <a href="https://stneng.com/google-analytics-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%EF%BC%88%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82%EF%BC%89/" target="_blank" rel="noopener">Google Analytics 异步请求（服务端请求）</a> 提供的代码修改的 Go 版本。</p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-使用我提供的服务"><a href="#1-使用我提供的服务" class="headerlink" title="1. 使用我提供的服务"></a>1. 使用我提供的服务</h3><p>将下面的代码加到你的网站的任意位置，同时修改 <code>&quot;UA-xxxx-x&quot;</code> 为你自己的跟踪代码。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,d,e</span>)</span>&#123;<span class="keyword">var</span> f=c.screen,g=<span class="built_in">encodeURIComponent</span>,h=[<span class="string">"ga="</span>+a,<span class="string">"dt="</span>+g(d.title),<span class="string">"dr="</span>+g(d.referrer),<span class="string">"ul="</span>+(e.language||e.browserLanguage||e.userLanguage),<span class="string">"sd="</span>+f.colorDepth+<span class="string">"-bit"</span>,<span class="string">"sr="</span>+f.width+<span class="string">"x"</span>+f.height,<span class="string">"vp="</span>+<span class="built_in">Math</span>.max(d.documentElement.clientWidth,c.innerWidth||<span class="number">0</span>)+<span class="string">"x"</span>+<span class="built_in">Math</span>.max(d.documentElement.clientHeight,c.innerHeight||<span class="number">0</span>),<span class="string">"z="</span>+ +<span class="keyword">new</span> <span class="built_in">Date</span>];c.__ga_img=<span class="keyword">new</span> Image,c.__ga_img.src=b+<span class="string">"?"</span>+h.join(<span class="string">"&amp;"</span>)&#125;(<span class="string">"UA-xxxx-x"</span>,<span class="string">"https://ga.giuem.com"</span>,<span class="built_in">window</span>,<span class="built_in">document</span>,navigator,location);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>目前已经部署海外线路（由 CloudFlare 提供），国内为腾讯云上海机房</strong></p>
 <h3 id="2-自己部署服务"><a href="#2-自己部署服务" class="headerlink" title="2. 自己部署服务"></a>2. 自己部署服务</h3><ol>
 <li>安装</li>
@@ -385,84 +406,75 @@
 <hr>
 <p>来源：<a href="https://www.giuem.com/google-analytics-loading-optimize/" target="_blank" rel="noopener">https://www.giuem.com/google-analytics-loading-optimize/</a></p>
 
-      </div>
-      
-      
-        <br>
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  
+
+<section class="widget copyright  card-shadow desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.bfdz.ink/2018/10/23/109/>https://www.bfdz.ink/2018/10/23/109/</a></p>
+          
+        
+          
+            <p>扫描下面的二维码，请博主喝杯咖啡~</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
 
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-02-22T23:52:50+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年2月22日</p>
-  </a>
-</div>
+          
 
         
       
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Google-Analytics/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Google Analytics</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.bfdz.ink/2018/10/23/109/&title=Google Analytics 加载优化 | BFDZ&summary=最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。
-因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。
-GitHub Repo （求 Star🌚"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.bfdz.ink/2018/10/23/109/&title=Google Analytics 加载优化 | BFDZ&summary=最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。
-因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。
-GitHub Repo （求 Star🌚"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://www.bfdz.ink/2018/10/23/109/&title=Google Analytics 加载优化 | BFDZ&summary=最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。
-因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。
-GitHub Repo （求 Star🌚"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Google-Analytics/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Google Analytics</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>linux</p></a></div>
 
 
         
@@ -471,61 +483,155 @@ GitHub Repo （求 Star🌚"
   </section>
 
 
-      
-      
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2018/10/31/110/" rel="prev" title="电影简介生成工具">
-                                
-                                    电影简介生成工具
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/pt/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> pt</a> <a class="tag" href="/tags/电影/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 电影</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2018/10/23/108/" rel="prev" title="Cloudflare 下 Nginx 获取用户真实 IP 地址">
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2018/10/31/110/" rel="prev" title="电影简介生成工具">
                                   
-                                      Cloudflare 下 Nginx 获取用户真实 IP 地址
+                                      电影简介生成工具
                                   
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/nginx/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> nginx</a> <a class="tag" href="/tags/Cloudflare/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Cloudflare</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-          </div>
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/pt/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> pt</a> <a class="tag" href="/tags/%E7%94%B5%E5%BD%B1/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 电影</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/23/108/" rel="prev" title="Cloudflare 下 Nginx 获取用户真实 IP 地址">
+                                    
+                                        Cloudflare 下 Nginx 获取用户真实 IP 地址
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/nginx/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> nginx</a> <a class="tag" href="/tags/Cloudflare/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Cloudflare</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
       
-    </section>
-  </article>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+
+<section class="widget qrcode  card-shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>打赏</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://img.vim-cn.com/86/adc4a04aaaac32fffe4543225cffbec17cbae7.png'
+        
+          height='120px'
+        >
+      
+    
+      
+        <img src='https://img.vim-cn.com/cc/f4a788ac40138f5cfaaa5fe32079b06c7ca815.png'
+        
+          height='120px'
+        >
+      
+    
+  </div>
+</section>
+
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget related_posts  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\05\14\11\" title="解决Openvz架构vps下Rsyslogd进程资源占用异常" rel="bookmark">解决Openvz架构vps下Rsyslogd进程资源占用异常</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\11\09\111\" title="PT-Gen 后端搭建" rel="bookmark">PT-Gen 后端搭建</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\11\30\116\" title="Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本" rel="bookmark">Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\01\13\121\" title="Ampache 私人云音乐搭建和使用" rel="bookmark">Ampache 私人云音乐搭建和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\15\126\" title="PT-Gen v0.4.x 搭建教程" rel="bookmark">PT-Gen v0.4.x 搭建教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\07\24\127\" title="PbootCMS 部署教程" rel="bookmark">PbootCMS 部署教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\08\22\130\" title="利用iptables+ipset限制端口" rel="bookmark">利用iptables+ipset限制端口</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\11\23\134\" title="V2Ray 部署之“三步走”教程" rel="bookmark">V2Ray 部署之“三步走”教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\05\20\12\" title="通过配置多个ssh key将博客同时推送至github/coding" rel="bookmark">通过配置多个ssh key将博客同时推送至github/coding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\11\24\31\" title="Landscape-plus 主题修改和优化" rel="bookmark">Landscape-plus 主题修改和优化</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments card-shadow ">
     <section class="article typo">
       <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
@@ -542,6 +648,7 @@ GitHub Repo （求 Star🌚"
   </article>
 
 
+  
 
 
 
@@ -562,235 +669,48 @@ GitHub Repo （求 Star🌚"
 <aside class='l_side'>
   
     
+      
     
       
-      
         
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class='content pure'>
+
+  <section class="widget toc-wrapper  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#序"><span class="toc-text">序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用我提供的服务"><span class="toc-text">1. 使用我提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-自己部署服务"><span class="toc-text">2. 自己部署服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用效果"><span class="toc-text">使用效果</span></a></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget category'>
-    
-<header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/categories/"
-    title="blog/categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/ARM/" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/BT/" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/HTTPS/" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/PT/" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/VPS/" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Windows/" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/实用网站/" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/日志/" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/游戏/" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/纪录片/" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网盘/" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网络/" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/脚本/" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/视频压制/" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>(8)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;开源项目</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="/tools/ptgen" href="/tools/ptgen"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;PT-Gen
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
       
     
-
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 </aside>
 
-<footer id="footer" class="clearfix">
-  
+<footer class="clearfix ">
+  <br><br>
   
     <div class="social-wrapper">
       
@@ -820,7 +740,7 @@ GitHub Repo （求 Star🌚"
       
         
           <a href="https://music.163.com/#/user/home?id=42333392"
-            class="social fas fa-music flat-btn"
+            class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -828,12 +748,13 @@ GitHub Repo （求 Star🌚"
       
     </div>
   
+  
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">material-x</a>
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
     作为主题
     
       ，
@@ -843,7 +764,12 @@ GitHub Repo （求 Star🌚"
     
     。
   </div>
-  <div>&copy; 2016-2020 BFDZ</div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -852,38 +778,26 @@ GitHub Repo （求 Star🌚"
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -902,30 +816,6 @@ GitHub Repo （求 Star🌚"
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -933,21 +823,18 @@ GitHub Repo （求 Star🌚"
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="/js/volantis.js"></script>
-    
+<script src="/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail'.split(',').filter(function(item){
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'false' == true;
+  var verify = 'true' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -957,26 +844,35 @@ GitHub Repo （求 Star🌚"
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
+    placeholder: "快来评论吧~",
     pageSize:'10',
-    avatar:'identicon',
+    avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="/js/search.js"></script>
 
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1060,8 +956,11 @@ GitHub Repo （求 Star🌚"
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   let LAZY_LOAD_IMAGE = "";
   $(".article-entry").find("fancybox").find("img").each(function () {
@@ -1079,6 +978,7 @@ GitHub Repo （求 Star🌚"
       $(this).wrap(element);
   });
 </script>
+
 
 
 

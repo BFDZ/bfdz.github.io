@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Evaluating BBRv2 on the Dropbox Edge Network - BFDZ</title>
+  
+    <meta name="keywords" content="BBR,Dropbox">
+  
+  
+    <meta name="description" content="转一篇 Dropbox 关于 BBRv2 在边缘网络的评估报告，先剧透评估结果：BBRv2 比 BBRv1 慢。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64016301-4');
+    </script>
+  
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <p class="title ">BFDZ</p>
+  
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
+    </form>
+  </div>
+
+<div class='menu navigation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home "
+            href="/"
+            
+            
+            id="home">
+            <i class='fas fa-home fa-fw'></i>&nbsp;首页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home "
+            href="/archives/"
+            
+            
+            id="archives">
+            <i class='fas fa-archive fa-fw'></i>&nbsp;归档
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home "
+            href="/friends/"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home "
+            href="/about/"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header ">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar"></div>
+  </div>
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;首页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/friends/"
+                  
+                  
+                  id="friends">
+									<i class='fas fa-link fa-fw'></i>&nbsp;友链
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone white-box">
+    <header>
+		<nav class="menu navigation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-home fa-fw'></i>&nbsp;首页
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box card-shadow  article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/02/02/143/">
+        Evaluating BBRv2 on the Dropbox Edge Network
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%BD%91%E7%BB%9C/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>网络</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2020年2月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/12-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400227494_nginx_total_bw_p50-copy.png?w=650&h=325" alt=""><br>转一篇 Dropbox 关于 BBRv2 在边缘网络的评估报告，先剧透评估结果：BBRv2 比 BBRv1 慢。</p>
+<a id="more"></a>
+<hr>
+<p>Spoiler alert: BBRv2 is slower than BBRv1 but that’s a good thing.</p>
+<h2 id="BBRv1-Congestion-Control"><a href="#BBRv1-Congestion-Control" class="headerlink" title="BBRv1 Congestion Control"></a>BBRv1 Congestion Control</h2><p>Three years have passed since “<a href="https://queue.acm.org/detail.cfm?id=3022184" target="_blank" rel="noopener">Bottleneck Bandwidth and Round-trip</a>” (BBR) congestion control was released. Nowadays, it is considered production-ready and added to Linux, FreeBSD, and Chrome (as part of QUIC.) In our blogpost from 2017, “<a href="https://blogs.dropbox.com/tech/2017/09/optimizing-web-servers-for-high-throughput-and-low-latency/#congestion-control" target="_blank" rel="noopener">Optimizing web servers for high throughput and low latency</a>,” we evaluated BBRv1 congestion control on our edge network and it showed awesome results:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/02-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1573251398603_image-copy.png?w=650&h=373" alt=""></p>
+<p>Desktop client’s download bandwidth during BBR experiment in 2017.</p>
+<p>Since then, BBRv1 has been deployed to Dropbox Edge Network and we got accustomed to some of its downsides. Some of these were eventually fixed, like it being measurably slower for Wi-Fi users. Other tradeoffs were quite conceptual: <a href="https://arxiv.org/pdf/1903.03852.pdf" target="_blank" rel="noopener">BBRv1’s unfairness towards loss-based congestion controls</a> (e.g. CUBIC, Compound), <a href="http://doc.tm.kit.edu/2017-kit-icnp-bbr-authors-copy.pdf" target="_blank" rel="noopener">RTT-unfairness between BBRv1 flows</a>, and (almost) total disregard for the packet loss:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/03-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1573250826005_image-copy.png?w=650&h=156" alt=""></p>
+<p>Initial BBRv1 deployment: some boxes have &gt;6% packet loss.</p>
+<p>BBR developers (and IETF ICCRG) were, of course, also quite aware of these problems and actively worked on solutions. Following <a href="https://datatracker.ietf.org/meeting/104/materials/slides-104-iccrg-an-update-on-bbr-00#page=3" target="_blank" rel="noopener">issues were identified</a>:</p>
+<blockquote>
+<ol>
+<li>Low throughput for Reno/CUBIC flows sharing a bottleneck with bulk BBR flows</li>
+<li>Loss-agnostic; high packet loss rates if bottleneck &lt; 1.5*BDP</li>
+<li>ECN-agnostic</li>
+<li>Low throughput for paths with high degrees of aggregation (e.g. wifi)</li>
+<li>Throughput variation due to low cwnd in PROBE_RTT</li>
+</ol>
+</blockquote>
+<h2 id="Meet-BBR-version-2"><a href="#Meet-BBR-version-2" class="headerlink" title="Meet BBR version 2"></a>Meet BBR version 2</h2><p><a href="https://datatracker.ietf.org/meeting/105/materials/slides-105-iccrg-bbr-v2-a-model-based-congestion-control-00#page=19" target="_blank" rel="noopener">BBRv2 aims to solve some major drawbacks of the first version</a>, from lack of concern for packet loss to not giving enough room for new flows to enter. Plus, it also enhances network modeling with aggregation/in-flight parameters and adds experimental support for ECN (explicit congestion notification).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CUBIC</th>
+<th>BBR v1</th>
+<th>BBR v2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Model parameters for the state machine</td>
+<td>N/A</td>
+<td>Throughput, RTT</td>
+<td>Throughput, RTT, max aggregation, max inflight</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td>Reduce cwnd by 30% on window by any loss</td>
+<td>N/A</td>
+<td>Explicit loss rate target</td>
+</tr>
+<tr>
+<td>ECN</td>
+<td>RFC3168 (Classic ECN)</td>
+<td>N/A</td>
+<td>DCTCP-inspired ECN</td>
+</tr>
+<tr>
+<td>Startup</td>
+<td>Slow-start until RTT rises (Hystart) or any loss</td>
+<td>Slow-start until throughput plateaus</td>
+<td>Slow-start until throughput plateaus or ECN/Loss rate &gt; target</td>
+</tr>
+</tbody></table>
+<p>As BBRv2 is getting closer to release, we decided to take it for a spin on Dropbox Edge Network and see how it handles our workloads. But before we get into experimental results (and somewhat pretty pictures), lets cover disclaimers and test setup.</p>
+<h2 id="Disclaimers"><a href="#Disclaimers" class="headerlink" title="Disclaimers"></a>Disclaimers</h2><h3 id="Not-a-low-latency-experiment"><a href="#Not-a-low-latency-experiment" class="headerlink" title="Not a low-latency experiment"></a>Not a low-latency experiment</h3><p>This experiment was aimed at high-throughput workloads, not latency-sensitive ones. All TCP connections and nginx logs mentioned in the post were filtered by having at least 1Mb of data transferred.</p>
+<blockquote>
+<p>Eventually, we may decide on deploying BBRv2 internally in datacenters (possibly even with ECN support) for RPC traffic but that is outside the scope of this post.</p>
+</blockquote>
+<h3 id="Not-a-single-connection-test"><a href="#Not-a-single-connection-test" class="headerlink" title="Not a single connection test"></a>Not a single connection test</h3><p>This experiment was performed in a single PoP (point of presence), but on boxes handling millions of connections, so no single connection troubleshooting, tcptrace drill-downs, nor tcpdumps were involved. What follows is a mix of summary statistics, Jupyter notebooks, pandas, and seaborn.</p>
+<blockquote>
+<p>Even though <a href="https://seaborn.pydata.org/examples/index.html" target="_blank" rel="noopener">seaborn facilitates the creation of pretty graphs</a>, I’ve mostly failed at that, so sorry in advance for the poor graphs’ quality. OTOH, <a href="https://blogs.dropbox.com/tech/2017/04/deploying-brotli-for-static-content/" target="_blank" rel="noopener">at least it’s not</a> <a href="https://blogs.dropbox.com/tech/2017/04/deploying-brotli-for-static-content/" target="_blank" rel="noopener">xkcd-style</a> =)</p>
+</blockquote>
+<h3 id="This-is-not-a-lab-test"><a href="#This-is-not-a-lab-test" class="headerlink" title="This is not a lab test"></a>This is not a lab test</h3><p>This is a real-world experiment on our edge network. If you want to test BRRv2 (or any other congestion control) in a lab environment, we would recommend using <a href="https://github.com/google/transperf" target="_blank" rel="noopener">github.com/google/transperf</a>, that allows “Testing TCP performance over a variety of emulated network scenarios (using <a href="https://wiki.linuxfoundation.org/networking/netem" target="_blank" rel="noopener">netem</a>), including RTT, bottleneck bandwidth, and policed rate that can change over time,” like this:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/04-transperf-screenshot-1.png?w=650&h=353" alt=""></p>
+<p>An example of a transperf run.</p>
+<h2 id="Test-setup"><a href="#Test-setup" class="headerlink" title="Test setup"></a>Test setup</h2><p>We used a set of machines in our Tokyo PoP and tested the following combinations of kernels/congestion control algorithms:</p>
+<ol>
+<li>5.3 kernel, cubic</li>
+<li>5.3 kernel, bbr1</li>
+<li>5.3 kernel, bbr2</li>
+<li>4.15 kernel, bbr1</li>
+</ol>
+<p>All of the servers are using a combination of mq and <a href="http://man7.org/linux/man-pages/man8/tc-fq.8.html" target="_blank" rel="noopener">sch_fq</a> qdiscs with default settings.<br>Kernel is based on <code>Ubuntu-hwe-edge-5.3.0-18.19_18.04.2</code> with all the patches from the <code>[v2alpha-2019-11-17](https://github.com/google/bbr/tree/v2alpha-2019-11-17)</code> tag:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/05_screenshot-2019-12-17-11.39.28.png?w=650&h=254" alt=""></p>
+<p>The set of BBRv2 patches on top of Ubuntu-hwe-edge-5.3.0-18.19_18.04.2</p>
+<p>We’ve also applied “<a href="https://lore.kernel.org/netdev/20190913232332.44036-1-tph@fb.com/#r" target="_blank" rel="noopener">tcp: Add TCP_INFO counter for packets received out-of-order</a>” for the ease of merging and “<a href="https://gist.github.com/SaveTheRbtz/63b6e416865837306b11490b6f51eb2a" target="_blank" rel="noopener">[DBX] net-tcp_bbr: v2: disable spurious warning</a>” to silence the following warning:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: CPU: 0 PID: 0 at net&#x2F;ipv4&#x2F;tcp_bbr2.c:2426 bbr_set_state [tcp_bbr2]</span><br></pre></td></tr></table></figure>
+
+<p>All the graphs in the post were generated from either connection-level information from <code>ss -neit</code> sampling, machine-level stats from <code>/proc</code>, or server-side application-level metrics from web-server logs.</p>
+<h3 id="Keeping-the-kernel-up-to-date"><a href="#Keeping-the-kernel-up-to-date" class="headerlink" title="Keeping the kernel up-to-date"></a>Keeping the kernel up-to-date</h3><p>Newer kernels usually bring quite a bit of improvement to all subsystems including the TCP/IP stack.</p>
+<p>For example, if we compare 4.15 performance to 5.3, we can see that the latter has ~15% higher throughput, based on the web server logs:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/06-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400243846_nginx_kernel_compar_total_bw_p50-copy.png?w=650&h=325" alt=""></p>
+<p>4.15 vs 5.3 median file download throughput from Nginx point of view.</p>
+<p>Most likely candidates for this improvement are “<a href="https://lore.kernel.org/netdev/20190123200454.260121-3-priyarjha@google.com/#t" target="_blank" rel="noopener">tcp_bbr: adapt cwnd based on ack aggregation estimation</a>” (that fixed the Wi-Fi slowness mentioned above) and “<a href="https://lore.kernel.org/netdev/20180921155154.49489-1-edumazet@google.com/#t" target="_blank" rel="noopener">tcp: switch to Early Departure Time model</a>” (which we’ll talk about later in the AFAP section.)</p>
+<blockquote>
+<p>Recent Linux kernels also include <a href="https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/" target="_blank" rel="noopener">mitigations for the newly discovered CPU vulnerabilities</a>. We highly discourage disabling them (esp. on the edge!) so be prepared to take a CPU usage hit.</p>
+</blockquote>
+<h3 id="Keeping-userspace-up-to-date"><a href="#Keeping-userspace-up-to-date" class="headerlink" title="Keeping userspace up-to-date"></a>Keeping userspace up-to-date</h3><p>Having recent versions of userspace is quite important if you are using newer versions of the kernel compared to what your OS was bundled with. Especially so for packages like <code>ethtool</code> and <code>iproute2</code>.</p>
+<p>Just compare the output of an <code>ss</code> command with the old version:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ss -tie</span><br><span class="line">ts sack bbr rto:220 rtt:16.139&#x2F;10.041 ato:40 mss:1448 cwnd:106</span><br><span class="line">ssthresh:52 bytes_acked:9067087 bytes_received:5775 segs_out:6327</span><br><span class="line">segs_in:551 send 76.1Mbps lastsnd:14536 lastrcv:15584 lastack:14504</span><br><span class="line">pacing_rate 98.5Mbps retrans:0&#x2F;5 rcv_rtt:16.125 rcv_space:14400</span><br></pre></td></tr></table></figure>
+
+<p>…versus the new one:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ ss -tie</span><br><span class="line">ts sack bbr rto:220 rtt:16.139&#x2F;10.041 ato:40 mss:1448 pmtu:1500</span><br><span class="line">rcvmss:1269 advmss:1428 cwnd:106 ssthresh:52 bytes_sent:9070462</span><br><span class="line">bytes_retrans:3375 bytes_acked:9067087 bytes_received:5775</span><br><span class="line">segs_out:6327 segs_in:551 data_segs_out:6315 data_segs_in:12</span><br><span class="line">bbr:(bw:99.5Mbps,mrtt:1.912,pacing_gain:1,cwnd_gain:2)</span><br><span class="line">send 76.1Mbps lastsnd:9896 lastrcv:10944 lastack:9864</span><br><span class="line">pacing_rate 98.5Mbps delivery_rate 27.9Mbps delivered:6316</span><br><span class="line">busy:3020ms rwnd_limited:2072ms(68.6%) retrans:0&#x2F;5 dsack_dups:5</span><br><span class="line">rcv_rtt:16.125 rcv_space:14400 rcv_ssthresh:65535 minrtt:1.907</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the new <code>ss</code> version has all the goodies from the kernel’s <code>[struct **tcp_info**](https://elixir.bootlin.com/linux/v5.3.8/source/include/uapi/linux/tcp.h#L206)</code>, plus the internal BBRv2 state from the <code>[struct **tcp_bbr_info**](https://elixir.bootlin.com/linux/v5.3.8/source/include/uapi/linux/tcp.h#L191)</code>. This adds a ton of useful data that we can use even in day-to-day TCP performance troubleshooting, for example, insufficient sender buffer and insufficient receive window/buffer stats from the “<a href="https://lore.kernel.org/netdev/1480191016-73210-1-git-send-email-ycheng@google.com/#t" target="_blank" rel="noopener">tcp: sender chronographs instrumentation</a>” patchset.</p>
+<h2 id="Experimental-results"><a href="#Experimental-results" class="headerlink" title="Experimental results"></a>Experimental results</h2><h3 id="Low-packet-loss"><a href="#Low-packet-loss" class="headerlink" title="Low packet loss"></a>Low packet loss</h3><p>First things first, immediately after enabling BBRv2 we observe an enormous drop in retransmits. Still not as low as CUBIC, but a great improvement. Also, given that BBR was designed to ignore non-congestion induced packet loss, we can probably say that things work as intended.</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/9xcjduba.png?w=650&h=177" alt=""></p>
+<p>RetransSegs %, for Cubic, BBRv1, and BBRv2.</p>
+<p>If we dig deeper and look at <code>ss</code> stats we can see that generally, BBRv2 has way lower packet loss than BBRv1 (note the logarithmic scale) but still way higher than CUBIC:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/08-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574757297178_retrans_pct_dist-copy.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/09-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574757296583_retrans_pct_dist_cubic-copy.png?w=650&h=325" alt=""></p>
+<p>One strange experimental result is that BBRv2 has connections with &gt;60% packet loss, which are present neither on BBRv1 nor CUBIC machines. Looking at some of these connections closer does not reveal any obvious patterns: connections with absurdly large packet loss come from different OS’es (based on Timestamp/ECN support,) connections types (based on MSS,) and locations (based on RTT.)</p>
+<p>Aside from these outliers, retransmissions are lower across all RTTs:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/10-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574757742568_image-copy.png?w=650&h=344" alt=""></p>
+<p>Somehow, hosts using BBRv2 observe a lower degree of reordering, though this may be a side effect of fewer segments in-flight:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/11-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574757819179_reord_seen_dist-copy.png?w=650&h=325" alt=""></p>
+<h3 id="Throughput"><a href="#Throughput" class="headerlink" title="Throughput"></a>Throughput</h3><blockquote>
+<p>From the Traffic team perspective one of our SLIs for edge performance is end-to-end client-reported file download speed. For this test, we’ve been using server-side file download speed as the closest proxy.</p>
+</blockquote>
+<p>Here are the results comparing file download speed from the nginx point of view: BBRv2 versus both BBRv1 and CUBIC:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/12-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400227494_nginx_total_bw_p50-copy.png?w=650&h=325" alt=""></p>
+<p>Median nginx throughput, 95% ci (for files &gt;1Mb.)</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/12-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400227498_nginx_total_bw_p75-copy.png?w=650&h=325" alt=""></p>
+<p>P75 nginx throughput, 95% ci (for files &gt;1Mb.)</p>
+<p>For lower percentiles of connection speeds, BBRv2 has performance is closer to CUBIC and for higher ones it starts getting closer to BBRv1.</p>
+<p>Connection-level stats confirm that BBRv2 has lower bandwidth than BBRv1, but still higher than CUBIC:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/13-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400952690_bbr_bw_dist-copy.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/14-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400954190_bw_dist_cubic-copy.png?w=650&h=325" alt=""></p>
+<p>So, is BBRv2 slower? It is, at least to some extent. So, what are we getting in return? Based on connection stats, quite a lot actually. We’ve already mentioned lower packet loss (and therefore higher “goodput”), but there is more.</p>
+<p><strong>Fewer packets in-flight</strong><br>We’ve observed way fewer “unacked” packets which is a good proxy for bytes in-flight. BBRv2 looks way better than in BBRv1, and even slightly better than CUBIC:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/15-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400965430_unacked_dist-copy.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/16-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574400964911_unacked_dist_cubic-copy.png?w=650&h=325" alt=""></p>
+<p>Plotting RTT (round-trip time) versus in-flight shows that in BBRv1 case amount of data in-flight tends to be dependent on the RTT, which looks fixed in BBRv2:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/17-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574661169757_bbr_mrtt_vs_inflight_separate-copy.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/18-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574661168891_bbr_mrtt_vs_inflight_separate_cubic-copy.png?w=650&h=325" alt=""></p>
+<p>As one of BBR co-authors, <a href="https://groups.google.com/d/msg/bbr-dev/chcftJgJ3vA/jsKISUUIAwAJ" target="_blank" rel="noopener">Neal Cardwell, explains</a>:</p>
+<blockquote>
+<p>In all of the cases I’ve seen with unfairness due to differing min_rtt values, the dominant factor is simply that with BBRv1 each flow has a cwnd that is basically 2_bw_min_rtt, which tends to try to maintain 1_bw_min_rtt in the bottleneck queue, which quite directly means that flows with higher min_rtt values maintain more packets in the bottleneck queue and therefore get a higher fraction of the bottleneck bandwidth. The most direct way I’m aware of to improve RTT fairness in the BBR framework is to get rid of that excess queue, or ensure that the amount of queue is independent of a flow’s min_rtt estimate.</p>
+</blockquote>
+<p><strong>Receive Window Limited connections</strong><br>We also observe that BBRv2 connections spend way less time being “receive window limited” than BBRv1 and CUBIC connections do:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/19-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574839077028_rwnd_limited_pct_dist.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/20-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574839077018_rwnd_limited_pct_dist_cubic.png?w=650&h=325" alt=""></p>
+<blockquote>
+<p>I would assume that CUBIC without <code>sch_fq</code> would look even worse than BBRv1.</p>
+</blockquote>
+<p><strong>Lower RTT</strong><br>As a bonus BBRv2 also has a lower RTT than BBRv1, but strangely higher than CUBIC:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/21-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574839335747_rtt_dist.png?w=650&h=325" alt=""></p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/22-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574839332657_rtt_dist_cubic.png?w=650&h=325" alt=""></p>
+<p><strong>Correlations between Min RTT and Bandwidth</strong><br>If we construct Min RTT vs Bandwidth graph then vertical bands represent a network distance from user to our Tokyo PoP while horizontal bands represent common Internet speeds:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/23-s_404e1187e2e445c1c3889ff2c82c3547161303ea0b85c4853b1e4041416d5cf8_1574645518541_bbr_mrtt_vs_bbr_bw_combined-copy.png?w=650&h=325" alt=""></p>
+<p>bbr_mrtt vs bbr_bw scatterplot of all BBR flows in the experiment (both BBRv1 and BBRv2.)</p>
+<p>What’s interesting here is the exponentially decaying relationship between MinRTT and bandwidth for both BBRv1 and BBRv2. This means that there are some cases where bandwidth is artificially limited by RTT. Since this behavior is the same between BBRv1 and BBRv2 we did not dig too much into it. It’s likely though that bandwidth is being artificially limited by the user’s receive window.</p>
+<blockquote>
+<p>The 130+ ms RTT band represents cross-Pacific traffic and hence very likely a GSLB failure to properly route users to the closest PoP. We’ll talk about how we are utilizing RUM data to avoid that in the following blog post.</p>
+</blockquote>
+<h3 id="CPU-Usage-Improvements"><a href="#CPU-Usage-Improvements" class="headerlink" title="CPU Usage Improvements"></a>CPU Usage Improvements</h3><p>Previously, BBRv1 updated the whole model on each ACK received, which is quite a lot of work given the millions of ACKs that an average server receives. BBRv2 has an even more sophisticated network path model but it also adds a fast path that <a href="https://github.com/google/bbr/blob/v2alpha-2019-11-17/net/ipv4/tcp_bbr2.c#L2192-L2215" target="_blank" rel="noopener">skips model updates for the application-limited case</a>. This, in theory, should greatly reduce CPU usage on common workloads.</p>
+<p>ACK fast-path is not the only optimization that was made, feel free to check out <a href="https://datatracker.ietf.org/meeting/106/materials/slides-106-iccrg-update-on-bbrv2#page=5" target="_blank" rel="noopener">the full list of optimizations in the BBR’s IETF ICCRG 106 presentation</a>.</p>
+<p>In our tests, though, we did not see any measurable difference in CPU usage between BBRv1 and BBRv2, but this is likely due to <a href="https://github.com/google/bbr/blob/v2alpha-2019-11-17/net/ipv4/tcp_bbr2.c#L502" target="_blank" rel="noopener">BBRv2 having quite a lot of debug code enabled</a> (for now:)</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/24_i63ftsqa.png?w=650&h=137" alt=""></p>
+<p>Idle CPU on BBRv1 vs BBRv2.</p>
+<blockquote>
+<p>Pay special attention to the CPU usage if you are testing BBR with ECN enabled since it may render GRO/GSO unusable for high packet loss scenarios.</p>
+</blockquote>
+<h2 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h2><p>In our testing BBRv2 showed the following properties:</p>
+<ol>
+<li>Bandwidth is comparable to CUBIC for users with lower percentiles of Internet speeds.</li>
+<li>Bandwidth is comparable to BBRv1 for users with higher percentiles of Internet speeds.</li>
+<li>Packet loss is 4 times lower compared to BBRv1*; still 2x higher than CUBIC.</li>
+<li>Data in-flight is 3 times lower compared to BBRv1; slightly lower than CUBIC.</li>
+<li>RTTs are lower compared to BBRv1; still higher than CUBIC.</li>
+<li>Higher RTT-fairness compared to BBRv1.</li>
+</ol>
+<p>Overall, BBRv2 is a great improvement over the BBRv1 and indeed seems way closer to being a drop-in replacement for Reno/CUBIC in cases where one needs slightly higher bandwidth. Adding experimental ECN support to that and we can even see a drop-in replacement for <a href="https://tools.ietf.org/html/rfc8257" target="_blank" rel="noopener">Data Center TCP (DCTCP)</a>.</p>
+<p>*<em>Minus the 0.0001% of outliers with a &gt;60% packet loss.</em></p>
+<h2 id="We’re-hiring"><a href="#We’re-hiring" class="headerlink" title="We’re hiring!"></a>We’re hiring!</h2><p>If you are still here, there is a good chance that you actually enjoy digging deep into the performance data and you may enjoy working on the Dropbox Traffic team! Dropbox has a globally distributed Edge network, terabits of traffic, and millions of requests per second. All of which is managed by a small team in Mountain View, CA.</p>
+<p>The <a href="https://www.dropbox.com/jobs/locations/mountain-view?gh_src=f80311fa1#open-positions" target="_blank" rel="noopener">Traffic team is hiring both SWEs and SREs</a> to work on <a href="https://github.com/facebookincubator/katran" target="_blank" rel="noopener">TCP/IP packet processors and loadbalancers</a>, <a href="https://github.com/envoyproxy/envoy" target="_blank" rel="noopener">HTTP/gRPC proxies</a>, and our internal <a href="https://blogs.dropbox.com/tech/2019/01/courier-dropbox-migration-to-grpc/" target="_blank" rel="noopener">gRPC-based service mesh</a>. Not your thing? Dropbox is also hiring for <a href="https://www.dropbox.com/jobs/teams/engineering?gh_src=f80311fa1#open-positions" target="_blank" rel="noopener">a wide variety of engineering positions in San Francisco, New York, Seattle, Tel Aviv, and other offices around the world</a>.</p>
+<h2 id="Appendix-A-BBRv2-Development"><a href="#Appendix-A-BBRv2-Development" class="headerlink" title="Appendix A. BBRv2 Development"></a>Appendix A. BBRv2 Development</h2><p>Development happens on <a href="https://github.com/google/bbr/blob/v2alpha/README.md" target="_blank" rel="noopener">github.com/google/bbr</a>. Discussions are happening on the <a href="https://groups.google.com/forum/#!forum/bbr-dev" target="_blank" rel="noopener">bbr-dev</a> mailing list.</p>
+<p>Here is <a href="https://datatracker.ietf.org/meeting/104/materials/slides-104-iccrg-an-update-on-bbr-00#page=36" target="_blank" rel="noopener">the list of BBR design principles</a> (<strong>bold</strong> means it’s new v2):</p>
+<ol>
+<li><strong>Leave headroom: leave space for entering flows to grab</strong></li>
+<li><strong>React quickly: using loss/ECN, adapt to delivery process now to maintain flow balance</strong></li>
+<li>Don’t overreact: don’t do a multiplicative decrease on every round trip with loss/ECN</li>
+<li><strong>Probe deferentially: probe on a time scale to allow coexistence with Reno/CUBIC</strong></li>
+<li>Probe robustly: try to probe beyond estimated max bw, max volume before we cut est.</li>
+<li><strong>Avoid overshooting: start probing at an inflight measured to be tolerable</strong></li>
+<li>Grow scalably: <strong>start probing at 1 extra packet;</strong> grow exponentially to use free capacity</li>
+</ol>
+<p>Here are some notable milestones in BBRv2 development to date:</p>
+<ol>
+<li>BBR v2 algorithm was described at IETF 104: Prague, Mar 2019 [<a href="https://youtu.be/cJ-0Ti8ZlfE?t=210" target="_blank" rel="noopener">video</a>] [<a href="https://datatracker.ietf.org/meeting/104/materials/slides-104-iccrg-an-update-on-bbr-00" target="_blank" rel="noopener">slides</a>]</li>
+<li>BBR v2 open source release was described at IETF 105: Montreal, July 2019 [<a href="https://www.youtube.com/watch?v=6Njd4ApRsuo&feature=youtu.be&t=1149" target="_blank" rel="noopener">video</a>] [<a href="https://datatracker.ietf.org/meeting/105/materials/slides-105-iccrg-bbr-v2-a-model-based-congestion-control-00" target="_blank" rel="noopener">slides</a>]</li>
+<li>BBR v2 performance improvements and fixes IETF 106: Singapore, Nov 2019 [<a href="https://www.youtube.com/watch?v=i3CpETXwA7Q&feature=youtu.be&t=1679" target="_blank" rel="noopener">video</a>] [<a href="https://datatracker.ietf.org/meeting/106/materials/slides-106-iccrg-update-on-bbrv2" target="_blank" rel="noopener">slides</a>]</li>
+</ol>
+<h2 id="Appendix-B-Explicit-Congestion-Notification"><a href="#Appendix-B-Explicit-Congestion-Notification" class="headerlink" title="Appendix B. Explicit Congestion Notification"></a>Appendix B. Explicit Congestion Notification</h2><p>ECN is a way for the network bottleneck to notify the sender to slow down before it runs out of buffers and starts “tail dropping” packets. Currently, though, ECN on the Internet is mostly deployed in a so-called “passive” mode. <a href="https://devstreaming-cdn.apple.com/videos/wwdc/2017/707h2gkb95cx1l/707/707_advances_in_networking_part_1.pdf?dl=1" target="_blank" rel="noopener">Based on Apple’s data 74+% most popular websites “passively” support ECN</a>. On our Tokyo PoP, we currently observe 3.68% of connections being negotiated with ECN, 88% of which have an <code>ecnseen</code> flag.</p>
+<blockquote>
+<p>There are a lot of upsides to using ECN both internally and externally, as described in “<a href="https://tools.ietf.org/html/rfc8087" target="_blank" rel="noopener">The Benefits of Using Explicit Congestion Notification (ECN)</a>” RFC.</p>
+</blockquote>
+<p>One of the downsides of Classic ECN (a.k.a <a href="https://tools.ietf.org/html/rfc3168" target="_blank" rel="noopener">RFC3168</a>) is that it is too prescriptive about explicit congestion signal:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Upon the receipt by an ECN-Capable transport of a single CE packet, the congestion control algorithms followed at the end-systems MUST be essentially the same as the congestion control response to a *single* dropped packet.</span><br><span class="line">...</span><br><span class="line">The indication of congestion should be treated just as a congestion loss in non-ECN-Capable TCP. That is, the TCP source halves the congestion window &quot;cwnd&quot; and reduces the slow start threshold &quot;ssthresh&quot;.</span><br></pre></td></tr></table></figure>
+
+<p>(And for a good reason, since any difference in behavior between explicit (CE mark) and implicit (drop) congestion will definitely lead to unfairness.)</p>
+<p>Other RFCs, like the “<a href="https://tools.ietf.org/html/rfc7560" target="_blank" rel="noopener">Problem Statement and Requirements for Increased Accuracy in Explicit Congestion Notification (ECN) Feedback</a>,” call out the low granularity of classic ECN that is only able to feedback one congestion signal per RTT. Also for a good reason: DCTCP (and BBRv2) implementation of ECN greatly benefits from its increased accuracy:</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/25_vxhqsyta.png?w=650&h=272" alt=""></p>
+<p>M. Alizadeh et al. Data Center TCP (DCTCP).</p>
+<blockquote>
+<p>DCTCP’s custom interpretation of CE leads to a total unfairness towards classic congestion control algorithms.</p>
+</blockquote>
+<p>RFC8311, “<a href="https://tools.ietf.org/html/rfc8311" target="_blank" rel="noopener">Relaxing Restrictions on Explicit Congestion Notification (ECN) Experimentation</a>” tries to fix this by relaxing this requirement so that implementations are free to choose behavior outside of one specified by Classic ECN.</p>
+<p>Talking about ECN it’s hard to not mention that there is also a “<a href="https://lwn.net/Articles/783673/" target="_blank" rel="noopener">congestion-notification conflict</a>” going over a single code point (a half a bit) of space in the IP header between the “<a href="https://tools.ietf.org/html/draft-ietf-tsvwg-l4s-arch-04" target="_blank" rel="noopener">Low Latency, Low Loss, Scalable Throughput (L4S)</a>” proposal and the bufferbloat folks behind the “<a href="https://tools.ietf.org/html/draft-morton-tsvwg-sce-01" target="_blank" rel="noopener">The Some Congestion Experienced ECN Codepoint (SCE)</a>” draft.</p>
+<p>As Jonathan Corbet summarizes it:</p>
+<blockquote>
+<p>These two proposals are clearly incompatible with each other; each places its own interpretation on the ECT(1) value and would be confused by the other. The SCE side argues that its use of that value is fully compatible with existing deployments, while the L4S proposal turns it over to private use by suitably anointed protocols that are not compatible with existing congestion-control algorithms. L4S proponents argue that the dual-queue architecture is necessary to achieve their latency objectives; SCE seems more focused on fixing the endpoints.</p>
+</blockquote>
+<p>Time will show which, if any, draft is approved by IETF, in the meantime, we can all help the Internet by <a href="https://tools.ietf.org/html/rfc7928" target="_blank" rel="noopener">deploying AQMs</a> (e.g. <a href="https://github.com/torvalds/linux/blob/master/net/sched/sch_fq_codel.c" target="_blank" rel="noopener">fq_codel</a>, <a href="https://github.com/torvalds/linux/blob/master/net/sched/sch_cake.c" target="_blank" rel="noopener">cake</a>) to the network bottlenecks under our control.</p>
+<blockquote>
+<p>There is an RFC for that too, namely, “<a href="https://tools.ietf.org/html/rfc7567" target="_blank" rel="noopener">IETF Recommendations Regarding Active Queue Management</a>”, that has a whole section on AQMs and ECN.</p>
+</blockquote>
+<h2 id="Appendix-C-Beyond-As-Fast-As-Possible"><a href="#Appendix-C-Beyond-As-Fast-As-Possible" class="headerlink" title="Appendix C. Beyond As Fast As Possible"></a>Appendix C. Beyond As Fast As Possible</h2><h3 id="“Evolving-from-AFAP-–-Teaching-NICs-about-time”"><a href="#“Evolving-from-AFAP-–-Teaching-NICs-about-time”" class="headerlink" title="“Evolving from AFAP – Teaching NICs about time”"></a>“Evolving from AFAP – Teaching NICs about time”</h3><p>There is a great talk by <a href="https://en.wikipedia.org/wiki/Van_Jacobson" target="_blank" rel="noopener">Van Jacobson</a> about the evolution of computer networks and that sending “as fast as possible” is not an optimal in today’s Internet and even inside a datacenter.</p>
+<p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/26_ljky-mf4.png?w=650&h=364" alt=""></p>
+<blockquote>
+<p>You can checkout <a href="https://www.dropbox.com/s/u3l28r8tw4wd9d3/Evolving%20from%20AFAP%20%E2%80%93%20Teaching%20NICs%20about%20time.pdf?dl=0" target="_blank" rel="noopener">slides</a> and <a href="https://youtu.be/MAni0_lN7zE" target="_blank" rel="noopener">video</a> of Van Jacobson’s netdev talk. Coverage is available from <a href="https://jvns.ca/blog/2018/07/12/netdev-day-2--moving-away-from--as-fast-as-possible/" target="_blank" rel="noopener">Julia Evans</a> (@<a href="https://twitter.com/b0rk" target="_blank" rel="noopener">b0rk</a>) and <a href="https://lwn.net/Articles/763564/" target="_blank" rel="noopener">LWN.net</a> (@<a href="https://twitter.com/BPismenny" target="_blank" rel="noopener">BPismenny</a>).</p>
+</blockquote>
+<p>This talk is a great summary of the reasons why one might consider using pacing on the network layer and a delay-based congestion control algorithm.</p>
+<h3 id="Fair-Queue-scheduler"><a href="#Fair-Queue-scheduler" class="headerlink" title="Fair Queue scheduler"></a>Fair Queue scheduler</h3><p>Quite often we mention that all our Edge boxes run with Fair Queue scheduler:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ tc -s qdisc show dev eth0</span><br><span class="line">qdisc mq 1: root</span><br><span class="line"> Sent 100800259362 bytes 81191255 pkt (dropped 122, overlimits 0 requeues 35)</span><br><span class="line"> backlog 499933b 124p requeues 35</span><br><span class="line">qdisc fq 9cd7: parent 1:17 limit 10000p flow_limit 100p buckets 1024 orphan_mask 1023 quantum 3028 initial_quantum 15140 low_rate_threshold 550Kbit refill_delay 40.0ms</span><br><span class="line"> Sent 1016286523 bytes 806982 pkt (dropped 0, overlimits 0 requeues 0)</span><br><span class="line"> backlog 0b 0p requeues 0</span><br><span class="line"> 2047 flows (2044 inactive, 0 throttled)</span><br><span class="line"> 6162 gc, 0 highprio, 43782 throttled, 2716 ns latency</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>We also mention that our main goal is not the fair queueing itself but pacing introduced by tc-fq.</p>
+<blockquote>
+<p>Earlier fq implementations did add some jitter to TCP’s RTT estimations which can be problematic inside the data center since it will likely inflate p99s of RPC requests. This was solved in “<a href="https://lore.kernel.org/netdev/20180921155154.49489-1-edumazet@google.com/#t" target="_blank" rel="noopener">tcp: switch to Early Departure Time model</a>.”</p>
+</blockquote>
+<p>Here is an example of pacing at work: let’s use <code>[bpftrace](https://github.com/iovisor/bpftrace)</code> to measure difference between packets are enqueued into the qdisc and dequeued from it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># bpftrace qdisc-fq.bt</span><br><span class="line">@us:</span><br><span class="line">[0]               237486 |                                                    |</span><br><span class="line">[1]              8712205 |@@@@@@@@@@@@@@@@@@@@                                |</span><br><span class="line">[2, 4)          21855350 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|</span><br><span class="line">[4, 8)           4378933 |@@@@@@@@@@                                          |</span><br><span class="line">[8, 16)           372762 |                                                    |</span><br><span class="line">[16, 32)          178145 |                                                    |</span><br><span class="line">[32, 64)          279016 |                                                    |</span><br><span class="line">[64, 128)         603899 |@                                                   |</span><br><span class="line">[128, 256)       1115705 |@@                                                  |</span><br><span class="line">[256, 512)       2303138 |@@@@@                                               |</span><br><span class="line">[512, 1K)        2702993 |@@@@@@                                              |</span><br><span class="line">[1K, 2K)        11999127 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |</span><br><span class="line">[2K, 4K)         5432353 |@@@@@@@@@@@@                                        |</span><br><span class="line">[4K, 8K)         1823173 |@@@@                                                |</span><br><span class="line">[8K, 16K)         778955 |@                                                   |</span><br><span class="line">[16K, 32K)        385202 |                                                    |</span><br><span class="line">[32K, 64K)        146435 |                                                    |</span><br><span class="line">[64K, 128K)        31369 |                                                    |</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://github.com/brendangregg/bpf-perf-tools-book/blob/master/originals/Ch10_Networking/qdisc-fq.bt" target="_blank" rel="noopener">qdisc-fq.bt</a> is a part of supplementary material to the “<a href="http://www.brendangregg.com/bpf-performance-tools-book.html" target="_blank" rel="noopener">BPF Performance Tools: Linux System and Application Observability</a>” book by Brendan Gregg.</p>
+</blockquote>
+<h2 id="Appendix-D-Nginx-Throughput-Graphs"><a href="#Appendix-D-Nginx-Throughput-Graphs" class="headerlink" title="Appendix D. Nginx Throughput Graphs"></a>Appendix D. Nginx Throughput Graphs</h2><p><img src="https://dropboxtechblog.files.wordpress.com/2019/12/nginx_5.3_vs_4.15_total_bw_pdf.png?w=650" alt="nginx_5.3_vs_4.15_total_bw_pdf">)<img src="https://dropboxtechblog.files.wordpress.com/2019/12/nginx_5.3_vs_4.15_total_bw_cdf.png?w=650" alt="nginx_5.3_vs_4.15_total_bw_cdf">)<img src="https://dropboxtechblog.files.wordpress.com/2019/12/nginx_5.3_total_bw_pdf.png?w=650" alt="nginx_5.3_total_bw_pdf">)<img src="https://dropboxtechblog.files.wordpress.com/2019/12/nginx_5.3_total_bw_cdf.png?w=650" alt="nginx_5.3_total_bw_cdf"></p>
+<hr>
+<p>via:<a href="https://blogs.dropbox.com/tech/2019/12/evaluating-bbrv2-on-the-dropbox-edge-network/" target="_blank" rel="noopener">Evaluating BBRv2 on the Dropbox Edge Network</a></p>
+
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  
+
+<section class="widget copyright  card-shadow desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.bfdz.ink/2020/02/02/143/>https://www.bfdz.ink/2020/02/02/143/</a></p>
+          
+        
+          
+            <p>扫描下面的二维码，请博主喝杯咖啡~</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/BBR/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>BBR</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Dropbox/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Dropbox</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2020/02/20/144/" rel="prev" title="vvtoolbox gui series | m3u8下载工具">
+                                  
+                                      vvtoolbox gui series | m3u8下载工具
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/m3u8/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> m3u8</a> <a class="tag" href="/tags/vvtoolbox/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> vvtoolbox</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/02/01/142/" rel="prev" title="2019 年度数据报告">
+                                    
+                                        2019 年度数据报告
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E8%B0%B7%E6%AD%8C%E5%88%86%E6%9E%90/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 谷歌分析</a> <a class="tag" href="/tags/%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 年度报告</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+
+<section class="widget qrcode  card-shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>打赏</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://img.vim-cn.com/86/adc4a04aaaac32fffe4543225cffbec17cbae7.png'
+        
+          height='120px'
+        >
+      
+    
+      
+        <img src='https://img.vim-cn.com/cc/f4a788ac40138f5cfaaa5fe32079b06c7ca815.png'
+        
+          height='120px'
+        >
+      
+    
+  </div>
+</section>
+
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget related_posts  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\12\08\34\" title="开启TCP BBR拥塞控制算法" rel="bookmark">开启TCP BBR拥塞控制算法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\12\12\35\" title="Linux Kernel 4.9 正式发布" rel="bookmark">Linux Kernel 4.9 正式发布</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2017\07\13\44\" title="Debian/Ubuntu TCP BBR 改进版/增强版" rel="bookmark">Debian/Ubuntu TCP BBR 改进版/增强版</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\06\24\100\" title="高墙深度解析" rel="bookmark">高墙深度解析</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\12\14\118\" title="墙与梯的较量" rel="bookmark">墙与梯的较量</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments card-shadow ">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Evaluating BBRv2 on the Dropbox Edge Network',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+      
+    
+      
+        
+
+
+  <section class="widget toc-wrapper  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BBRv1-Congestion-Control"><span class="toc-text">BBRv1 Congestion Control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Meet-BBR-version-2"><span class="toc-text">Meet BBR version 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Disclaimers"><span class="toc-text">Disclaimers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Not-a-low-latency-experiment"><span class="toc-text">Not a low-latency experiment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Not-a-single-connection-test"><span class="toc-text">Not a single connection test</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#This-is-not-a-lab-test"><span class="toc-text">This is not a lab test</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test-setup"><span class="toc-text">Test setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Keeping-the-kernel-up-to-date"><span class="toc-text">Keeping the kernel up-to-date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Keeping-userspace-up-to-date"><span class="toc-text">Keeping userspace up-to-date</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Experimental-results"><span class="toc-text">Experimental results</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Low-packet-loss"><span class="toc-text">Low packet loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Throughput"><span class="toc-text">Throughput</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-Usage-Improvements"><span class="toc-text">CPU Usage Improvements</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusions"><span class="toc-text">Conclusions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#We’re-hiring"><span class="toc-text">We’re hiring!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix-A-BBRv2-Development"><span class="toc-text">Appendix A. BBRv2 Development</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix-B-Explicit-Congestion-Notification"><span class="toc-text">Appendix B. Explicit Congestion Notification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix-C-Beyond-As-Fast-As-Possible"><span class="toc-text">Appendix C. Beyond As Fast As Possible</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#“Evolving-from-AFAP-–-Teaching-NICs-about-time”"><span class="toc-text">“Evolving from AFAP – Teaching NICs about time”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fair-Queue-scheduler"><span class="toc-text">Fair Queue scheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix-D-Nginx-Throughput-Graphs"><span class="toc-text">Appendix D. Nginx Throughput Graphs</span></a></li></ol>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</aside>
+
+<footer class="clearfix ">
+  <br><br>
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:root@bfdz.ink"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bfdz"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=42333392"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
+    appKey: "xCtxMDBxturft2Dnd2wG6udr",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

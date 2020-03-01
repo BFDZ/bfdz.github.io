@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>我的朋友们 | BFDZ</title>
+    
   
-  
-  <meta name="description" content="BFDZ的博客">
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="BFDZ">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>我的朋友们 - BFDZ</title>
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -57,27 +81,28 @@
 
 <body>
   
-  
   <div class="cover-wrapper">
     <cover class='cover links half'>
       
         
-  <h1 class='title'>BFDZ</h1>
+  <p class="title ">BFDZ</p>
+  
 
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
       <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
     </form>
   </div>
 
-<div class='menu navgation'>
+<div class='menu navigation'>
   <ul class='h-list'>
     
       
         <li>
-          <a class="nav home" href="/"
+          <a class="nav home "
+            href="/"
             
             
             id="home">
@@ -86,9 +111,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/archives/"
             
             
             id="archives">
@@ -97,9 +121,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/friends/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/friends/"
             
             
             id="friends">
@@ -108,9 +131,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/about/"
             
             
             id="about">
@@ -124,19 +146,26 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header ">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar"></div>
   </div>
-
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/' >
-        
-          BFDZ
-        
-      </a>
-			<div class='menu navgation'>
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
 				<ul class='h-list'>
           
   					
@@ -152,8 +181,6 @@
   						<li>
 								<a class="nav flat-box" href="/archives/"
                   
-                    rel="nofollow"
-                  
                   
                   id="archives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
@@ -163,8 +190,6 @@
   						<li>
 								<a class="nav flat-box" href="/friends/"
                   
-                    rel="nofollow"
-                  
                   
                   id="friends">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
@@ -173,8 +198,6 @@
       			
   						<li>
 								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
                   
                   
                   id="about">
@@ -186,36 +209,35 @@
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
+	<aside class="menu-phone white-box">
     <header>
-		<nav class="menu navgation">
+		<nav class="menu navigation">
       <ul>
         
           
@@ -231,8 +253,6 @@
             <li>
 							<a class="nav flat-box" href="/archives/"
                 
-                  rel="nofollow"
-                
                 
                 id="archives">
 								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
@@ -242,8 +262,6 @@
             <li>
 							<a class="nav flat-box" href="/friends/"
                 
-                  rel="nofollow"
-                
                 
                 id="friends">
 								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
@@ -252,8 +270,6 @@
           
             <li>
 							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
                 
                 
                 id="about">
@@ -273,8 +289,10 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
-  <article id="links" class="post white-box article-type-links" itemscope itemprop="blogPost">
+      
+
+<div class='l_main'>
+  <article id="links" class="post white-box card-shadow  article-type-links" itemscope itemprop="blogPost">
     
 
 
@@ -299,10 +317,11 @@
           
         
           
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-11</p>
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
   </a>
 </div>
 
@@ -314,20 +333,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2020年3月1日</p>
+  </a>
+</div>
 
           
         
@@ -346,6 +357,7 @@
 
       <section class="article typo l_friends">
         
+        
           
             
               <div class='friends-group'>
@@ -363,10 +375,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://xaoxuu.com'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/xiaoxun.jpg'/>
+                        
+                          <img class='avatar' src='/images/ico/xiaoxun.jpg'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">xaoxuu</p>
+                        
                         
                       </div>
                     </a>
@@ -374,10 +389,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.xjh.me/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/xjh.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/xjh.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">岁月小筑</p>
+                        
                         
                       </div>
                     </a>
@@ -385,10 +403,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://blog.xcatliu.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/xcatliu.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/xcatliu.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">Xcat Liu's Blog</p>
+                        
                         
                       </div>
                     </a>
@@ -396,10 +417,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='http://chuangzaoshi.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/chuangzaoshi.png'/>
+                        
+                          <img class='avatar' src='/images/ico/chuangzaoshi.png'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">创意狮导航</p>
+                        
                         
                       </div>
                     </a>
@@ -407,10 +431,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.azimiao.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/azimiao.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/azimiao.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">梓喵出没</p>
+                        
                         
                       </div>
                     </a>
@@ -418,10 +445,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='http://blog.goagent.net/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/goagent.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/goagent.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">小小</p>
+                        
                         
                       </div>
                     </a>
@@ -429,10 +459,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://cuojue.org/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/weicn.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/weicn.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">浅秋枫影</p>
+                        
                         
                       </div>
                     </a>
@@ -440,10 +473,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://wobeibk.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/wobeibk.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/wobeibk.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">我辈博客</p>
+                        
                         
                       </div>
                     </a>
@@ -451,10 +487,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://affvps.net/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/affvps.png'/>
+                        
+                          <img class='avatar' src='/images/ico/affvps.png'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">AFFVPS</p>
+                        
                         
                       </div>
                     </a>
@@ -462,10 +501,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.do1999.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/do1999.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/do1999.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">Let me Attente</p>
+                        
                         
                       </div>
                     </a>
@@ -473,10 +515,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://blog.weimo.info/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/weimo.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/weimo.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">未末小城</p>
+                        
                         
                       </div>
                     </a>
@@ -484,10 +529,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.wushile.top/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/wushile.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/wushile.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">小吴博客</p>
+                        
                         
                       </div>
                     </a>
@@ -495,10 +543,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.laba.me/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/laba.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/laba.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">大喇叭</p>
+                        
                         
                       </div>
                     </a>
@@ -506,10 +557,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://w3c.ink/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/w3c.png'/>
+                        
+                          <img class='avatar' src='/images/ico/w3c.png'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">王三尺Blog</p>
+                        
                         
                       </div>
                     </a>
@@ -517,10 +571,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://blog.zerbo.cn/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/zerbo.jpg'/>
+                        
+                          <img class='avatar' src='/images/ico/zerbo.jpg'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">zerbo</p>
+                        
                         
                       </div>
                     </a>
@@ -528,10 +585,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://lijinghua.club/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/lijinghua.png'/>
+                        
+                          <img class='avatar' src='/images/ico/lijinghua.png'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">李阿斗</p>
+                        
                         
                       </div>
                     </a>
@@ -539,10 +599,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='http://blog.syabq.cn/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/syabq.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/syabq.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">BBQ前端博客</p>
+                        
                         
                       </div>
                     </a>
@@ -550,10 +613,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://hcl233.com/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/hcl233.png'/>
+                        
+                          <img class='avatar' src='/images/ico/hcl233.png'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">纯洁的V笑</p>
+                        
                         
                       </div>
                     </a>
@@ -578,10 +644,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://www.bfdz.ink/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/favicon.ico'/>
+                        
+                          <img class='avatar' src='/favicon.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">www.bfdz.ink</p>
+                        
                         
                       </div>
                     </a>
@@ -589,10 +658,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://ipv6.bfdz.ink'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/favicon.ico'/>
+                        
+                          <img class='avatar' src='/favicon.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">ipv6.bfdz.ink</p>
+                        
                         
                       </div>
                     </a>
@@ -600,10 +672,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://bfdz.coding.me/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/coding.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/coding.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">bfdz.coding.me</p>
+                        
                         
                       </div>
                     </a>
@@ -611,10 +686,13 @@
                     <a class='friend-card' style='background:; color:'
                       target="_blank" rel="external nofollow noopener noreferrer" href='https://bfdz.github.io/'>
                       <div class='friend-left'>
-                        <img class='avatar' src='/favicon.ico' data-echo='/images/ico/github.ico'/>
+                        
+                          <img class='avatar' src='/images/ico/github.ico'/>
+                        
                       </div>
                       <div class='friend-right'>
                         <p class="friend-name">bfdz.github.io</p>
+                        
                         
                       </div>
                     </a>
@@ -640,7 +718,7 @@
 
 
 
-  <article class="post white-box comments">
+  <article class="post white-box comments card-shadow ">
     <section class="article typo">
       <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
@@ -662,221 +740,34 @@
 <aside class='l_side'>
   
     
-    
-      
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget category'>
-    
-<header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/categories/"
-    title="blog/categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/ARM/" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/BT/" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/HTTPS/" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/PT/" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/VPS/" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Windows/" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/实用网站/" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/日志/" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/游戏/" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/纪录片/" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网盘/" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网络/" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/脚本/" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/视频压制/" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>(8)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;开源项目</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="/tools/ptgen" href="/tools/ptgen"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;PT-Gen
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
       
     
+      
+        
 
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 </aside>
 
-<footer id="footer" class="clearfix">
-  
+<footer class="clearfix ">
+  <br><br>
   
     <div class="social-wrapper">
       
@@ -906,7 +797,7 @@
       
         
           <a href="https://music.163.com/#/user/home?id=42333392"
-            class="social fas fa-music flat-btn"
+            class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -914,12 +805,13 @@
       
     </div>
   
+  
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">material-x</a>
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
     作为主题
     
       ，
@@ -929,7 +821,12 @@
     
     。
   </div>
-  <div>&copy; 2016-2020 BFDZ</div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -938,38 +835,26 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -988,30 +873,6 @@
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -1019,21 +880,18 @@
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="/js/volantis.js"></script>
-    
+<script src="/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail'.split(',').filter(function(item){
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'false' == true;
+  var verify = 'true' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -1043,38 +901,35 @@
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
+    placeholder: "快来评论吧~",
     pageSize:'10',
-    avatar:'identicon',
+    avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="/js/app.js"></script>
-
-
-  <script src="/js/search.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/toddmotto/echo@1.7.3/src/echo.js"></script>
-  <script>
-    echo.init({
-      offset: 100,
-      throttle: 250,
-      unload: false,
-      callback: function (element, op) {
-        // console.log(element, 'has been', op + 'ed');
-      }
-    });
-  </script>
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
+
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1158,8 +1013,11 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   let LAZY_LOAD_IMAGE = "";
   $(".article-entry").find("fancybox").find("img").each(function () {
@@ -1177,6 +1035,7 @@
       $(this).wrap(element);
   });
 </script>
+
 
 
 

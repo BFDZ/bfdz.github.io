@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍 | BFDZ</title>
+    
   
-  
-  <meta name="description" content="BFDZ的博客">
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="BFDZ">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍 - BFDZ</title>
+  
+    <meta name="keywords" content="高清知识">
+  
+  
+    <meta name="description" content="
+博主注：本文部分信息已经过时，仅供参考。
+
+对电影、电视剧等资源来源有兴趣的童鞋的科普，需要一定的混PT的经验才能看懂！有相关经验的，定会收益很多，有种豁然开朗的感觉！！
+关键词一：0day广义上的0day包含两种概念：
+
+0day攻击，一种对计算机软件的攻击方式
+0day资源，一种Warez
+
+在本站的语境下，0day多指后者。
+0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cra...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -57,27 +95,28 @@
 
 <body>
   
-  
   <div class="cover-wrapper">
     <cover class='cover post half'>
       
         
-  <h1 class='title'>BFDZ</h1>
+  <p class="title ">BFDZ</p>
+  
 
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
       <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
     </form>
   </div>
 
-<div class='menu navgation'>
+<div class='menu navigation'>
   <ul class='h-list'>
     
       
         <li>
-          <a class="nav home" href="/"
+          <a class="nav home "
+            href="/"
             
             
             id="home">
@@ -86,9 +125,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/archives/"
             
             
             id="archives">
@@ -97,9 +135,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/friends/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/friends/"
             
             
             id="friends">
@@ -108,9 +145,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/about/"
             
             
             id="about">
@@ -124,19 +160,26 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header ">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar"></div>
   </div>
-
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/' >
-        
-          BFDZ
-        
-      </a>
-			<div class='menu navgation'>
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
 				<ul class='h-list'>
           
   					
@@ -152,8 +195,6 @@
   						<li>
 								<a class="nav flat-box" href="/archives/"
                   
-                    rel="nofollow"
-                  
                   
                   id="archives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
@@ -163,8 +204,6 @@
   						<li>
 								<a class="nav flat-box" href="/friends/"
                   
-                    rel="nofollow"
-                  
                   
                   id="friends">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
@@ -173,8 +212,6 @@
       			
   						<li>
 								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
                   
                   
                   id="about">
@@ -186,36 +223,35 @@
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
+	<aside class="menu-phone white-box">
     <header>
-		<nav class="menu navgation">
+		<nav class="menu navigation">
       <ul>
         
           
@@ -231,8 +267,6 @@
             <li>
 							<a class="nav flat-box" href="/archives/"
                 
-                  rel="nofollow"
-                
                 
                 id="archives">
 								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
@@ -242,8 +276,6 @@
             <li>
 							<a class="nav flat-box" href="/friends/"
                 
-                  rel="nofollow"
-                
                 
                 id="friends">
 								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
@@ -252,8 +284,6 @@
           
             <li>
 							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
                 
                 
                 id="about">
@@ -273,11 +303,14 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box card-shadow  article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -301,10 +334,11 @@
           
         
           
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2016-09-10</p>
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
   </a>
 </div>
 
@@ -324,20 +358,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2016年9月10日</p>
+  </a>
+</div>
 
           
         
@@ -354,9 +380,10 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <blockquote>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
 <p>博主注：本文部分信息已经过时，仅供参考。</p>
 </blockquote>
 <p><strong>对电影、电视剧等资源来源有兴趣的童鞋的科普，需要一定的混PT的经验才能看懂！有相关经验的，定会收益很多，有种豁然开朗的感觉！！</strong></p>
@@ -366,10 +393,12 @@
 <li>0day资源，一种Warez</li>
 </ul>
 <p><strong>在本站的语境下，0day多指后者。</strong></p>
-<p>0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cracked on the same day it is released）<br><a id="more"></a><br>0day 最初定义是在官方发行软件或游戏后24小时内出现的破解版本，一些技术小组对这些软件或游戏以一定的格式进行打包发布，通过匿名的FTP渠道最终共享全球，是一种Warz。现在只要是在软件或者其他资源发布后，于最短时间内出现的相关破解，都归入0day的范畴。0day因此也经常被视为破解的同义词。</p>
+<p>0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cracked on the same day it is released）</p>
+<a id="more"></a>
+<p>0day 最初定义是在官方发行软件或游戏后24小时内出现的破解版本，一些技术小组对这些软件或游戏以一定的格式进行打包发布，通过匿名的FTP渠道最终共享全球，是一种Warz。现在只要是在软件或者其他资源发布后，于最短时间内出现的相关破解，都归入0day的范畴。0day因此也经常被视为破解的同义词。</p>
 <p>Warez 则是指在电脑领域非法交换的软件（盗版拷贝）。这个词最初源自于英语单词Software，然后在Leet语（黑客语）里将单词的复数“S”换成“Z”。 还有一种说法则认为, Z表示Zero Day的Z。随着互联网的发展，如今已发展为指代涵盖游戏，音乐，影视等各种数据资源。</p>
 <p>在一般情况下，指称0day资源的0day和WareZ基本上可视为同义词。</p>
-<h3 id="关键词二："><a href="#关键词二：" class="headerlink" title="关键词二："></a>关键词二：</h3><blockquote>
+<h3 id="关键词二："><a href="#关键词二：" class="headerlink" title="关键词二：###"></a>关键词二：###</h3><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Warez_scene" target="_blank" rel="noopener">维基百科对于Scene的解释：</a><br>The Warez scene, mostly referred to as The Scene (often capitalized) is a term of reference used to describe an underground community of people that specialize in the illegal distribution of pirated material, currently being TV, movies, music/music videos, games (all platforms), applications (all platforms), ebooks, and pornography.</p>
 </blockquote>
 <blockquote>
@@ -384,7 +413,7 @@
 <p>这个定义点出了rlz group的一些特点：Internet，FTP，release 但是对象并不完整，事实上的Release Groups发布对象涵盖影视、软件、游戏、音乐、资料等各种数据资源。</p>
 <p>每个rlz group发布作品均包含说明该发布作品的NFO文件，此文件主要包含发布组信息、发布作品的信息、破解信息等。nfo文件可通过专门的软件查看，也可使用系统自带的记事本查看。</p>
 <p>在目前国内比较权威的0day信息发布平台xtm的BBS上，rlz group的作品被主要分为了四个板块：</p>
-<h3 id="关键词四：Topsite，简称TS"><a href="#关键词四：Topsite，简称TS" class="headerlink" title="关键词四：Topsite，简称TS"></a>关键词四：Topsite，简称TS</h3><blockquote>
+<h3 id="关键词四：Topsite，简称TS"><a href="#关键词四：Topsite，简称TS" class="headerlink" title="关键词四：Topsite，简称TS###"></a>关键词四：Topsite，简称TS###</h3><blockquote>
 <p>维基百科对于Topsite的解释:<br>Topsite is a term used by the warez scene to refer to high-speed FTP servers used by release groups and couriers for distribution, storage and archiving of warez releases.</p>
 </blockquote>
 <p>Topsite 是一个Warez术语。由私密的Irc和FTP组成，Irc用于Scene Group成员的交流，FTP则用于Scene Group发布Warez。进入IRC需要对申请者进行极严格的审查，包括技术、资源甚至是人品，而FTP的限制则更为严格，甚至只能在限定的IP地址段 内才能登录。一般Topsite拥有Tb级的硬盘和100Mbit以上的宽带。</p>
@@ -392,10 +421,10 @@
 <p>一个Topsite通常包含若干个group（即Scene Group，简称grp），每个grp的核心领袖称OP，grp是WareZ的直接制造者，他们的作品最终汇总到topsite中进行统一发布。在每个 topsite中，又有详细的分工，以MovieZ为例：负责提供原材料（DVD、Bluray-Disc等原盘）的supplier，负责抓取压制的 ripper，负责传输到TS上的racer等。</p>
 <p>有些topsite的成员，会将topsite的作品传到自己所在的其他FTP（非Topsite）里，这种行为称dump。从TS上获取WareZ的FTP站点称为Dump站。<br>通 常Scene Group在TS上会进行竞赛，也就是race，比较哪个grp发布的速度最快发布的作品品质最好，其主要原则是，对于同一种资源，如果有一个grp最先 发布出来，除非nuke，否则其他grp的rlz就不再被允许发布到TS上。TS服务器一般都带有各种验证工具和脚本会自动计算race后的结果，也就是 credit，类似于PT站点的ratio。grp的racer参与race的过程，以维持grp在TS中的位置，若长期排在末位则会被TS ban掉，因并非所有的grp成员都有TS帐号，grp通常内部会有自己的dump站，racer也需负责将TS上的Warez搬运到Dump站来，供 grp的其他成员分享。Topsite上还有一类特殊leech帐号，提供给对TS做出特殊贡献的人（supplier，retirer或者捐助者）使用 者不需要参与race，因此不受race结果限制而可以随意的分享TS上的Warez。</p>
 <p>Warez hierarchy（等级）：<br><img src="http://pic.yupoo.com/beyondme37_v/D6z6LeC2/ra76N.png" alt=""></p>
-<h3 id="关键词五：pre-pretime"><a href="#关键词五：pre-pretime" class="headerlink" title="关键词五：pre/pretime"></a>关键词五：pre/pretime</h3><p>pre 是指某grp成员将制作好的资源上传到topsite后（首先上传到小组内部目录），把资源转移到topsite上所有用户有下载权限的目录里，同时脚本 会自动在该TS的IRC上发布该rlz的相关信息。此过程称“preing”而这段时间则称为pretime，此后这一个rlz状态变成pre‘d（前提 是不出BUG，有问题则会被nuked。其他小组如果继续发布相同的资源则会被dupe，除非某其他的grp制作出更好rlz，此时这个更好的rlz会标 注tag proper</p>
+<h3 id="关键词五：pre-pretime"><a href="#关键词五：pre-pretime" class="headerlink" title="关键词五：pre/pretime###"></a>关键词五：pre/pretime###</h3><p>pre 是指某grp成员将制作好的资源上传到topsite后（首先上传到小组内部目录），把资源转移到topsite上所有用户有下载权限的目录里，同时脚本 会自动在该TS的IRC上发布该rlz的相关信息。此过程称“preing”而这段时间则称为pretime，此后这一个rlz状态变成pre‘d（前提 是不出BUG，有问题则会被nuked。其他小组如果继续发布相同的资源则会被dupe，除非某其他的grp制作出更好rlz，此时这个更好的rlz会标 注tag proper</p>
 <p>另外pretime也可以理解为从release被上传到TS后到资源被制作成种子并发布这段时间。一些0day方向的PT站会在资源中注明pretime，以强调自身转发的速度，对于普通用户而言，pretime并没有太多实际意义。</p>
 <p>在介绍iNT组之前依然先说明几个概念：</p>
-<h4 id="Non-Scene-Group"><a href="#Non-Scene-Group" class="headerlink" title="Non-Scene Group"></a>Non-Scene Group</h4><blockquote>
+<h4 id="Non-Scene-Group"><a href="#Non-Scene-Group" class="headerlink" title="Non-Scene Group####"></a>Non-Scene Group####</h4><blockquote>
 <p>Non-Scene Group是区别于Scene Group的一些小组，这些小组不参与Topsite上的race，通过其他渠道发布自己的资源。按照作品的传播途径，又分为P2P Group和其他的Group。</p>
 </blockquote>
 <blockquote>
@@ -408,9 +437,9 @@
 <p><img src="http://pic.yupoo.com/beyondme37_v/D6z6LhT1/4evbD.jpg" alt=""></p>
 <p>在Non-Scene Group中，大部分的小组选择长期驻守在某个site上发布资源，我们称这些小组为某个site的内部发行组，<em>即Internal组，简称iNT组。</em>比 较著名的iNT组如HDB的CtrlHD、DON、Ebp、ESiR，TTG的WiKi，CHD的CHD等。早年国内著名的几个DVDrip小组 KiSS、NewMov还有韩国的WAF也都属于iNT组。</p>
 <p>需要区别的是，在Scene里面，也有internal的概念，其具体含义是：不太符合TDX标准（参见此帖）的作品，一些是Scene Group的成员自己个人随性制做，质量比较差，另一些则是grp认为依照TDX标准无法做出满意的质量,比如其中bitrate限制和codec限制过 于死板等，但不依照TDX做又会被NUKE，于是做成不参与race，只在自己的site内部传阅的作品，这种internal比较有收藏价值。所有这些 作品都会在命名里标记上iNT。因此，iNT组和iNT作品是两码事，Scene组偶尔也会制作一些iNT rlz。</p>
-<h4 id="Encode-重编码作品"><a href="#Encode-重编码作品" class="headerlink" title="Encode-重编码作品"></a>Encode-重编码作品</h4><p>发布组（rlz group）利用其内部渠道获得的DVD或Bluray-Disc片源，通过转换视频的编码格式（目前比较流行的是XVID和H264），达到压缩体积的 目的，最终封装后缀名为avi、mp4、mkv的文件我们称之为重编码作品，这个过程的制作者我们称为Encoder。</p>
+<h4 id="Encode-重编码作品"><a href="#Encode-重编码作品" class="headerlink" title="Encode-重编码作品####"></a>Encode-重编码作品####</h4><p>发布组（rlz group）利用其内部渠道获得的DVD或Bluray-Disc片源，通过转换视频的编码格式（目前比较流行的是XVID和H264），达到压缩体积的 目的，最终封装后缀名为avi、mp4、mkv的文件我们称之为重编码作品，这个过程的制作者我们称为Encoder。</p>
 <p>以下局限在高清影视领域讨论各Group的Encode：</p>
-<p>由<a href="http://www.kmgtp.org/forums.php?action=viewtopic&amp;topicid=6885&amp;page=last#last" target="_blank" rel="noopener">Scene，0day一些概念的简单解释可知</a>：Scene组为了参与在TS上的race，时间成为他们首要考虑因素，只要压制出来的作品看上去没有太大的技术问题，就会发布出来。而驻守在各个 site上的iNT组则追求慢工出细活，将压制作品的品质放在首位，时间次之，因此在影视资源的品质上，iNT组是明显优于Scene组的。不过一个很好 玩的现状是，由于现在几个知名的Internal Group驻守的PT站点为了增强自身的竞争力，常会经由一些独占渠道抢先发布资源，结果是Internal组比Scene组发布速度还快。必须指出的 是，虽然从整体上看，iNT组所发布的作品画质确实优于Scene组（因为遵照High Definition x264 Standards Revision 4.0 的标准，Scene组压制的高清影视只能跑固定的参数），但是并不意味着Scene组的作品不可接受，在著名的PT站点SceneHD，只有Scene Group的作品是允许被上传的。</p>
+<p>由<a href="http://www.kmgtp.org/forums.php?action=viewtopic&topicid=6885&page=last#last" target="_blank" rel="noopener">Scene，0day一些概念的简单解释可知</a>：Scene组为了参与在TS上的race，时间成为他们首要考虑因素，只要压制出来的作品看上去没有太大的技术问题，就会发布出来。而驻守在各个 site上的iNT组则追求慢工出细活，将压制作品的品质放在首位，时间次之，因此在影视资源的品质上，iNT组是明显优于Scene组的。不过一个很好 玩的现状是，由于现在几个知名的Internal Group驻守的PT站点为了增强自身的竞争力，常会经由一些独占渠道抢先发布资源，结果是Internal组比Scene组发布速度还快。必须指出的 是，虽然从整体上看，iNT组所发布的作品画质确实优于Scene组（因为遵照High Definition x264 Standards Revision 4.0 的标准，Scene组压制的高清影视只能跑固定的参数），但是并不意味着Scene组的作品不可接受，在著名的PT站点SceneHD，只有Scene Group的作品是允许被上传的。</p>
 <p>而TOP组这个概念，其实只在国内一些小圈子里流行，国外并无TOP Group的说法。</p>
 <p>此概念最早由NHD的管理层提出，用于减少其站内的电影资源内容上的重复。</p>
 <p>其最早的规则如下：</p>
@@ -431,11 +460,11 @@
 <p>需要的说明是：</p>
 <p>1.NHD的这个分级制度在大范围内其实并不被认可，即使在同一个小组（即使用相同的小组签名）也会因为理念的差异、经验的累积导致作品质量参差不齐。部分国外的资深PTer认为Encoder（即压制成员）比压制组更有参考价值。</p>
 <p>2.X264编码技术在近几年的飞速更新也是一个需要考虑的因素，从今天的眼光来看，三年前发布大量作品的ESiR组的rlz品质未见得优于现在的一些新组，尽管当时的ESiR为全球Internal Group之翘楚。</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>一个通俗易懂的结论：</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结：####"></a>小结：####</h4><p>一个通俗易懂的结论：</p>
 <blockquote>
 <p>Scene = Speed<br>Internal = Quality<br>TOP组，也就是HDB的几个小组CtrlHD、DON、Ebp、ESiR整体而言作品质量较高，且发布的资源数量也非常多，在国内流传度非常高，他们的rlz是高清发烧友值得考虑的收藏对象。</p>
 </blockquote>
-<h3 id="部分Scene-Group的简介："><a href="#部分Scene-Group的简介：" class="headerlink" title="部分Scene Group的简介："></a>部分Scene Group的简介：</h3><p>Immerse 这个组在Scene可谓声名狼藉，在TS上为了race无所不用其极，经常发布劣质的encode，在YYETS的论坛，Immerse被人戏称为“骑兵 组”或“马赛克小组”该组为了抢快经常用很低的码率和参数，作品不是播放没有声音就是花屏，常年在TS上被Proper。喜欢美剧的混一些外站的PTer 应当特别留心这个组，很可能在别的站还没下载完就被网站的管理员删档了。</p>
+<h3 id="部分Scene-Group的简介："><a href="#部分Scene-Group的简介：" class="headerlink" title="部分Scene Group的简介：###"></a>部分Scene Group的简介：###</h3><p>Immerse 这个组在Scene可谓声名狼藉，在TS上为了race无所不用其极，经常发布劣质的encode，在YYETS的论坛，Immerse被人戏称为“骑兵 组”或“马赛克小组”该组为了抢快经常用很低的码率和参数，作品不是播放没有声音就是花屏，常年在TS上被Proper。喜欢美剧的混一些外站的PTer 应当特别留心这个组，很可能在别的站还没下载完就被网站的管理员删档了。</p>
 <p>同样是以发布美剧闻名的CTU、DIMENSION、ORENJi、SYS等组则很少出现这样的问题。</p>
 <p>Japhson 常常能看到这个组Proper其他Scene的作品。</p>
 <p>LCHD LooKMaNe 多发布亚洲影视作品。</p>
@@ -445,7 +474,7 @@
 <p>TWiZTED 这个组经常会出Repack，自己压坏了之后赶紧重做。</p>
 <p>附注的是，很多组会身披不同马甲做标清视频和高清视频，目前已知的是：</p>
 <p>XII=IMMERSE（做标清的XII也压坏了很多美剧），FQM=CTU（冰与火之歌的第一季的0day版想必很多人还记得，标清的多是FQM的，高清的多是CTU的）LOL=DIMENSION，ORENJi=XOR以及IMBT=METiS</p>
-<h3 id="部分Non-Scene-Group介绍："><a href="#部分Non-Scene-Group介绍：" class="headerlink" title="部分Non-Scene Group介绍："></a>部分Non-Scene Group介绍：</h3><p>高清PT站点HDB的Intenal Group,部分被视为TOP组：</p>
+<h3 id="部分Non-Scene-Group介绍："><a href="#部分Non-Scene-Group介绍：" class="headerlink" title="部分Non-Scene Group介绍：###"></a>部分Non-Scene Group介绍：###</h3><p>高清PT站点HDB的Intenal Group,部分被视为TOP组：</p>
 <p>CtrlHD、CRiSC、DON、Ebp、ESiR、HDL、HDmonSK、HDxT、iLL、MMI、PerfectionHD、Prestige、RuDe3</p>
 <p>被称为HDB三大组的CtrlHD、DON、ESiR，以高质量和众多数量的Encode在PT圈内享有盛誉，ESiR的720P更是曾在PT界首屈一指， 风行于国内各大资源站点。ESiR由Thor小组演化而成，后又分离出Thora这样专心从事动漫的压制组。10年4月ESiR因内部问题人员变动，作品 质量和数量下滑，现已不在HDB发片，但HDB站内依然有大量ESiR的重编码作品。如今ESiR的地位已被Ebp取代，后者与CtrlHD、DON继续 在HDB成三足鼎立之势。</p>
 <p>HDmonSK、PerfectionHD则在HDB以发布BD原盘为主，不时也会释出一些Encode。</p>
@@ -461,7 +490,7 @@
 </li>
 </ol>
 <p>3.HDB由于站内的Dupe制度，其重编码的720P、1080P每种仅允许保留一个作品，因此CtrlHD在其他小组发布了encode之后，会通过Usenet等途径将本组重复压制的作品流出来。</p>
-<h3 id="高清PT站点HDT的Intenal-Group："><a href="#高清PT站点HDT的Intenal-Group：" class="headerlink" title="高清PT站点HDT的Intenal Group："></a>高清PT站点HDT的Intenal Group：</h3><p>DNL、EuReKA、HDMaNiAcS、HiDT、KRaLiMaRKo、ViSTA™、</p>
+<h3 id="高清PT站点HDT的Intenal-Group："><a href="#高清PT站点HDT的Intenal-Group：" class="headerlink" title="高清PT站点HDT的Intenal Group：###"></a>高清PT站点HDT的Intenal Group：###</h3><p>DNL、EuReKA、HDMaNiAcS、HiDT、KRaLiMaRKo、ViSTA™、</p>
 <p>HDT 的几个压制组在P2P圈内也有一定的声望。HiDT主要压制720P作品，ViSTA™则以1080P为主，两个iNT组作品在国外PT站流传度较广，在 国内相对少见。ViSTA™似乎是单人小组，现在已经消失。KRaLiMaRKo和HDMaNiAcS为新加入的小组，前者专门制作remux，后者则压 制720P、1080P不等。DNL的作品不时在国内会见到转发，不过转发的也以720P HDTV多见。这三个小组的品质相对HiDT、ViSTA™这样的老牌还有很大的提升空间。</p>
 <p>EuReKA 像是PT圈子里的浪子，最早在Bit-HDTV上发布作品，08年底和Bit-HDTV的staff争吵后自行建站Eureka.org，后来站点出现状 况，转头Awsome-HD，因为感觉自己制作BD25伪原盘的理念在HDT无法的得到重视，现又离开自行成立PT站BD25（<a href="http://bd25.org/）且由原来重编码压制1080P改为制作BD5、BD9、BD25伪原盘。" target="_blank" rel="noopener">http://bd25.org/）且由原来重编码压制1080P改为制作BD5、BD9、BD25伪原盘。</a></p>
 <p>FraMeSToR<br>这 个组是从EuReKA分离出来的小组。曾先后在Bit-HDTV、HDME等PT站常驻发布1080P，特点是封装无损音轨及次世代音轨，现自行建立PT 站点tracker.framestor-hd.org，其压制极为严苛，码率往往非常高，封装次世代音轨后有时1080P的encode比原盘还大。</p>
@@ -477,108 +506,75 @@
 <hr>
 <p>全文转自蝴蝶PT，在此感谢。</p>
 
-      </div>
-      
-      
-        <br>
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  
+
+<section class="widget copyright  card-shadow desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.bfdz.ink/2016/09/10/24/>https://www.bfdz.ink/2016/09/10/24/</a></p>
+          
+        
+          
+            <p>扫描下面的二维码，请博主喝杯咖啡~</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
 
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-02-22T23:52:50+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年2月22日</p>
-  </a>
-</div>
+          
 
         
       
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/高清知识/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>高清知识</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.bfdz.ink/2016/09/10/24/&title=0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍 | BFDZ&summary=
-博主注：本文部分信息已经过时，仅供参考。
-
-对电影、电视剧等资源来源有兴趣的童鞋的科普，需要一定的混PT的经验才能看懂！有相关经验的，定会收益很多，有种豁然开朗的感觉！！
-关键词一：0day广义上的0day包含两种概念：
-
-0day攻击，一种对计算机软件的攻击方式
-0day资源，一种Warez
-
-在本站的语境下，0day多指后者。
-0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cracked on the same day it is released）"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.bfdz.ink/2016/09/10/24/&title=0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍 | BFDZ&summary=
-博主注：本文部分信息已经过时，仅供参考。
-
-对电影、电视剧等资源来源有兴趣的童鞋的科普，需要一定的混PT的经验才能看懂！有相关经验的，定会收益很多，有种豁然开朗的感觉！！
-关键词一：0day广义上的0day包含两种概念：
-
-0day攻击，一种对计算机软件的攻击方式
-0day资源，一种Warez
-
-在本站的语境下，0day多指后者。
-0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cracked on the same day it is released）"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://www.bfdz.ink/2016/09/10/24/&title=0day一些概念的解释，及Scene组、iNT组、TOP组的一些介绍 | BFDZ&summary=
-博主注：本文部分信息已经过时，仅供参考。
-
-对电影、电视剧等资源来源有兴趣的童鞋的科普，需要一定的混PT的经验才能看懂！有相关经验的，定会收益很多，有种豁然开朗的感觉！！
-关键词一：0day广义上的0day包含两种概念：
-
-0day攻击，一种对计算机软件的攻击方式
-0day资源，一种Warez
-
-在本站的语境下，0day多指后者。
-0day中的0表示zero，其更准确的称呼是Zero-day warez（copyrighted software that is cracked on the same day it is released）"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%AB%98%E6%B8%85%E7%9F%A5%E8%AF%86/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>高清知识</p></a></div>
 
 
         
@@ -587,61 +583,155 @@
   </section>
 
 
-      
-      
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2016/10/25/25/" rel="prev" title="shadowsocks 优化">
-                                
-                                    shadowsocks 优化
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/shadowsocks/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> shadowsocks</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2016/09/10/23/" rel="prev" title="nfo相关小知识">
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2016/10/25/25/" rel="prev" title="shadowsocks 优化">
                                   
-                                      nfo相关小知识
+                                      shadowsocks 优化
                                   
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/高清知识/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 高清知识</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-          </div>
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/shadowsocks/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> shadowsocks</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2016/09/10/23/" rel="prev" title="nfo相关小知识">
+                                    
+                                        nfo相关小知识
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E9%AB%98%E6%B8%85%E7%9F%A5%E8%AF%86/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 高清知识</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
       
-    </section>
-  </article>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+
+<section class="widget qrcode  card-shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>打赏</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://img.vim-cn.com/86/adc4a04aaaac32fffe4543225cffbec17cbae7.png'
+        
+          height='120px'
+        >
+      
+    
+      
+        <img src='https://img.vim-cn.com/cc/f4a788ac40138f5cfaaa5fe32079b06c7ca815.png'
+        
+          height='120px'
+        >
+      
+    
+  </div>
+</section>
+
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget related_posts  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\09\10\23\" title="nfo相关小知识" rel="bookmark">nfo相关小知识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\09\06\22\" title="看懂影片标题，各种电影视频格式标题的含义" rel="bookmark">看懂影片标题，各种电影视频格式标题的含义</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\12\23\119\" title="TnP压制组标准&规范" rel="bookmark">TnP压制组标准&规范</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\07\28\128\" title="使用 Cloudflare Worker 构建 Pt-Gen" rel="bookmark">使用 Cloudflare Worker 构建 Pt-Gen</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments card-shadow ">
     <section class="article typo">
       <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
@@ -658,6 +748,7 @@
   </article>
 
 
+  
 
 
 
@@ -678,235 +769,48 @@
 <aside class='l_side'>
   
     
+      
     
       
-      
         
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词一：0day"><span class="toc-text">关键词一：0day</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词二："><span class="toc-text">关键词二：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词三：Scene-Group"><span class="toc-text">关键词三：Scene Group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词四：Topsite，简称TS"><span class="toc-text">关键词四：Topsite，简称TS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词五：pre-pretime"><span class="toc-text">关键词五：pre/pretime</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-Scene-Group"><span class="toc-text">Non-Scene Group</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encode-重编码作品"><span class="toc-text">Encode-重编码作品</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小结："><span class="toc-text">小结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部分Scene-Group的简介："><span class="toc-text">部分Scene Group的简介：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部分Non-Scene-Group介绍："><span class="toc-text">部分Non-Scene Group介绍：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高清PT站点HDT的Intenal-Group："><span class="toc-text">高清PT站点HDT的Intenal Group：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面国内的："><span class="toc-text">下面国内的：</span></a></li></ol>
+
+  <section class="widget toc-wrapper  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词一：0day"><span class="toc-text">关键词一：0day</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词二："><span class="toc-text">关键词二：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词三：Scene-Group"><span class="toc-text">关键词三：Scene Group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词四：Topsite，简称TS"><span class="toc-text">关键词四：Topsite，简称TS###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键词五：pre-pretime"><span class="toc-text">关键词五：pre&#x2F;pretime###</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-Scene-Group"><span class="toc-text">Non-Scene Group####</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encode-重编码作品"><span class="toc-text">Encode-重编码作品####</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小结："><span class="toc-text">小结：####</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部分Scene-Group的简介："><span class="toc-text">部分Scene Group的简介：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部分Non-Scene-Group介绍："><span class="toc-text">部分Non-Scene Group介绍：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高清PT站点HDT的Intenal-Group："><span class="toc-text">高清PT站点HDT的Intenal Group：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面国内的："><span class="toc-text">下面国内的：</span></a></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget category'>
-    
-<header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/categories/"
-    title="blog/categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/ARM/" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/BT/" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/HTTPS/" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/PT/" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/VPS/" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Windows/" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/实用网站/" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/日志/" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/游戏/" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/纪录片/" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网盘/" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网络/" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/脚本/" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/视频压制/" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>(8)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;开源项目</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="/tools/ptgen" href="/tools/ptgen"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;PT-Gen
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
       
     
-
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 </aside>
 
-<footer id="footer" class="clearfix">
-  
+<footer class="clearfix ">
+  <br><br>
   
     <div class="social-wrapper">
       
@@ -936,7 +840,7 @@
       
         
           <a href="https://music.163.com/#/user/home?id=42333392"
-            class="social fas fa-music flat-btn"
+            class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -944,12 +848,13 @@
       
     </div>
   
+  
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">material-x</a>
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
     作为主题
     
       ，
@@ -959,7 +864,12 @@
     
     。
   </div>
-  <div>&copy; 2016-2020 BFDZ</div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -968,38 +878,26 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -1018,30 +916,6 @@
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -1049,21 +923,18 @@
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="/js/volantis.js"></script>
-    
+<script src="/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail'.split(',').filter(function(item){
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'false' == true;
+  var verify = 'true' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -1073,26 +944,35 @@
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
+    placeholder: "快来评论吧~",
     pageSize:'10',
-    avatar:'identicon',
+    avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="/js/search.js"></script>
 
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1176,8 +1056,11 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   let LAZY_LOAD_IMAGE = "";
   $(".article-entry").find("fancybox").find("img").each(function () {
@@ -1195,6 +1078,7 @@
       $(this).wrap(element);
   });
 </script>
+
 
 
 

@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head hexo-theme='https://volantis.js.org/#1.6.4'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>Landscape-plus 主题修改和优化 | BFDZ</title>
+    
   
-  
-  <meta name="description" content="BFDZ的博客">
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="BFDZ">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>Landscape-plus 主题修改和优化 - BFDZ</title>
+  
+    <meta name="keywords" content="Hexo,https,Landscape-plus">
+  
+  
+    <meta name="description" content="jQuery库的优化Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。
+修改 \themes\landscape-plus\layout\_partial\after-footer.ejs 第62行，将原来的">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -57,27 +86,28 @@
 
 <body>
   
-  
   <div class="cover-wrapper">
     <cover class='cover post half'>
       
         
-  <h1 class='title'>BFDZ</h1>
+  <p class="title ">BFDZ</p>
+  
 
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
       <i class="icon fas fa-search fa-fw"></i>
+      <input type="text" class="input u-search-input" placeholder="搜索" />
     </form>
   </div>
 
-<div class='menu navgation'>
+<div class='menu navigation'>
   <ul class='h-list'>
     
       
         <li>
-          <a class="nav home" href="/"
+          <a class="nav home "
+            href="/"
             
             
             id="home">
@@ -86,9 +116,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/archives/"
             
             
             id="archives">
@@ -97,9 +126,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/friends/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/friends/"
             
             
             id="friends">
@@ -108,9 +136,8 @@
         </li>
       
         <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
+          <a class="nav home "
+            href="/about/"
             
             
             id="about">
@@ -124,19 +151,26 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header ">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar"></div>
   </div>
-
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/' >
-        
-          BFDZ
-        
-      </a>
-			<div class='menu navgation'>
+      
+        <a class="logo flat-box" target="_self" href='/' >
+          
+            
+              
+              
+                BFDZ
+              
+            
+          
+        </a>
+      
+
+			<div class='menu navigation'>
 				<ul class='h-list'>
           
   					
@@ -152,8 +186,6 @@
   						<li>
 								<a class="nav flat-box" href="/archives/"
                   
-                    rel="nofollow"
-                  
                   
                   id="archives">
 									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
@@ -163,8 +195,6 @@
   						<li>
 								<a class="nav flat-box" href="/friends/"
                   
-                    rel="nofollow"
-                  
                   
                   id="friends">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
@@ -173,8 +203,6 @@
       			
   						<li>
 								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
                   
                   
                   id="about">
@@ -186,36 +214,35 @@
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="站内搜索" />
+        </form>
+      </div>
+
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
+	<aside class="menu-phone white-box">
     <header>
-		<nav class="menu navgation">
+		<nav class="menu navigation">
       <ul>
         
           
@@ -231,8 +258,6 @@
             <li>
 							<a class="nav flat-box" href="/archives/"
                 
-                  rel="nofollow"
-                
                 
                 id="archives">
 								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
@@ -242,8 +267,6 @@
             <li>
 							<a class="nav flat-box" href="/friends/"
                 
-                  rel="nofollow"
-                
                 
                 id="friends">
 								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
@@ -252,8 +275,6 @@
           
             <li>
 							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
                 
                 
                 id="about">
@@ -273,11 +294,14 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box card-shadow  article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -301,10 +325,11 @@
           
         
           
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2016-11-24</p>
+            
+<div class='new-meta-item author'>
+  <a href="https://www.bfdz.ink" rel="nofollow">
+    <img src="https://www.bfdz.ink/favicon.ico">
+    <p>BFDZ</p>
   </a>
 </div>
 
@@ -324,20 +349,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2016年11月24日</p>
+  </a>
+</div>
 
           
         
@@ -354,27 +371,34 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <h3 id="jQuery库的优化"><a href="#jQuery库的优化" class="headerlink" title="jQuery库的优化"></a>jQuery库的优化</h3><p>Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。</p>
-<p>修改 <code>\themes\landscape-plus\layout\_partial\after-footer.ejs</code> 第62行，将原来的<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h3 id="jQuery库的优化"><a href="#jQuery库的优化" class="headerlink" title="jQuery库的优化"></a>jQuery库的优化</h3><p>Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。</p>
+<p>修改 <code>\themes\landscape-plus\layout\_partial\after-footer.ejs</code> 第62行，将原来的</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;1.11.1&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
 <p>替换成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">//&lt;![CDATA[</span><br><span class="line">if (typeof jQuery == &apos;undefined&apos;) &#123;</span><br><span class="line">  document.write(unescape(&quot;%3Cscript src=&apos;/js/jquery-2.1.4.min.js&apos; type=&apos;text/javascript&apos;%3E%3C/script%3E&quot;));&#125;</span><br><span class="line">// ]]&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;jquery&#x2F;2.1.4&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">&#x2F;&#x2F;&lt;![CDATA[</span><br><span class="line">if (typeof jQuery &#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">  document.write(unescape(&quot;%3Cscript src&#x3D;&#39;&#x2F;js&#x2F;jquery-2.1.4.min.js&#39; type&#x3D;&#39;text&#x2F;javascript&#39;%3E%3C&#x2F;script%3E&quot;));&#125;</span><br><span class="line">&#x2F;&#x2F; ]]&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>BootstrapCDN是支持HTTPS的，所以也方便了博客启用HTTPS。这里不但将CloudFlare的jQuery替换成了Bootstrap的，随后还进行了一个判断，如果获取BootstrapCDN的jQuery失败，则使用本网站自己的jQuery。为了让这段代码有效，我们要去jQuery官方下载合适版本的jQuery并将其放到 <code>\themes\landscape-plus\source\js</code> 目录下。还有一点需要特别注意，那就是jQuery这个文件在Hexo生产博客时会被解析，因此一定要将jQuery文件开头处的 <code>//@ sourceMappingURL=jquery-2.0.3.min.map</code> 这一行代码删去，否则会导致博客无法生成。</p>
 <hr>
 <h3 id="完全启用-HTTPS"><a href="#完全启用-HTTPS" class="headerlink" title="完全启用 HTTPS"></a>完全启用 HTTPS</h3><p>我的另一篇博文(<a href="https://www.bfdz.ink/2016/11/08/28/">LNMP配置启用HTTPS</a>)讲了在LNMP环境下为网站配置HTTPS的方法，但博客在启用HTTPS后会遇到了一些资源不能使用HTTPS的问题。</p>
 <h4 id="多说头像和表情"><a href="#多说头像和表情" class="headerlink" title="多说头像和表情"></a>多说头像和表情</h4><p>我的博客采用的是多说评论系统，第三方登录的帐号，其评论头像往往不支持HTTPS。这样导致了Chrome会出现警告，网站也没有小绿锁。我采用的解决方法是将头像用支持HTTPS的CDN做代理，github上面有个现成项目：<a href="https://github.com/rainwsy/duoshuo-https" target="_blank" rel="noopener">duoshuo-https</a></p>
 <p>修改 <code>\themes\landscape-plus\layout\_partial\after-footer.ejs</code> 第11行, 将</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;//static.duoshuo.com/embed.js&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#x2F;&#x2F;static.duoshuo.com&#x2F;embed.js&#39;</span><br></pre></td></tr></table></figure>
+
 <p>替换成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;//dn-hb0716.qbox.me/duoshuo.js&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#x2F;&#x2F;dn-hb0716.qbox.me&#x2F;duoshuo.js&#39;</span><br></pre></td></tr></table></figure>
+
 <h4 id="关闭分享按钮"><a href="#关闭分享按钮" class="headerlink" title="关闭分享按钮"></a>关闭分享按钮</h4><p>主题自带的百度分享同样对HTTPS的支持有问题，在个可在主题配置文件中关闭。关闭后分享按钮又恢复成Hexo默认的了，我感觉这个功能也没啥用，所以关闭之。默认分享按钮在Hexo主配置没有关闭的地方，找到 <code>/landscape-plus/blob/master/layout/_partial/article.ejs</code> , 删除或注视掉26-30行。其内容如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (config.baidushare || theme.baidushare)&#123; %&gt;</span><br><span class="line">&lt;a data-url=&quot;&lt;%- post.permalink %&gt;&quot; data-id=&quot;&lt;%= post._id %&gt;&quot; class=&quot;article-share-link&quot; data-share=&quot;baidu&quot; data-title=&quot;&lt;%= post.title %&gt;&quot;&gt;&lt;%= __(&apos;share&apos;) %&gt;&lt;/a&gt;</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">&lt;a data-url=&quot;&lt;%- post.permalink %&gt;&quot; data-id=&quot;&lt;%= post._id %&gt;&quot; class=&quot;article-share-link&quot;&gt;&lt;%= __(&apos;share&apos;) %&gt;&lt;/a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (config.baidushare || theme.baidushare)&#123; %&gt;</span><br><span class="line">&lt;a data-url&#x3D;&quot;&lt;%- post.permalink %&gt;&quot; data-id&#x3D;&quot;&lt;%&#x3D; post._id %&gt;&quot; class&#x3D;&quot;article-share-link&quot; data-share&#x3D;&quot;baidu&quot; data-title&#x3D;&quot;&lt;%&#x3D; post.title %&gt;&quot;&gt;&lt;%&#x3D; __(&#39;share&#39;) %&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">&lt;a data-url&#x3D;&quot;&lt;%- post.permalink %&gt;&quot; data-id&#x3D;&quot;&lt;%&#x3D; post._id %&gt;&quot; class&#x3D;&quot;article-share-link&quot;&gt;&lt;%&#x3D; __(&#39;share&#39;) %&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h3 id="自动切换-banner-图片"><a href="#自动切换-banner-图片" class="headerlink" title="自动切换 banner 图片"></a>自动切换 banner 图片</h3><h4 id="显示banner和标题透明"><a href="#显示banner和标题透明" class="headerlink" title="显示banner和标题透明"></a>显示banner和标题透明</h4><p>首先要让banner显示出来，Landscape-plus主题为了优化速度默认不显示banner。然后去掉博客名的红色背景色，改成透明的，这样防止影响banner图的效果。主要是修改这个文件 <code>themes/landscape-plus/source/css/_partial/header.styl</code> 的第33行，将这一行 <code>// background: url(banner-url) center #000</code> 替换成 <code>background: center #000</code> ，同时也要注释掉第13、16、32行。第56行修改成 <code>background: rgba(0,0,0,0.2)</code> ,最后一个数字是透明度，可以自己调节。</p>
 <p>自动切换 banner 图片的代码和具体方法是另一位博主写的，下面是直接引用他的<a href="http://kuangqi.me/tricks/hexo-banner-auto-switcher/" target="_blank" rel="noopener">博文</a>：</p>
 <h4 id="添加随机切换图片的脚本"><a href="#添加随机切换图片的脚本" class="headerlink" title="添加随机切换图片的脚本"></a>添加随机切换图片的脚本</h4><p>首先要在themes/landscape-plus/layout/_partial/下新建一个ejs文件，我将其命名为switch-banner.ejs，其中是用于切换banner图片的Javascript代码，代码会每个小时将6张图片轮换一次，也就相当于每10分钟换一张。该文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    &lt;% if (theme.switch_banner)&#123; %&gt;</span><br><span class="line">    var d = new Date();</span><br><span class="line">    var m = d.getMinutes();</span><br><span class="line">    var num = Math.ceil((m + 1) / (60 / &lt;%- theme.banner_count %&gt;));</span><br><span class="line">    document.getElementById(&quot;banner&quot;).style.backgroundImage = &quot;url(/css/images/banner&quot; + num + &quot;.jpg)&quot;;</span><br><span class="line">    &lt;% &#125; else &#123; %&gt;</span><br><span class="line">    document.getElementById(&quot;banner&quot;).style.backgroundImage = &quot;url(/css/images/banner.jpg)&quot;;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    &lt;% if (theme.switch_banner)&#123; %&gt;</span><br><span class="line">    var d &#x3D; new Date();</span><br><span class="line">    var m &#x3D; d.getMinutes();</span><br><span class="line">    var num &#x3D; Math.ceil((m + 1) &#x2F; (60 &#x2F; &lt;%- theme.banner_count %&gt;));</span><br><span class="line">    document.getElementById(&quot;banner&quot;).style.backgroundImage &#x3D; &quot;url(&#x2F;css&#x2F;images&#x2F;banner&quot; + num + &quot;.jpg)&quot;;</span><br><span class="line">    &lt;% &#125; else &#123; %&gt;</span><br><span class="line">    document.getElementById(&quot;banner&quot;).style.backgroundImage &#x3D; &quot;url(&#x2F;css&#x2F;images&#x2F;banner.jpg)&quot;;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>代码也比较简单，通过JavaScript的Date对象的getMinutes()来获取当前时间的分钟数，这是一个0～59的数，然后经过一点小算术映射到图片的文件名的编号，注意处理边界情况。</p>
 <p>这里还有一个小修改，就是将图片的张数改成了可配置的，而不是硬编码的。这就需要在Landscape-plus模板的配置文件中设置一个数字。在themes/landscape-plus/_config.yml中添加一行banner_count: 6。请根据实际图片的张数来修改这个数字。</p>
 <p>banner图片要放到 <code>themes/landscape/source/css/images/</code> 目录下，命名为 <code>banner*.jpg</code> ，其中的星号是一个数字。如果是6张图片必须连续地使用1～6这6个数字。</p>
@@ -383,23 +407,68 @@
 <hr>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.tiexo.cn/duoshuo-https/" target="_blank" rel="noopener">本站重启多说评论支持HTTPS头像&amp;表情</a><br><a href="http://kuangqi.me/tricks/hexo-optimizations-for-mainland-china/" target="_blank" rel="noopener">Hexo Landscape主题的字体和JS库优化</a><br><a href="http://kuangqi.me/tricks/hexo-banner-auto-switcher/" target="_blank" rel="noopener">自动随机切换Hexo博客的banner图片</a></p>
 
-      </div>
-      
-      
-        <br>
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  
+
+<section class="widget copyright  card-shadow desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.bfdz.ink/2016/11/24/31/>https://www.bfdz.ink/2016/11/24/31/</a></p>
+          
+        
+          
+            <p>扫描下面的二维码，请博主喝杯咖啡~</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
 
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-02-22T23:52:50+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年2月22日</p>
-  </a>
-</div>
+          
 
         
       
@@ -411,116 +480,159 @@
 
         
       
+    </div>
+  </section>
+
+
         
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2016/11/27/32/" rel="prev" title="Linux 中安装rar和unrar">
+                                  
+                                      Linux 中安装rar和unrar
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a> <a class="tag" href="/tags/rar/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> rar</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2016/11/14/30/" rel="prev" title="Shadowsocks流量管理脚本ss-bash">
+                                    
+                                        Shadowsocks流量管理脚本ss-bash
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/shadowsocks/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> shadowsocks</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.bfdz.ink/2016/11/24/31/&title=Landscape-plus 主题修改和优化 | BFDZ&summary=jQuery库的优化Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。
-修改 \themes\landscape-plus\layout\_partial\after-footer.ejs 第62行，将原来的"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
+    
       
     
       
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.bfdz.ink/2016/11/24/31/&title=Landscape-plus 主题修改和优化 | BFDZ&summary=jQuery库的优化Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。
-修改 \themes\landscape-plus\layout\_partial\after-footer.ejs 第62行，将原来的"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
+    
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://www.bfdz.ink/2016/11/24/31/&title=Landscape-plus 主题修改和优化 | BFDZ&summary=jQuery库的优化Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。
-修改 \themes\landscape-plus\layout\_partial\after-footer.ejs 第62行，将原来的"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
+    
+      
+    
+      
+        
+
+<section class="widget qrcode  card-shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>打赏</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://img.vim-cn.com/86/adc4a04aaaac32fffe4543225cffbec17cbae7.png'
+        
+          height='120px'
+        >
+      
+    
+      
+        <img src='https://img.vim-cn.com/cc/f4a788ac40138f5cfaaa5fe32079b06c7ca815.png'
+        
+          height='120px'
+        >
       
     
   </div>
-</div>
+</section>
 
-
-
-        
       
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget related_posts  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\05\20\12\" title="通过配置多个ssh key将博客同时推送至github/coding" rel="bookmark">通过配置多个ssh key将博客同时推送至github/coding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\05\03\93\" title="GitHub Pages 自定义域名正式支持 HTTPS" rel="bookmark">GitHub Pages 自定义域名正式支持 HTTPS</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\11\08\28\" title="LNMP配置启用HTTPS" rel="bookmark">LNMP配置启用HTTPS</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2018\10\23\109\" title="Google Analytics 加载优化" rel="bookmark">Google Analytics 加载优化</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2016\12\29\37\" title="Markdown 语法高亮的常用语言关键字" rel="bookmark">Markdown 语法高亮的常用语言关键字</a></h3></div></li></ul>
     </div>
   </section>
 
 
       
+    
       
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2016/11/27/32/" rel="prev" title="Linux 中安装rar和unrar">
-                                
-                                    Linux 中安装rar和unrar
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/linux/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> linux</a> <a class="tag" href="/tags/rar/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> rar</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2016/11/14/30/" rel="prev" title="Shadowsocks流量管理脚本ss-bash">
-                                  
-                                      Shadowsocks流量管理脚本ss-bash
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/shadowsocks/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> shadowsocks</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-          </div>
+    
       
-    </section>
-  </article>
+    
+      
+    
+      
+    
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments card-shadow ">
     <section class="article typo">
       <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
@@ -537,6 +649,7 @@
   </article>
 
 
+  
 
 
 
@@ -557,235 +670,48 @@
 <aside class='l_side'>
   
     
+      
     
       
-      
         
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class='content pure'>
+
+  <section class="widget toc-wrapper  card-shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery库的优化"><span class="toc-text">jQuery库的优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完全启用-HTTPS"><span class="toc-text">完全启用 HTTPS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#多说头像和表情"><span class="toc-text">多说头像和表情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关闭分享按钮"><span class="toc-text">关闭分享按钮</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动切换-banner-图片"><span class="toc-text">自动切换 banner 图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#显示banner和标题透明"><span class="toc-text">显示banner和标题透明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加随机切换图片的脚本"><span class="toc-text">添加随机切换图片的脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改模板调用上述脚本"><span class="toc-text">修改模板调用上述脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class='widget category'>
-    
-<header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/categories/"
-    title="blog/categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/ARM/" href="/categories/ARM/"><div class='name'>ARM</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/BT/" href="/categories/BT/"><div class='name'>BT</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/HTTPS/" href="/categories/HTTPS/"><div class='name'>HTTPS</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/PT/" href="/categories/PT/"><div class='name'>PT</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/VPS/" href="/categories/VPS/"><div class='name'>VPS</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Windows/" href="/categories/Windows/"><div class='name'>Windows</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/实用网站/" href="/categories/实用网站/"><div class='name'>实用网站</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/日志/" href="/categories/日志/"><div class='name'>日志</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/游戏/" href="/categories/游戏/"><div class='name'>游戏</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电影/" href="/categories/电影/"><div class='name'>电影</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视剧/" href="/categories/电视剧/"><div class='name'>电视剧</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/电视节目/" href="/categories/电视节目/"><div class='name'>电视节目</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/纪录片/" href="/categories/纪录片/"><div class='name'>纪录片</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网盘/" href="/categories/网盘/"><div class='name'>网盘</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/网络/" href="/categories/网络/"><div class='name'>网络</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/脚本/" href="/categories/脚本/"><div class='name'>脚本</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/视频压制/" href="/categories/视频压制/"><div class='name'>视频压制</div><div class='badge'>(8)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='pure'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;开源项目</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="/tools/ptgen" href="/tools/ptgen"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;PT-Gen
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
       
     
-
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 </aside>
 
-<footer id="footer" class="clearfix">
-  
+<footer class="clearfix ">
+  <br><br>
   
     <div class="social-wrapper">
       
@@ -815,7 +741,7 @@
       
         
           <a href="https://music.163.com/#/user/home?id=42333392"
-            class="social fas fa-music flat-btn"
+            class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -823,12 +749,13 @@
       
     </div>
   
+  
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">material-x</a>
+    <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
     作为主题
     
       ，
@@ -838,7 +765,12 @@
     
     。
   </div>
-  <div>&copy; 2016-2020 BFDZ</div>
+  
+    <div class='copyright'>
+    <p><a href="https://www.bfdz.ink">Copyright © 2016-2020 BFDZ</a></p>
+
+    </div>
+  
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -847,38 +779,26 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -897,30 +817,6 @@
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          [""],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -928,21 +824,18 @@
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="/js/volantis.js"></script>
-    
+<script src="/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail'.split(',').filter(function(item){
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
   var notify = 'true' == true;
-  var verify = 'false' == true;
+  var verify = 'true' == true;
   var valine = new Valine();
   valine.init({
     el: '#valine_container',
@@ -952,26 +845,35 @@
     
     appId: "TslI1jV9fc3G0gCsIHq3v4SW-MdYXbMMI",
     appKey: "xCtxMDBxturft2Dnd2wG6udr",
-    placeholder: "快来评论吧~（填正确的邮箱可以接收回复提醒）",
+    placeholder: "快来评论吧~",
     pageSize:'10',
-    avatar:'identicon',
+    avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="/js/search.js"></script>
 
+  
+<script src="/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.6.3/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1055,8 +957,11 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   let LAZY_LOAD_IMAGE = "";
   $(".article-entry").find("fancybox").find("img").each(function () {
@@ -1074,6 +979,7 @@
       $(this).wrap(element);
   });
 </script>
+
 
 
 
