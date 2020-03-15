@@ -89,7 +89,81 @@
 
 <body>
   
-  <div id="loading-bar-wrapper">
+  <div class="cover-wrapper">
+    
+      <cover class='cover  half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title ">BFDZ</p>
+    
+    
+      <p class="subtitle ">「山重水复疑无路 柳暗花明又一村」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='h-list'>
+        
+          
+            <li>
+              <a class="nav home "
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>&nbsp;首页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home "
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>&nbsp;归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home "
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>&nbsp;友链
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home "
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
@@ -347,9 +421,10 @@
 </ul>
 <script>setLoadingBarProgress(40);</script>
 
+  </div>
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper'>
       
 
@@ -1874,7 +1949,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://www.bfdz.ink">Copyright © 2017-2020 BFDZ</a></p>
+        <p>Copyright © 2017-2020 <a href="https://www.bfdz.ink">BFDZ</a> | <a href="https://status.bfdz.ink/" target="_blank" rel="noopener">Status</a></p>
 
         </div>
       
@@ -1923,6 +1998,47 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://ae01.alicdn.com/kf/H5994cb570d97416b97735e8e2578a1860.jpg", "https://ae01.alicdn.com/kf/H626a0224e90a46d8b7424591837e8ca9j.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
 
 
 
