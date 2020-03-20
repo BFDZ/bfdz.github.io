@@ -20,7 +20,7 @@ body{padding-top:50px}
 .navbar-fixed-top{border:0}
 .main{padding:20px;margin-top:0}
 @media (min-width:768px){.main{padding-right:40px;padding-left:40px}
-}#input_value{width:500px}
+}#input_value{width:400px}
 .zero-clipboard{position:relative}
 .btn-clipboard{position:absolute;top:8px;right:21px;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px 0 4px}
 ul.timeline{list-style-type:none;position:relative}
@@ -67,7 +67,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
                 <div class="form-inline">
                     <div class="form-group">
                         <label class="sr-only" for="input_value">Input value</label>
-                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam、Epic、Indienova等资源链接"
+                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam等资源链接"
                                id="input_value"/>
                     </div>
                     <button class="btn btn-success" id="query_btn">查询</button>
@@ -90,6 +90,11 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
                     <button class="btn btn-clipboard" data-clipboard-target="#movie_info">复制</button>
                 </div>
                 <textarea class="form-control" rows=22 id="movie_info"></textarea>
+            </div>
+            <hr>
+            <div id="support_url">
+                <h4>支持网站</h4>
+                <a href="https://movie.douban.com/" target="_blank">豆瓣电影</a> | <a href="https://www.imdb.com/" target="_blank">IMDb</a> | <a href="https://bangumi.tv/" target="_blank">Bangumi</a> | <a href="https://store.steampowered.com/games/" target="_blank">Steam</a> | <a href="https://epicgames.com/" target="_blank">Epic</a> | <a href="https://indienova.com/" target="_blank">Indienova</a>
             </div>
             <hr>
             <div id="gen_history">
@@ -147,6 +152,10 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
                     <li>Bangumi： Bangumi Info Export <a href="https://git.io/fjm3l" target="_blank">脚本</a>，
                         <a href="https://bgm.tv/dev/app/103" target="_blank">应用平台</a></li>
                 </ul>
+            </div>
+            <hr>
+            <div id="status">
+                <a href="https://status.bfdz.ink/" target="_blank">Status</a>
             </div>
         </div>
     </div>
