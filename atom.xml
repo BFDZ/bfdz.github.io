@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2020-03-15T06:36:06.164Z</updated>
+  <updated>2020-03-21T14:49:36.308Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>百度贴吧内部版</title>
+    <link href="https://www.bfdz.ink/2020/03/21/147/"/>
+    <id>https://www.bfdz.ink/2020/03/21/147/</id>
+    <published>2020-03-21T14:49:00.000Z</published>
+    <updated>2020-03-21T14:49:36.308Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ae01.alicdn.com/kf/U2fb67c034ec24178850b0435b04d801aL.jpg" alt=""></p><p>在小米应用商店里面发现的一个贴吧版本，开发者是百度官方。这个版本没有任何广告，堪称和迅雷极速版一样的良心应用。因为被低分保护了，所有现在知道的人应该还不多。</p><p><strong>下载地址</strong></p><ul><li>小米商店：<a href="http://app.mi.com/details?id=com.baidu.tbflutterlite&ref=search" target="_blank" rel="noopener">贴吧内部版</a></li><li>蓝奏网盘：<a href="https://www.lanzous.com/iai9tmd" target="_blank" rel="noopener">https://www.lanzous.com/iai9tmd</a></li><li>coding网盘：<a href="https://bfdz.coding.net/api/share/download/13748b17-b262-4a73-8620-79622b1ea415" target="_blank" rel="noopener">直接下载</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://ae01.alicdn.com/kf/U2fb67c034ec24178850b0435b04d801aL.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在小米应用商店里面发现的一个贴吧版本，开发者是百度官方。这个版本没有任何广告，堪称和迅雷极
+      
+    
+    </summary>
+    
+    
+      <category term="APP" scheme="https://www.bfdz.ink/categories/APP/"/>
+    
+    
+      <category term="百度贴吧" scheme="https://www.bfdz.ink/tags/%E7%99%BE%E5%BA%A6%E8%B4%B4%E5%90%A7/"/>
+    
+      <category term="无广告" scheme="https://www.bfdz.ink/tags/%E6%97%A0%E5%B9%BF%E5%91%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>coding 文件网盘：无限空间高速直链下载</title>
@@ -530,38 +559,6 @@
       <category term="Cloudflare Worker" scheme="https://www.bfdz.ink/tags/Cloudflare-Worker/"/>
     
       <category term="转载" scheme="https://www.bfdz.ink/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PbootCMS 部署教程</title>
-    <link href="https://www.bfdz.ink/2019/07/24/127/"/>
-    <id>https://www.bfdz.ink/2019/07/24/127/</id>
-    <published>2019-07-23T23:08:00.000Z</published>
-    <updated>2019-07-23T18:02:26.990Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="演示环境"><a href="#演示环境" class="headerlink" title="演示环境"></a>演示环境</h2><ul><li>系统: Linux</li><li>面板：lnmp<ul><li>nginx</li><li>php-7.2</li></ul></li></ul><a id="more"></a><h2 id="创建网站"><a href="#创建网站" class="headerlink" title="创建网站"></a>创建网站</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/24/eAdd9f.jpg" alt=""></p><p>因为 PbootCMS 要求开启环境的 Pathinfo 模式支持，所以 Enable PHP Pathinfo 这一项必须选 y ，其他选项随意。</p><h2 id="下载和配置"><a href="#下载和配置" class="headerlink" title="下载和配置"></a>下载和配置</h2><p>进入网站目录</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/demo.example.com/</span><br></pre></td></tr></table></figure><p>下载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/hnaoyun/PbootCMS/archive/V1.4.2.tar.gz</span><br></pre></td></tr></table></figure><p>解压</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf V1.4.2.tar.gz </span><br><span class="line">mv PbootCMS-1.4.2&#x2F;* .&#x2F;</span><br></pre></td></tr></table></figure><p>配置权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R www ./*</span><br><span class="line">chgrp -R www ./*</span><br></pre></td></tr></table></figure><h2 id="配置授权码"><a href="#配置授权码" class="headerlink" title="配置授权码"></a>配置授权码</h2><p>进入 PbootCMS 官网页面 <a href="https://www.pbootcms.com/freesn.html" target="_blank" rel="noopener">https://www.pbootcms.com/freesn.html</a> ，输入自己网站的域名免费获取永久授权码。</p><p><img src="https://s2.ax1x.com/2019/07/24/eA07fx.jpg" alt=""></p><p>登陆自己网站后台，在 <code>全局配置</code> &gt;&gt; <code>配置参数</code> 中填写系统授权码并提交，这时候网站就已经可以访问了。</p><p>系统后台默认访问路径：http://域名/admin.php 账号：admin 密码：123456</p><p><img src="https://s2.ax1x.com/2019/07/24/eABptI.jpg" alt=""></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>最后注意修改后台管理员的默认密码和点击自动修改数据库路径。</p><p><img src="https://s2.ax1x.com/2019/07/24/eABnNn.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;演示环境&quot;&gt;&lt;a href=&quot;#演示环境&quot; class=&quot;headerlink&quot; title=&quot;演示环境&quot;&gt;&lt;/a&gt;演示环境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;系统: Linux&lt;/li&gt;
-&lt;li&gt;面板：lnmp&lt;ul&gt;
-&lt;li&gt;nginx&lt;/li&gt;
-&lt;li&gt;php-7.2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
-    
-    
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
-      <category term="PbootCMS" scheme="https://www.bfdz.ink/tags/PbootCMS/"/>
     
   </entry>
   
