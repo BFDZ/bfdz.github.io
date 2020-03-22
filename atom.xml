@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2020-03-21T14:49:36.308Z</updated>
+  <updated>2020-03-22T05:27:35.761Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一图流：这些软件可代替Adobe全家桶</title>
+    <link href="https://www.bfdz.ink/2020/03/22/148/"/>
+    <id>https://www.bfdz.ink/2020/03/22/148/</id>
+    <published>2020-03-22T14:49:00.000Z</published>
+    <updated>2020-03-22T05:27:35.761Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ae01.alicdn.com/kf/U71d9687f8562491c868c5110ef9c5f31t.jpg" alt=""></p><p>对包括设计师在内的创意职业来说，Adobe让人又爱又恨。一方面，类似Photoshop CC这样的软件不论在功能性还是在稳定性上都是上乘的，而且Adobe系列已经成为了创意领域的工业标准级产品。但另一方面，Adobe全家桶的价格比较感人…… 然而，或许你并不需要全部的Adobe系列软件，特定的流程也许有其他选择可以作为替代。且不说有些软件是免费的，大多数付费软件也要比Adobe系列便宜，全部或部分使用Adobe之外的软件并不意味着你就不能做出好的作品不是吗。 仅在平面设计和图片处理方面，GIMP可以代替Photoshop已经是大家都知道的事情，并且对于Linux用户来说根本没得选。但如果你的需求不仅仅在于替换掉Photoshop，而是要在多方面摆脱Adobe全家桶，那么我们的Adobe替代品一览表正适合你。</p><p>这张表格是漫画Everblue的作者Michael Sexton制作的，设计师充电站为您进行了翻译。它列举了Adobe系列中最常见的生产工具，并给出了备选方案。</p><a id="more"></a><p>这个表格涉及的软件包括： </p><ul><li>Adobe Photoshop – 图像处理 </li><li>Adobe Illustrator – 矢量平面设计 </li><li>Adobe InDesign – 排版出版 </li><li>Adobe Animate – 网页动画设计 </li><li>Adobe Lightroom – 照片处理 </li><li>Adobe Dreamweaver – 网页设计 </li><li>Adobe After Effect – 视频特效 </li><li>Adobe Audition – 音频处理 </li></ul><p>备选软件包括付费的和免费的，在图片里面都有标注。凡是付费的，推荐的软件都是一次性买断，没有订阅付费的。里面介绍的软件，包括Affinity Photo、Designer、Publisher等都是非常优秀，而其中也有些比较小众的值得一试，比如Krita和Fire Alpaca。不用说，大名鼎鼎的GIMP也在其列。备选方案无疑可以大大降低成本，但你要花时间去熟悉它们。</p><hr><p>via:原文出自[卡米雷特的小站(kamilet.cn)]，转载请附带原文链接: <a href="https://www.kamilet.cn/2019-adobe-alternatives/" target="_blank" rel="noopener">https://www.kamilet.cn/2019-adobe-alternatives/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ae01.alicdn.com/kf/U71d9687f8562491c868c5110ef9c5f31t.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;对包括设计师在内的创意职业来说，Adobe让人又爱又恨。一方面，类似Photoshop CC这样的软件不论在功能性还是在稳定性上都是上乘的，而且Adobe系列已经成为了创意领域的工业标准级产品。但另一方面，Adobe全家桶的价格比较感人…… 然而，或许你并不需要全部的Adobe系列软件，特定的流程也许有其他选择可以作为替代。且不说有些软件是免费的，大多数付费软件也要比Adobe系列便宜，全部或部分使用Adobe之外的软件并不意味着你就不能做出好的作品不是吗。 仅在平面设计和图片处理方面，GIMP可以代替Photoshop已经是大家都知道的事情，并且对于Linux用户来说根本没得选。但如果你的需求不仅仅在于替换掉Photoshop，而是要在多方面摆脱Adobe全家桶，那么我们的Adobe替代品一览表正适合你。&lt;/p&gt;
+&lt;p&gt;这张表格是漫画Everblue的作者Michael Sexton制作的，设计师充电站为您进行了翻译。它列举了Adobe系列中最常见的生产工具，并给出了备选方案。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="APP" scheme="https://www.bfdz.ink/categories/APP/"/>
+    
+    
+      <category term="Adobe" scheme="https://www.bfdz.ink/tags/Adobe/"/>
+    
+      <category term="GIMP" scheme="https://www.bfdz.ink/tags/GIMP/"/>
+    
+      <category term="DaVinciResolve" scheme="https://www.bfdz.ink/tags/DaVinciResolve/"/>
+    
+  </entry>
   
   <entry>
     <title>百度贴吧内部版</title>
@@ -528,37 +557,6 @@
     
     
       <category term="KMS" scheme="https://www.bfdz.ink/tags/KMS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 Cloudflare Worker 构建 Pt-Gen</title>
-    <link href="https://www.bfdz.ink/2019/07/28/128/"/>
-    <id>https://www.bfdz.ink/2019/07/28/128/</id>
-    <published>2019-07-28T07:23:00.000Z</published>
-    <updated>2019-07-28T07:44:58.114Z</updated>
-    
-    <content type="html"><![CDATA[<p>最早的时候，Pt-Gen是作为Pt-help的一个子项，使用flask内置的web server提供服务，后来BFDZ将其单独提取出来（<a href="https://github.com/BFDZ/PT-Gen" target="_blank" rel="noopener">BFDZ/PT-Gen</a>），但是仍然存在部署较为困难的问题。</p><p>过去近1年的Pt-Gen的运行中，我曾经迁移过多次宿主机。目前托给ourhelp组的Pt-Gen服务器更是远在欧洲大陆。此外因为网络的问题，也导致部分时间段与豆瓣服务器无法连接，导致Pt-Gen服务的SLA特别差。</p><p>近期，我得知八蠢想要构建基于AWS lambda的Pt-Gen，也正好最近看到了有关Cloudflare Worker的一些介绍。正好这也是Cf-worker的用途之一——“构建完全依赖于 Web API 的“无服务器”应用程序”。</p><p>然而，与AWS lambda不同的是，cf-worker只支持Javscript。于是将原来Pt-Gen改成javascript的格式并使用Travis CI进行自动构建。</p><p>项目地址： <a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank" rel="noopener">https://github.com/Rhilip/pt-gen-cfworker</a><br>项目Demo地址： <a href="https://ptgen.rhilip.workers.dev/" target="_blank" rel="noopener">https://ptgen.rhilip.workers.dev/</a></p><a id="more"></a><p>Cloudflare Worker介绍<br>文档： <a href="https://workers.cloudflare.com/docs" target="_blank" rel="noopener">https://workers.cloudflare.com/docs</a></p><p>Cloudflare Worker是Cloudflare推出的serverless服务，可以使用Javascript以及WebAssembly语言进行编程，其最简单的代码示例如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1\. Register a FetchEvent listener that sends a custom</span></span><br><span class="line"><span class="comment">// response for the given request.</span></span><br><span class="line">addEventListener(<span class="string">'fetch'</span>, event =&gt; &#123;</span><br><span class="line">event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 2\. Return a custom request object</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">handleRequest</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Response(<span class="string">"hello world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并提供了相应的CLI工具 <a href="https://github.com/cloudflare/wrangler" target="_blank" rel="noopener">Wrangler</a> 进行APP构建。此外，还提供了很简洁的调试界面。</p><p><strong>最为良心的Cloudflare Worker是可以免费使用的（免费计划一天最多100,000次请求）</strong></p><h2 id="部署基于Cloudflare-Worker的Pt-Gen"><a href="#部署基于Cloudflare-Worker的Pt-Gen" class="headerlink" title="部署基于Cloudflare Worker的Pt-Gen"></a>部署基于Cloudflare Worker的Pt-Gen</h2><p>和原项目相比，Pt-Gen-cfworker并不需要你在VPS上搭建复杂（并不）的Python3+uwsgi工具链，只需要你有Cloudflare帐号就可以。</p><p>本教程并不介绍Cloudflare帐号的注册方法（请自己搜索），仅分有无Node.js环境对不同用户部署方法进行介绍。</p><h3 id="1-无Node环境直接部署"><a href="#1-无Node环境直接部署" class="headerlink" title="1.无Node环境直接部署"></a>1.无Node环境直接部署</h3><p>因为项目主文件 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/master/index.js" target="_blank" rel="noopener">index.js</a> 加载了两个npm库用于解析页面，所以并不能直接使用。不过在项目的build分支中，我使用Travis CI自动构建了 可以用于CF-Worker的 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/build/script.js" target="_blank" rel="noopener">script.js</a> 。</p><p>所以进入Cloudflare的Worker面板，并创建新的Worker。<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/2591219312.png" alt=""><br><img src="https://blog.rhilip.info/usr/uploads/2019/07/1417315508.png" alt=""></p><p>在Worker代码的编辑器里面，首先修改左上角的Worker名称，这个名称会影响到后面生成的Worker域名（除非你使用已经在CF中注册的其他域名）。然后将 build分支的 <a href="https://github.com/Rhilip/pt-gen-cfworker/blob/build/script.js" target="_blank" rel="noopener">script.js</a> 文件全部复制到左侧的代码框中替换Cloudflare默认的代码块。</p><p>最后点击Run，如果右侧出现如下图的JSON块说明部署成功。之后你就可以直接使用worker域名进行访问。</p><p>如我这边部署的域名是<code>https://ptgen.rhilip.workers.dev/</code>。<br>则获取豆瓣的信息则请求地址如下： <code>https://ptgen.rhilip.workers.dev/?url=https://movie.douban.com/subject/1297880/</code>。<br>请求链接格式和Python写的Pt-Gen相同，既可以使用<code>&amp;url=.....</code> ，也可以使用<code>&amp;site=....&amp;sid=....</code>。且返回字段格式尽可能与原repo相同。<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/1494080402.png" alt=""><br><img src="https://blog.rhilip.info/usr/uploads/2019/07/3901039727.png" alt=""></p><h3 id="2-Node环境下使用Wrangler部署"><a href="#2-Node环境下使用Wrangler部署" class="headerlink" title="2.Node环境下使用Wrangler部署"></a>2.Node环境下使用Wrangler部署</h3><p>如果你本地有Node环境，或者希望对Pt-Gen-cfworker有改进的需要，你可以自己构建Worker文件。</p><blockquote><p>Wrangler 文档： <a href="https://github.com/cloudflare/wrangler" target="_blank" rel="noopener">https://github.com/cloudflare/wrangler</a></p></blockquote><ol><li>安装Wrangler并注册全局信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i @cloudflare/wrangler -g</span><br><span class="line">wrangler config <span class="string">"<span class="variable">$&#123;CF_EMAIL&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;CF_API_KEY&#125;</span>"</span></span><br></pre></td></tr></table></figure></li></ol><p>其中 <code>${CF_EMAIL}</code>为你的Cloudflare帐号，而 <code>${CF_API_KEY}</code> 你可以在你帐号的Profile页面中找到Global API Key。</p><ol start="2"><li>取得项目源代码并配置Wrangler信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Rhilip/pt-gen-cfworker.git</span><br><span class="line">cp wrangler.toml.sample wrangler.toml</span><br><span class="line">sed -i <span class="string">"s/CF_ACCOUNT_ID/<span class="variable">$&#123;CF_ACCOUNT_ID&#125;</span>/g"</span> wrangler.toml</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li></ol><p>使用git clone或者zip包下载项目源代码后，需要编辑<code>wrangler.toml</code>文件的相关键值，并将<code>account_id</code>值改成你在Worker界面右侧API栏中看到的值，<code>name</code> 值会影响到部署时的值，默认为<code>ptgen</code>。如果你不愿部署在<code>..workers.dev</code>域名下，你可以再参照Wrangler文档，添加<code>zone_id</code>，<code>route</code>等信息，本处不再累述。</p><ol start="3"><li>部署到workers.dev上<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#wrangler build # 构造</span></span><br><span class="line"><span class="comment">#wrangler preview # 构造并预览</span></span><br><span class="line">wrangler publish <span class="comment"># 构造并发布</span></span><br></pre></td></tr></table></figure></li></ol><p>如果配置好wrangler信息并使用 <code>wrangler publish</code>，会直接部署，并 提示如下信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wrangler publish</span><br><span class="line">⬇️ Installing wasm-pack...</span><br><span class="line">⬇️ Installing wranglerjs...</span><br><span class="line">Built successfully.</span><br><span class="line">Successfully published your script.</span><br><span class="line">Successfully made your script available at ptgen.rhilip.workers.dev</span><br><span class="line">✨ Success! Your worker was successfully published. ✨</span><br></pre></td></tr></table></figure><p>而如果使用<code>wrangler preview</code>则会在构建完后，弹出<code>https://cloudflareworkers.com/</code>开头的网页。此时你可以使用console等方法对脚本进行调试。</p><p>除了使用wrangler，本人还在<code>package.json</code>中设置了<code>alias</code>，你也可以使用 <code>npm {build,preview,publish}</code> （在IDE中）快速调用。</p><h3 id="Travis-CI-自动构建"><a href="#Travis-CI-自动构建" class="headerlink" title="Travis-CI 自动构建"></a>Travis-CI 自动构建</h3><p>本项目使用Travis-CI对主分支的更新进行自动构建生成build分支信息。</p><p>相关配置文件写在 .travis.yml 中。请自行查阅，并在Travis-CI中对以下环境变量进行设置：<br><img src="https://blog.rhilip.info/usr/uploads/2019/07/3885747407.png" alt=""></p><hr><p>著作权归作者所有。<br>商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：Rhilip<br>链接：<a href="https://blog.rhilip.info/archives/1095/" target="_blank" rel="noopener">https://blog.rhilip.info/archives/1095/</a><br>来源：<a href="https://blog.rhilip.info/" target="_blank" rel="noopener">https://blog.rhilip.info/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最早的时候，Pt-Gen是作为Pt-help的一个子项，使用flask内置的web server提供服务，后来BFDZ将其单独提取出来（&lt;a href=&quot;https://github.com/BFDZ/PT-Gen&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;BFDZ/PT-Gen&lt;/a&gt;），但是仍然存在部署较为困难的问题。&lt;/p&gt;
-&lt;p&gt;过去近1年的Pt-Gen的运行中，我曾经迁移过多次宿主机。目前托给ourhelp组的Pt-Gen服务器更是远在欧洲大陆。此外因为网络的问题，也导致部分时间段与豆瓣服务器无法连接，导致Pt-Gen服务的SLA特别差。&lt;/p&gt;
-&lt;p&gt;近期，我得知八蠢想要构建基于AWS lambda的Pt-Gen，也正好最近看到了有关Cloudflare Worker的一些介绍。正好这也是Cf-worker的用途之一——“构建完全依赖于 Web API 的“无服务器”应用程序”。&lt;/p&gt;
-&lt;p&gt;然而，与AWS lambda不同的是，cf-worker只支持Javscript。于是将原来Pt-Gen改成javascript的格式并使用Travis CI进行自动构建。&lt;/p&gt;
-&lt;p&gt;项目地址： &lt;a href=&quot;https://github.com/Rhilip/pt-gen-cfworker&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Rhilip/pt-gen-cfworker&lt;/a&gt;&lt;br&gt;项目Demo地址： &lt;a href=&quot;https://ptgen.rhilip.workers.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://ptgen.rhilip.workers.dev/&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="PT" scheme="https://www.bfdz.ink/categories/PT/"/>
-    
-    
-      <category term="pt" scheme="https://www.bfdz.ink/tags/pt/"/>
-    
-      <category term="Cloudflare Worker" scheme="https://www.bfdz.ink/tags/Cloudflare-Worker/"/>
-    
-      <category term="转载" scheme="https://www.bfdz.ink/tags/%E8%BD%AC%E8%BD%BD/"/>
     
   </entry>
   
