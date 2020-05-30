@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#2.1.4'>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -31,15 +31,16 @@
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
   
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
 
   
 
@@ -57,8 +58,9 @@
   
 
   
+  
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4.3/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -70,16 +72,20 @@
 
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
     <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-64016301-4";
+	  script.defer=true;
+	  document.body.appendChild(script);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-64016301-4');
+	}, 5000);
     </script>
   
   
-
 </head>
 
 <body>
@@ -88,21 +94,21 @@
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
-
+  <div class='container'>
   <div class='wrapper'>
-    <div class='nav-sub container--flex'>
-      <a class="logo flat-box"></a>
-      <ul class='switcher h-list'>
-        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
-		<div class="nav-main container container--flex">
+		<div class="nav-main">
       
         
-        <a class="logo flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href='/'>
           
           
           
@@ -113,7 +119,7 @@
       
 
 			<div class='menu navigation'>
-				<ul class='h-list'>
+				<ul class='nav-list-h'>
           
           
           
@@ -126,10 +132,7 @@
                   
                     id="home"
                   >
-                  
-                    <i class='fas fa-home fa-fw'></i>
-                  
-                  首页
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -145,10 +148,7 @@
                   
                     id="categories"
                   >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -164,10 +164,7 @@
                   
                     id="tags"
                   >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -183,10 +180,7 @@
                   
                     id="archives"
                   >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -202,10 +196,7 @@
                   
                     id="friends"
                   >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -221,10 +212,7 @@
                   
                     id="about"
                   >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -234,112 +222,125 @@
 				</ul>
 			</div>
 
-      
-        <div class="m_search">
-          <form name="searchform" class="form u-search-form">
-            <i class="icon fas fa-search fa-fw"></i>
-            <input type="text" class="input u-search-input" placeholder="搜索" />
-          </form>
-        </div>
-      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
 
-			<ul class='switcher h-list'>
+			<ul class='switcher nav-list-h'>
 				
-					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
 			</ul>
 		</div>
 	</div>
+  </div>
 </header>
-<ul class="menu-phone navigation white-box">
-  
-  
-    <li>
-      <a class="flat-box" href=/
-        
-        
-        
-          id="home"
-        >
-        
-          <i class='fas fa-home fa-fw'></i>
-        
-        首页
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/categories/
-        
-        
-        
-          id="categories"
-        >
-        
-          <i class='fas fa-folder-open fa-fw'></i>
-        
-        分类
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/tags/
-        
-        
-        
-          id="tags"
-        >
-        
-          <i class='fas fa-tags fa-fw'></i>
-        
-        标签
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/archives/
-        
-        
-        
-          id="archives"
-        >
-        
-          <i class='fas fa-archive fa-fw'></i>
-        
-        归档
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/friends/
-        
-        
-        
-          id="friends"
-        >
-        
-          <i class='fas fa-link fa-fw'></i>
-        
-        友链
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/about/
-        
-        
-        
-          id="about"
-        >
-        
-          <i class='fas fa-info-circle fa-fw'></i>
-        
-        关于
-      </a>
-    </li>
-  
-</ul>
+
 <script>setLoadingBarProgress(40);</script>
 
 
@@ -389,10 +390,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/11/23/134/">
       V2Ray 部署之“三步走”教程
@@ -400,13 +402,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -414,62 +416,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年11月23日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2019/11/23/134/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/11/23/134/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -484,10 +489,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/08/22/130/">
       利用iptables+ipset限制端口
@@ -495,13 +501,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -509,62 +515,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年8月22日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>利用iptables+ipset限制端口，只允许国内访问。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2019/08/22/130/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>利用iptables+ipset限制端口，只允许国内访问。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/08/22/130/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -579,10 +588,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/07/24/127/">
       PbootCMS 部署教程
@@ -590,13 +600,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -604,52 +614,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年7月24日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="演示环境"><a href="#演示环境" class="headerlink" title="演示环境"></a>演示环境</h2><ul>
+      
+        <h2 id="演示环境"><a href="#演示环境" class="headerlink" title="演示环境"></a>演示环境</h2><ul>
 <li>系统: Linux</li>
 <li>面板：lnmp<ul>
 <li>nginx</li>
@@ -658,15 +670,16 @@
 </li>
 </ul>
       
-        
-          <div class="button readmore">
-            <a href="/2019/07/24/127/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/07/24/127/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -681,10 +694,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/05/15/126/">
       PT-Gen v0.4.x 搭建教程
@@ -692,13 +706,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -706,52 +720,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年5月15日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>PT-Gen 0.4.4 版，相比于之前的 0.3.5 版，有很大的改动：</p>
+      
+        <p>PT-Gen 0.4.4 版，相比于之前的 0.3.5 版，有很大的改动：</p>
 <ol>
 <li>增加了数据库缓存，所以服务器必须要安装 sqlite3。</li>
 <li>5月13日豆瓣电影的公共API下线，导致 PT-Gen v0.4.2 及之前的版本无法获取电影数据，现在通过在前端页面和后端程序加入 apikey 才解决这个问题。</li>
@@ -770,15 +786,16 @@
 </ul>
 <p>我使用的是 lnmp 安装环境，nginx 安装过程不再赘述。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2019/05/15/126/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/05/15/126/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -793,10 +810,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/01/13/121/">
       Ampache 私人云音乐搭建和使用
@@ -804,13 +822,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -818,64 +836,67 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年1月13日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>Ampache 是一个​基于网络的音频/视频流应用程序和文件管理器。它最初是为了利用 Apache 的 Mod_mp3 而编写的，后来增加了流式传输方法，可以支持你从任何平台的网络设备访问自己的视频和音乐。</p>
+      
+        <p>Ampache 是一个​基于网络的音频/视频流应用程序和文件管理器。它最初是为了利用 Apache 的 Mod_mp3 而编写的，后来增加了流式传输方法，可以支持你从任何平台的网络设备访问自己的视频和音乐。</p>
 <p>和 Plex 相比，这款程序全部功能都是免费开源的，并且支持包括 Plex 在内的多种客户端 API 和网络传输协议。</p>
 <p>项目网址：<a href="https://github.com/ampache/ampache" target="_blank" rel="noopener">https://github.com/ampache/ampache</a></p>
       
-        
-          <div class="button readmore">
-            <a href="/2019/01/13/121/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/01/13/121/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -890,10 +911,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/11/30/116/">
       Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本
@@ -901,13 +923,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -915,66 +937,69 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年11月30日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <blockquote>
+      
+        <blockquote>
 <p>Vicer 突然临时关闭了博客，这是原文和脚本的备份。</p>
 </blockquote>
 <p>脚本：<a href="https://pan.nas.ink/script/InstallNET.sh" target="_blank" rel="noopener">https://pan.nas.ink/script/InstallNET.sh</a></p>
 <p>第 328 行有一个压缩包，如果你也要备份这个脚本，建议把压缩包也下载好，然后修改链接。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/11/30/116/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/11/30/116/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -989,10 +1014,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/11/09/111/">
       PT-Gen 后端搭建
@@ -1000,13 +1026,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1014,52 +1040,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年11月9日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>服务器必备的软件环境：</p>
+      
+        <p>服务器必备的软件环境：</p>
 <ul>
 <li>nginx</li>
 <li>python3</li>
@@ -1068,15 +1096,16 @@
 </ul>
 <p>我使用的是 lnmp 安装环境，nginx 安装过程不再赘述。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/11/09/111/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/11/09/111/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1091,10 +1120,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/10/23/108/">
       Cloudflare 下 Nginx 获取用户真实 IP 地址
@@ -1102,13 +1132,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1116,67 +1146,70 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年10月23日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>惯例性滴先Google了一下，发现了这篇文章</p>
+      
+        <p>惯例性滴先Google了一下，发现了这篇文章</p>
 <ul>
 <li><a href="https://support.cloudflare.com/hc/en-us/articles/200170706-How-do-I-restore-original-visitor-IP-with-Nginx" target="_blank" rel="noopener">How do I restore original visitor IP with Nginx? – Cloudflare Support</a></li>
 <li><a href="https://nginx.org/en/docs/http/ngx_http_realip_module.html" target="_blank" rel="noopener">Module ngx_http_realip_module - Nginx</a></li>
 </ul>
 <p>看起来挺简单的嘛，在nginx配置文件中加一段地址说明就好了的事。。<br>然而在重启时却发现，报错了。。。。。新添加的”set_real_ip_from”没有被认出来，导致新配置的文件不被认可就没能重启。。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/10/23/108/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/10/23/108/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1191,10 +1224,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/04/25/91/">
       ffmpeg 常用命令
@@ -1202,13 +1236,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1216,62 +1250,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年4月25日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><strong>ffmepg是个神器，因此写一下自己平时使用过程中经常用到的命令</strong></p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/04/25/91/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p><strong>ffmepg是个神器，因此写一下自己平时使用过程中经常用到的命令</strong></p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/04/25/91/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1286,10 +1323,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/04/09/87/">
       ss-panel 魔改版搭建踩坑记
@@ -1297,13 +1335,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1311,52 +1349,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年4月9日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>版本和环境：</p>
+      
+        <p>版本和环境：</p>
 <ul>
 <li>Debian 8</li>
 <li>ss-panel v4</li>
@@ -1364,15 +1404,16 @@
 </ul>
 <p>ss-panel v4 魔改版改动不大，可直接套用 sspanel v3 魔改版的教程。详细的搭建过程见参考资料，本文主要记录各种教程没提到的问题和解决方法。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/04/09/87/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/04/09/87/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1540,7 +1581,7 @@
     
   
 
-  <section class="widget tagcloud shadow desktop">
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
@@ -1562,7 +1603,7 @@
 
 
   
-  <footer class="clearfix ">
+  <footer class="clearfix">
     <br><br>
     
       
@@ -1620,11 +1661,8 @@
       
         本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作为主题
-        
-          ，
-          总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
           次
         
       
@@ -1660,6 +1698,18 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -1677,7 +1727,7 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
@@ -1733,13 +1783,16 @@
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4/js/app.js"></script>
 
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
 
 
 
@@ -1748,10 +1801,17 @@
 
 
 
+
+
+
 <!-- 复制 -->
 
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
   !function (e, t, a) {
     var initCopyCode = function(){
       var copyHtml = '';
@@ -1759,6 +1819,7 @@
       copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
         target: function(trigger) {
           return trigger.nextElementSibling;
@@ -1766,12 +1827,18 @@
       });
       clipboard.on('success', function(e) {
         let $btn = $(e.trigger);
-        $btn.addClass('copyed');
+        $btn.addClass('copied');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-clipboard-check');
+        $icon.addClass('fa-check-circle');
         let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPYED';
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
       clipboard.on('error', function(e) {
         e.clearSelection();
@@ -1779,9 +1846,15 @@
         $btn.addClass('copy-failed');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-exclamation-triangle');
+        $icon.addClass('fa-times-circle');
         let $span = $($btn.find('span'));
         $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
     }
     initCopyCode();
@@ -1792,27 +1865,49 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
   });
 </script>
-
-
 
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#2.1.4'>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -31,15 +31,16 @@
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
   
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
 
   
 
@@ -57,8 +58,9 @@
   
 
   
+  
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4.3/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -70,16 +72,20 @@
 
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
     <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-64016301-4";
+	  script.defer=true;
+	  document.body.appendChild(script);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-64016301-4');
+	}, 5000);
     </script>
   
   
-
 </head>
 
 <body>
@@ -88,21 +94,21 @@
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
-
+  <div class='container'>
   <div class='wrapper'>
-    <div class='nav-sub container--flex'>
-      <a class="logo flat-box"></a>
-      <ul class='switcher h-list'>
-        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
-		<div class="nav-main container container--flex">
+		<div class="nav-main">
       
         
-        <a class="logo flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href='/'>
           
           
           
@@ -113,7 +119,7 @@
       
 
 			<div class='menu navigation'>
-				<ul class='h-list'>
+				<ul class='nav-list-h'>
           
           
           
@@ -126,10 +132,7 @@
                   
                     id="home"
                   >
-                  
-                    <i class='fas fa-home fa-fw'></i>
-                  
-                  首页
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -145,10 +148,7 @@
                   
                     id="categories"
                   >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -164,10 +164,7 @@
                   
                     id="tags"
                   >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -183,10 +180,7 @@
                   
                     id="archives"
                   >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -202,10 +196,7 @@
                   
                     id="friends"
                   >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -221,10 +212,7 @@
                   
                     id="about"
                   >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -234,112 +222,125 @@
 				</ul>
 			</div>
 
-      
-        <div class="m_search">
-          <form name="searchform" class="form u-search-form">
-            <i class="icon fas fa-search fa-fw"></i>
-            <input type="text" class="input u-search-input" placeholder="搜索" />
-          </form>
-        </div>
-      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
 
-			<ul class='switcher h-list'>
+			<ul class='switcher nav-list-h'>
 				
-					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
 			</ul>
 		</div>
 	</div>
+  </div>
 </header>
-<ul class="menu-phone navigation white-box">
-  
-  
-    <li>
-      <a class="flat-box" href=/
-        
-        
-        
-          id="home"
-        >
-        
-          <i class='fas fa-home fa-fw'></i>
-        
-        首页
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/categories/
-        
-        
-        
-          id="categories"
-        >
-        
-          <i class='fas fa-folder-open fa-fw'></i>
-        
-        分类
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/tags/
-        
-        
-        
-          id="tags"
-        >
-        
-          <i class='fas fa-tags fa-fw'></i>
-        
-        标签
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/archives/
-        
-        
-        
-          id="archives"
-        >
-        
-          <i class='fas fa-archive fa-fw'></i>
-        
-        归档
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/friends/
-        
-        
-        
-          id="friends"
-        >
-        
-          <i class='fas fa-link fa-fw'></i>
-        
-        友链
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/about/
-        
-        
-        
-          id="about"
-        >
-        
-          <i class='fas fa-info-circle fa-fw'></i>
-        
-        关于
-      </a>
-    </li>
-  
-</ul>
+
 <script>setLoadingBarProgress(40);</script>
 
 
@@ -373,10 +374,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/11/26/135/">
       ipv6 测试站上线
@@ -384,13 +386,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -398,58 +400,61 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E6%97%A5%E5%BF%97/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>日志</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年11月26日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>21 号晚上 coding pages 发生严重故障导致本站不可访问，于是连夜将博客迁移到自己的“小鸡”（vps）上。迁移时发现“小鸡”的ipv6居然是可用的，虽然官方套餐里面只写了ipv4，但既然机房分配了ipv6，不用白不用，所以顺便部署上线了本站的 ipv6 测试站: <a href="https://ipv6.bfdz.ink" target="_blank" rel="noopener">https://ipv6.bfdz.ink</a></p>
+      
+        <p>21 号晚上 coding pages 发生严重故障导致本站不可访问，于是连夜将博客迁移到自己的“小鸡”（vps）上。迁移时发现“小鸡”的ipv6居然是可用的，虽然官方套餐里面只写了ipv4，但既然机房分配了ipv6，不用白不用，所以顺便部署上线了本站的 ipv6 测试站: <a href="https://ipv6.bfdz.ink" target="_blank" rel="noopener">https://ipv6.bfdz.ink</a></p>
 <p>考虑到国内不同地区连接国外ipv6网络的速度可能不快，主站目前还是只设置 ipv4 地址，ipv6 测试站只开放 ipv6 地址，如果你能访问这个博客的 ipv6 域名，说明你的网络已经支持ipv6了。</p>
 
       
-        
-      
     </div>
+    
+      
+    
   </section>
 </article>
 
@@ -464,10 +469,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/11/23/134/">
       V2Ray 部署之“三步走”教程
@@ -475,13 +481,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -489,62 +495,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年11月23日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2019/11/23/134/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2019/11/23/134/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -559,10 +568,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2019/11/06/133/">
       高清电视直播IPTV
@@ -570,13 +580,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -584,60 +594,63 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>实用网站</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2019年11月6日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>这是北京邮电大学和 BYR-Team 提供的校园直播，拥有央视高清及各大卫视高清频道。</p>
+      
+        <p>这是北京邮电大学和 BYR-Team 提供的校园直播，拥有央视高清及各大卫视高清频道。</p>
 <p>浏览器在线观看：<a href="https://v4.uhd.app/" target="_blank" rel="noopener">https://v4.uhd.app/</a></p>
 <p>PC端和移动端直播源：<a href="http://ivi.bupt.edu.cn/" target="_blank" rel="noopener">http://ivi.bupt.edu.cn/</a></p>
 <p><img src="https://ae01.alicdn.com/kf/H27af28f2756b4b66bd217684793e3f4b1.jpg" alt=""></p>
 
       
-        
-      
     </div>
+    
+      
+    
   </section>
 </article>
 
@@ -788,7 +801,7 @@
     
   
 
-  <section class="widget tagcloud shadow desktop">
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
@@ -810,7 +823,7 @@
 
 
   
-  <footer class="clearfix ">
+  <footer class="clearfix">
     <br><br>
     
       
@@ -868,11 +881,8 @@
       
         本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作为主题
-        
-          ，
-          总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
           次
         
       
@@ -916,6 +926,18 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -933,7 +955,7 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
@@ -989,13 +1011,16 @@
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4/js/app.js"></script>
 
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
 
 
 
@@ -1004,10 +1029,17 @@
 
 
 
+
+
+
 <!-- 复制 -->
 
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
   !function (e, t, a) {
     var initCopyCode = function(){
       var copyHtml = '';
@@ -1015,6 +1047,7 @@
       copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
         target: function(trigger) {
           return trigger.nextElementSibling;
@@ -1022,12 +1055,18 @@
       });
       clipboard.on('success', function(e) {
         let $btn = $(e.trigger);
-        $btn.addClass('copyed');
+        $btn.addClass('copied');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-clipboard-check');
+        $icon.addClass('fa-check-circle');
         let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPYED';
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
       clipboard.on('error', function(e) {
         e.clearSelection();
@@ -1035,9 +1074,15 @@
         $btn.addClass('copy-failed');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-exclamation-triangle');
+        $icon.addClass('fa-times-circle');
         let $span = $($btn.find('span'));
         $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
     }
     initCopyCode();
@@ -1048,27 +1093,49 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
   });
 </script>
-
-
 
 
 

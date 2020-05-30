@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#2.1.4'>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -33,15 +33,16 @@
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
   
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
 
   
 
@@ -59,8 +60,9 @@
   
 
   
+  
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4.3/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -72,16 +74,20 @@
 
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
     <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-64016301-4";
+	  script.defer=true;
+	  document.body.appendChild(script);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-64016301-4');
+	}, 5000);
     </script>
   
   
-
 </head>
 
 <body>
@@ -90,21 +96,21 @@
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
-
+  <div class='container'>
   <div class='wrapper'>
-    <div class='nav-sub container--flex'>
-      <a class="logo flat-box"></a>
-      <ul class='switcher h-list'>
-        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
-		<div class="nav-main container container--flex">
+		<div class="nav-main">
       
         
-        <a class="logo flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href='/'>
           
           
           
@@ -115,7 +121,7 @@
       
 
 			<div class='menu navigation'>
-				<ul class='h-list'>
+				<ul class='nav-list-h'>
           
           
           
@@ -128,10 +134,7 @@
                   
                     id="home"
                   >
-                  
-                    <i class='fas fa-home fa-fw'></i>
-                  
-                  首页
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -147,10 +150,7 @@
                   
                     id="categories"
                   >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -166,10 +166,7 @@
                   
                     id="tags"
                   >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -185,10 +182,7 @@
                   
                     id="archives"
                   >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -204,10 +198,7 @@
                   
                     id="friends"
                   >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -223,10 +214,7 @@
                   
                     id="about"
                   >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -236,112 +224,125 @@
 				</ul>
 			</div>
 
-      
-        <div class="m_search">
-          <form name="searchform" class="form u-search-form">
-            <i class="icon fas fa-search fa-fw"></i>
-            <input type="text" class="input u-search-input" placeholder="搜索" />
-          </form>
-        </div>
-      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
 
-			<ul class='switcher h-list'>
+			<ul class='switcher nav-list-h'>
 				
-					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
 			</ul>
 		</div>
 	</div>
+  </div>
 </header>
-<ul class="menu-phone navigation white-box">
-  
-  
-    <li>
-      <a class="flat-box" href=/
-        
-        
-        
-          id="home"
-        >
-        
-          <i class='fas fa-home fa-fw'></i>
-        
-        首页
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/categories/
-        
-        
-        
-          id="categories"
-        >
-        
-          <i class='fas fa-folder-open fa-fw'></i>
-        
-        分类
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/tags/
-        
-        
-        
-          id="tags"
-        >
-        
-          <i class='fas fa-tags fa-fw'></i>
-        
-        标签
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/archives/
-        
-        
-        
-          id="archives"
-        >
-        
-          <i class='fas fa-archive fa-fw'></i>
-        
-        归档
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/friends/
-        
-        
-        
-          id="friends"
-        >
-        
-          <i class='fas fa-link fa-fw'></i>
-        
-        友链
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/about/
-        
-        
-        
-          id="about"
-        >
-        
-          <i class='fas fa-info-circle fa-fw'></i>
-        
-        关于
-      </a>
-    </li>
-  
-</ul>
+
 <script>setLoadingBarProgress(40);</script>
 
 
@@ -364,10 +365,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/31/38/">
       Ubuntu 配置 tftp 服务器
@@ -375,13 +377,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -389,52 +391,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月31日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><strong>配置 tftp 服务器</strong></p>
+      
+        <p><strong>配置 tftp 服务器</strong></p>
 <ul>
 <li>安装 tftp 客户端、服务端和 xinetd 服务</li>
 </ul>
@@ -450,15 +454,16 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /home/tftpboot</span><br></pre></td></tr></table></figure>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/31/38/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/31/38/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -473,10 +478,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/29/37/">
       Markdown 语法高亮的常用语言关键字
@@ -484,13 +490,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -498,62 +504,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Hexo/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Hexo</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月29日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>Markdown 语法高亮支持的语言还是比较多的，记下来备用。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/29/37/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>Markdown 语法高亮支持的语言还是比较多的，记下来备用。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/29/37/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -568,10 +577,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/28/36/">
       ARM 汇编指令的条件执行
@@ -579,13 +589,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -593,65 +603,68 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/ARM/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>ARM</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月28日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在ARM模式下，任何一条数据处理指令可以选择是否根据操作的结果来更新CPSR寄存器中的ALU状态标志位。在数据处理指令中使用S后缀来实现该功能。</p>
+      
+        <p>在ARM模式下，任何一条数据处理指令可以选择是否根据操作的结果来更新CPSR寄存器中的ALU状态标志位。在数据处理指令中使用S后缀来实现该功能。</p>
 <p><em>不要在CMP,CMN,TST或者TEQ指令中使用S后缀。这些比较指令总是会更新标志位。</em></p>
 <p>在Thumb模式下，所有数据处理指令都更新CPSR中的标志位。有一个例外就是：当一个或更多个高寄存器被用在MOV和ADD指令时，此时MOV和ADD不能更新状态标志.</p>
 <p>几乎所有的ARM指令都可以根据CPSR中的ALU状态标志位来条件执行。参见条件执行后缀表。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/28/36/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/28/36/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -666,10 +679,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/12/35/">
       Linux Kernel 4.9 正式发布
@@ -677,13 +691,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -691,67 +705,70 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月12日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <blockquote>
+      
+        <blockquote>
 <p>上一篇博文<a href="http://www.bfdz.ink/2016/12/08/34/">开启TCP BBR拥塞控制算法</a>使用的内核是 4.9rc 版，如今可替换为正式版。</p>
 </blockquote>
 <h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><p>Linus Torvalds 在内核邮件列表上宣布正式释出 Linux Kernel 4.9，4.10合并窗口开启。为期两周的合并窗口预计将在圣诞节这天关闭，Linus表示因为假期的原因他考虑缩短或延长合并窗口，最有可能的做法是缩短而不是延长，以便于开发者们能度过一个平静的圣诞假期。Linux Kernel 4.9的主要特性包括：<a href="http://lwn.net/Articles/692953/" target="_blank" rel="noopener">虚拟映射内核栈分配</a>，英特尔的粗粒度保护机制<a href="https://lwn.net/Articles/689395/" target="_blank" rel="noopener">pkeys系统调用</a>，<a href="https://lwn.net/Articles/701165/" target="_blank" rel="noopener">BBR拥堵控制算法</a>，支持模块化智能手机的<a href="https://lwn.net/Articles/648400/" target="_blank" rel="noopener">Greybus</a>子系统，大量的文件系统改进，驱动更新如改进 AMD Radeon GPU 支持，bug修正，等等。4.9包含了16,216个非合并变更集，是内核项目历史上最忙碌的开发周期，AMD贡献了最多的行变更，最活跃的开发者中就有开发AMD PowerPlay驱动的Rex Zhu。</p>
 <hr>
 <h2 id="关于-BBR"><a href="#关于-BBR" class="headerlink" title="关于 BBR"></a>关于 BBR</h2><p>经过几天使用体验，Linux Kernel 4.9 新增的BBR拥塞控制算法确实对vps网络速度的提升很大。以最近测试位于迈阿密的vps为例，在 Ubuntu 16.04 - Linxu Kernel 3.04 上，从vps到国内的下载速度只有不到 5Mbps ，而在更换至 4.9 版内核并开启BBR后，下载速度高达46Mbps，效果能与锐速相媲美。而锐速是收费软件，BBR则是免费开源的且内核自带。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/12/35/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/12/35/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -766,10 +783,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/08/34/">
       开启TCP BBR拥塞控制算法
@@ -777,13 +795,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -791,52 +809,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月8日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>Linux 4.9版的内核新增了名为BBR的拥塞控制算法，可以有效加快TCP数据传输速度和降低延迟。</p>
+      
+        <p>Linux 4.9版的内核新增了名为BBR的拥塞控制算法，可以有效加快TCP数据传输速度和降低延迟。</p>
 <blockquote>
 <p>注：openvz架构的vps不能开启bbr，因为openvz不支持更换内核。</p>
 </blockquote>
@@ -844,15 +864,16 @@
 <li><p>下载最新内核,最新内核查看<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline" target="_blank" rel="noopener">这里</a>  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;kernel.ubuntu.com&#x2F;~kernel-ppa&#x2F;mainline&#x2F;v4.9-rc8&#x2F;linux-image-4.9.0-040900rc8-generic_4.9.0-040900rc8.201612051443_amd64.deb</span><br></pre></td></tr></table></figure>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/08/34/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/08/34/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -867,10 +888,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/12/05/33/">
       MTS/M2T/M2TS/TS合并工具 HD Remuxer V1.1.4.8
@@ -878,13 +900,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -892,63 +914,66 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Windows/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Windows</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年12月5日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>最近在别人电脑上使用 you-get 下载视频，ffms 出了问题，这导致视频合并不了。ffms的问题一时解决不了，看着一堆分割的ts文件，只有想办法合并视频。</p>
+      
+        <p>最近在别人电脑上使用 you-get 下载视频，ffms 出了问题，这导致视频合并不了。ffms的问题一时解决不了，看着一堆分割的ts文件，只有想办法合并视频。</p>
 <p>然后找到了一个合并工具 HD Remuxer ，这款软件和tsMuxer类似，但合并分块视频的功能更优秀。全选同一个文件夹内的ts文件，自动按文件名排序合并，而tsMuxer只有单选追加模式。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/12/05/33/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/12/05/33/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -963,10 +988,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/11/27/32/">
       Linux 中安装rar和unrar
@@ -974,13 +1000,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -988,65 +1014,68 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年11月27日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>有时需要上传rar格式的压缩包到linux系统中，因为在Windows环境下还是rar比较常用。但linux某些发行版没有rar的在线安装软件包，所以需要手动下载安装。</p>
+      
+        <p>有时需要上传rar格式的压缩包到linux系统中，因为在Windows环境下还是rar比较常用。但linux某些发行版没有rar的在线安装软件包，所以需要手动下载安装。</p>
 <p>首先访问<a href="http://www.rarlab.com/download.htm" target="_blank" rel="noopener">RARLAB官方下载页</a>，选取合适的Linux软件包。</p>
 <p>下载软件包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz</span><br></pre></td></tr></table></figure>
       
-        
-          <div class="button readmore">
-            <a href="/2016/11/27/32/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/11/27/32/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1061,10 +1090,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/11/24/31/">
       Landscape-plus 主题修改和优化
@@ -1072,13 +1102,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1086,63 +1116,66 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Hexo/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Hexo</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年11月24日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="jQuery库的优化"><a href="#jQuery库的优化" class="headerlink" title="jQuery库的优化"></a>jQuery库的优化</h3><p>Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。</p>
+      
+        <h3 id="jQuery库的优化"><a href="#jQuery库的优化" class="headerlink" title="jQuery库的优化"></a>jQuery库的优化</h3><p>Landscape-plus主题本身针对Landscape做过优化，将谷歌的CDN替换成了CloudFlare的。但目前国内访问CloudFlare的速度十分不理想，所以我选择了换用Bootstrap中文网提供的CDN。</p>
 <p>修改 <code>\themes\landscape-plus\layout\_partial\after-footer.ejs</code> 第62行，将原来的</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/11/24/31/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/11/24/31/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1157,10 +1190,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/11/14/30/">
       Shadowsocks流量管理脚本ss-bash
@@ -1168,13 +1202,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1182,62 +1216,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E8%84%9A%E6%9C%AC/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>脚本</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年11月14日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>在分享自己搭建的Shadowsocks时，遇到一个问题。Shadowsocks python版虽然自带有多用户配置功能，但无法限制用户流量。而ss-panel+ss-manyuser的多用户分享方案偏商业用途，部署和配置都比较繁琐，数据库和web面板都有不小的资源占用。hellofwy所写的ss-bash的脚本则完美解决了这个问题，下面是这个脚本的简介、安装和注意事项说明：</p>
       
-        
-          <div class="button readmore">
-            <a href="/2016/11/14/30/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>在分享自己搭建的Shadowsocks时，遇到一个问题。Shadowsocks python版虽然自带有多用户配置功能，但无法限制用户流量。而ss-panel+ss-manyuser的多用户分享方案偏商业用途，部署和配置都比较繁琐，数据库和web面板都有不小的资源占用。hellofwy所写的ss-bash的脚本则完美解决了这个问题，下面是这个脚本的简介、安装和注意事项说明：</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/11/14/30/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1252,10 +1289,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2016/11/11/29/">
       升级 openssl 环境至 openssl-1.0.2j
@@ -1263,13 +1301,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1277,66 +1315,69 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2016年11月11日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>1、查看源版本</p>
+      
+        <p>1、查看源版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@~]<span class="comment"># openssl version -a</span></span><br><span class="line">OpenSSL 1.0.1g</span><br></pre></td></tr></table></figure>
 
 <p>2、下载 openssl-1.0.2j.tar.gz</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.openssl.org/<span class="built_in">source</span>/openssl-1.0.2j.tar.gz</span><br></pre></td></tr></table></figure>
       
-        
-          <div class="button readmore">
-            <a href="/2016/11/11/29/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2016/11/11/29/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1507,7 +1548,7 @@
     
   
 
-  <section class="widget tagcloud shadow desktop">
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
@@ -1529,7 +1570,7 @@
 
 
   
-  <footer class="clearfix ">
+  <footer class="clearfix">
     <br><br>
     
       
@@ -1587,11 +1628,8 @@
       
         本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作为主题
-        
-          ，
-          总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
           次
         
       
@@ -1627,6 +1665,18 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -1644,7 +1694,7 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
@@ -1700,13 +1750,16 @@
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4/js/app.js"></script>
 
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
 
 
 
@@ -1715,10 +1768,17 @@
 
 
 
+
+
+
 <!-- 复制 -->
 
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
   !function (e, t, a) {
     var initCopyCode = function(){
       var copyHtml = '';
@@ -1726,6 +1786,7 @@
       copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
         target: function(trigger) {
           return trigger.nextElementSibling;
@@ -1733,12 +1794,18 @@
       });
       clipboard.on('success', function(e) {
         let $btn = $(e.trigger);
-        $btn.addClass('copyed');
+        $btn.addClass('copied');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-clipboard-check');
+        $icon.addClass('fa-check-circle');
         let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPYED';
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
       clipboard.on('error', function(e) {
         e.clearSelection();
@@ -1746,9 +1813,15 @@
         $btn.addClass('copy-failed');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-exclamation-triangle');
+        $icon.addClass('fa-times-circle');
         let $span = $($btn.find('span'));
         $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
     }
     initCopyCode();
@@ -1759,27 +1832,49 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
   });
 </script>
-
-
 
 
 

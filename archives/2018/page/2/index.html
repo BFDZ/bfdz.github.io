@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#2.1.4'>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -31,15 +31,16 @@
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
   
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
 
   
 
@@ -57,8 +58,9 @@
   
 
   
+  
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4.3/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -70,16 +72,20 @@
 
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-4"></script>
     <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-64016301-4";
+	  script.defer=true;
+	  document.body.appendChild(script);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-64016301-4');
+	}, 5000);
     </script>
   
   
-
 </head>
 
 <body>
@@ -88,21 +94,21 @@
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
-
+  <div class='container'>
   <div class='wrapper'>
-    <div class='nav-sub container--flex'>
-      <a class="logo flat-box"></a>
-      <ul class='switcher h-list'>
-        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
-		<div class="nav-main container container--flex">
+		<div class="nav-main">
       
         
-        <a class="logo flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href='/'>
           
           
           
@@ -113,7 +119,7 @@
       
 
 			<div class='menu navigation'>
-				<ul class='h-list'>
+				<ul class='nav-list-h'>
           
           
           
@@ -126,10 +132,7 @@
                   
                     id="home"
                   >
-                  
-                    <i class='fas fa-home fa-fw'></i>
-                  
-                  首页
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -145,10 +148,7 @@
                   
                     id="categories"
                   >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -164,10 +164,7 @@
                   
                     id="tags"
                   >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -183,10 +180,7 @@
                   
                     id="archives"
                   >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -202,10 +196,7 @@
                   
                     id="friends"
                   >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -221,10 +212,7 @@
                   
                     id="about"
                   >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -234,112 +222,125 @@
 				</ul>
 			</div>
 
-      
-        <div class="m_search">
-          <form name="searchform" class="form u-search-form">
-            <i class="icon fas fa-search fa-fw"></i>
-            <input type="text" class="input u-search-input" placeholder="搜索" />
-          </form>
-        </div>
-      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
 
-			<ul class='switcher h-list'>
+			<ul class='switcher nav-list-h'>
 				
-					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
 			</ul>
 		</div>
 	</div>
+  </div>
 </header>
-<ul class="menu-phone navigation white-box">
-  
-  
-    <li>
-      <a class="flat-box" href=/
-        
-        
-        
-          id="home"
-        >
-        
-          <i class='fas fa-home fa-fw'></i>
-        
-        首页
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/categories/
-        
-        
-        
-          id="categories"
-        >
-        
-          <i class='fas fa-folder-open fa-fw'></i>
-        
-        分类
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/tags/
-        
-        
-        
-          id="tags"
-        >
-        
-          <i class='fas fa-tags fa-fw'></i>
-        
-        标签
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/archives/
-        
-        
-        
-          id="archives"
-        >
-        
-          <i class='fas fa-archive fa-fw'></i>
-        
-        归档
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/friends/
-        
-        
-        
-          id="friends"
-        >
-        
-          <i class='fas fa-link fa-fw'></i>
-        
-        友链
-      </a>
-    </li>
-  
-    <li>
-      <a class="flat-box" href=/about/
-        
-        
-        
-          id="about"
-        >
-        
-          <i class='fas fa-info-circle fa-fw'></i>
-        
-        关于
-      </a>
-    </li>
-  
-</ul>
+
 <script>setLoadingBarProgress(40);</script>
 
 
@@ -363,10 +364,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/10/23/109/">
       Google Analytics 加载优化
@@ -374,13 +376,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -388,64 +390,67 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Hexo/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Hexo</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年10月23日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p>
+      
+        <p>最近给网站加上了 Google Analytics（大概两年前，我刚换到 Hexo 的时候，我就把统计撤了，看到 LWL 的群里在晒统计结果，心里痒痒又加上了）。但是直接使用 Google Analytics 有一点弊端：一是会被各种广告屏蔽软件屏蔽，导致统计结果不准确；二是在国内加载不稳定。</p>
 <p>因此，我给 Google Analytics 加了一层代理，优化加载速度同时防止被屏蔽。</p>
 <p><a href="https://github.com/giuem/ga-proxy" target="_blank" rel="noopener">GitHub Repo</a> （求 Star🌚</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/10/23/109/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/10/23/109/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -460,10 +465,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/10/23/108/">
       Cloudflare 下 Nginx 获取用户真实 IP 地址
@@ -471,13 +477,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -485,67 +491,70 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Linux</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年10月23日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>惯例性滴先Google了一下，发现了这篇文章</p>
+      
+        <p>惯例性滴先Google了一下，发现了这篇文章</p>
 <ul>
 <li><a href="https://support.cloudflare.com/hc/en-us/articles/200170706-How-do-I-restore-original-visitor-IP-with-Nginx" target="_blank" rel="noopener">How do I restore original visitor IP with Nginx? – Cloudflare Support</a></li>
 <li><a href="https://nginx.org/en/docs/http/ngx_http_realip_module.html" target="_blank" rel="noopener">Module ngx_http_realip_module - Nginx</a></li>
 </ul>
 <p>看起来挺简单的嘛，在nginx配置文件中加一段地址说明就好了的事。。<br>然而在重启时却发现，报错了。。。。。新添加的”set_real_ip_from”没有被认出来，导致新配置的文件不被认可就没能重启。。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/10/23/108/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/10/23/108/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -560,10 +569,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/10/04/107/">
       江湖儿女
@@ -571,13 +581,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -585,62 +595,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E7%94%B5%E5%BD%B1/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>电影</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年10月4日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><img src="https://ws4.sinaimg.cn/large/92253953gy1fvwj1p9q63j20f00l0q7l.jpg" alt=""></p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/10/04/107/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p><img src="https://ws4.sinaimg.cn/large/92253953gy1fvwj1p9q63j20f00l0q7l.jpg" alt=""></p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/10/04/107/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -655,10 +668,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/08/31/106/">
       VapourSynthEditor 汉化版
@@ -666,13 +680,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -680,62 +694,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E8%A7%86%E9%A2%91%E5%8E%8B%E5%88%B6/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>视频压制</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年8月31日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>基于 VapourSynthEditor r18 64bit 汉化</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/08/31/106/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>基于 VapourSynthEditor r18 64bit 汉化</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/08/31/106/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -750,10 +767,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/07/26/105/">
       Windows10 获取数字许可证 批处理版
@@ -761,13 +779,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -775,62 +793,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Windows/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Windows</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年7月26日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>直接获取Windows10 数字许可证,同一台电脑,即使重装系统,无需输入许可证密钥,只要联网就能自动永久获得授权.因为你的授权信息已经保存在微软服务器上了.<br>这是Windows10特有的方式,非KMS方式的180天循环授权.</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/07/26/105/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>直接获取Windows10 数字许可证,同一台电脑,即使重装系统,无需输入许可证密钥,只要联网就能自动永久获得授权.因为你的授权信息已经保存在微软服务器上了.<br>这是Windows10特有的方式,非KMS方式的180天循环授权.</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/07/26/105/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -845,10 +866,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/07/24/104/">
       ListAssFonts - ass 字幕字体分析工具
@@ -856,13 +878,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -870,63 +892,66 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Windows/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Windows</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年7月24日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>因為最近比較常看動畫，但每一套字幕用到的字型都不同<br>有時字型包裡又有缺漏，或是有些字型壓根就沒用到</p>
+      
+        <p>因為最近比較常看動畫，但每一套字幕用到的字型都不同<br>有時字型包裡又有缺漏，或是有些字型壓根就沒用到</p>
 <p>於是自己寫了個小程式來判斷字幕檔裡到底用了哪些字型<br>(C# .NetFramework 4.5.2 環境)</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/07/24/104/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/07/24/104/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -941,10 +966,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/07/06/103/">
       周浩作品集（第二版）
@@ -952,13 +978,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -966,52 +992,54 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E7%BA%AA%E5%BD%95%E7%89%87/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>纪录片</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年7月6日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>更新了失效的百度网盘链接，全部替换为 OneDrive 分享链接。</p>
+      
+        <p>更新了失效的百度网盘链接，全部替换为 OneDrive 分享链接。</p>
 <p><strong>新增</strong></p>
 <p>影片：</p>
 <ul>
@@ -1023,15 +1051,16 @@
 <p>演讲：一席 周浩</p>
 <p>访谈：真实与现实——《差馆 II》放映及周浩访谈</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/07/06/103/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/07/06/103/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1046,10 +1075,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/06/28/102/">
       windows 7 分区表转换和 USB 3.0 驱动注入
@@ -1057,13 +1087,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1071,62 +1101,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/Windows/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>Windows</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年6月28日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>最近碰到一些机器只有 USB 3.0 的接口，同时设备还不支持 GPT 分区表。这导致了系统无法安装问题和安装 windows 7 系统后键盘、鼠标无法使用的问题。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/06/28/102/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>最近碰到一些机器只有 USB 3.0 的接口，同时设备还不支持 GPT 分区表。这导致了系统无法安装问题和安装 windows 7 系统后键盘、鼠标无法使用的问题。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/06/28/102/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1141,10 +1174,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/06/24/101/">
       字幕组网站签到脚本
@@ -1152,13 +1186,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1166,62 +1200,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E8%84%9A%E6%9C%AC/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>脚本</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年6月24日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><a href="http://www.zimuzu.tv" target="_blank" rel="noopener">字幕组网站</a>每天签到获得 1 积分，可用 100 积分升级金至尊会员。三个月未登录网站或者客户端的“金至尊会员”也会被降级到至尊会员。</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/06/24/101/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p><a href="http://www.zimuzu.tv" target="_blank" rel="noopener">字幕组网站</a>每天签到获得 1 积分，可用 100 积分升级金至尊会员。三个月未登录网站或者客户端的“金至尊会员”也会被降级到至尊会员。</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/06/24/101/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1236,10 +1273,11 @@
 
   <section class='meta'>
     
-    
-    <div class="meta" id="header-meta">
       
+      
+      <div class="meta" id="header-meta">
         
+          
   <h2 class="title">
     <a href="/2018/06/24/100/">
       高墙深度解析
@@ -1247,13 +1285,13 @@
   </h2>
 
 
-      
-      <div class='new-meta-box'>
         
-          
-        
+        <div class='new-meta-box'>
           
             
+          
+            
+              
 <div class='new-meta-item author'>
   <a href="https://www.bfdz.ink" rel="nofollow">
     <img src="https://www.bfdz.ink/favicon.ico">
@@ -1261,62 +1299,65 @@
   </a>
 </div>
 
-          
-        
+            
           
             
+              
   
   <div class='new-meta-item category'>
     <a href='/categories/%E7%BD%91%E7%BB%9C/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>网络</p>
     </a>
   </div>
 
 
+            
           
-        
-          
-            <div class="new-meta-item date">
+            
+              <div class="new-meta-item date">
   <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2018年6月24日</p>
   </a>
 </div>
 
-          
-        
+            
           
             
+              
 
-          
-        
+            
           
             
+              
 
+            
           
+        </div>
+        
+          <hr>
         
       </div>
-      
-        <hr>
-      
-    </div>
+    
   </section>
 
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>谈下自己根据实际经历写的一些关于被墙原因及深度解析↑(几年日常使用30+主机商200余台虚机/杜甫分布世界各地的经历。)以下全是大白话<br>这里可以首先基本肯定的是，高墙墙你不是根据你机子的历史行为，而是根据高墙在发作那一刻扫描出的结果来决定墙不墙你。后面写不下了，看图片吧</p>
       
-        
-          <div class="button readmore">
-            <a href="/2018/06/24/100/">
-              阅读全文 <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
+        <p>谈下自己根据实际经历写的一些关于被墙原因及深度解析↑(几年日常使用30+主机商200余台虚机/杜甫分布世界各地的经历。)以下全是大白话<br>这里可以首先基本肯定的是，高墙墙你不是根据你机子的历史行为，而是根据高墙在发作那一刻扫描出的结果来决定墙不墙你。后面写不下了，看图片吧</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2018/06/24/100/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
 </article>
 
@@ -1488,7 +1529,7 @@
     
   
 
-  <section class="widget tagcloud shadow desktop">
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
@@ -1510,7 +1551,7 @@
 
 
   
-  <footer class="clearfix ">
+  <footer class="clearfix">
     <br><br>
     
       
@@ -1568,11 +1609,8 @@
       
         本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作为主题
-        
-          ，
-          总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
           次
         
       
@@ -1616,6 +1654,18 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -1633,7 +1683,7 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
@@ -1689,13 +1739,16 @@
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1.4/js/app.js"></script>
 
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
 
 
 
@@ -1704,10 +1757,17 @@
 
 
 
+
+
+
 <!-- 复制 -->
 
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
   !function (e, t, a) {
     var initCopyCode = function(){
       var copyHtml = '';
@@ -1715,6 +1775,7 @@
       copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
         target: function(trigger) {
           return trigger.nextElementSibling;
@@ -1722,12 +1783,18 @@
       });
       clipboard.on('success', function(e) {
         let $btn = $(e.trigger);
-        $btn.addClass('copyed');
+        $btn.addClass('copied');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-clipboard-check');
+        $icon.addClass('fa-check-circle');
         let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPYED';
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
       clipboard.on('error', function(e) {
         e.clearSelection();
@@ -1735,9 +1802,15 @@
         $btn.addClass('copy-failed');
         let $icon = $($btn.find('i'));
         $icon.removeClass('fa-copy');
-        $icon.addClass('fa-exclamation-triangle');
+        $icon.addClass('fa-times-circle');
         let $span = $($btn.find('span'));
         $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
       });
     }
     initCopyCode();
@@ -1748,27 +1821,49 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
   });
 </script>
-
-
 
 
 
