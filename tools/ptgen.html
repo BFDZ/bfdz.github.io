@@ -67,7 +67,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
                 <div class="form-inline">
                     <div class="form-group">
                         <label class="sr-only" for="input_value">Input value</label>
-                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam等资源链接"
+                        <input type="text" class="form-control" placeholder="豆瓣、IMDb、Bangumi、Steam等资源链接"
                                id="input_value"/>
                     </div>
                     <button class="btn btn-success" id="query_btn">查询</button>
@@ -100,6 +100,10 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
             <div id="gen_history">
                 <h4>更新历史</h4>
                 <ul class="timeline">
+                    <li>
+                        <a href="#timeline_2020_08_21" data-toggle="collapse" class="float-right">2020-08-21</a>
+                        <p id="timeline_2020_08_21" class="collapse in">因豆瓣api受限制，名称搜索无法使用。</p>
+                        </li>
                 <li>
                 <a href="#timeline_2019_07_09" data-toggle="collapse" class="float-right">2019-07-09</a>
                 <p id="timeline_2019_07_09" class="collapse in">增加API Point 选择，<b>请注意不同API请求时间或结果可能不同。</b></p>
@@ -195,7 +199,6 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
     ];
     
     const apiList = [
-        "https://api.nas.ink/infogen",
         "https://api.douban.workers.dev",
         "https://ptgen.rhilip.workers.dev/",
     ];
