@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bfdz.ink/"/>
-  <updated>2020-08-16T08:28:16.023Z</updated>
+  <updated>2020-09-10T14:55:42.419Z</updated>
   <id>https://www.bfdz.ink/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【TecLab极评】推动4K成主流 RTX3080全球抢先体验</title>
+    <link href="https://www.bfdz.ink/2020/09/10/154/"/>
+    <id>https://www.bfdz.ink/2020/09/10/154/</id>
+    <published>2020-09-10T14:18:00.000Z</published>
+    <updated>2020-09-10T14:55:42.419Z</updated>
+    
+    <content type="html"><![CDATA[<p>RTX3080全球偷跑测评，视频来自B站，原稿件已经被删除。</p><p>相比于上一代显卡，比 2080Ti 提升约38%，比 2080s 提升约59%。</p><p><img src="https://img.rruu.net/image/5f5a3a66f40cd" alt=""></p><a id="more"></a><p><img src="https://img.rruu.net/image/5f5a3c169c2d6" alt=""></p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>链接：<a href="https://pan.baidu.com/s/1dk_1nAnHkLhCbo07NXjwuw" target="_blank" rel="noopener">https://pan.baidu.com/s/1dk_1nAnHkLhCbo07NXjwuw</a><br>提取码：bfdz</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;RTX3080全球偷跑测评，视频来自B站，原稿件已经被删除。&lt;/p&gt;
+&lt;p&gt;相比于上一代显卡，比 2080Ti 提升约38%，比 2080s 提升约59%。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.rruu.net/image/5f5a3a66f40cd&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="电视节目" scheme="https://www.bfdz.ink/categories/%E7%94%B5%E8%A7%86%E8%8A%82%E7%9B%AE/"/>
+    
+    
+      <category term="Teclab" scheme="https://www.bfdz.ink/tags/Teclab/"/>
+    
+      <category term="nVidia" scheme="https://www.bfdz.ink/tags/nVidia/"/>
+    
+      <category term="RTX3080" scheme="https://www.bfdz.ink/tags/RTX3080/"/>
+    
+  </entry>
+  
+  <entry>
     <title>哔哩哔哩下载工具-BBDown</title>
     <link href="https://www.bfdz.ink/2020/08/16/153/"/>
     <id>https://www.bfdz.ink/2020/08/16/153/</id>
-    <published>2020-08-16T08:14:43.954Z</published>
-    <updated>2020-08-16T08:28:16.023Z</updated>
+    <published>2020-08-16T08:00:00.000Z</published>
+    <updated>2020-09-10T14:18:36.359Z</updated>
     
     <content type="html"><![CDATA[<p>一款命令行式哔哩哔哩下载器——Bilibili Downloader。比 you-get 的使用体验更好，部分视频可使用 TV 接口下载无水印的版本。</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="https://github.com/nilaoda/BBDown/releases" target="_blank" rel="noopener">https://github.com/nilaoda/BBDown/releases</a></p><h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><ul><li><input checked="" disabled="" type="checkbox"> 番剧下载(Web|TV)</li><li><input checked="" disabled="" type="checkbox"> 普通内容下载(Web|TV) <code>(TV接口可以下载部分UP主的无水印内容)</code></li><li><input checked="" disabled="" type="checkbox"> 多分P自动下载</li><li><input checked="" disabled="" type="checkbox"> 选择指定分P进行下载</li><li><input checked="" disabled="" type="checkbox"> 选择指定清晰度进行下载</li><li><input checked="" disabled="" type="checkbox"> 下载外挂字幕并转换为srt格式</li><li><input checked="" disabled="" type="checkbox"> 自动合并音频+视频流+字幕流</li><li><input checked="" disabled="" type="checkbox"> 二维码登录账号</li><li><input checked="" disabled="" type="checkbox"> <strong>多线程下载</strong></li></ul><a id="more"></a><h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><p>目前测试版的命令行参数支持情况</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">BBDown:</span><br><span class="line">  BBDown是一个免费且便捷高效的哔哩哔哩下载&#x2F;解析软件.</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">  BBDown [options] &lt;url&gt; [command]</span><br><span class="line"></span><br><span class="line">Arguments:</span><br><span class="line">  &lt;url&gt;    视频地址 或 av|bv|BV|ep|ss</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -tv, --use-tv-api                    使用TV端解析模式(不支持版权内容)</span><br><span class="line">  -hevc, --only-hevc                   下载hevc编码</span><br><span class="line">  -info, --only-show-info              仅解析不下载</span><br><span class="line">  -hs, --hide-streams                  不要显示所有可用音视频流</span><br><span class="line">  -ia, --interactive                   交互式选择清晰度</span><br><span class="line">  -mt, --multi-thread                  使用多线程下载</span><br><span class="line">  -p, --select-page &lt;select-page&gt;      选择指定分p或分p范围</span><br><span class="line">  -c, --cookie &lt;cookie&gt;                设置字符串cookie用以下载网页接口的会员内容</span><br><span class="line">  -a, --access-token &lt;access-token&gt;    设置access_token用以下载TV接口的会员内容</span><br><span class="line">  --version                            Show version information</span><br><span class="line">  -?, -h, --help                       Show help and usage information</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  login      通过APP扫描二维码以登录您的WEB账号</span><br><span class="line">  logintv    通过APP扫描二维码以登录您的TV账号</span><br></pre></td></tr></table></figure><h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul><li><input disabled="" type="checkbox"> 支持更多自定义选项</li><li><input disabled="" type="checkbox"> 其他的懒得写了</li></ul><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p><img src="https://user-images.githubusercontent.com/20772925/88686407-a2001480-d129-11ea-8aac-97a0c71af115.gif" alt="1"></p><p>下载完毕后在当前目录查看MP4文件：</p><p><img src="https://user-images.githubusercontent.com/20772925/88478901-5e1cdc00-cf7e-11ea-97c1-154b9226564e.png" alt="2"></p>]]></content>
     
@@ -562,31 +591,6 @@
     
     
       <category term="ipv6" scheme="https://www.bfdz.ink/tags/ipv6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>V2Ray 部署之“三步走”教程</title>
-    <link href="https://www.bfdz.ink/2019/11/23/134/"/>
-    <id>https://www.bfdz.ink/2019/11/23/134/</id>
-    <published>2019-11-23T08:08:00.000Z</published>
-    <updated>2019-11-24T09:21:03.203Z</updated>
-    
-    <content type="html"><![CDATA[<p>这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。</p><a id="more"></a><h2 id="1-安装-V2Ray"><a href="#1-安装-V2Ray" class="headerlink" title="1.安装 V2Ray"></a>1.安装 V2Ray</h2><p>先使用官方脚本安装，以后升级只需重复执行此命令。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://install.direct/go.sh)</span><br></pre></td></tr></table></figure><p>新安装完会提示两行，一个端口，一个 uuid，记不记都可以。</p><p>官方脚本默认支持 vmess，下一步需要编辑修改 v2 的服务端配置，让支持 ws 和 tls，post 和 id 改成上面的，也可以自己定义，不建议直接搬运下面的，id 相当于密码，还得用你自己的，下面 path 是目录，这里不设。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/v2ray/config.json</span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#123;</span></span><br><span class="line">  <span class="attr">"inbounds":</span> <span class="string">[</span></span><br><span class="line">    <span class="string">&#123;</span></span><br><span class="line">      <span class="attr">"port":</span> <span class="number">12345</span><span class="string">,</span></span><br><span class="line">      <span class="string">"listen"</span><span class="string">:"127.0.0.1",</span></span><br><span class="line">      <span class="attr">"protocol":</span> <span class="string">"vmess"</span><span class="string">,</span></span><br><span class="line">      <span class="attr">"settings":</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="attr">"clients":</span> <span class="string">[</span></span><br><span class="line">          <span class="string">&#123;</span></span><br><span class="line">            <span class="attr">"id":</span> <span class="string">"6768f908-d39f-424f-b3e7-c1b6b10fdf72"</span><span class="string">,</span></span><br><span class="line">            <span class="attr">"alterId":</span> <span class="number">64</span></span><br><span class="line">          <span class="string">&#125;</span></span><br><span class="line">        <span class="string">]</span></span><br><span class="line">      <span class="string">&#125;,</span></span><br><span class="line">      <span class="attr">"streamSettings":</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="attr">"network":</span> <span class="string">"ws"</span><span class="string">,</span></span><br><span class="line">        <span class="attr">"wsSettings":</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="attr">"path":</span> <span class="string">"/"</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">      <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">  <span class="string">],</span></span><br><span class="line">  <span class="attr">"outbounds":</span> <span class="string">[</span></span><br><span class="line">    <span class="string">&#123;</span></span><br><span class="line">      <span class="attr">"protocol":</span> <span class="string">"freedom"</span><span class="string">,</span></span><br><span class="line">      <span class="attr">"settings":</span> <span class="string">&#123;&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">  <span class="string">]</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><p>改过配置，就要重启一下 v2 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service v2ray restart</span><br></pre></td></tr></table></figure><p>最好也顺手查看下状态，有没有报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service v2ray status</span><br></pre></td></tr></table></figure><hr><h2 id="2-安装caddy"><a href="#2-安装caddy" class="headerlink" title="2.安装caddy"></a>2.安装caddy</h2><p>用 caddy 申请证书和反代。这里只勾选 hook.service，hook.service 是 caddy 的自启服务，开机实现自启，你需要其它插件就自己另外加，caddy 是 Go 语言的，以后升级、或者另外加插件，也是一样再一次运行命令即可，会自动替换。</p><p>如果服务器之前安装过 nginx ，那么需要将其关闭或卸载，因为 nginx 会占用 80 和 443 端口，和 caddy 产生端口冲突。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://getcaddy.com | bash -s personal hook.service</span><br></pre></td></tr></table></figure><p>然后运行：让自启生效。邮箱换你的，Caddyfile 是 caddy 的默认配置文档，本人习惯和 caddy 同一目录 /usr/local/bin，你要调整就要和下面一并调整</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy -service install -agree -email z@z.com -conf /usr/<span class="built_in">local</span>/bin/Caddyfile</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;bin</span><br></pre></td></tr></table></figure><p>进入 caddy 安装目录，然后 nano Caddyfile 写配置支持 tls</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hostloc.xyz &#123;</span><br><span class="line">    tls    z@z.com</span><br><span class="line">    proxy /  127.0.0.1:12345  &#123;</span><br><span class="line">    websocket</span><br><span class="line">    header_upstream -Origin</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>端口要与上面统一，域名用你自己的，二级域名都可以，先做好解析。<strong>注意这里是不套 cloudflare 的，你不要开了 cloudflare 的云。</strong></p><p>仍然在 /usr/local/bin 当前目录， ./caddy  初次运行一次，会显示申请证书，没报错就是成功了。</p><p>需要查看 caddy 运行状态的命令，其它重启、启动就不用说</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy -service status</span><br></pre></td></tr></table></figure><p>对应的重启、启动、停止就是 <code>caddy -service restart |  start  |  stop</code></p><hr><h2 id="3-客户端设置"><a href="#3-客户端设置" class="headerlink" title="3.客户端设置"></a>3.客户端设置</h2><p>地址：就是你的域名，端口是 443，ID 是你上面那一串，额外 ID 是 0，传输协议是 ws，其它默认，最下面底层传输安全记得把 tls 选上。完事。</p><p><img src="https://img13.360buyimg.com/uba/jfs/t1/83731/10/15881/20469/5dda46dbEb45d2378/2b9c135ee8705969.png" alt=""></p><hr><p>via:<a href="https://www.hostloc.com/thread-589486-1-1.html" target="_blank" rel="noopener"> v2-ws-tls教程就三步</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这几天国际联网线路出现大范围的丢包或干扰，使用 v2 + ws + tls 貌似可以应对这种情况。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://www.bfdz.ink/categories/Linux/"/>
-    
-    
-      <category term="linux" scheme="https://www.bfdz.ink/tags/linux/"/>
-    
-      <category term="v2ray" scheme="https://www.bfdz.ink/tags/v2ray/"/>
     
   </entry>
   
