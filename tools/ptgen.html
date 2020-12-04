@@ -161,7 +161,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
         gen_help.hide();
         gen_out.show();
 
-        $.getJSON('https://api.douban.workers.dev/', {
+        $.getJSON('https://api.nas.ink/', {
           url: input_value
         }).success(function (data) {
           movie_info.val(data["success"] === false ? data["error"] : data["format"]);
@@ -174,7 +174,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
         gen_help.show();
         gen_out.hide();
 
-        $.getJSON('https://api.douban.workers.dev/', {
+        $.getJSON('https://api.nas.ink/', {
           search: input_value,
           source: $('#search_source_val').val()
         }).success(function (data) {
