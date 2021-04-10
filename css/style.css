@@ -18,14 +18,20 @@
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
 }
 @font-face {
-  font-family: 'UbuntuMono';
-  src: url("https://cdn.jsdelivr.net/gh/xaoxuu/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-family: 'HuaKangJinGangHei';
+  src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/HuaKangJinGangHei-Regular-2.ttf");
   font-weight: 'normal';
   font-style: 'normal';
 }
 @font-face {
-  font-family: 'Varela Round';
-  src: url("https://cdn.jsdelivr.net/gh/xaoxuu/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-family: 'Mono';
+  src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/JetBrainsMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+}
+@font-face {
+  font-family: 'HuaKangJinGangHei';
+  src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/HuaKangJinGangHei-Regular-2.ttf");
   font-weight: 'normal';
   font-style: 'normal';
 }
@@ -39,7 +45,7 @@ html {
   color: #555;
   width: 100%;
   height: 100%;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
@@ -1256,11 +1262,11 @@ p.p.subtitle:first-child {
 }
 span.p.logo,
 p.p.logo {
-  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
 }
 span.p.code,
 p.p.code {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 span.p.left,
 p.p.left {
@@ -1571,7 +1577,7 @@ pre {
   display: block;
   background: #f6f6f6;
   font-size: 0.8125rem;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border-radius: 4px;
   border: 1px solid #e7e7e7;
   line-height: 1.5;
@@ -1926,7 +1932,7 @@ pre {
   -webkit-user-select: none;
   user-select: none;
   -webkit-appearance: none;
-  font-family: Menlo, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Menlo, Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
   font-size: calc(0.8125rem - 1px);
   font-weight: bold;
   padding: 4px 8px;
@@ -2079,7 +2085,7 @@ div.gallery.stretch>p img {
   color: rgba(85,85,85,0.65);
 }
 .article mjx-container {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
   background: rgba(255,255,255,0);
   padding: 16px 8px;
   border-radius: 4px;
@@ -2278,7 +2284,7 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vcards .vcontent code {
   color: #555;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .l_main #comments #valine_container .vcards .vcontent pre {
   background: #f6f6f6;
@@ -2712,7 +2718,7 @@ div.gallery.stretch>p img {
   overflow: auto;
   background: #f6f6f6;
   font-size: 0.8125rem;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border: 1px solid #e7e7e7;
   padding: 16px;
   border-radius: 4px;
@@ -2730,7 +2736,7 @@ div.gallery.stretch>p img {
   color: rgba(85,85,85,0.9);
 }
 .article code {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .article code:not([class]) {
   padding: 3px 4px 1px 4px;
@@ -3005,7 +3011,7 @@ article .readmore >a {
   max-width: 100%;
 }
 .cover-wrapper .cover .cover-body .title {
-  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
   font-size: 3rem;
   line-height: 1.2;
 }
@@ -3856,7 +3862,7 @@ div.hoverbox:hover >div.target {
   line-height: 64px;
   padding: 0 24px;
   font-size: 1.25rem;
-  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
 }
 .l_header .wrapper .nav-main .title img {
   height: 64px;
@@ -3867,7 +3873,7 @@ div.hoverbox:hover >div.target {
 }
 .l_header .nav-sub .title {
   font-size: 1rem;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -5177,7 +5183,7 @@ ul.list-v >li>a.active {
   max-width: 500px;
   border-radius: 4px;
   color: #555;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
 }
 .aplayer .aplayer-list {
   text-align: left;
