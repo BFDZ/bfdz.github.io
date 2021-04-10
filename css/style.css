@@ -18,20 +18,8 @@
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
 }
 @font-face {
-  font-family: 'HuaKangJinGangHei';
-  src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/HuaKangJinGangHei-Regular-2.ttf");
-  font-weight: 'normal';
-  font-style: 'normal';
-}
-@font-face {
   font-family: 'Mono';
   src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/JetBrainsMono-Regular.ttf");
-  font-weight: 'normal';
-  font-style: 'normal';
-}
-@font-face {
-  font-family: 'HuaKangJinGangHei';
-  src: url("https://cdn.jsdelivr.net/gh/bfdz/cdn-blog/HuaKangJinGangHei-Regular-2.ttf");
   font-weight: 'normal';
   font-style: 'normal';
 }
@@ -45,7 +33,7 @@ html {
   color: #555;
   width: 100%;
   height: 100%;
-  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Menlo, Monaco, monospace, sans-serif;
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
@@ -1075,7 +1063,7 @@ div.note {
   position: relative;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  padding: 0.6rem 16px 0.5rem 16px;
+  padding: 0.5rem 16px 0.5rem 16px;
   padding-left: calc(16px + 16px);
   border-radius: 4px;
   background: #f6f6f6;
@@ -1262,11 +1250,11 @@ p.p.subtitle:first-child {
 }
 span.p.logo,
 p.p.logo {
-  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Helvetica, monospace;
 }
 span.p.code,
 p.p.code {
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
 }
 span.p.left,
 p.p.left {
@@ -1577,7 +1565,7 @@ pre {
   display: block;
   background: #f6f6f6;
   font-size: 0.8125rem;
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
   border-radius: 4px;
   border: 1px solid #e7e7e7;
   line-height: 1.5;
@@ -1932,7 +1920,7 @@ pre {
   -webkit-user-select: none;
   user-select: none;
   -webkit-appearance: none;
-  font-family: Menlo, Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Menlo, Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
   font-size: calc(0.8125rem - 1px);
   font-weight: bold;
   padding: 4px 8px;
@@ -2085,7 +2073,7 @@ div.gallery.stretch>p img {
   color: rgba(85,85,85,0.65);
 }
 .article mjx-container {
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
   background: rgba(255,255,255,0);
   padding: 16px 8px;
   border-radius: 4px;
@@ -2284,7 +2272,7 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vcards .vcontent code {
   color: #555;
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
 }
 .l_main #comments #valine_container .vcards .vcontent pre {
   background: #f6f6f6;
@@ -2672,7 +2660,7 @@ div.gallery.stretch>p img {
 .article blockquote {
   position: relative;
   width: 100%;
-  padding: 0.6rem 16px 0.5rem 16px;
+  padding: 0.5rem 16px 0.5rem 16px;
   transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
@@ -2718,7 +2706,7 @@ div.gallery.stretch>p img {
   overflow: auto;
   background: #f6f6f6;
   font-size: 0.8125rem;
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
   border: 1px solid #e7e7e7;
   padding: 16px;
   border-radius: 4px;
@@ -2736,7 +2724,7 @@ div.gallery.stretch>p img {
   color: rgba(85,85,85,0.9);
 }
 .article code {
-  font-family: Mono, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Mono, "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, monospace, courier, sans-serif;
 }
 .article code:not([class]) {
   padding: 3px 4px 1px 4px;
@@ -3011,7 +2999,7 @@ article .readmore >a {
   max-width: 100%;
 }
 .cover-wrapper .cover .cover-body .title {
-  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Helvetica, monospace;
   font-size: 3rem;
   line-height: 1.2;
 }
@@ -3862,7 +3850,7 @@ div.hoverbox:hover >div.target {
   line-height: 64px;
   padding: 0 24px;
   font-size: 1.25rem;
-  font-family: "HuaKangJinGangHei", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Helvetica, monospace;
 }
 .l_header .wrapper .nav-main .title img {
   height: 64px;
@@ -3873,7 +3861,7 @@ div.hoverbox:hover >div.target {
 }
 .l_header .nav-sub .title {
   font-size: 1rem;
-  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -5183,7 +5171,7 @@ ul.list-v >li>a.active {
   max-width: 500px;
   border-radius: 4px;
   color: #555;
-  font-family: HuaKangJinGangHei, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "San Francisco", "Lucida Grande", "helvetica neue", Aril, PingFangSC-Light, "hiragino sans gb", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", sans-serif, Menlo, Monaco, monospace, sans-serif;
 }
 .aplayer .aplayer-list {
   text-align: left;
