@@ -13,7 +13,7 @@ a:hover {
 
 #nav {
     background: #3f51b5;
-    height:64px;
+    height:50px;
 }
 
 #nav.translucent {
@@ -21,7 +21,7 @@ a:hover {
 }
 
 #nav a {
-    color: #ddd;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 1.5em;
     display: inline-block;
