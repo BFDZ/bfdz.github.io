@@ -11,6 +11,26 @@ a:hover {
     color: #265778;
 }
 
+#nav {
+    background: #3f51b5;
+    height:64px;
+}
+
+#nav.translucent {
+    background: none;
+}
+
+#nav a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 1.5em;
+    display: inline-block;
+}
+
+#nav a:hover {
+    color: #eee;
+}
+
 #header, #main {
     margin: 0 auto;
     max-width: 768px;
