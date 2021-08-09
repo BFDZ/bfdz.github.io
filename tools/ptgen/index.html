@@ -50,9 +50,9 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-				<li><a href="//www.bfdz.ink/" target="_blank">博客</a>
+				<li><a href="//www.bfdz.ink/" target="_blank">Blog</a>
 				</li>
-                <li><a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank">源码</a>
+                <li><a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank">Docs</a>
             </ul>
         </div>
     </div>
@@ -64,7 +64,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
                 <div class="form-inline">
                     <div class="form-group">
                         <label class="sr-only" for="input_value">Input value</label>
-                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、indienova、Epic等资源链接" id="input_value" style="width: 480px">
+                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam、indienova、Epic等资源链接" id="input_value" style="width: 480px">
                     </div>
                     <div class="form-group" id="search_source" style="display: none">
                         <label class="sr-only" for="search_source_val"></label>
@@ -161,7 +161,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
         gen_help.hide();
         gen_out.show();
 
-        $.getJSON('https://api.nas.ink/', {
+        $.getJSON('https://api.douban.workers.dev/', {
           url: input_value
         }).success(function (data) {
           movie_info.val(data["success"] === false ? data["error"] : data["format"]);
@@ -174,7 +174,7 @@ ul.timeline > li:before{content:' ';background:white;display:inline-block;positi
         gen_help.show();
         gen_out.hide();
 
-        $.getJSON('https://api.nas.ink/', {
+        $.getJSON('https://api.douban.workers.dev/', {
           search: input_value,
           source: $('#search_source_val').val()
         }).success(function (data) {
