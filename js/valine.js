@@ -2343,7 +2343,7 @@
                     case "-MdYXbMMI":
                         r += "us."
                     }
-                o = e.serverURLs || r + "avoscloud.com",
+                o = e.serverURLs || r + "tsli1jv9.api.lncldglobal.com",
                 AV.init({
                     appId: a,
                     appKey: s,
