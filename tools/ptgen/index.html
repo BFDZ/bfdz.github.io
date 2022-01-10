@@ -1,213 +1,871 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="PT Gen | 电影、动漫、游戏简介生成工具，根据豆瓣、IMDb、Bangumi、Steam、Epic、Indienova链接自动生成简介">
-    <meta name="keywords" content="电影查询 电影简介生成 电影介绍生成 豆瓣简介 游戏简介生成" />
-    <meta name="author" content="BFDZ">
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>PT Gen 简介查询生成工具 | 豆瓣 IMDb Bangumi Steam Epic Indienova</title>
+  <!-- 页面元数据 -->
+  
+    <title>PT Gen - BFDZ</title>
+  
+  
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="BFDZ">
+  
 
-    <!-- Custom styles for this template -->
-    <style type="text/css">
-body{padding-top:50px}
-.navbar-fixed-top{border:0}
-.main{padding:20px;margin-top:0}
-@media (min-width:768px){.main{padding-right:40px;padding-left:40px}
-}#input_value{width:400px}
-.zero-clipboard{position:relative}
-.btn-clipboard{position:absolute;top:8px;right:21px;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px 0 4px}
-ul.timeline{list-style-type:none;position:relative}
-ul.timeline:before{content:' ';background:#d4d9df;display:inline-block;position:absolute;left:29px;width:2px;height:100%;z-index:400}
-ul.timeline > li{margin:20px 0;padding-left:20px}
-ul.timeline > li:before{content:' ';background:white;display:inline-block;position:absolute;border-radius:50%;border:3px solid #22c0e8;left:20px;width:20px;height:20px;z-index:400}
-    </style>
+  <!-- import meta -->
+  
 
-    <!--[if lt IE 9]>
-    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js" integrity="sha256-9uAoNWHdszsUDhSXf/rVcWOqKPfi5/8V5R4UdbZle2A=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js" integrity="sha256-nwhzW/P9gnvWMPOm84MK8BzQRRMdi8iutxMuYsYcOgw=" crossorigin="anonymous"></script>
-    <![endif]-->
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  <link rel='icon' type='image/png' sizes='128x128' href='https://www.bfdz.ink/favicon.png'>
+  <link rel='apple-touch-icon' type='image/png' href='https://www.bfdz.ink/apple-touch-icon.png'>
+  <link rel='mask-icon' type='image/x-icon' href='https://www.bfdz.ink/favicon.ico'>
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-64016301-4";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64016301-4');
+	}, 5000);
+    </script>
+  
+  
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #ffffffe6;">
-    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">PT Gen</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-				<li><a href="//www.bfdz.ink/" target="_blank">Blog</a>
-				</li>
-                <li><a href="https://github.com/Rhilip/pt-gen-cfworker" target="_blank">Docs</a>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="container-fluid main" style="background-color: #f4f4f4;">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <div>
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label class="sr-only" for="input_value">Input value</label>
-                        <input type="text" class="form-control" placeholder="名称或豆瓣、IMDb、Bangumi、Steam、indienova、Epic等资源链接" id="input_value" style="width: 480px">
-                    </div>
-                    <div class="form-group" id="search_source" style="display: none">
-                        <label class="sr-only" for="search_source_val"></label>
-                        <select class="form-control" id="search_source_val">
-                            <option value="douban">豆瓣</option>
-                            <option value="imdb">IMDb</option>
-                            <option value="bangumi">Bangumi</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-success" id="query_btn">查询</button>
-                </div>
-            </div>
-            <hr>
-            <div id="gen_help" style="display: none"></div>
-            <div id="gen_out">
-                <div class="zero-clipboard">
-                    <button class="btn btn-clipboard" data-clipboard-target="#movie_info">复制</button>
-                </div>
-                <textarea class="form-control" rows="22" id="movie_info"></textarea>
-            </div>
-            <hr>
-            <div id="gen_replace">
-              <h4>相关替代</h4>
-              此处列出可以替代本平台的用户脚本，以便在 <code>Pt-Gen</code> 失效或返回数据陈旧时使用
-              <ul style="margin-top: 10px">
-                  <li><b><a href="https://ptgen.rhilip.workers.dev/" target="_blank">Rhilip/pt-gen-cfworker</a></b>：构建在Cloudflare Worker上的Pt-Gen分支</li>
-                  <li><b><a href="https://github.com/Rhilip/PT-help" target="_blank">Rhilip/PT-help</a></b> :
-                      <a href="https://api.rhilip.info/ptgen.html" target="_blank">https://api.rhilip.info/ptgen.html</a> ,
-                      Pt-Gen的源项目</li>
-                  <li>豆瓣：<a href="https://greasyfork.org/en/scripts/38878" target="_blank">电影信息查询脚本</a></li>
-                  <li>Bangumi： Bangumi Info Export <a href="https://git.io/fjm3l" target="_blank">脚本</a>，
-                      <a href="https://bgm.tv/dev/app/103" target="_blank">应用平台</a></li>
-              </ul>
-          </div>
-          <hr>
-          <div id="status">
-            <a href="https://status.bfdz.ink/" target="_blank">Status</a>
-        </div>
-        </div>
-    </div>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
+<header class="l_header no_sidebar shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            BFDZ
+          
+          
+        </a>
+      
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.0/dist/clipboard.min.js" integrity="sha256-meF2HJJ2Tcruwz3z4XcxYDRMxKprjdruBHc3InmixCQ=" crossorigin="anonymous"></script>
-<script>
-  // 脚本查询相关
-  $(function () {
-    let query_btn = $("#query_btn");
-    let gen_help = $("#gen_help");
-    let gen_out = $("#gen_out");
-    let movie_info = $("#movie_info");
-    let input_btn = $("#input_value");
-    let search_source = $("#search_source");
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-tools fa-fw'></i>工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tools/ptgen/
+                  
+                  
+                  
+                    id="toolsptgen"
+                  >
+                  PT-Gen
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tools/password.html
+                  
+                  
+                  
+                    id="toolspasswordhtml"
+                  >
+                  随机密码
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
 
-    input_btn.on('input change', function () {
-      let input_value = input_btn.val();
-      if (/^http/.test(input_value) || input_value === '') {
-        search_source.hideBtn();
-      } else {
-        search_source.showBtn();
-      }
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-tools fa-fw'></i>工具
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tools/ptgen/
+                  
+                  
+                  
+                    id="toolsptgen"
+                  >
+                  PT-Gen
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tools/password.html
+                  
+                  
+                  
+                    id="toolspasswordhtml"
+                  >
+                  随机密码
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main no_sidebar'>
+  
+
+  
+    
+  
+    
+    
+
+<section class="widget text shadow desktop mobile">
+  
+  <header>
+    
+      <a href='https://cloud.tencent.com/act/cps/redirect?redirect=1079&cps_key=cd492a24f1b12f9c8d2bba136e585243&from=console' target="_blank" rel="noopener"><i class=" fa-fw" aria-hidden="true"></i><span class='name'>腾讯云轻量服务器年付低至74元</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <p><a href="https://cloud.tencent.com/act/cps/redirect?redirect=1079&cps_key=cd492a24f1b12f9c8d2bba136e585243&from=console" target="_blank" rel="noopener"><img src="/images/首单限时_1040-100.jpg" width="824px"></a></p>
+
+    
+  </div>
+</section>
+
+  
+
+
+  
+
+  
+    <article id="page" class="post white-box reveal shadow article-type-page" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+        <div class='new-meta-box'>
+          
+        </div>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>本站的 Pt-Gen 已停止公开使用，推荐各位替代使用油猴子脚本：<a href="https://greasyfork.org/en/scripts/38878" target="_blank" rel="noopener">电影信息查询脚本</a> 和 iyuu 的 <a href="https://api.iyuu.cn/ptgen/index.html" target="_blank" rel="noopener">PT-Gen</a> 服务。</p>
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:root@bfdz.ink"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/bfdz"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=42333392"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p>Copyright © 2016-2021 <a href="https://www.bfdz.ink">BFDZ</a> | <a href="https://status.bfdz.ink/" target="_blank" rel="noopener">Status</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
     });
+  </script>
 
-    search_source.showBtn = function () {
-      query_btn.html("搜索");
-      search_source.show();
-      input_btn.css({width:'460px'});
-    }
 
-    search_source.hideBtn = function () {
-      query_btn.html("查询");
-      search_source.hide();
-      input_btn.css({width:'480px'});
-    }
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
 
-    query_btn.disable = function () {
-      query_btn.attr("disabled", true);
-      query_btn.html("查询中");
-    };
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
 
-    query_btn.enable = function () {
-      query_btn.removeAttr("disabled");
-      query_btn.html("查询");
-    };
 
-    query_btn.click(function () {
-      query_btn.disable();
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
-      let input_value = input_btn.val();
-      if (input_value.length === 0) {
-        alert("空字符，请检查输入");
-        query_btn.enable();
-      } else if (/^http/.test(input_value)) {
-        gen_help.hide();
-        gen_out.show();
 
-        $.getJSON('https://api.douban.workers.dev/', {
-          url: input_value
-        }).success(function (data) {
-          movie_info.val(data["success"] === false ? data["error"] : data["format"]);
-        }).fail(function (jqXHR) {
-          alert(jqXHR.status === 429 ? 'Met Rate Limit, Retry later~' : "Error occured!");
-        }).complete(function () {
-          query_btn.enable();
-        });
-      } else if (input_btn.val().length > 0) {
-        gen_help.show();
-        gen_out.hide();
 
-        $.getJSON('https://api.douban.workers.dev/', {
-          search: input_value,
-          source: $('#search_source_val').val()
-        }).success(function (data) {
-          let subjects = data.data;
-          gen_help.html(subjects.reduce((accumulator, currentValue) => {
-            return accumulator += "<tr><td>" + currentValue.year + "</td><td>" + currentValue.subtype + "</td><td>" + currentValue.title + (currentValue.subtitle && currentValue.subtitle !== currentValue.title ? ('<br>' + currentValue.subtitle) : '' ) + "</td><td><a href='" + currentValue.link + "' target='_blank'>" + currentValue.link + "</a></td><td><a href='javascript:void(0);' class='gen-search-choose' data-url='" + currentValue.link + "'>选择</a></td></tr>";
-          }, "<table id='gen_help_table' class='table table-striped table-hover'><thead><tr><th>年代</th><th>类别</th><th>标题</th><th>资源链接</th><th>行为</th></tr></thead><tbody>"));
-          $("a.gen-search-choose").click(function () {
-            let tag = $(this);
-            input_btn.val(tag.attr("data-url"));
-            search_source.hideBtn();
-            query_btn.click();
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://zfwzzc.www.gov.cn/check_web/upload/2021/11/29/20211129233115_147.jpeg", "https://zfwzzc.www.gov.cn/check_web/upload/2021/11/29/20211129233225_732.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
           });
-        }).fail(function (jqXHR) {
-          alert('不知道发生了什么奇怪的事情');
-        }).complete(function() {
-          query_btn.enable();
-        })
-      }
-    });
-  });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
 
-  // 页面复制相关
-  new ClipboardJS('.btn-clipboard');
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64016301-5"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-64016301-5');
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
 </script>
 
-</body></html>
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
